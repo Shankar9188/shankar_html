@@ -1,0 +1,206 @@
+
+body{
+	background-color: #e5e5e5;
+}
+header{
+	background-color: #3e043e;
+	color: #fff;
+}
+nav{
+	background-color: #27002c;
+	color: #fff;
+}
+.clr-green{
+	color: #64b000;
+}
+.clr-red{
+	color: #b01e00;
+}
+.light-grey{
+	color: #3e043e;
+}
+.white{
+	color: #fff;
+}
+.grey{
+	color: #999;
+}
+.fent-blue{
+	color: #005b65;
+}
+.bread-crum{
+	background-color: #3e043e;
+}
+.bread-crum a {
+	color: #999;
+}
+.bread-crum a.active{
+	color: #64b000;
+}
+.inner-score-holder .score-div{
+	background-color: #27002c;
+	color: #fff;
+}
+.inner-score-holder .left-score:before,
+.inner-score-holder .right-score:after{
+	background-color: #fff;
+}
+.active{
+	color: #64b000;
+}
+.middle-score{
+	background-color: #3e043e;
+}
+.commentry{
+	color: #fff;
+}
+.one-col .width-100{
+	background-color: #ddd;
+}
+.inner-holder{
+	background-color: #fff;
+}
+.heading-row{
+	background-color: #3e043e;
+	color: #fff;
+}
+.data-row{
+	background-color: #e4d9e7;
+}
+.data-row:hover{
+	background-color: #ccbbdf;
+}
+.match-status-title{
+	background-color: #27002c;
+	color: #fff;
+}
+.match-status-title:before{
+	background-color: #64b000;
+}
+.box-title{
+  background-color: #52356f;
+  color: #fff;
+}
+.inner-box{
+	/*background-color: #fff;*/
+}
+.box{
+	background-color: #fff;
+}
+.br-bt{
+	border-bottom:  1px solid #f7f5f5;
+}
+.sport-row{
+	background-color: #3e043e;
+}
+.sport-row .type{
+	color: #fff;
+}
+.empty-bet-title{
+	background-color: #27002c;
+	color: #fff;
+	border-color: #64b000;
+}
+.close{
+	color: #fff;
+}
+.empty-bet-notice{
+	background-color: #52356f;
+	color: #fff;
+}
+.placed-bet .inner-box{
+	/*background-color: #fff;*/
+	background-color: #52356f;
+}
+.inner-bet{
+/*	background-color: #fff;
+	color: #52356f;*/
+	background-color: #52356f;
+  color: #fff;
+}
+.bet-input .sign{
+/*  background-color: #52356f;
+  color: #fff;*/
+	background-color: #27002c;
+	color: #ffffff;
+}
+.bet-input input{
+	/*border:1px solid #52356f;*/
+	border: 1px solid #27002c;
+	color: #447502;
+}
+.bet-btn{
+	color: #fff;
+	border: 1px solid #27002c;
+}
+.place-btn{
+	background-color: #64b000;
+	/*border-color: #529001;*/
+}
+.clear-btn{
+	background-color: #b01e00;
+	/*border-color: #921900;*/
+}
+
+.nav-list{
+	background-color: #e4d9e7;
+}
+.nav-list .nav-item{
+	color: #52356f;
+}
+.nav-list span .count{
+  border: 1px solid #888888;
+  color: #888888;
+}
+.nav-list .nav-item:hover{
+	color: #27002c;
+}
+.nav-list .nav-item:hover > .count{
+	border: 1px solid #1a212f;
+	background-color: #e4d9e7;
+	color: #27002c;
+}
+.nav-list .nav-item.active{
+	color: #27002c;
+}
+.nav-list .nav-item.active .count{
+	border: 1px solid #1a212f;
+	background-color: #888888;
+	color: #fff;
+}
+.dark{
+	background-color: #27002c;
+  color: #fff;
+}
+.dark:hover{
+	background-color: #1a212f;
+}
+.light{
+	background-color: #52356f;
+  color: #fff;
+}
+.light:hover{
+	background-color: #313542;
+}
+
+.right-panel .box,
+.box-title {
+    background-color: #52356f;
+    color: #fff;
+}
+.right-panel .box .br-bt {
+    border-bottom: 1px solid #34363c;
+}
+@media all and (max-width: 768px){
+/*	.match-box, .match-box p,
+	.match-box .inner-box{
+		background-color: #e5e5e5;
+	}*/
+	/*.placed-bet .inner-box,
+	.placed-bet .table{
+		background-color: #f0f8ff;
+	}*/
+	.placed-bet .br-bt{
+		border-color: #fff;
+	}
+}

@@ -1,0 +1,417 @@
+
+/* Buyed Contest */
+
+.grey-border{
+	background-color: #1a1d27;
+  border: 2px solid #21242d;
+  padding: 6px;
+  border-radius: 3px;
+}
+.pl-10{
+  padding-left: 10px;
+}
+
+.nav-item:focus {
+    outline: none;
+    border: 0;
+ }
+/* Updates */
+.icn{
+  width: auto;
+  height: 36px;
+}
+.match-row p{
+  line-height: 18px;
+}
+.contest-outer {
+  align-items: center;
+}
+.b-right{
+  border-right: 2px solid #3a3f49;
+  padding-right: 10px;
+}
+.pr-10{
+  padding-right: 10px;
+}
+.fs-14{
+  font-size: 14px;
+}
+.border{
+  border: 2px solid #3a3f49;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+/* Main CSS 1172 */
+@media all and (max-width: 600px){
+  .match-row{
+    background-color: #292d38;
+  }
+	.sport-container .icn{
+		display: none;
+	}
+	.sport-container .b-left{
+		border-left: none;
+		position: relative;
+	}
+	.sport-container .data-row{
+		display: block;
+	}
+	.sport-container .data-row p{
+		padding-left: 0;
+	}
+  .match-title .schedule{
+    flex: inherit;
+  }
+  .match-title {
+    display: flex;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #3a3f49;
+  }
+  .contest-outer p{
+    text-align: center;
+  }
+  .contest-outer .total-contest{
+    border-right: 2px solid #3a3f49;
+  }
+  .contest-outer .border{
+    border: none;
+    padding: 0 0 0 10px;
+  }
+}
+
+
+.win-anim {
+	-webkit-animation: win-anim 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: win-anim 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes win-anim {
+  0% {
+    transform: scaleX(0.4);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.contest-match{
+  background-color: #1a1d27;
+  color: #fff;
+  /* border: 2px solid #1a1d27; */
+  border-radius: 3px;
+}
+.contest-match .contest-title,
+.contest-match .contest-time{
+  padding: 8px;
+}
+.contest-time img{
+  width: 18px;
+  height: auto;
+  margin-right: 10px;
+}
+
+
+/* Live Contest Panel */
+.contest-left{
+  /*width: 320px;*/
+}
+.contest-outer{
+  /*border: 2px solid #343743;*/
+  border-radius: 3px;
+}
+.contest-inner{
+  background-color: #1a1d27;
+  padding: 5px 5px 5px;
+  position: relative;
+}
+.tr-pos{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.time-left img{
+  width: 15px;
+  height: auto;
+  margin-right: 5px;
+}
+.c-right-icn{
+  justify-content: flex-start;
+  padding: 15px 20px;
+}
+.c-right-icn img{
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  padding: 2px;
+  border: 2px solid #343743;
+}
+.gold{
+  color: #bc8b43;
+}
+.contest-left .c-title .bullets-none:before,
+.contest-left .c-title .bullets-none::after{
+  display: none;
+}
+.a-center{
+  align-items: center;
+}
+.img-border{
+
+}
+.c-list p{
+  background-color: #343743;
+  padding: 4px 10px;
+}
+.img-border img{
+  border: 2px solid #343743;
+  width: 30px;
+  height: auto;
+  padding: 2px;
+  border-radius: 50%;
+}
+.contest-left .c-title{
+  padding-left: 10px;
+}
+.w-60{
+  width: 50px;
+}
+
+.live{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #a0de4e;
+	animation:blinkingText 3s infinite;
+}
+@keyframes blinkingText{
+	0%{		background-color: #a0de4e;	}
+	49%{	background-color: transparent;	}
+	50%{	background-color: #a0de4e;	}
+	99%{	background-color:transparent;	}
+	100%{	background-color: #a0de4e;	}
+}
+.contest-list  {
+  /* border: 2px solid #1a1d27; */
+}
+.nav-list.contest-list .nav-item{
+  font-size: 13px;
+}
+.nav-list.contest-list .nav-item:first-child{
+  padding-left: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Contest Panel */
+.contest-row {
+	background-color: #1a1d27;
+	color: #fff;
+	padding: 8px;
+}
+.c-title {
+	background-color: #343743;
+	padding: 6px;
+	border-radius: 3px;
+	position: relative;
+}
+.c-title span {
+	position: relative;
+	color: #bc8b43;
+}
+.c-title span:before {
+	left: -20px;
+}
+.c-title span:after {
+	right: -20px;
+}
+.c-title span:before,
+.c-title span:after {
+	content: '\2022';
+	display: block;
+	position: absolute;
+	top: 0;
+	color: #fff;
+}
+.buy {
+	position: absolute;
+	display: inline;
+	right: 0;
+	top: 0;
+	background-color: #1d7116;
+	color: #ffffff;
+	height: 100%;
+	line-height: 31px;
+	padding: 0 15px;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+}
+.c-mid-icn {
+	justify-content: center;
+	padding: 15px 20px;
+}
+.c-mid-icn img {
+	width: 50px;
+	height: auto;
+	border-radius: 50%;
+	padding: 2px;
+	border: 2px solid #343743;
+}
+.c-left,
+.c-right {
+	justify-content: center;
+	flex-direction: column;
+}
+.prize span {
+	position: relative;
+	bottom: 1px;
+	font-size: 12px;
+}
+.c-spots .l-text {
+	padding-left: 5px;
+}
+.c-spots .r-text {
+	padding-right: 5px;
+}
+@media all and (max-width: 768px) {
+	.contest-row .c-title {
+		text-align: left;
+		padding-left: 10px;
+	}
+	.c-title span:before,
+	.c-title span:after {
+		display: none;
+	}
+}
+/* Progress Bar */
+
+.contest-container .meter {
+	height: 5px;
+	/* Can be anything */
+	position: relative;
+	margin-bottom: 5px;
+	/* Just for demo spacing */
+	background: #343743;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 2px;
+}
+.contest-container .meter > span {
+	display: block;
+	height: 100%;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: rgb(154, 114, 0);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(156, 120, 20)), color-stop(1, rgb(251, 191, 25)));
+	background-image: -moz-linear-gradient(center bottom, rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69%);
+	-webkit-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+	box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+	position: relative;
+	overflow: hidden;
+}
+.contest-container .meter > span:after,
+.animate > span > span {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	z-index: 1;
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	-webkit-animation: move 2s linear infinite;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	overflow: hidden;
+}
+.animate > span:after {
+	display: none;
+}
+@-webkit-keyframes move {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 50px 50px;
+	}
+}
+.orange > span {
+	background-color: #f1a165;
+	background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f1a165), color-stop(1, #f36d0a));
+	background-image: -webkit-linear-gradient(#f1a165, #f36d0a);
+}
+
+
+
+/* Live Contest Start */
+.l-content-outer{
+	padding: 5px;
+	background-color: #343743;
+	/* border: 2px solid #1a1d27; */
+	border-radius: 3px;
+}
+.l-content-outer .l-title{
+	justify-content: flex-start;
+	align-items: center;
+}
+.l-content-outer .r-title{
+	justify-content: flex-end;
+	align-items: center;
+}
+.l-content-outer img{
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	padding: 2px;
+	border: 2px solid #1a1d27;
+}
+.l-title img{
+	margin-right: 10px;
+}
+.r-title img{
+	margin-left: 10px;
+}
+
+@media all and (max-width: 600px){
+	.l-content-outer .fs-16{
+		font-size: 13px;
+	}
+	.l-content-outer .fs-sm{
+		font-size: 10px;
+	}
+}
+/* Live Contest Close */

@@ -1,0 +1,97 @@
+td{
+  color: #fff;
+}
+.clr-red{
+  color: #ff5a5a;
+}
+.ledger-outer{
+  padding: 2px;
+  border-radius: 3px;
+  background-color: #3a3f49;
+}
+.bc-ledger-table{
+  width: 100%;
+  background-color: #333743;
+  border: 0px solid #272a31;
+  border-collapse: collapse;
+}
+.bc-ledger-table td{
+  padding: 8px;
+  border: 2px solid #3a3f49;
+}
+.led-heading{
+  background-color: #272a31;
+}
+.tdl-bal{
+}
+
+
+@media all and (max-width: 768px){
+  .bc-ledger-table .led-heading{
+    display: none;
+  }
+  .ledger-outer {
+    border-radius: 3px;
+    background-color: #20262d;
+  }
+  .bc-ledger-table{
+    background-color: #20262d;
+  }
+  .bc-ledger-table td{
+    display: block;
+    position: relative;
+    border: 1px solid #3a3f49;
+    float: left;
+  }
+  .tdl-ref,
+  .tdl-note{
+    width: calc(100% - 18px);
+    text-align: center;
+  }
+  .tdl-crd,
+  .tdl-dbt,
+  .tdl-bal{
+    width: calc(33.33% - 18px);
+    text-align: center;
+  }
+  .bc-ledger-table .led-data{
+    display: block;
+    background-color: #292d38;
+    border: 1px solid #3a3f49;
+    width: calc(100% - 2px);
+    float: left;
+    margin-bottom: 10px;
+  }
+  .bc-ledger-table .led-data:last-child{
+    /* margin-bottom: 0px; */
+  }
+
+  .tdl-note:before{
+    content: "Note - ";
+  }
+  .tdl-ref:before{
+    content: "Reference - ";
+  }
+  .tdl-crd:before{
+    content: "Debit - ";
+  }
+  .tdl-dbt:before{
+    content: "Credit - ";
+  }
+  .tdl-bal:before{
+    content: "Balance - ";
+  }
+  .tdl-ref.tdl-date:before{
+    content: "Date - ";
+  }
+}
+
+@media all and (max-width: 600px){
+  .tdl-crd,
+  .tdl-dbt{
+    width: calc(50% - 18px);
+  }
+  .tdl-bal{
+    width: calc(100% - 18px);
+  }
+}

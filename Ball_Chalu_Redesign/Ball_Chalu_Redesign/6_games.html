@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Games</title>
+	<!-- <meta content="width=device-width, initial-scale=1" name="viewport"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="css/main.css">
+	<!-- THEMES -->
+	<link rel="stylesheet" href="css/theme/blue_red.css">
+	<!-- <link rel="stylesheet" href="css/theme/dark.css"> -->
+
+	<link rel="stylesheet" href="css/contest.css">
+	<link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+<div class="win-outer">
+
+	<div class="win-title-outer win-left" onclick="hideMobWinner()">
+
+	</div>
+
+	<div class="win-inner">
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>1st</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">John Wick</p>
+				<p class="win-amt">2,45,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>2nd</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Graham Cracker</p>
+				<p class="win-amt">1,00,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>3rd</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Pat Agonia</p>
+				<p class="win-amt">75,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>4th</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Donatella Nobatti</p>
+				<p class="win-amt">50,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>5th</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Matt Innae</p>
+				<p class="win-amt">10,000/-</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="win-title-outer win-right">
+	</div>
+
+</div>
+
+
+<header>
+	<div class="container-width flex">
+		<div class="logo">
+			<!-- <img src="img/page/logo_3.png"> -->
+			BSF
+		</div>
+
+		<div class="flex flex-1 r-text login-row">
+			<div class="table">
+					<div class="login-cell cell">
+						<p class="details">
+							<span class="username bold">John Wick</span>|
+							<span class="coins clr-green">2,00,000 Coins</span>
+							<!-- <img src="img/indicators/arrow-right.svg" class="ar-down"> -->
+						</p>
+						<p class="details logout">
+							<a href="signup.html">
+								<span class="username bold clr-green">Logout</span>
+							</a>
+						</p>
+						<p class="menu" onclick="showMobMenu()">
+							<img src="img/page/menu-white.svg">
+						</p>
+					</div>
+				</div>
+		</div>
+
+	</div>
+</header>
+
+<nav>
+	<div class="container-width flex">
+		<div class="flex-1 l-text nav-align">
+			<ul>
+				<a href="">
+					<li>Home</li>
+				</a>
+				<a href="">
+					<li>In Play</li>
+				</a>
+				<a href="">
+					<li>All Matches</li>
+				</a>
+				<a href="">
+					<li>Schedule</li>
+				</a>
+				<a href="">
+					<li class="nav-active">Games</li>
+				</a>
+				<a href="tipper-list.html">
+					<li>Tipers</li>
+				</a>
+				<a href="">
+					<li>About</li>
+				</a>
+			</ul>
+		</div>
+		<!-- <div class="r-text nav-align">
+			<div class="chat-icn win-menu-icn" onclick="toggleWinner()">
+				<img src="img/page/trophy_2.svg">
+			</div>
+		</div>
+		<div class="r-text nav-align">
+			<div class="chat-icn" onclick="showChat()">
+				<img src="img/page/chat.svg">
+			</div>
+		</div> -->
+	</div>
+</nav>
+
+<div class="mob-nav light-bg">
+	<div class="outer-nav">
+		<div class="inner-nav flex dark-bg">
+			<p class="l-text flex-1"><img src="img/page/close.svg" onclick="hideMobMenu()"></p>
+			<p class="r-text flex-1 bold">John Wick | <span class="clr-green">20,000 Coins</span></p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Home</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af" onclick="showChat()">Chat Room</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">In Play</p>
+		</div>
+		<div class="inner-nav flex br-bt" onclick="showWinners()">
+			<p class="r-text flex-1 bold dot-af">Winners</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Upcoming</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 dot-af">
+				<a class="bold" href="tipper-list.html">Tipers</a>
+			</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Live</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">About</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Profile</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Log Out</p>
+		</div>
+	</div>
+</div>
+
+<div class="container-width main-container games-outer-container flex">
+
+
+
+
+
+<!-- =================MIDDLE PANEL START================= -->
+	<div class="middle-panel flex-1">
+
+		<div class="l-content-outer flex dark-bg mb-10 mt-10">
+			<div class="flex-1 flex l-title">
+				<img class="game-icon" src="img/page/game.svg">
+				<p class="fs-16 bold">Play Games and Win Coins</p>
+			</div>
+		</div>
+
+    <div class="flex width-100 games-container">
+      <div class="games-box-outer g-roulette g-show">
+      	<div class="game-inner flex">
+      		<img src="img/page/play.svg">
+      	</div>
+      </div>
+      <div class="games-box-outer g-tp-20 g-show">
+      	<div class="game-inner flex">
+      		<img src="img/page/play.svg">
+      	</div>
+      </div>
+      <div class="games-box-outer g-tp-oneday">
+      	<div class="game-inner flex c-soon">
+      		<p class="bold">Coming Soon</p>
+      	</div>
+      </div>
+      <div class="games-box-outer g-tp-test">
+      	<div class="game-inner flex c-soon">
+      		<p class="bold">Coming Soon</p>
+      	</div>
+      </div>
+      <div class="games-box-outer">
+      	<div class="game-inner flex c-soon">
+      		<p class="bold">Coming Soon</p>
+      	</div>
+      </div>
+      <div class="games-box-outer">
+      	<div class="game-inner flex c-soon">
+      		<p class="bold">Coming Soon</p>
+      	</div>
+      </div>
+    </div>
+
+	</div><!-- middle-panel close -->
+	<!-- =================MIDDLE PANEL CLOSE================= -->
+
+
+
+</div><!-- main-container close -->
+
+
+</body>
+</html>

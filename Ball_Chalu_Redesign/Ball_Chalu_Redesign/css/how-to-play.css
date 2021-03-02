@@ -1,0 +1,58 @@
+.htp-outer{
+  /* padding: 2px; */
+  /* border-radius: 3px; */
+}
+.htp-step{
+  background-color: #1a1d27;
+  padding: 10px;
+  align-items: center;
+  border-radius: 3px 3px 0 0;
+}
+.htp-step img{
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}
+.htp-img{
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  background-color: #343743;
+  border-radius: 3px;
+}
+.htp-img img{
+  width: 100%;
+  height: auto;
+}
+.htp-guide-outer{
+  background-color: #1a1d27;
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+  /* align-items: center; */
+}
+.htp-guide-text{
+  text-align: justify;
+}
+.htp-guide-text p{
+  margin-bottom: 5px;
+}
+.img-right .htp-guide-text{
+  padding-right: 10px;
+}
+.img-left .htp-guide-text{
+  padding-left: 10px;
+}
+
+@media all and (max-width: 1366px){
+  .htp-guide-outer{
+    flex-direction: column;
+    align-items: center;
+  }
+  .htp-guide-text{
+    order: 2;
+  }
+  .htp-img{
+    order: 1;
+    margin-bottom: 10px;
+  }
+}

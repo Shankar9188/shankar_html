@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rules</title>
+	<!-- <meta content="width=device-width, initial-scale=1" name="viewport"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="css/main.css">
+	<!-- THEMES -->
+	<link rel="stylesheet" href="css/theme/blue_red.css">
+	<!-- <link rel="stylesheet" href="css/theme/dark.css"> -->
+
+	<link rel="stylesheet" href="css/contest.css">
+	<link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+<div class="win-outer">
+
+	<div class="win-title-outer win-left" onclick="hideMobWinner()">
+
+	</div>
+
+	<div class="win-inner">
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>1st</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">John Wick</p>
+				<p class="win-amt">2,45,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>2nd</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Graham Cracker</p>
+				<p class="win-amt">1,00,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>3rd</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Pat Agonia</p>
+				<p class="win-amt">75,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>4th</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Donatella Nobatti</p>
+				<p class="win-amt">50,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>5th</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Matt Innae</p>
+				<p class="win-amt">10,000/-</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="win-title-outer win-right">
+	</div>
+
+</div>
+
+
+<header>
+	<div class="container-width flex">
+		<div class="logo">
+			<!-- <img src="img/page/logo_3.png"> -->
+			BSF
+		</div>
+
+		<div class="flex flex-1 r-text login-row">
+			<div class="table">
+					<div class="login-cell cell">
+						<p class="details">
+							<span class="username bold">John Wick</span>|
+							<span class="coins clr-green">2,00,000 Coins</span>
+							<!-- <img src="img/indicators/arrow-right.svg" class="ar-down"> -->
+						</p>
+						<p class="details logout">
+							<a href="signup.html">
+								<span class="username bold clr-green">Logout</span>
+							</a>
+						</p>
+						<p class="menu" onclick="showMobMenu()">
+							<img src="img/page/menu-white.svg">
+						</p>
+					</div>
+				</div>
+		</div>
+
+	</div>
+</header>
+
+<nav>
+	<div class="container-width flex">
+		<div class="flex-1 l-text nav-align">
+			<ul>
+				<a href="">
+					<li>Home</li>
+				</a>
+				<a href="">
+					<li>In Play</li>
+				</a>
+				<a href="">
+					<li >All Matches</li>
+				</a>
+				<a href="">
+					<li class="nav-active">Rules</li>
+				</a>
+				<a href="">
+					<li>Live</li>
+				</a>
+				<a href="tipper-list.html">
+					<li>Tipers</li>
+				</a>
+				<a href="">
+					<li>About</li>
+				</a>
+			</ul>
+		</div>
+		<!-- <div class="r-text nav-align">
+			<div class="chat-icn win-menu-icn" onclick="toggleWinner()">
+				<img src="img/page/trophy_2.svg">
+			</div>
+		</div>
+		<div class="r-text nav-align">
+			<div class="chat-icn" onclick="showChat()">
+				<img src="img/page/chat.svg">
+			</div>
+		</div> -->
+	</div>
+</nav>
+
+<div class="mob-nav light-bg">
+	<div class="outer-nav">
+		<div class="inner-nav flex dark-bg">
+			<p class="l-text flex-1"><img src="img/page/close.svg" onclick="hideMobMenu()"></p>
+			<p class="r-text flex-1 bold">John Wick | <span class="clr-green">20,000 Coins</span></p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Home</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af" onclick="showChat()">Chat Room</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">In Play</p>
+		</div>
+		<div class="inner-nav flex br-bt" onclick="showWinners()">
+			<p class="r-text flex-1 bold dot-af">Winners</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Upcoming</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 dot-af">
+				<a class="bold" href="tipper-list.html">Tipers</a>
+			</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Live</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">About</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Profile</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Log Out</p>
+		</div>
+	</div>
+</div>
+
+<div class="container-width main-container flex">
+
+	<div class="left-panel">
+		<div class="main-box">
+			<div class="match-status-title l-text mb-2">Choose Language</div>
+
+			<div class="sport-row mb-2 active-sport">
+				<div class="icn">
+					<img src="img/page/language.svg">
+				</div>
+				<div class="type bold">English</div>
+			</div>
+			<div class="sport-row mb-2">
+				<div class="icn">
+					<img src="img/page/language.svg">
+				</div>
+				<div class="type bold">Hindi</div>
+			</div>
+
+
+		</div>
+	</div><!-- left-panel close -->
+
+
+
+
+<!-- =================MIDDLE PANEL START================= -->
+	<div class="middle-panel flex-1">
+
+		<!-- <div class="bread-crum mb-10">
+			<a href="#">Rules In English</a>
+		</div> -->
+
+    <div class="one-col sport-container">
+      <div class="width-100 bg-none">
+
+        <div class="inner-holder mb-10 clear">
+        	<div class="match-status-title l-text mb-2">Rules</div>
+	      	
+	      	<div class="data-row rules-row flex data-row-100 mb-2">
+	            <div class="rule-icn mr-10">
+	              <img src="img/indicators/point-right.svg">
+	            </div>
+				<div class="rules">
+					<p class="l-text fs-sm flex-1 bold b-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				</div>
+			</div>
+
+			<div class="data-row rules-row flex data-row-100 mb-2">
+	            <div class="rule-icn mr-10">
+	              <img src="img/indicators/point-right.svg">
+	            </div>
+				<div class="rules">
+					<p class="l-text fs-sm flex-1 bold b-left">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English.</p>
+				</div>
+			</div>
+
+			<div class="data-row rules-row flex data-row-100 mb-2">
+	            <div class="rule-icn mr-10">
+	              <img src="img/indicators/point-right.svg">
+	            </div>
+				<div class="rules">
+					<p class="l-text fs-sm flex-1 bold b-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+				</div>
+			</div>
+
+			<div class="data-row rules-row flex data-row-100">
+	            <div class="rule-icn mr-10">
+	              <img src="img/indicators/point-right.svg">
+	            </div>
+				<div class="rules">
+					<p class="l-text fs-sm flex-1 bold b-left">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+				</div>
+			</div>
+
+		</div><!-- inner-holder close -->
+
+		<div class="inner-holder mb-10 clear">
+        	<div class="match-status-title l-text mb-2">NSW 134 VS QSW 134</div>
+	      	
+	      	<div class="data-row rules-row flex data-row-100 mb-2">
+	            <table class="flex-1 rules-table">
+	            	<tr>
+	            		<th class="l-text">Market Type</th>
+	            		<th class="c-text">Minimum Bet Amount</th>
+	            		<th class="c-text">Maximum Bet Amount</th>
+	            	</tr>
+	            	<tr>
+	            		<th class="l-text">Match Winner</th>
+	            		<td class="c-text">1000.0</td>
+	            		<td class="c-text">200000.0</td>
+	            	</tr>
+	            	<tr>
+	            		<th class="l-text">Session</th>
+	            		<td class="c-text">1000.0</td>
+	            		<td class="c-text">200000.0</td>
+	            	</tr>
+	            	<tr>
+	            		<th class="l-text">Even Odd</th>
+	            		<td class="c-text">1000.0</td>
+	            		<td class="c-text">200000.0</td>
+	            	</tr>
+	            	<tr>
+	            		<th class="l-text">Ending Digit</th>
+	            		<td class="c-text">1000.0</td>
+	            		<td class="c-text">200000.0</td>
+	            	</tr>
+	            </table>	
+			</div>
+
+		</div><!-- inner-holder close -->
+
+      </div>
+    </div>
+
+	</div><!-- middle-panel close -->
+	<!-- =================MIDDLE PANEL CLOSE================= -->
+
+
+
+
+
+
+
+	<div class="right-panel">
+		<div class="main-box">
+			<div class="match-status-title l-text mb-2">Live Matches</div>
+			<div class="box-title c-text mb-2">Indian Premier League</div>
+				<div class="box match-box mb-2">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Chennai Super Kings</p>
+						<p class="right-text flex-1 r-text fs-sm grey">Match Bets | <span class="bold clr-green">5</span></p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Kings XI Punjab</p>
+						<p class="right-text flex-1 r-text fs-sm grey">Session Bets | <span class="bold clr-green">2</span></p>
+					</div>
+				</div>
+				<div class="box match-box">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Sunrisers Hyderabad</p>
+						<p class="right-text flex-1 r-text fs-sm grey">Match Bets | <span class="bold clr-green">12</span></p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Mumbai Indians</p>
+						<p class="right-text flex-1 r-text fs-sm grey">Session Bets | <span class="bold clr-green">0</span></p>
+					</div>
+				</div>
+
+			<div class="match-status-title l-text mb-2 mt-10">Upcoming Matches</div>
+			<div class="box-title c-text mb-2">Indian Premier League</div>
+				<div class="box match-box mb-2">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Chennai Super Kings</p>
+						<p class="right-text flex-1 r-text fs-sm grey">06 April 2019</p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Kings XI Punjab</p>
+						<p class="right-text flex-1 r-text fs-sm grey">08:00 PM</p>
+					</div>
+				</div>
+				<div class="box match-box mb-2">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Sunrisers Hyderabad</p>
+						<p class="right-text flex-1 r-text fs-sm grey">06 April 2019</p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Mumbai Indians</p>
+						<p class="right-text flex-1 r-text fs-sm grey">08:00 PM</p>
+					</div>
+				</div>
+
+				<div class="box-title c-text mb-2">Football Premier League</div>
+				<div class="box match-box">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">France</p>
+						<p class="right-text flex-1 r-text fs-sm grey">06 April 2019</p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Brazil</p>
+						<p class="right-text flex-1 r-text fs-sm grey">08:00 PM</p>
+					</div>
+				</div>
+		</div>
+	</div><!-- right-panel close -->
+</div><!-- main-container close -->
+
+
+</body>
+</html>

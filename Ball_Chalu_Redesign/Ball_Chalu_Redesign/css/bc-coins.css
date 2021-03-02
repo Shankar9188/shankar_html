@@ -1,0 +1,203 @@
+.p-8{
+	padding: 8px;
+}
+.p-10{
+	padding: 10px;
+}
+
+.br-3{
+	border-radius: 3px;
+}
+.y-gold{
+	color: #fcd462;
+}
+.ld-bg{
+	background-color: #343743;
+}
+.darkest-bg{
+	background-color: #1a1d27;
+}
+.al-cen{
+  align-items: center;
+}
+.bc-user{
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bc-user-icn{
+	width: 50px;
+  height: auto;
+  border-radius: 50%;
+  padding: 2px;
+  border: 2px solid #20262d;
+  margin-bottom: 8px;
+}
+.bc-coin-outer{
+	margin-top: 25px;
+}
+.bc-coin-outer .coin-inner{
+	position: relative;
+	height: 60px;
+}
+
+.bc-coin-outer .coin-inner .coin-icn{
+	width: 50px;
+  height: auto;
+  position: absolute;
+  left: calc(50% - 25px);
+  top: -26px;
+  padding: 2px;
+	border: 2px solid #626469;
+  border-radius: 50%;
+}
+.coin-inner p{
+	margin-top: 28px;
+}
+.buy-bc-title{
+	padding: 5px;
+	border: 2px solid #3a3f49;
+	border-radius: 3px;
+}
+
+.buy-bc-outer img{
+	width: 30px;
+	height: 30px;
+	padding: 2px;
+	border-radius: 50%;
+	border: 2px solid #20262d;
+}
+.buy-bc-a,
+.buy-bc-b{
+	max-width: 200px;
+}
+.buy-now-bc{
+	justify-content: flex-end;
+	align-items: center;
+}
+.buy-bc-btn{
+	border: 2px solid #6b6d74;
+  padding: 8px 12px;
+  border-radius: 20px;
+	cursor: pointer;
+}
+.bbt{
+	position: relative;
+	padding-left: 22px;
+}
+.bbt:before{
+	content: "";
+	display: block;
+	left: 10px;
+	top: 2px;
+	width: 3px;
+	height: 16px;
+	position: absolute;
+	background-color: #64b000;
+}
+.for-txt{
+	padding-right: 15px;
+}
+.l-dot{
+	position: relative;
+	padding-left: 25px;
+}
+.l-dot:before{
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+  height: 0;
+	left: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #1a1d27;
+}
+
+@media all and (max-width: 768px){
+	.l-dot:before{
+		display: none;
+	}
+	.for-txt{
+		display: block;
+		position: absolute;
+		left: -30px;
+		background-color: #1a1d27;
+		padding: 3px 6px;
+		border-radius: 3px;
+		box-shadow: 0 0 10px -4px #1d1d1d;
+	}
+	.l-dot{
+		padding-left: 0;
+	}
+	.buy-bc-outer{
+		padding: 5px;
+    border: 2px solid #3a3f49;
+    border-radius: 3px;
+    display: block;
+	}
+	.buy-bc-a, .buy-bc-b {
+    max-width: inherit;
+    display: inline-flex;
+    width: calc(50% - 3px);
+    align-items: center;
+	}
+	.buy-bc-a{
+		justify-content: flex-start;
+		flex-direction: row;
+		border-right: 2px solid #393e48;
+	}
+	.buy-bc-b{
+		flex-direction: row-reverse;
+		position: relative;
+	}
+	.buy-bc-a .fs-16,
+	.buy-bc-b .fs-16,
+	.buy-bc-btn{
+		font-size: 14px;
+	}
+	.buy-bc-b img{
+		margin-left: 10px;
+	}
+	.buy-bc-btn{
+		width: 100%;
+		text-align: center;
+		border: none;
+		background-color: #1a1d27;
+		border-radius: 3px;
+		margin-top: 5px;
+		box-shadow: 0 0 20px -6px #1d1d1d;
+	}
+	.bc-user-icn{
+		width: 40px;
+	}
+	.bc-coin-outer .coin-inner .coin-icn{
+		width: 30px;
+	}
+	.bc-coin-outer .coin-inner .coin-icn {
+    left: calc(50% - 20px);
+	}
+	.coin-inner p {
+    margin-top: 16px;
+	}
+	.bc-coin-outer .coin-inner {
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media all and (max-width: 600px){
+	.coin-inner p {
+    margin-top: inherit;
+		margin-left: 10px;
+		font-size: 16px;
+	}
+	.bc-coin-outer .coin-inner .coin-icn {
+    left: inherit;
+    top: inherit;
+		position: inherit;
+	}
+}

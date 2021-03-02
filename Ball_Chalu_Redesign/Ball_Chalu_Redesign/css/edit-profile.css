@@ -1,0 +1,82 @@
+#image-preview{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #1a1d27;
+}
+.preview-outer{
+  align-items: center;
+  flex-direction: column;
+  /* margin-right: 10px; */
+}
+.upload-btn input{
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.upload-btn{
+  position: relative;
+  border: 2px solid #6b6d74;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  min-width: 120px;
+}
+
+.ep-outer{
+  background-color: #343743;
+  padding: 10px;
+  border-radius: 4px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-inner{
+  /* padding: 10px; */
+}
+.p-10{
+  padding: 10px;
+}
+.pl-10{
+  padding-left: 10px;
+}
+.input-holder{
+  width: 100%;
+  padding: 10px 10px 0;
+  margin-top: 10px;
+}
+
+.input-outer{
+  /* padding-left: 10px; */
+}
+.input-outer input{
+  width: 100%;
+  height: 35px;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+  background-color: #1a1d27;
+  color: #fff;
+  border-radius: 4px;
+}
+.fld-col{
+  flex-direction: column;
+}
+.j-cen{
+  justify-content: center;
+}
+
+@media all and (max-width: 600px){
+  .flu-holder{
+    flex-direction: column;
+  }
+  .flu-holder .input-outer{
+    padding: 0 0;
+  }
+  .flu-holder .input-outer.pl-10{
+    padding-top: 10px;
+  }
+}

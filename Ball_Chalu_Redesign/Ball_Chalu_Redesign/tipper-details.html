@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tippers List</title>
+	<!-- <meta content="width=device-width, initial-scale=1" name="viewport"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- THEMES -->
+	<!-- <link rel="stylesheet" href="css/theme/default.css"> -->
+	<link rel="stylesheet" href="css/theme/dark.css">
+	<!-- <link rel="stylesheet" href="css/theme/ubuntu.css"> -->
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/product.css">
+	<link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+<header>
+	<div class="container-width flex">
+		<div class="logo">
+			<img src="img/page/logo_3.png">
+		</div>
+		
+		<div class="flex-1 r-text login-row">
+			<div class="table">
+					<div class="login-cell cell">
+						<p class="details">
+							<span class="username bold">John Wick</span>| 
+							<span class="coins clr-green">2,00,000 Coins</span>
+							<!-- <img src="img/indicators/arrow-right.svg" class="ar-down"> -->
+						</p>
+						<p class="details logout">
+							<span class="username bold clr-green">Logout</span>
+						</p>
+						<p class="menu" onclick="showMobMenu()">
+							<img src="img/page/menu-white.svg">
+						</p>
+					</div>
+				</div>
+		</div>
+
+	</div>
+</header>
+
+<nav>
+	<div class="container-width flex">
+		<div class="flex-1 l-text nav-align">
+			<ul>
+				<a href="">
+					<li>Home</li>
+				</a>
+				<a href="">
+					<li>In Play</li>
+				</a>
+				<a href="">
+					<li>Upcoming</li>
+				</a>
+				<a href="">
+					<li>Casino</li>
+				</a>
+				<a href="">
+					<li>Live</li>
+				</a>
+				<a href="tipper-list.html" class="active">
+					<li>Tippers</li>
+				</a>
+				<a href="">
+					<li>About</li>
+				</a>
+			</ul>
+		</div>
+		<div class="r-text nav-align">
+			<div class="chat-icn" onclick="showChat()">
+				<img src="img/page/chat.svg">
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="mob-nav light-bg">
+	<div class="outer-nav">
+		<div class="inner-nav flex dark-bg">
+			<p class="l-text flex-1"><img src="img/page/close.svg" onclick="hideMobMenu()"></p>
+			<p class="r-text flex-1 bold">John Wick | <span class="clr-green">20,000 Coins</span></p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Home</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af" onclick="showChat()">Chat Room</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">In Play</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Upcoming</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 dot-af">
+				<a class="bold" href="tipper-list.html">Tippers</a>
+			</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Live</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">About</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Profile</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Log Out</p>
+		</div>
+	</div>
+</div>
+
+<div class="container-width main-container tipper-container tipper-details-container flex">
+
+	<!-- <div class="left-panel">
+		<div class="main-box">
+			<div class="filter-title l-text mb-2"><i class="fa fa-filter" aria-hidden="true"></i> Filters</div>
+		</div>
+	</div> --><!-- left-panel close -->
+	
+
+
+
+<!-- =================MIDDLE PANEL START================= -->
+	<div class="middle-panel tipper-panel flex-1">
+		
+		<div class="bread-crum mb-10">
+			<a href="#">Home</a>
+			<a href="#" class="r-arrow"></a>
+			<a href="#" class="active">Tippers</a>
+		</div>
+		
+		<div class="tipper-details mb-10">
+			<div class="flex tipper-details-inner">
+				<div class="flex l-text t-creds r-cell">
+					<div class="t-img r-cell">
+						<img src="img/avatar/boy-2.svg">
+					</div>
+					
+					<div class="flex-1 t-details r-cell">
+						<p class="name bold">sylvester stallone</p>
+						<p class="sub-name fs-18">Tipper</p>
+						<p class="rating-stars fs-18">
+							<i class="fa fa-star" aria-hidden="true"></i>
+							<i class="fa fa-star" aria-hidden="true"></i>
+							<i class="fa fa-star" aria-hidden="true"></i>
+							<i class="fa fa-star-half-o" aria-hidden="true"></i>
+							<i class="fa fa-star-o" aria-hidden="true"></i>
+						</p>
+						<p class="rate fs-18">
+							<i class="fa fa-inr" aria-hidden="true"></i>
+							2999/-
+						</p>
+						<p class="buy bold">
+							<a class="clr-green">Buy Tipper</a>
+						</p>
+					</div>
+				</div>
+				<div class="flex-1 l-text t-info-box r-cell">
+					<p class="t-info">
+						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. <br>
+						There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="tipper-comments">
+			<div class="title mb-10">Reviews</div>
+			
+			<div class="review-box mb-10">
+				<div class="reviewer flex">
+					<div class="flex-1 r-icn">
+						<img src="img/avatar/boy-2.svg"><span class="bold">John Wick</span>
+					</div>
+					<div class="flex-1 r-text cmt-time">
+						<span>April 14, 2:00 <small>PM</small></span>
+					</div>
+				</div>
+				<div class="flex comment">
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+				</div>
+			</div>
+
+			<div class="review-box mb-10">
+				<div class="reviewer flex">
+					<div class="flex-1 r-icn">
+						<img src="img/avatar/boy-1.svg"><span class="bold">John Wick</span>
+					</div>
+					<div class="flex-1 r-text cmt-time">
+						<span>April 14, 2:00 <small>PM</small></span>
+					</div>
+				</div>
+				<div class="flex comment">
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+				</div>
+			</div>
+
+			<div class="review-box mb-10">
+				<div class="reviewer flex">
+					<div class="flex-1 r-icn">
+						<img src="img/avatar/man-4.svg"><span class="bold">John Wick</span>
+					</div>
+					<div class="flex-1 r-text cmt-time">
+						<span>April 14, 2:00 <small>PM</small></span>
+					</div>
+				</div>
+				<div class="flex comment">
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+				</div>
+			</div>
+		
+		<div class="title c-text">
+			<button class="load-more mt-10">Load More...</button>
+		</div>
+		</div>
+
+	</div><!-- middle-panel close -->
+	<!-- =================MIDDLE PANEL CLOSE================= -->
+	
+
+
+
+
+
+
+	<div class="right-panel right-tipper">
+		<div class="title mb-10">Similar Tippers</div>
+		
+		<div class="p-box">
+			<div class="inner-holder">
+				<div class="t-picture t-size">
+					<img src="img/avatar/man-1.svg">
+				</div>
+				<div class="t-title c-text">
+					<p class="name bold">John Snow</p>
+					<p class="sub-name">Tipper</p>
+				</div>
+				
+				<div class="flex rating">
+					<div class="flex-2 l-text rating-stars">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star-half-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</div>
+					<div class="flex-1 r-text text bold">
+						<i class="fa fa-inr" aria-hidden="true"></i>
+						<span class="text">2999/-</span>
+					</div>
+				</div>
+
+				<div class="flex c-text t-btn-box">
+					<p class="flex-1 c-text">
+						<a href="tipper-details.html">
+							<button class="t-btn bold">View Details</button>
+						</a>
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<div class="p-box">
+			<div class="inner-holder">
+				<div class="t-picture t-size">
+					<img src="img/avatar/man-1.svg">
+				</div>
+				<div class="t-title c-text">
+					<p class="name bold">John Snow</p>
+					<p class="sub-name">Tipper</p>
+				</div>
+				
+				<div class="flex rating">
+					<div class="flex-2 l-text rating-stars">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star-half-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</div>
+					<div class="flex-1 r-text text bold">
+						<i class="fa fa-inr" aria-hidden="true"></i>
+						<span class="text">2999/-</span>
+					</div>
+				</div>
+
+				<div class="flex c-text t-btn-box">
+					<p class="flex-1 c-text">
+						<a href="tipper-details.html">
+							<button class="t-btn bold">View Details</button>
+						</a>
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<div class="p-box">
+			<div class="inner-holder">
+				<div class="t-picture t-size">
+					<img src="img/avatar/man-1.svg">
+				</div>
+				<div class="t-title c-text">
+					<p class="name bold">John Snow</p>
+					<p class="sub-name">Tipper</p>
+				</div>
+				
+				<div class="flex rating">
+					<div class="flex-2 l-text rating-stars">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star-half-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</div>
+					<div class="flex-1 r-text text bold">
+						<i class="fa fa-inr" aria-hidden="true"></i>
+						<span class="text">2999/-</span>
+					</div>
+				</div>
+
+				<div class="flex c-text t-btn-box">
+					<p class="flex-1 c-text">
+						<a href="tipper-details.html">
+							<button class="t-btn bold">View Details</button>
+						</a>
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<div class="p-box">
+			<div class="inner-holder">
+				<div class="t-picture t-size">
+					<img src="img/avatar/man-1.svg">
+				</div>
+				<div class="t-title c-text">
+					<p class="name bold">John Snow</p>
+					<p class="sub-name">Tipper</p>
+				</div>
+				
+				<div class="flex rating">
+					<div class="flex-2 l-text rating-stars">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star-half-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</div>
+					<div class="flex-1 r-text text bold">
+						<i class="fa fa-inr" aria-hidden="true"></i>
+						<span class="text">2999/-</span>
+					</div>
+				</div>
+
+				<div class="flex c-text t-btn-box">
+					<p class="flex-1 c-text">
+						<a href="tipper-details.html">
+							<button class="t-btn bold">View Details</button>
+						</a>
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<!-- right-panel close -->
+</div><!-- main-container close -->
+
+
+
+<div class="chat-subscribe-main-div">
+	<div class="chat-subscribe-header chat-category flex">
+		<p class="flex-1 c-text text mr-5 chat-cat-title bc-chat active" onclick="chatCategory('bc_chat')">BC Chat Room</p>
+		<p class="flex-1 c-text text mr-5 chat-cat-title tiproom-chat" onclick="chatCategory('tiproom_chat')">Tip Room Chat</p>
+		<p class="cancel-icn r-text" onclick="hideChat()"><img class="mt-10" src="img/page/cancel.svg"></p>
+	</div>
+	
+
+	<div class="chat-input-newslater-table-div bc-chat-panel">
+		
+		<div class="chat-boxes grp-chat-box hide-scroll">
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="grp_msg_push"></div>
+			
+		</div><!-- chat-boxes close -->
+		
+		<div class="chat-input-div flex">
+			<textarea class="group-chat-input group-enter flex-1" placeholder="Write here.."></textarea>
+			<div class="send-icn c-text" onclick="sendMsg()">
+				<img src="img/page/send.svg">
+			</div>
+		</div>
+
+	</div><!-- chat-input-newslater-table-div bc-chat-panel-->
+
+	
+	<div class="chat-input-newslater-table-div tiproom-chat-list hide">
+		<div class="chat-boxes hide-scroll">
+			
+			<div class="tiproom-user-box flex mb-10" onclick="showTipRoomChat()">
+				<div class="tiproom-user-icn bg-img-man-1"></div>
+				<div class="tiproom-user-info flex-2 ml-10">
+					<p class="tiproom-username bold">John Wick</p>
+					<p class="last-seen fs-sm online">Online...</p>
+				</div>
+				<div class="flex-1 r-text msg-icon-status">
+					<img class="msg-green" src="img/page/msg-green.svg">
+				</div>
+			</div>
+
+			<div class="tiproom-user-box flex mb-10" onclick="showTipRoomChat()">
+				<div class="tiproom-user-icn bg-img-man-1"></div>
+				<div class="tiproom-user-info flex-2 ml-10">
+					<p class="tiproom-username bold">John Wick</p>
+					<p class="last-seen fs-sm">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+				</div>
+				<div class="flex-1 r-text msg-icon-status incoming-msg">
+					<img class="msg-green" src="img/page/msg-green.svg">
+				</div>
+			</div>	
+
+			<div class="tiproom-user-box flex mb-10" onclick="showTipRoomChat()">
+				<div class="tiproom-user-icn bg-img-man-1"></div>
+				<div class="tiproom-user-info flex-2 ml-10">
+					<p class="tiproom-username bold">John Wick</p>
+					<p class="last-seen fs-sm">23 min ago</p>
+				</div>
+				<div class="flex-1 r-text msg-icon-status">
+					<img class="msg-green" src="img/page/msg-green.svg">
+				</div>
+			</div>	
+
+		</div><!-- chat-boxes close -->
+	</div><!-- chat-input-newslater-table-div tiproom-chat-list -->
+
+
+	<div class="chat-input-newslater-table-div tiproom-chat-panel hide">
+
+		<div class="tiproom-user-box flex">
+				<div class="tiproom-user-icn bg-img-man-1"></div>
+				<div class="tiproom-user-info flex-2 ml-10">
+					<p class="tiproom-username bold">John Wick</p>
+					<p class="last-seen fs-sm online">Online...</p>
+				</div>
+				<div class="flex-1 r-text msg-icon-status close-chat" onclick="chatCategory('tiproom_chat')">
+					<img src="img/page/cancel.svg">
+				</div>
+		</div>
+
+		<div class="chat-boxes tip-chat-box hide-scroll">
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+			
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+			
+			<div class="tiproom_msg_push"></div>
+			
+		</div><!-- chat-boxes close -->
+		
+		<div class="chat-input-div flex">
+			<textarea class="group-chat-input tiproom-enter flex-1" placeholder="Write here.."></textarea>
+			<div class="send-icn c-text" onclick="sendTipMsg()">
+				<img src="img/page/send.svg">
+			</div>
+		</div>
+	</div><!-- chat-input-newslater-table-div tiproom-chat-list -->
+
+
+</div><!-- chat-subscribe-main-div close -->
+
+</body>
+</html>

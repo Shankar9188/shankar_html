@@ -1,0 +1,132 @@
+#header-slider{
+  background-color: #20262d;
+  padding: 15px 0;
+}
+.hs-card{
+  width: 100%;
+  height: 140px;
+  padding: 5px 0;
+}
+#header-slider .slick-slide{
+  opacity: 1;
+}
+
+#header-slider .slick-slide {
+    margin: 0px 10px;
+    padding: 0 5px;
+    background-color: #494d5a;
+    background-color: #494d5a;
+    border-radius: 3px;
+}
+
+.hs-title span{
+  font-size: 13px !important;
+}
+.hs-match-box{
+  display: flex;
+  flex-direction: column;
+}
+.hs-team{
+  display: flex;
+  justify-content: space-between;
+}
+.hs-team-left,
+.hs-team-right{
+  display: flex;
+  align-items: center;
+}
+.hs-team-right{
+  justify-content: flex-end;
+}
+.hs-team img{
+  height: 20px !important;
+  width: auto !important;
+  margin-right: 10px;
+}
+.hs-card-inner{
+  padding: 10px;
+  background-color: #1a1d27;
+  border-radius: 3px;
+}
+
+.hs-status{
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.hs-active-team{
+  position: relative;
+}
+.hs-active-team:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #a0de4e;
+    position: absolute;
+    top: 3px;
+    right: -14px;
+}
+
+/* =======================Default CSS======================= */
+.slider {
+    width: calc(100% - 100px);
+    margin: 0 auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+#header-slider .slick-prev,
+#header-slider .slick-next{
+  top: calc(50% - 5px);
+  width: 36px;
+  height: 36px;
+}
+#header-slider .slick-prev:before,
+#header-slider .slick-next:before {
+  color: #fff;
+  font-size: 32px;
+}
+#header-slider .slick-prev:before{
+content: "\2770";
+}
+#header-slider .slick-next:before{
+content: "\2771";
+}
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  #header-slider .slick-prev:before,
+  #header-slider .slick-next:before {
+      color: #fff;
+      font-size: 22px;
+  }
+  .slider {
+      width: calc(100% - 50px);
+  }
+}
+
+.slick-slide:focus{
+  outline: none;
+}

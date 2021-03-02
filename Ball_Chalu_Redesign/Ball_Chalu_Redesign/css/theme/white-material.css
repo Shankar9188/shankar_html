@@ -1,0 +1,305 @@
+/*============================*/
+body{
+	/*background-color: #20262d;*/
+	background-color: #ffffff;
+}
+header{
+	/*background-color: #343743;*/
+	background: linear-gradient(to bottom, #009cff 0%, #0065ff 100%);
+	color: #fff;
+}
+nav{
+	background-color: #fff;
+    color: #ff3952;
+    box-shadow: 0 3px 10px -3px #a7a7a7;
+}
+.nav-align ul li{
+	color: #1b3162;
+	font-weight: 600;
+}
+.nav-align ul li.nav-active{
+	color: #ff3952;
+}
+.login-cell .details{
+	background-color: #006afe;
+    border: 2px solid #025fe0;
+}
+.login-cell .details span {
+    color: #fff;
+}
+.l-content-outer{
+    /*background-color: #0b2340;*/
+    background-color: #fff !important;
+	box-shadow: 0 0 15px -3px #777777;
+}
+p{
+	color: #fff;
+}
+.clr-green{
+	color: #4c8600;
+}
+.clr-red{
+	color: #fd2d01;
+}
+.light-grey{
+	color: #343743;
+}
+.white{
+	color: #102c4c;
+}
+.grey{
+	color: #999;
+}
+.fent-blue{
+	color: #005b65;
+}
+.bread-crum{
+	background-color: #fff;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.bread-crum a.r-arrow{
+	background-image: url(../../img/indicators/arrow-right-grey.svg);
+}
+.bread-crum a {
+	color: #999;
+}
+.bread-crum a.active{
+	color: #4c8600;
+}
+.inner-score-holder .score-div{
+	background-color: #102c4c;
+	color: #fff;
+}
+.inner-score-holder .left-score:before,
+.inner-score-holder .right-score:after{
+	background-color: #fff;
+}
+.active,
+.nav-align ul .active li{
+	color: #4c8600;
+}
+.middle-score {
+    background-color: #fff !important;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.commentry{
+	color: #00429e;
+}
+.one-col .width-100{
+	background-color: #ddd;
+}
+.inner-holder{
+	background-color: transparent !important;
+	/*box-shadow: 0 0 15px -3px #777777;*/
+}
+.heading-row{
+	/*background-color: #102c4c;
+	background: linear-gradient(to bottom, #153860 0%, #102c4c 100%);*/
+	background-color: #fff !important;
+	box-shadow: 0 0 15px -3px #777777;
+	
+}
+.heading-row p {
+	color: #1b3162;
+}
+.data-row p{
+	color: #1b3162;
+}
+.data-row{
+	background-color: #fff !important;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.data-row:hover{
+	background-color: #003877;
+}
+.match-status-title{
+	background-color: #0065ff;
+    color: #fff;
+    box-shadow: 0 0 15px -3px #777777;
+}
+.match-status-title:before{
+	background-color: #00429e;
+}
+.box-title{
+  background-color: #494d5a;
+  color: #fff;
+}
+.inner-box{
+	/*background-color: #fff;*/
+}
+.box{
+	background-color: #fff;
+}
+.br-bt{
+	border-bottom:  1px solid #e2e2e2;
+}
+.sport-row{
+	background-color: #fff;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.sport-row.active-sport{
+	background-color: #009aff;
+}
+.sport-row.active-sport .type{
+	color: #fff;
+}
+.sport-row .type{
+	color: #1b3162;
+}
+.empty-bet-title{
+	background-color: #0065ff;
+	color: #fff;
+	border-color: #025fe0;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.sport-row{
+	padding: 0 10px 0 0;
+	display: flex;
+	align-items: center;
+}
+.gold {
+    color: #00429e !important;
+}
+.sport-row .icn{
+	padding: 10px;
+}
+.close{
+	color: #fff;
+}
+.empty-bet-notice{
+	background-color: #fff;
+	color: #102c4c;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.placed-bet .inner-box{
+	/*background-color: #fff;*/
+	background-color: #fff !important;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.inner-bet{
+/*	background-color: #fff;
+	color: #494d5a;*/
+	background-color: #fff !important;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.inner-bet p{
+	color: #1b3162;
+}
+.bet-input .sign{
+/*  background-color: #494d5a;
+  color: #fff;*/
+	background-color: #0165e6;
+	color: #ffffff;
+}
+.bet-input input{
+	/*border:1px solid #494d5a;*/
+	border: 1px solid #0165e6;
+	color: #447502;
+}
+.bet-btn{
+	color: #fff;
+	border: 1px solid #272a31;
+}
+.place-btn{
+	background-color: #006afe;
+    border-color: #025fe0;
+}
+.clear-btn{
+	background-color: #b01e00;
+	/*border-color: #921900;*/
+}
+
+.nav-list{
+	background-color: #fff !important;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.nav-list .nav-item{
+	color: #adadad;
+}
+.nav-list span .count{
+  border: 1px solid #888888;
+  color: #888888;
+}
+.nav-list .nav-item:hover{
+	color: #1a1d27;
+}
+.nav-list .nav-item:hover > .count{
+	border: 1px solid #1a212f;
+	background-color: #1a1d27;
+	color: #fff;
+}
+.nav-list .nav-item.active{
+	color: #1a1d27;
+}
+.nav-list .nav-item.active .count{
+	border: 1px solid #1a212f;
+	background-color: #1a1d27;
+	color: #fff;
+}
+.dark{
+	background-color: #006afe;
+  color: #fff;
+}
+.dark:hover{
+	background-color: #006afe;
+}
+.light{
+	background-color: #009bff;
+  color: #fff;
+}
+.light:hover{
+	background-color: #009bff;
+}
+
+.right-panel .box,
+.box-title {
+    background-color: #fff;
+	box-shadow: 0 0 15px -3px #777777;
+    color: #102c4c;
+}
+.right-panel .box .br-bt {
+    border-bottom: 1px solid #e2e2e2;
+}
+@media all and (max-width: 768px){
+/*	.match-box, .match-box p,
+	.match-box .inner-box{
+		background-color: #e5e5e5;
+	}*/
+	/*.placed-bet .inner-box,
+	.placed-bet .table{
+		background-color: #f0f8ff;
+	}*/
+	.right-panel{
+		background-color: #20262d !important;
+	}
+	.placed-bet .br-bt{
+		border-color: #fff;
+	}
+}
+
+.b-left {
+    border-left: 2px solid #0b2340;
+}
+
+.inner-score-holder .left-score,
+.inner-score-holder .right-score{
+	background-color: #fff !important;
+	box-shadow: 0 0 15px -3px #777777;
+}
+.inner-score-holder .left-score p,
+.inner-score-holder .right-score p{
+	color: #102c4c;
+}
+.inner-score-holder .left-score .active,
+.inner-score-holder .right-score .active{
+	color: #4c8600;
+}
+
+.sport-row .icn{
+	border-radius: 3px 0 0 3px;
+	background-color: #999;
+	margin-right: 10px;
+}
+.sport-row.active-sport .icn{
+	background-color: #006afe;
+}

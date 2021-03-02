@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sports</title>
+	<!-- <meta content="width=device-width, initial-scale=1" name="viewport"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- THEMES -->
+	<!-- <link rel="stylesheet" href="css/theme/default.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/dark.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/ubuntu.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/blue_red.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/white-material.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/black_red.css"> -->
+	<link rel="stylesheet" href="css/theme/supreme.css">
+
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/contest.css">
+	<link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<link rel="stylesheet" href="head-slider/head-slider.css">
+	<link rel="stylesheet" href="head-slider/slick.css">
+	<link rel="stylesheet" href="head-slider/slick-theme.css">
+	<script type="text/javascript" src="head-slider/head-slider.js"></script>
+</head>
+<body>
+
+<div class="win-outer">
+
+	<div class="win-title-outer win-left" onclick="hideMobWinner()">
+
+	</div>
+
+	<div class="win-inner">
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>1st</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">John Wick</p>
+				<p class="win-amt">2,45,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>2nd</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Graham Cracker</p>
+				<p class="win-amt">1,00,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>3rd</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Pat Agonia</p>
+				<p class="win-amt">75,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>4th</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Donatella Nobatti</p>
+				<p class="win-amt">50,000/-</p>
+			</div>
+		</div>
+		<div class="win-box win-br">
+			<div class="win-cell win-pos">
+				<p class="win-position"><strong>5th</strong></p>
+			</div>
+			<div class="win-icn">
+				<img src="img/avatar/man-2.svg">
+			</div>
+			<div class="win-cell">
+				<p class="win-name">Matt Innae</p>
+				<p class="win-amt">10,000/-</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="win-title-outer win-right">
+	</div>
+
+</div>
+
+
+<header>
+	<div class="container-width flex">
+		<div class="logo">
+			<img src="img/page/logo_3.png">
+		</div>
+
+		<div class="flex-1 r-text login-row d-flex">
+					<div class="login-cell cell">
+						<p class="details">
+							<span class="username bold">John Wick</span>|
+							<span class="coins clr-green effect-static-text">2,00,000 Coins</span>
+							<!-- <img src="img/indicators/arrow-right.svg" class="ar-down"> -->
+						</p>
+						<p class="details logout">
+							<a href="signup.html">
+								<span class="username bold clr-green">Logout</span>
+							</a>
+						</p>
+						<p class="menu" onclick="showMobMenu()">
+							<img src="img/page/menu-white.svg">
+						</p>
+					</div>
+		</div>
+
+	</div>
+</header>
+
+<section id="header-slider" class="container-width">
+	<section class="regular slider">
+
+		<div>
+      <div class="hs-card">
+				<div class="hs-card-inner">
+					<div class="hs-title bold clr-green"><span>Live</span></div>
+					<div class="hs-desc white"><span class="fs-sm grey">Sydney Cricket Ground, Sydney</span></div>
+					<div class="hs-match-box mt-10 mb-10">
+						<div class="hs-team mb-5">
+							<div class="hs-team-left">
+								<img src="head-slider/img/ind.webp">
+								<span class="fs-sm white bold hs-active-team">INDIA</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold mr-10">(34 ov, target 407)</span>
+								<span class="hs-score fs-sm white bold">244 &amp; 98/2</span>
+							</div>
+						</div>
+						<div class="hs-team">
+							<div class="hs-team-left">
+								<img src="head-slider/img/aus.webp">
+								<span class="fs-sm white bold">AUS</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold ">150/5</span>
+								<!-- <span class="hs-score fs-sm white bold">244 &amp; 98/2</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="hs-status c-text">
+						<span class="fs-sm white">Day 4 - Session 3: India need 309 runs CRR: 2.88</span>
+					</div>
+      	</div>
+			</div>
+    </div>
+
+		<div>
+      <div class="hs-card">
+				<div class="hs-card-inner">
+					<div class="hs-title bold clr-green"><span>Live</span></div>
+					<div class="hs-desc white"><span class="fs-sm grey">Sydney Cricket Ground, Sydney</span></div>
+					<div class="hs-match-box mt-10 mb-10">
+						<div class="hs-team mb-5">
+							<div class="hs-team-left">
+								<img src="head-slider/img/ind.webp">
+								<span class="fs-sm white bold ">INDIA</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold mr-10">(34 ov, target 407)</span>
+								<span class="hs-score fs-sm white bold">244 &amp; 98/2</span>
+							</div>
+						</div>
+						<div class="hs-team">
+							<div class="hs-team-left">
+								<img src="head-slider/img/aus.webp">
+								<span class="fs-sm white bold hs-active-team">AUS</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold ">150/5</span>
+								<!-- <span class="hs-score fs-sm white bold">244 &amp; 98/2</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="hs-status c-text">
+						<span class="fs-sm white">Day 4 - Session 3: India need 309 runs CRR: 2.88</span>
+					</div>
+      	</div>
+			</div>
+    </div>
+
+		<div>
+      <div class="hs-card">
+				<div class="hs-card-inner">
+					<div class="hs-title bold clr-green"><span>Live</span></div>
+					<div class="hs-desc white"><span class="fs-sm grey">Sydney Cricket Ground, Sydney</span></div>
+					<div class="hs-match-box mt-10 mb-10">
+						<div class="hs-team mb-5">
+							<div class="hs-team-left">
+								<img src="head-slider/img/ind.webp">
+								<span class="fs-sm white bold hs-active-team">INDIA</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold mr-10">(34 ov, target 407)</span>
+								<span class="hs-score fs-sm white bold">244 &amp; 98/2</span>
+							</div>
+						</div>
+						<div class="hs-team">
+							<div class="hs-team-left">
+								<img src="head-slider/img/aus.webp">
+								<span class="fs-sm white bold">AUS</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold ">150/5</span>
+								<!-- <span class="hs-score fs-sm white bold">244 &amp; 98/2</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="hs-status c-text">
+						<span class="fs-sm white">Day 4 - Session 3: India need 309 runs CRR: 2.88</span>
+					</div>
+      	</div>
+			</div>
+    </div>
+
+		<div>
+      <div class="hs-card">
+				<div class="hs-card-inner">
+					<div class="hs-title bold clr-green"><span>Live</span></div>
+					<div class="hs-desc white"><span class="fs-sm grey">Sydney Cricket Ground, Sydney</span></div>
+					<div class="hs-match-box mt-10 mb-10">
+						<div class="hs-team mb-5">
+							<div class="hs-team-left">
+								<img src="head-slider/img/ind.webp">
+								<span class="fs-sm white bold hs-active-team">INDIA</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold mr-10">(34 ov, target 407)</span>
+								<span class="hs-score fs-sm white bold">244 &amp; 98/2</span>
+							</div>
+						</div>
+						<div class="hs-team">
+							<div class="hs-team-left">
+								<img src="head-slider/img/aus.webp">
+								<span class="fs-sm white bold">AUS</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold ">150/5</span>
+								<!-- <span class="hs-score fs-sm white bold">244 &amp; 98/2</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="hs-status c-text">
+						<span class="fs-sm white">Day 4 - Session 3: India need 309 runs CRR: 2.88</span>
+					</div>
+      	</div>
+			</div>
+    </div>
+
+		<div>
+      <div class="hs-card">
+				<div class="hs-card-inner">
+					<div class="hs-title bold clr-green"><span>Live</span></div>
+					<div class="hs-desc white"><span class="fs-sm grey">Sydney Cricket Ground, Sydney</span></div>
+					<div class="hs-match-box mt-10 mb-10">
+						<div class="hs-team mb-5">
+							<div class="hs-team-left">
+								<img src="head-slider/img/ind.webp">
+								<span class="fs-sm white bold hs-active-team">INDIA</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold mr-10">(34 ov, target 407)</span>
+								<span class="hs-score fs-sm white bold">244 &amp; 98/2</span>
+							</div>
+						</div>
+						<div class="hs-team">
+							<div class="hs-team-left">
+								<img src="head-slider/img/aus.webp">
+								<span class="fs-sm white bold">AUS</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold ">150/5</span>
+								<!-- <span class="hs-score fs-sm white bold">244 &amp; 98/2</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="hs-status c-text">
+						<span class="fs-sm white">Day 4 - Session 3: India need 309 runs CRR: 2.88</span>
+					</div>
+      	</div>
+			</div>
+    </div>
+
+		<div>
+      <div class="hs-card">
+				<div class="hs-card-inner">
+					<div class="hs-title bold clr-green"><span>Live</span></div>
+					<div class="hs-desc white"><span class="fs-sm grey">Sydney Cricket Ground, Sydney</span></div>
+					<div class="hs-match-box mt-10 mb-10">
+						<div class="hs-team mb-5">
+							<div class="hs-team-left">
+								<img src="head-slider/img/ind.webp">
+								<span class="fs-sm white bold hs-active-team">INDIA</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold mr-10">(34 ov, target 407)</span>
+								<span class="hs-score fs-sm white bold">244 &amp; 98/2</span>
+							</div>
+						</div>
+						<div class="hs-team">
+							<div class="hs-team-left">
+								<img src="head-slider/img/aus.webp">
+								<span class="fs-sm white bold">AUS</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold ">150/5</span>
+								<!-- <span class="hs-score fs-sm white bold">244 &amp; 98/2</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="hs-status c-text">
+						<span class="fs-sm white">Day 4 - Session 3: India need 309 runs CRR: 2.88</span>
+					</div>
+      	</div>
+			</div>
+    </div>
+
+		<div>
+      <div class="hs-card">
+				<div class="hs-card-inner">
+					<div class="hs-title bold clr-green"><span>Live</span></div>
+					<div class="hs-desc white"><span class="fs-sm grey">Sydney Cricket Ground, Sydney</span></div>
+					<div class="hs-match-box mt-10 mb-10">
+						<div class="hs-team mb-5">
+							<div class="hs-team-left">
+								<img src="head-slider/img/ind.webp">
+								<span class="fs-sm white bold hs-active-team">INDIA</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold mr-10">(34 ov, target 407)</span>
+								<span class="hs-score fs-sm white bold">244 &amp; 98/2</span>
+							</div>
+						</div>
+						<div class="hs-team">
+							<div class="hs-team-left">
+								<img src="head-slider/img/aus.webp">
+								<span class="fs-sm white bold">AUS</span>
+							</div>
+							<div class="hs-team-right flex-1 r-text">
+								<span class="hs-score-info fs-sm white bold ">150/5</span>
+								<!-- <span class="hs-score fs-sm white bold">244 &amp; 98/2</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="hs-status c-text">
+						<span class="fs-sm white">Day 4 - Session 3: India need 309 runs CRR: 2.88</span>
+					</div>
+      	</div>
+			</div>
+    </div>
+  </section>
+
+</section>
+
+<nav>
+	<div class="container-width flex nav-inner">
+		<div class="flex-1 l-text nav-align">
+			<ul>
+				<a href="">
+					<li>Home</li>
+				</a>
+				<a href="">
+					<li>In Play</li>
+				</a>
+				<a href="">
+					<li>Upcoming</li>
+				</a>
+				<a href="">
+					<li>Casino</li>
+				</a>
+				<a href="">
+					<li>Live</li>
+				</a>
+				<a href="tipper-list.html">
+					<li>Tipers</li>
+				</a>
+				<a href="">
+					<li>About</li>
+				</a>
+			</ul>
+		</div>
+		<div class="r-text nav-align">
+			<div class="chat-icn win-menu-icn" onclick="toggleWinner()">
+				<img src="img/page/trophy_2.svg">
+			</div>
+		</div>
+		<div class="r-text nav-align">
+			<div class="chat-icn" onclick="showChat()">
+				<img src="img/page/chat.svg">
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="mob-nav light-bg">
+	<div class="outer-nav">
+		<div class="inner-nav flex dark-bg">
+			<p class="l-text flex-1"><img src="img/page/close.svg" onclick="hideMobMenu()"></p>
+			<p class="r-text flex-1 bold">John Wick | <span class="clr-green">20,000 Coins</span></p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Home</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af" onclick="showChat()">Chat Room</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">In Play</p>
+		</div>
+		<div class="inner-nav flex br-bt" onclick="showWinners()">
+			<p class="r-text flex-1 bold dot-af">Winners</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Upcoming</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 dot-af">
+				<a class="bold" href="tipper-list.html">Tipers</a>
+			</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Live</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">About</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Profile</p>
+		</div>
+		<div class="inner-nav flex br-bt">
+			<p class="r-text flex-1 bold dot-af">Log Out</p>
+		</div>
+	</div>
+</div>
+
+<div class="container-width main-container flex">
+
+	<div class="left-panel">
+		<div class="main-box">
+			<div class="match-status-title l-text mb-2">Choose Sport</div>
+
+			<div class="sport-row mb-2">
+				<div class="icn">
+					<img src="img/sport/cricket.png">
+				</div>
+				<div class="type bold">Cricket</div>
+			</div>
+			<div class="sport-row mb-2">
+				<div class="icn">
+					<img src="img/sport/football.png">
+				</div>
+				<div class="type bold">Football</div>
+			</div>
+			<div class="sport-row mb-2">
+				<div class="icn">
+					<img src="img/sport/cricket.png">
+				</div>
+				<div class="type bold">Tennis</div>
+			</div>
+			<div class="sport-row mb-2">
+				<div class="icn">
+					<img src="img/sport/football.png">
+				</div>
+				<div class="type bold">Football</div>
+			</div>
+
+
+		</div>
+	</div><!-- left-panel close -->
+
+
+
+
+<!-- =================MIDDLE PANEL START================= -->
+	<div class="middle-panel flex-1">
+
+		<div class="bread-crum mb-10">
+			<a href="#">Home</a>
+			<a href="#" class="r-arrow"></a>
+			<a href="#">Sports</a>
+			<a href="#" class="r-arrow"></a>
+			<a href="#">Cricket</a>
+			<a href="#" class="r-arrow"></a>
+			<a href="#">IPL</a>
+			<a href="#" class="r-arrow"></a>
+			<a href="#" class="active">Delhi Capitals vs Sunrisers Hyderabad</a>
+		</div>
+
+		<div class="l-content-outer flex dark-bg mb-10">
+			<div class="flex-1 flex l-title">
+				<img src="img/page/trophy.svg">
+				<p class="fs-16 gold bold ">Delhi Capitals vs Sunrisers Hyderabad</p>
+			</div>
+			<!-- <div class="flex r-title">
+				<p class=""><span class="fs-16 clr-green bold">20</span> <span class="grey fs-sm bold">USERS</span></p>
+				<img src="img/page/worldwide.svg">
+			</div> -->
+		</div>
+
+
+		<div class="score-panel mb-10">
+			<div class="inner-score-holder">
+				<div class="left-score score-div l-text">
+					<p class="team-name active bold">Delhi Capitals</p>
+					<p class="status score bold">145/2 <small>12.5 Overs</small></p>
+				</div>
+				<div class="middle-score">
+					<p class="commentry bold c-text">
+						Bet Open
+					</p>
+				</div>
+				<div class="right-score score-div r-text">
+					<p class="team-name bold">Sunrisers Hyderabad</p>
+					<p class="status">Bowling...</p>
+				</div>
+			</div>
+		</div>
+
+	</div><!-- middle-panel close -->
+	<!-- =================MIDDLE PANEL CLOSE================= -->
+
+
+
+
+
+
+
+	<div class="right-panel">
+		<div class="fill-div"></div>
+		<div class="betting-box">
+
+			<div class="empty-bet mb-10">
+				<div class="empty-bet-title c-text">Your Bet Slip is Empty</div>
+				<div class="empty-bet-notice c-text">
+					Your bet slip is empty. Click on any price to add a bet..!
+				</div>
+			</div>
+
+			<div class="placed-bet hide">
+				<div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()">&times;</span></div>
+				<div class="table inner-bet br-bt">
+					<div class="cell l-text bold runner">Delhi Capitals</div>
+					<div class="cell r-text">
+						<p class="bold bet-type">Lagai</p>
+						<p class="bold bet-odds">1.05</p>
+					</div>
+				</div>
+				<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Market</p>
+						<p class="right-text flex-1 r-text bold white">Match Winner</p>
+				</div>
+
+				<div class="inner-box flex br-bt">
+						<div class="bet-input c-text">
+							<p class="sign bold minus" onclick="addValue(-1)">&#8722;</p>
+							<input class="c-text bold" type="text" value="0" id="bet-value">
+							<input type="hidden" id="bet-hidden" value="-1">
+							<p class="sign bold plus" onclick="addValue(1)">&#43;</p>
+						</div>
+				</div>
+				<div class="inner-box flex br-bt">
+						<div class="bet-input c-text">
+							<p class="left-text c-text white">Return | <span class="bold clr-green">1000</span></p>
+						</div>
+				</div>
+				<div class="inner-box flex br-bt">
+						<button class="bet-btn place-btn flex-1 mr-10">Place Bet</button>
+						<button class="bet-btn clear-btn flex-1" onclick="clearBet()">Clear Bet</button>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="main-box">
+			<div class="match-status-title l-text mb-2 mt-10">Live Matches</div>
+			<div class="box-title c-text mb-2">Indian Premier League</div>
+				<div class="box match-box mb-2">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Chennai Super Kings</p>
+						<p class="right-text flex-1 r-text fs-sm grey">Match Bets | <span class="bold clr-green">5</span></p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Kings XI Punjab</p>
+						<p class="right-text flex-1 r-text fs-sm grey">Session Bets | <span class="bold clr-green">2</span></p>
+					</div>
+				</div>
+				<div class="box match-box">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Sunrisers Hyderabad</p>
+						<p class="right-text flex-1 r-text fs-sm grey">Match Bets | <span class="bold clr-green">12</span></p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Mumbai Indians</p>
+						<p class="right-text flex-1 r-text fs-sm grey">Session Bets | <span class="bold clr-green">0</span></p>
+					</div>
+				</div>
+
+			<div class="match-status-title l-text mb-2 mt-10">Upcoming Matches</div>
+			<div class="box-title c-text mb-2">Indian Premier League</div>
+				<div class="box match-box mb-2">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Chennai Super Kings</p>
+						<p class="right-text flex-1 r-text fs-sm grey">06 April 2019</p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Kings XI Punjab</p>
+						<p class="right-text flex-1 r-text fs-sm grey">08:00 PM</p>
+					</div>
+				</div>
+				<div class="box match-box mb-2">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">Sunrisers Hyderabad</p>
+						<p class="right-text flex-1 r-text fs-sm grey">06 April 2019</p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Mumbai Indians</p>
+						<p class="right-text flex-1 r-text fs-sm grey">08:00 PM</p>
+					</div>
+				</div>
+
+				<div class="box-title c-text mb-2">Football Premier League</div>
+				<div class="box match-box">
+					<div class="inner-box flex br-bt">
+						<p class="left-text flex-1 l-text white">France</p>
+						<p class="right-text flex-1 r-text fs-sm grey">06 April 2019</p>
+					</div>
+					<div class="inner-box flex">
+						<p class="left-text flex-1 l-text white">Brazil</p>
+						<p class="right-text flex-1 r-text fs-sm grey">08:00 PM</p>
+					</div>
+				</div>
+		</div>
+	</div><!-- right-panel close -->
+</div><!-- main-container close -->
+
+
+
+<div class="chat-subscribe-main-div">
+	<div class="chat-subscribe-header chat-category flex">
+		<p class="flex-1 c-text text mr-5 chat-cat-title bc-chat active" onclick="chatCategory('bc_chat')">BC Chat Room</p>
+		<p class="flex-1 c-text text mr-5 chat-cat-title tiproom-chat" onclick="chatCategory('tiproom_chat')">Tip Room Chat</p>
+		<p class="cancel-icn r-text" onclick="hideChat()"><img class="mt-10" src="img/page/cancel.svg"></p>
+	</div>
+
+
+	<div class="chat-input-newslater-table-div bc-chat-panel">
+
+		<div class="chat-boxes grp-chat-box hide-scroll">
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="grp_msg_push"></div>
+
+		</div><!-- chat-boxes close -->
+
+		<div class="chat-input-div flex">
+			<textarea class="group-chat-input group-enter flex-1" placeholder="Write here.."></textarea>
+			<div class="send-icn c-text" onclick="sendMsg()">
+				<img src="img/page/send.svg">
+			</div>
+		</div>
+
+	</div><!-- chat-input-newslater-table-div bc-chat-panel-->
+
+
+	<div class="chat-input-newslater-table-div tiproom-chat-list hide">
+		<div class="chat-boxes hide-scroll">
+
+			<div class="tiproom-user-box flex mb-10" onclick="showTipRoomChat()">
+				<div class="tiproom-user-icn bg-img-man-1"></div>
+				<div class="tiproom-user-info flex-2 ml-10">
+					<p class="tiproom-username bold">John Wick</p>
+					<p class="last-seen fs-sm online">Online...</p>
+				</div>
+				<div class="flex-1 r-text msg-icon-status">
+					<img class="msg-green" src="img/page/msg-green.svg">
+				</div>
+			</div>
+
+			<div class="tiproom-user-box flex mb-10" onclick="showTipRoomChat()">
+				<div class="tiproom-user-icn bg-img-man-1"></div>
+				<div class="tiproom-user-info flex-2 ml-10">
+					<p class="tiproom-username bold">John Wick</p>
+					<p class="last-seen fs-sm">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+				</div>
+				<div class="flex-1 r-text msg-icon-status incoming-msg">
+					<img class="msg-green" src="img/page/msg-green.svg">
+				</div>
+			</div>
+
+			<div class="tiproom-user-box flex mb-10" onclick="showTipRoomChat()">
+				<div class="tiproom-user-icn bg-img-man-1"></div>
+				<div class="tiproom-user-info flex-2 ml-10">
+					<p class="tiproom-username bold">John Wick</p>
+					<p class="last-seen fs-sm">23 min ago</p>
+				</div>
+				<div class="flex-1 r-text msg-icon-status">
+					<img class="msg-green" src="img/page/msg-green.svg">
+				</div>
+			</div>
+
+		</div><!-- chat-boxes close -->
+	</div><!-- chat-input-newslater-table-div tiproom-chat-list -->
+
+
+	<div class="chat-input-newslater-table-div tiproom-chat-panel hide">
+
+		<div class="tiproom-user-box flex">
+				<div class="tiproom-user-icn bg-img-man-1"></div>
+				<div class="tiproom-user-info flex-2 ml-10">
+					<p class="tiproom-username bold">John Wick</p>
+					<p class="last-seen fs-sm online">Online...</p>
+				</div>
+				<div class="flex-1 r-text msg-icon-status close-chat" onclick="chatCategory('tiproom_chat')">
+					<img src="img/page/cancel.svg">
+				</div>
+		</div>
+
+		<div class="chat-boxes tip-chat-box hide-scroll">
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="chat-b-user chat-user">John Snow | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-b">Hello</div>
+
+			<div class="chat-a-user chat-user">You | <small> 03:23 PM</small></div>
+			<div class="chat-msg chat-a">Hi</div>
+
+			<div class="tiproom_msg_push"></div>
+
+		</div><!-- chat-boxes close -->
+
+		<div class="chat-input-div flex">
+			<textarea class="group-chat-input tiproom-enter flex-1" placeholder="Write here.."></textarea>
+			<div class="send-icn c-text" onclick="sendTipMsg()">
+				<img src="img/page/send.svg">
+			</div>
+		</div>
+	</div><!-- chat-input-newslater-table-div tiproom-chat-list -->
+
+
+</div><!-- chat-subscribe-main-div close -->
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="head-slider/slick.js"></script>
+<script type="text/javascript">
+	$(document).on('ready', function() {
+
+		$(".regular").slick({
+			dots: true,
+			infinite: false,
+			speed: 300,
+			slidesToShow: 5,
+			slidesToScroll: 5,
+			responsive: [
+				{
+					breakpoint: 1600,
+					settings: {
+						infinite: false,
+						slidesToShow: 4,
+						slidesToScroll: 4,
+						infinite: true,
+						dots: false
+					}
+				},
+				{
+					breakpoint: 1320,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3
+					}
+				},
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				},
+				{
+					breakpoint: 720,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			]
+		});
+
+	});
+</script>
+</body>
+</html>

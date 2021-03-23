@@ -1,0 +1,3776 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lords24</title>
+   <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/user_dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      I18n.defaultLocale = "en";
+      I18n.locale = "en";
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <style type="text/css">
+  @media (max-width: 375px){
+    .logo {
+      font-size: 25px;
+    }
+
+    .login-cell .details span {
+      font-size: 14px;
+    }
+
+    .login-cell .details {
+      width: 230px;
+      padding: 7px 10px;
+    }
+  }
+
+  @media (max-width: 600px) and (min-width: 375px){
+    .logo {
+      font-size: 25px;
+    }
+
+    .login-cell .details span {
+      font-size: 16px;
+    }
+
+    .login-cell .details {
+      width: 260px;
+      padding: 7px 10px;
+    }
+  }
+</style>
+<header>
+  <div class="container-width flex">
+    <div class="logo">
+      <!-- <img src="img/page/logo_3.png"> -->
+      xBook.Pro
+    </div>
+
+    <div class="flex flex-1 r-text login-row">
+      <div class="table">
+        <div class="login-cell cell">
+          <p class="menu" onclick="showMobMenu()">
+            <!-- <span class="username bold">USER_OF_AGENT</span>|
+            <span class="coins">2969.0&nbsp;&nbsp;Coins </span> -->
+            <img alt="Menu" src="img/menu-aee306771f7f5dfa6274f52b319907ef.svg" />
+          </p>
+          <p class="details">
+            <span class="username bold">USER_OF_AGENT</span>|
+            <span class="coins">2969.0&nbsp;&nbsp;Coins </span>
+            <!-- <img src="img/indicators/arrow-right.svg" class="ar-down"> -->
+          </p>
+          <p class="details logout">
+            <a href="/users/sign_out" data-method="delete" rel="nofollow">
+              <span class="username bold clr-green">LOGOUT</span>
+            </a>
+          </p>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="container-width flex">
+    <div class="flex-1 l-text nav-align">
+      <ul>
+        <a href="/user/rules">
+          <li >HOME</li>
+        </a>
+        <!-- <a href="/user/dashboard/schedule">
+          <li   class="nav-active" ></li>
+        </a> -->
+        <a href="/user/matches">
+          <li >IN PLAY</li>
+        </a>
+          <a href="/user/matches/tournaments">
+            <li >TOURNAMENT</li>
+          </a>
+        <a href="/user/upcomming_matches">
+          <li >UPCOMING</li>
+        </a>
+        <a href="/user/rules">
+          <li >RULES</li>
+        </a>
+        <a href="/user/ledgers">
+          <li >LEDGER</li>
+        </a>
+        <a href="/user/dashboard/change_password">
+          <li >PASSWORD</li>
+        </a>
+        <a href="/user/all_matches">
+          <li >ALL MATCHES</li>
+        </a>
+        <!-- <a href="/user/games">
+          <li   class="nav-active" ></li>
+        </a> -->
+          <a href="/user/settings">
+            <li >SETTINGS</li>
+          </a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mob-nav light-bg">
+  <div class="outer-nav">
+    <div class="inner-nav flex dark-bg">
+      <p class="r-text fs-sm flex-1 bold  clr-user">USER_OF_AGENT | <span class="white fs-sm">2969.0  Coins</span></p>
+      <p class="l-text fs-sm flex-1"><img alt="Close right arrow" onClick="hideMobMenu()" src="img/close-right-arrow-9c53fbf0dc7a1234ee7a3813273e398a.svg" /></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/rules">HOME</a></p>
+    </div>
+    <!-- <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/dashboard/schedule"></a></p>
+    </div> -->
+    
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/matches">IN PLAY</a></p>
+    </div>
+
+      <div class="inner-nav flex br-bt">
+        <p class="r-text flex-1 bold dot-af"><a href="/user/matches/tournaments">TOURNAMENT</a></p>
+      </div>
+
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/upcomming_matches">UPCOMING</a></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/rules">RULES</a></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/ledgers">LEDGER</a></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/dashboard/change_password">PASSWORD</a></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/all_matches">ALL MATCHES</a></p>
+    </div>
+    <!-- <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/games"></a></p>
+    </div> -->
+      <div class="inner-nav flex br-bt">
+        <p class="r-text flex-1 bold dot-af"><a href="/user/settings">SETTINGS</a></p>
+      </div>
+    <!-- <div class="inner-nav flex br-bt" onclick="showMobBets()">
+      <p class="r-text flex-1 bold dot-af">SHOW BETS</p>
+    </div> -->
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/users/sign_out" data-method="delete" rel="nofollow">LOGOUT</a></p>
+    </div> 
+
+    <div class="logo">
+      <!-- <img src="img/page/logo_3.png"> -->
+      xBook.pro
+    </div>
+  </div>
+</div>
+    </div>  
+    <!-- <div class="container-width main-container flex"> -->
+      <html>
+
+  <head>
+    <script src="/assets/user/show15-957a555e5ffd5290009de0a2417a3001.js?body=1"></script>
+    <script type="text/javascript">
+      match_id_show13 = 26;
+    </script>
+
+    
+    
+    <script type="text/javascript">
+      $(function() {
+        // setTimeout(function(){
+        //   setBetStatus();
+        // }, 3000);
+
+        stompConnect();
+
+        // setHeroicCommentaryEvent('');
+        //set_event_font_size('');
+      });
+
+      var client;
+
+      var stompSuccessCallback = function() {
+        console.log('connected');
+        subscription = client.subscribe("/topic/arenas.global", messageRecivedStomp);
+      };
+
+      var stompFailureCallback =  function() {
+        console.log('error');
+        setTimeout(stompConnect, 10000);
+        console.log('STOMP: Reconecting in 10 seconds');
+      };
+
+       // called when the client receives a STOMP message from the server
+
+      function stompConnect() {
+        console.log('STOMP: Attempting connection');
+        // var sockJSConn = new SockJS('http://equivalent.io:15674/stomp');
+        var sockJSConn = new SockJS('http://164.52.194.11:15674/stomp');
+        sockJSConn._transportTimeout = function() { console.log('gotcha!!!'); };
+
+        console.log(sockJSConn);
+
+        // ws.onclose = function() {
+        //   console.log('close');
+        //   client.disconnect();
+        //   setConnected();
+        // };
+
+        client = Stomp.over(sockJSConn);
+        console.log(client);
+        // SockJS does not support heart-beat: disable heart-beats
+        client.heartbeat.outgoing = 0;
+        client.heartbeat.incoming = 0;
+
+        // recreate the stompClient to use a new WebSocket
+        client.connect('arenas_consumer', 'WJ+#5b5T6Z9VZwYF', stompSuccessCallback, stompFailureCallback, 'lagaikhai');
+      }
+    </script>
+
+
+  </head>
+  <style type="text/css">
+    /*Start Suspend Style*/
+    .market-suspend-p{
+      background: #7D5861 !important;
+      color: #7D5861 !important;
+      border-radius: 3px;
+      border: 2px solid #fff !important;
+      height: calc(24px - 1px) !important;
+      width: calc(50px - 2px) !important;
+      opacity: 0.5;
+      /*height: 100%;*/
+      cursor: not-allowed;
+    }
+    .market-suspend-b{
+      background: #0C5677 !important;
+      color: #0C5677 !important;
+      border-radius: 3px;
+      border: 2px solid #fff !important;
+      height: calc(24px - 1px) !important;
+      width: calc(50px - 2px) !important;
+      opacity: 0.5;
+      /*height: 100%;*/
+      cursor: not-allowed;
+    }
+    /*End Suspend Style*/
+
+    /*Start Odds Indicator Style*/
+    .green-m{
+      border-color: #009000;
+      animation: move-in-step 0.8s;
+      animation-iteration-count:3;
+      border-color: inherit;
+    }
+
+    @keyframes move-in-step{
+      0% {
+        /*border-color: inherit;*/
+        border-color: #fff;
+      }
+      80% {
+        border-color: #63C76A;
+      }
+      100% {
+        border-color: #63C76A;
+      }
+    }
+
+    .yellow-m{
+      border-color: #ffff00;
+      animation: move-in-step-yello 0.8s;
+      animation-iteration-count:3;
+      border-color: inherit;
+    }
+
+    @keyframes move-in-step-yello{
+      0% {
+        /*border-color: inherit;*/
+        border-color: #fff;
+      }
+      80% {
+        border-color: #ffff00;
+      }
+      100% {
+        border-color: #ffff00;
+      }
+    }
+
+    .red-m{
+      border-color: #d21717;
+      animation: move-in-steps 0.8s;
+      animation-iteration-count:3;
+      border-color: inherit
+    }
+
+    @keyframes move-in-steps{
+      0% {
+        /*border-color: inherit*/
+        border-color: #fff;
+      }
+      80% {
+        border-color: #ED5656;
+      }
+      100% {
+        border-color: #ED5656;
+      }
+    }
+
+    .l-button{
+      border: 2px solid #53aceb;
+      height: calc(24px - 1px) !important;
+      width: calc(50px - 2px) !important;
+    }
+
+    .k-button{
+      border: 2px solid #F0B5C3;
+      height: calc(24px - 1px) !important;
+      width: calc(50px - 2px) !important;
+    }
+    /*End Odds Indicator Style*/
+
+    .red{
+      color: red;
+    }
+
+    .box-background{
+      background-color: #344955;
+    }
+
+    /*LOAD BUTTON CSS FROM USER MATCH SHOW PAGE*/
+      .button.alert:before,
+      .button.alert:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; 
+      }
+
+      .button.round, .button.round {
+        border-radius: 1000px; 
+      }
+
+      .button.alert, .button.alert {
+        /*background-color: #3A61A2;*/
+        /*border-color: #3A61A2;*/
+        color: white; 
+      }
+
+      @media only screen and (min-width: 40.063em) {
+        .button, .button {
+          display: inline-block; 
+        } 
+      }
+
+      .button, .button {
+        position: relative;  
+      } 
+         
+      .button:not(.disabled):before {
+        content: '';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -11px;
+        width: 20px;
+        height: 20px;
+        border: 4px solid;
+        border-left-color: transparent;
+        border-radius: 50%;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -moz-transition-property: opacity;
+        -o-transition-property: opacity;
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
+        -moz-animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -moz-animation-name: rotate;
+        -webkit-animation-name: rotate;
+        animation-name: rotate;
+        -moz-animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+      }
+      .button:not(.disabled):after {
+        /*content: '';*/
+        display: inline-block;
+        height: 100%;
+        width: 0px;
+        -moz-transition-delay: 0.5s;
+        -o-transition-delay: 0.5s;
+        -webkit-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+        -moz-transition-duration: 0.75s;
+        -o-transition-duration: 0.75s;
+        -webkit-transition-duration: 0.75s;
+        transition-duration: 0.75s;
+        -moz-transition-property: width;
+        -o-transition-property: width;
+        -webkit-transition-property: width;
+        transition-property: width;
+      }
+
+      @media all and (max-width: 767px){
+        .button.alert{
+          font-size: 12px;
+          padding-top: 0.8rem;
+          padding-bottom: 0.8rem;
+        }
+      }
+
+      .button:not(.disabled).sending {
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+
+      .button:not(.disabled).sending:not(.expand) {
+        /*text-align: left;*/
+      }
+
+      .button:not(.disabled).sending:before {
+        -moz-transition-delay: 0.5s;
+        -o-transition-delay: 0.5s;
+        -webkit-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+        -moz-transition-duration: 1s;
+        -o-transition-duration: 1s;
+        -webkit-transition-duration: 1s;
+        transition-duration: 1s;
+        filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+        opacity: 1;
+      }
+
+      .button:not(.disabled).sending:after {
+        -moz-transition-delay: 0s;
+        -o-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+        width: 20px;
+      }
+
+      @keyframes rotate {
+        0% {
+          -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -moz-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+    /*LOAD BUTTON CSS FROM USER MATCH SHOW PAGE*/
+
+    .button.alert.round{
+      margin-left: 15px;
+    }
+
+    /*START ERROR POPUP*/
+      .md-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        max-width: 630px;
+        min-width: 320px;
+        height: auto;
+        z-index: 2000;
+        visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      /* Effect 1: Fade in and scale up */
+      .md-effect-1 .md-content {
+        -webkit-transform: scale(0.7);
+        -moz-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        transform: scale(0.7);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .md-show.md-effect-1 .md-content {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .md-perspective,
+      .md-perspective body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .md-perspective body  {
+        background: #222;
+        -webkit-perspective: 600px;
+        -moz-perspective: 600px;
+        perspective: 600px;
+      }
+
+      .md-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        max-width: 630px;
+        min-width: 280px;
+        height: auto;
+        z-index: 2000;
+        visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      .md-show {
+        visibility: visible;
+      }
+
+      .md-overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        opacity: 0;
+        /*background: rgba(143,27,15,0.8);*/
+        background: none repeat scroll 0% 0% rgba(171, 186, 214, 0.76) !important;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .md-show ~ .md-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Content styles */
+      .md-content {
+        color: #fff;
+        background: #3A61A2;
+        position: relative;
+        border-radius: 10px;
+        margin: 0 auto;
+      }
+      .md-content p{
+        text-align: center;
+      }
+      .md-content h3 {
+        font-family: "open-sans-semibold" !important;
+        margin: 0;
+        padding: 0.4em;
+        text-align: center;
+        font-size: 2.4em;
+        font-weight: 300;
+        opacity: 0.8;
+        background: #3A61A2;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .md-content > div {
+        padding: 20px 40px 20px;
+        margin: 0;
+        font-weight: 300;
+        font-size: 1.15em;
+      }
+
+      /*.md-content > div p {
+        margin: 0;
+        padding: 10px 0;
+      }*/
+
+      .md-content > div ul {
+        margin: 0;
+        padding: 0 0 30px 20px;
+      }
+
+      .md-content > div ul li {
+        font-family: "open-sans-semibold"!important;
+        padding: 5px 0;
+      }
+
+      .md-content button {
+        display: block;
+        margin: 0 auto;
+        font-size: 0.8em;
+      }
+
+    /*END ERROR POPUP*/
+
+    /*Background Images related Issue fixed start*/
+      .score-panel{
+        background-image: url(img/cricket_bg-5a4e85976f9b4103e7cae34e41fd297f.png);
+      }
+      .bread-crum a.r-arrow{
+        background-image: url(img/arrow-right-7741e14390f9c2b0ec435540b7b8a602.svg);
+      }
+
+      @media all and (max-width: 992px){
+        .score-panel{
+          height: 136px;
+          background-image: none;
+          background-color: #fff;
+        }
+      }
+    /*Background Images related Issue fixed End*/  
+
+    /*=======place-bet style start===== */
+      .num-btn-holder{
+        background-color: #000;
+      }
+      .sl-desktop-num-btn{
+        font-size: 16px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        width: 60px;
+        height: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(17, 42, 76);
+        font-weight: 600;
+        background-color: rgb(236, 234, 234);
+        margin: 0px 8px;
+      }
+      
+      @media all and (max-width: 860px){
+        .market-bet-mob{
+          display: none;
+        }
+        .session-desk{
+          display: none !important
+        }
+      }
+      @media all and (min-width: 860px){
+        .market-bet-mob{
+          display: none !important;
+        }
+        .session-mob{
+          display: none !important
+        }
+      }
+
+      @media all and (max-width: 768px){
+        .right-panel.match-list-box.right-panel-show{
+          width: calc(100% - 20px);
+          background-color: #e9e9e9 !important;
+        }
+
+        .market-bet-desk{
+          transition: right 0.3s;
+          /*position: fixed;*/
+          top: 10px;
+          /*width: calc(100% - 20px);*/
+          z-index: 5555;
+          transition: right 0.3s;
+          background-color: #e9e9e9 !important;
+        }
+
+        .market-bet-desk-show{
+          right: 10px;
+        }
+        .top{
+          right: -429px;
+        }
+        .block{
+          display: block;
+        }
+        .button.alert {
+          font-size: 15px;
+          padding-top: 0.4rem;
+        }
+
+       .session-bet-desk{
+          transition: right 0.3s;
+          /*position: fixed;*/
+          top: 0px;
+          /*width: calc(100% - 20px);*/
+          z-index: 5556;
+          transition: right 0.3s;
+          background-color: #e9e9e9 !important;
+        }
+        .session-bet-desk-show{
+          right: 10px;
+        }
+        .session-bet-desk .main-box{
+          margin-top: 386px !important;
+        }
+      }
+    /*=======place-bet style end===== */
+  </style>
+  
+  <body>
+
+    <div class="football_game">
+         <style>
+              .football_score_panel{
+                    background-image: url(img/football_bg-5bf4760ffc74781db1831f12e56230a5.png) !important;
+                }
+              .football_left_panel{
+                width:320px !important;
+              }
+              .left-title{
+                background-color: #344955;
+                color: #fff;
+              }
+              .left_main a{
+                display: block !important;
+              }
+              .d-flex{
+                display: flex;
+                align-items: center;
+              }
+
+              /*=======statistics style start==========*/
+              
+              .inner_s_panel{
+                height: 185px;
+                border-radius: 3px;
+                box-shadow: 0 0 15px -3px #777777;
+                width: 100%;
+                background-color: #252525;
+              }
+              .first_slide{
+                height: 100%;
+                border-radius: 3px;
+                /*box-shadow: 0 0 15px -3px #777777;*/
+                width: 100%;
+                background-color: #252525;
+              }
+              .head-to-head-panel{
+                height: 100%;
+                border-radius: 3px;
+                width: 100%;
+                background-color: #252525;
+              }
+              .statistics_panel{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                color:rgba(255,255,255,0.8);
+              }
+              .inner_head{
+                height: auto;
+                border-bottom: 1px solid rgba(255,255,255,0.12);
+                padding: 5px 15px 4px 15px;
+              }
+              .heade_panel_icon{
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+              }
+              .m_head{
+                padding: 0px 0px 4px 0px;
+                font-size: 13px;
+                font-weight: 600;
+                border-bottom: 1px solid rgba(255,255,255,0.12);
+                margin: 0px 15px 0px 15px;
+              }
+               .s_inner_section{
+                margin: 0px 15px 0px 15px;
+              }
+              .cards_sec{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 5px 0px 2px 0px;
+                margin: 1px 0px 1px 0px;
+              }
+              .center_c , .right_c , .left_c{
+                font-size: 12px;
+              }
+              .card_header{
+                font-size: 13px;
+              }
+              .cicks_Sec{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 2px solid;
+                padding: 2px 0px 2px 0px;
+                font-size: 13px;
+              }
+              .y_r_card_sec{
+                margin: 0px 7px;
+              }
+              .y_card{
+                height: 13px;
+                border-radius: 2px;
+                width: 8px;
+                background-color: yellow;
+                transform: rotate(-20deg);
+              }
+              .r_card{
+                height: 13px;
+                border-radius: 2px;
+                width: 8px;
+                background-color: red;
+                transform: rotate(20deg);
+              }
+                /*=======statistics style end==========*/
+                .card_sec{
+                  position: absolute;
+                  top: 0px;
+                  left: -4px;
+                  z-index: 10;
+                }
+                .card_c{
+                  width: 6px;
+                  /*background-color: #fff;*/
+                  height: 7px;
+                  border-radius: 6px;
+                  position: relative;
+                }
+                .cards_out_sec{
+                  position: absolute;
+                  top: -24px;
+                }
+                .cards_bottom-icon_sec{
+                  position: absolute;
+                  top: 13px;
+                }
+                .card_c img{
+                  height: 9px;
+                  width: 7px;
+                }
+                .football_score_panel{
+                  display: flex;
+                  align-items: center;
+                  width: 100%;
+                  height: 185px;
+                  justify-content: center;
+                }
+                .inner-score-contianer{
+                  width: 100%;
+                  height: 170px;
+                  border-radius: 1px;
+                  background-color: #252525;
+                }
+                .scorebaord_panel{
+                  display: flex;
+                  height: 56px;
+                  font-size: 14px;
+                  font-weight: 600;
+                  color: rgba(255,255,255,0.8);
+                  align-items: center;
+                  justify-content: space-between;
+                  padding:0px 16px;
+                  border-bottom: 1px solid rgba(255,255,255,0.12);
+                }
+                .match_first span img{
+                  height: 20px;
+                  filter: invert(1);
+                }
+                .live_score_section{
+                  text-align: center;
+                }
+                .socre_status{
+                  height: 13px;
+                  font-weight:100;
+                  font-size: 10px;
+                }
+                .result_period{
+                  font-size: 10px;
+                  font-weight:100;
+                }
+                .score{
+                  font-size: 20px;
+                }
+                .last_scorer{
+                  font-size: 10px;
+                  font-weight: 100;
+                }
+                .match_second{
+                  text-align: end;
+                }
+                .momentum_wrap{
+                  margin-left: 16px;
+                  margin-right: 16px;
+                  padding: 8px 0px;
+                  overflow-x: auto;
+                }
+                /*.momentum_wrap:-webkit-scrollbar
+                  {
+                    height: 2px;
+                  }*/
+                .momentum_team{
+                  color: rgba(255,255,255,0.8);
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                }
+                .m_team_name{
+                  font-size: 12px;
+                  font-weight: 700;
+                }
+                .top_label{
+                  font-size: 12px;
+                }
+                .right_label span{
+                  font-size: 12px;
+                }
+                .right_label{
+                  font-size: 12px;
+                }
+                .momentum_svg_wrap{
+                  height: 54px;
+                  position: relative;
+                }
+                .m_inner_line{
+                  border-bottom: 1px solid rgba(255,255,255,0.12);
+                  position: absolute;
+                  top: 50%;
+                  width: 100%;
+                }
+                .top_bar .lines{
+                  display: inline-block;
+                }
+                .bottom_bar .line{
+                  display: inline-block;
+                }
+              .top_bar{
+                /*position: absolute;
+                top: 8px;
+                width: 100%;*/
+
+                  position: absolute;
+                  top: 13px;
+                  left: -1px;
+                  width: 99px;
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: space-around;
+                          }
+              .bottom_bar{
+                position: absolute;
+                top: 4px;
+                width: 100%;
+              }
+              .vertical { 
+                border-left: 4px solid #eadfdf;
+                height: 12px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+              .vertical2{ 
+                border-left: 4px solid #eadfdf;
+                height: 8px;
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+              .vertical3{ 
+                border-left: 4px solid #eadfdf;
+                height: 14px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              }
+              .vertical4{ 
+                border-left: 4px solid #eadfdf;
+                height: 8px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+              .vertical5{ 
+                border-left: 4px solid #eadfdf;
+                height: 6px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+              .vertical6{ 
+                border-left: 4px solid #eadfdf;
+                height: 6px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+              .vertical7{ 
+                border-left: 4px solid #eadfdf;
+                height: 7px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+               .vertical8{ 
+                border-left: 4px solid #eadfdf;
+                height: 4px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+               .vertical9{ 
+                border-left: 4px solid #eadfdf;
+                height: 11px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+               .vertical-10{ 
+                border-left: 4px solid #eadfdf;
+                height: 6px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+
+               .vertical-11{ 
+                border-left: 4px solid #eadfdf;
+                height: 4px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+               .vertical-12{ 
+                border-left: 4px solid #eadfdf;
+                height: 10px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+               .vertical-13{ 
+                border-left: 4px solid #eadfdf;
+                height: 4px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+               .vertical-14{ 
+                border-left: 4px solid #eadfdf;
+                height: 6px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+               .vertical-15{ 
+                position: relative;
+                border-left: 4px solid #eadfdf;
+                height: 8px; 
+                width:0px;
+                margin-bottom: -4px;
+                position: relative;
+              } 
+              .vertical_b1{ 
+                border-left: 4px solid #868585;
+                height: 9px;
+                width: 1px;
+                margin-left: 14px;
+                margin-bottom: -4px;
+              } 
+              .vertical_b2{ 
+                border-left: 4px solid #868585;
+                height: 5px;
+                position: absolute;
+                top: 10px;
+                width: 1px;
+                margin-left: 0px;
+                margin-bottom: -4px;
+              } 
+              .vertical_b3{ 
+                border-left: 4px solid #868585;
+                height: 7px;
+                width: 1px;
+                top: 10px;
+                position: absolute;
+                margin-left: 14px;
+                margin-bottom: -4px;
+
+              } 
+              .vertical_b4{ 
+                border-left: 4px solid #868585;
+                height: 8px;
+                position: absolute;
+                top: 10px;
+                width: 1px;
+                margin-left:9px;
+                margin-bottom: -4px;
+              }
+              .vertical_b5{ 
+                border-left: 4px solid #868585;
+                height: 4px;
+                width: 1px;
+                top: 10px;
+                position: absolute;
+                margin-left:20px;
+                margin-bottom: -4px;
+              }
+               .vertical_b6{ 
+                border-left: 4px solid #868585;
+                height: 4px;
+                width: 1px;
+                top: 10px;
+                position: absolute;
+                margin-left:77px;
+                margin-bottom: -4px;
+              }
+              .yellow_c{
+                position: absolute;
+                left: -5px;
+                z-index: 10;
+              }
+              .yellow_c .yellow_card{
+                width: 6px;
+                /*background-color: #ffbf00;*/
+                height: 7px;
+                border-radius: 1px;
+                position: relative;
+              }
+               .yellow_card img{
+                  height: 9px;
+                  width: 6px;
+                }
+              .yellow_card:hover .card_section{
+                display: block;
+                display: flex;
+              }
+             
+              .card_section{
+                display: none;
+                padding: 5px;
+                background: #1f1e1ee0;
+                width: 107px;
+                height: auto;
+                top: -7px;
+                align-items: center;
+                right: -119px;
+                position: absolute;
+                line-height: 10px;
+                color: rgba(255,255,255,0.8);
+                justify-content: space-around;
+              }
+                #shot_card_section{
+                 display:none;
+                }
+              .card_c:hover .shot_card_section{
+                display: block;
+                display: flex !important;
+              }
+              .shot_card_section{
+                display: none;
+                padding: 5px;
+                background: #1f1e1ee0;
+                width: 107px;
+                height: auto;
+                top: -7px;
+                align-items: center;
+                right: -119px;
+                position: absolute;
+                line-height: 10px;
+                color: rgba(255,255,255,0.8);
+                justify-content: space-around;
+              }
+              .m_number{
+                font-size: 14px;
+                background: rgba(255,255,255,0.8);
+                padding: 7px 3px;
+                border-radius: 2px;
+                color: grey;
+              }
+              .y_sub_content li{
+                text-decoration: none;
+                list-style-type: none;
+                font-size: 10px;
+                display: inline-flex;
+              }
+
+           
+              .lines_divider{
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+              }
+               .ht{
+                  margin-left: 35px !important;
+                }
+                .vertical_line4{
+                  position: relative;
+                }
+                 .stoppage_sec{
+                  position: absolute;
+                  width: 8px;
+                  left: -4px;
+                  height: 100%;
+                  background: #8080803d;
+                 }
+              .divider_l{
+                border-left: 1px solid rgba(255,255,255,0.12);
+                height: 50px;
+                width: 1px;
+              }
+              .bet-open-container{
+                height: 170px;
+                border-radius: 1px;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                background-color: #252525;
+                width: 15%;
+                margin-left: 3px;
+              }
+              .bet_open_inner_sec{
+                color: #fff;
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 19px;  
+                text-align: center;            
+              }
+              .empty-bet-title{
+                height: 22px;
+              }
+              .empty-bet-notice{
+                height: 33px;
+              }
+             
+              /*=======first panel css start======*/
+              .first_panel{
+                /*display: none !important;*/
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60%;
+              }
+              /*=======first panel css end======*/
+
+              @media all and (min-width:600px){
+                .momentum_team .top_label{
+                  margin-left: 5%;
+                }
+               
+                
+                .slider-panel{
+                  display: none;
+                }
+              }
+              @media all and (max-width:600px){
+                .first_panel{
+                  display: inherit;
+                  width:100%;
+                }
+                .carousel{
+                  height: 200px !important;
+                  width:100% !important;
+                }
+                .inner_s_panel{
+                  height: 245px !important;
+                }
+                .s_inner_section{
+                  margin: 0px 15px 0px 15px;
+                  display: flex;
+                  flex-direction: column;
+                  height: 129px;
+                  justify-content: center;
+                  vertical-align: middle;
+                }
+                .inner_head{
+                  padding: 10px 15px 0px 15px;
+                }
+                .m_head{
+                  padding: 9px 0px 7px 0px;
+                }
+                .bet-open-container{
+                  margin-top:1px;
+                }
+                
+              }
+              @media all and (min-width:769px){
+                .slider-panel{
+                  display: none;
+                }
+                .carousel-controls{
+                  display: none;
+                }
+
+              }
+              @media all and (max-width:769px){
+                .desktop_first_panel {
+                  display: none;
+                }
+                .slider-panel{
+                  display: block;
+                }
+                .stat-box-desktop{
+                  display: none;
+                }
+              }
+             /*======= score panel slidershow css start=====*/
+              .carousel {
+                width: 60%;
+                height: 170px;
+                position: relative;
+                overflow: hidden;
+              }
+
+              .carousel-deck {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+              }
+
+              .carousel-slide {
+                position: absolute;
+                left: 100%;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                /*transition: left .5s;*/
+              }
+
+              .carousel-slide.atLeft {
+                left: -100%;
+              }
+
+              .carousel-slide.atRight {
+                left: 100%;
+              }
+
+              .carousel-slide.atCenter {
+                left: 0;
+              }
+
+              .moving {
+                transition: left .4s;
+              }
+
+              .carousel-controls {
+                position: absolute;
+                top: 12%;
+                left: 0;
+                z-index: 5;
+                width: 100%;
+                text-align: center;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+              }
+
+              .carousel-paginate {
+                display: none !important;
+              }
+
+              .carousel-move-left,
+              .carousel-move-right,
+              .carousel-paginate {
+                width: 2em;
+                height: 2em;
+                text-align: center;
+                line-height: 2em;
+                font-family: monospace;
+                /*background-color: rgba(255, 255, 255, 0.5);*/
+                border-radius: 50%;
+                color: #fff;
+                position: absolute;
+                bottom: 10px;
+                transition: all .3s;
+              }
+
+              .carousel-move-left {
+                left: -2em;
+              }
+
+              .carousel:hover .carousel-move-left {
+                left: 5px;
+              }
+
+              .carousel-move-right {
+                right: -2em;
+              }
+
+              .carousel:hover .carousel-move-right {
+                right: 5px;
+              }
+
+              .carousel-pagination {
+                display: inline-block;
+                position: relative;
+                bottom: -1.25em;
+                transition: all .3s;
+              }
+
+              .carousel:hover .carousel-pagination {
+                bottom: 10px;
+              }
+
+              .carousel-paginate {
+                position: static;
+                font-size: 1rem;
+                border-width: 0;
+                cursor: pointer;
+                outline: 0;
+                display: inline-block;
+                color: rgba(0, 0, 0, 0.2);
+              }
+
+              .carousel-paginate.active {
+                background-color: rgba(255, 255, 255, 0.7);
+                color: rgba(0, 0, 0, 1);
+                cursor: pointer;
+              }
+
+              .carousel-move-left:hover,
+              .carousel-move-right:hover,
+              .carousel-paginate:hover {
+                /*background-color: rgba(255, 255, 255, 1);
+                color: rgba(0, 0, 0, 1);*/
+                cursor: pointer;
+              }
+
+              .carousel[data-controls=pagination] .carousel-move-right,
+              .carousel[data-controls=pagination] .carousel-move-left {
+                display: none;
+              }
+
+              .carousel[data-controls=directional] .carousel-pagination {
+                display: none;
+              }
+
+              .carousel[data-controls=none] .carousel-controls {
+                display: none;
+              }
+              /*=======score panel slidershow mob view css end=====*/        
+              .timeline-inner-panel{
+                height: 100%;
+                border-radius: 3px;
+                width: 100%;
+                background-color: #252525;
+              }
+              .standings-panel{
+                height: 100%;
+                border-radius: 3px;
+                width: 100%;
+                background-color: #252525;
+              }
+             .tabs {
+
+                clear: both;
+                position: relative;   
+                max-width: 650px;
+                margin: 0 auto;
+               /* you can either manually set a min-height here or do it via JS ---> */
+              }
+
+             /* .tab {
+                float: left;
+              }*/
+
+              .tab label {
+                margin-right: 20px;
+                position: relative;
+                top: 0;
+                cursor: pointer;
+                color: #333;
+                text-transform: uppercase;
+              }
+
+              .tab [type=radio] {
+                display: none;   
+              }
+
+              .tab__content {
+                position: absolute;
+                top: 35px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transition: opacity .2s cubic-bezier(.42,0,.34,1.01);
+              }
+
+              [type=radio]:checked ~ label {
+                border-bottom: 2px solid #1d1d1d;
+                color: #1d1d1d;
+                z-index: 10;
+              }
+
+              .head-t-head-icon span{
+                font-size: 14px;
+              }
+              .head-t-head-icon span img{
+                height: auto;
+                width: 14px;
+              }
+              .bet_open_container{
+                display: block;
+                padding: 8px 10px;
+                border-radius: 3px 3px 0 0;
+                border-bottom: 2px solid;
+                background-color: #fff;
+                height: 70px;
+                border-color: #cecece;
+                box-shadow: 0 0 15px -3px #777777;
+              }
+              .open_bet{
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100%;
+               letter-spacing: 1px;
+               font-weight: 600;
+               cursor: pointer;
+              }
+              .bet_sec{
+                font-weight: bold;
+                padding: 8px 8px;
+              }
+              @media all and (max-width:769px){
+              .desktop_bet_open{
+                display: none;
+              }
+              }
+              @media all and (max-width: 600px){
+                 .football_score_panel{
+                  height: 244px !important;
+                }
+                .inner-score-contianer{
+                  height: 200px;
+                }
+                .football_score_panel{
+                  display: inherit;
+                }
+                .bet-open-container{
+                  height: 43px;
+                  width: 100%;
+                  border-top: 1px solid rgba(255,255,255,0.12);
+                  margin-left: 0px;
+                }
+                .scorebaord_panel{
+                  height: 85px;
+                }
+              }
+
+              /*============stat tabs css start==========*/
+
+                .timeline-inner-panel{
+                  height: 100%;
+                  border-radius: 3px;
+                  width: 100%;
+                  background-color: #252525;
+                }
+                .standings-panel{
+                  height: 100%;
+                  border-radius: 3px;
+                  width: 100%;
+                  background-color: #252525;
+                }
+               .tabs-d {
+                  clear: both;
+                  position: relative;   
+                  max-width: 650px;
+                  margin: 0 auto;
+                 /* you can either manually set a min-height here or do it via JS ---> */
+                }
+
+                .tabs {
+                  float: left;
+                }
+
+                .tabs label {
+                  margin-right: 20px;
+                  position: relative;
+                  top: 0;
+                  cursor: pointer;
+                  color: #333;
+                  text-transform: uppercase;
+                }
+
+                .tabs [type=radio] {
+                  display: none;   
+                }
+                .tabs__content {
+                  position: absolute;
+                  top: 35px;
+                  bottom: 0;
+                  width: 315px;
+                  transition: opacity .2s cubic-bezier(.42,0,.34,1.01);
+                  
+                }
+                [type=radio]:checked ~ label {
+                  border-bottom: 2px solid #1d1d1d;
+                  color: #1d1d1d;
+                  z-index: 10;
+                }
+                .f-second-tabs{
+                  position: absolute;
+                  left:-78px !important;
+                }
+                .f-third-tabs{
+                  position: absolute;
+                  left: -158px !important;
+                }
+                .f-fourth-tabs{
+                  position: absolute;
+                  left: -237px !important;
+                }
+               
+                .head-t-head-icon span{
+                  font-size: 14px;
+                }
+                .head-t-head-icon span img{
+                  height: auto;
+                  width: 14px;
+                }
+
+                /*==============stat css end ===============*/
+
+                .team-container{
+                  display: flex;
+                  width: 571px;
+                  position: absolute;
+                  top: 13px;
+                }
+                .top_bar_sec{
+                  width: 97px;
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: space-around;
+                }
+                .yellow_Card:before{
+                  content: '';
+                  background: url(img/yellow-icon.svg);
+                  background-size: contain;
+                  width: 9px;
+                  background-repeat: no-repeat;
+                  height: 9px;
+                  display: block;
+                  position: absolute;
+                  bottom: 21px;
+                  left: -4px;
+                  cursor: pointer;
+                }
+                .red_Card:before{
+                  content: '';
+                  background: url(img/red-card.svg);
+                  background-size: contain;
+                  width: 9px;
+                  background-repeat: no-repeat;
+                  height: 9px;
+                  display: block;
+                  position: absolute;
+                  bottom: 21px;
+                  left: -4px;
+                  cursor: pointer;
+                }
+                .corner_card:before{
+                  content: '';
+                  background: url(img/corner-card.svg);
+                  background-size: contain;
+                  width: 7px;
+                  background-repeat: no-repeat;
+                  height: 7px;
+                  display: block;
+                  position: absolute;
+                  bottom: 21px;
+                  left: -4px;
+                  cursor: pointer;
+                }
+                .red_yellow_Card:before{
+                  content: '';
+                  background: url(img/Red-Yellow-card.svg);
+                  background-size: contain;
+                  width: 9px;
+                  background-repeat: no-repeat;
+                  height: 9px;
+                  display: block;
+                  position: absolute;
+                  bottom: 21px;
+                  left: 2px;
+                  cursor: pointer;
+                }
+                .shot_on_target:before{
+                  content: '';
+                  background: url(img/Shot-on-Target.svg);
+                  background-size: contain;
+                  width: 6px;
+                  background-repeat: no-repeat;
+                  height: 6px;
+                  display: block;
+                  position: absolute;
+                  bottom: 21px;
+                  left: 2px;
+                  cursor: pointer;
+                }
+          </style>
+          <div class="container-width main-container flex">
+              <div class="left-panel football_left_panel">
+                <div class="main-box">
+                  <div class="match-status-title l-text mb-2">Choose Sport</div>
+                  <a href="index.html">
+                  <div class="sport-row mb-2 open_cricket_game">
+                    <div class="icn">
+                      <img alt="Cricket" src="img/cricket-13750a814721f130e5d898ee0ae4851f.png" />
+                    </div>
+                    <div class="type bold">CRICKET</div>
+                  </div>
+                  </a>
+                  <a href="mango-football.html">
+                  <div class="sport-row active-sport mb-2">
+                    <div class="icn">
+                      <img alt="Football" src="img/football-5fc1ef67f4ac648bb2a62481b4d1cfde.png" />
+                    </div>
+                    <div class="type bold">FOOTBALL</div>
+                  </div>
+                  </a>
+                  <a href="mango-tennis.html">
+                  <div class="sport-row mb-2 open_tennis_game">
+                    <div class="icn">
+                      <img alt="Tennis img" src="img/tennis-img-8eea36e88eba328b5ef330aa4b7aa90e.svg" />
+                    </div>
+                    <div class="type bold tennis-g"><span class="translation_missing" title="translation missing: en.tennis">Tennis</span></div>
+                  </div>
+                  </a>
+                </div>
+                <div class="main-box left_main">
+                  <!-- Inplay Cricket and Football Match List -->
+                    <div class="match-status-title mb-2 mt-10">Live Matches</div>
+                      <div class="box match-box mb-2 left-title">
+                        <a href="/user/matches/10/show14">
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 c-text white">INDIA DEMO 17 VS SAW DEMO 18</p>
+                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">30&nbsp;&nbsp;March&nbsp;&nbsp;06:59&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                          </div>
+                          <div class="inner-box flex">
+                            <p class="right-text flex-1 c-text fs-16 grey">
+                              Session Bets | 
+                              <span class="bold clr-green mr-10">
+                                0
+                              </span>
+                              Match Bets | 
+                              <span class="bold clr-green">
+                                0
+                              </span>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="box match-box mb-2 left-title">
+                        <a href="/user/matches/11/show14">
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 c-text white">INDIA DEMO 19 VS SAW DEMO 20</p>
+                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">06&nbsp;&nbsp;April&nbsp;&nbsp;04:53&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                          </div>
+                          <div class="inner-box flex">
+                            <p class="right-text flex-1 c-text fs-16 grey">
+                              Session Bets | 
+                              <span class="bold clr-green mr-10">
+                                0
+                              </span>
+                              Match Bets | 
+                              <span class="bold clr-green">
+                                0
+                              </span>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="box match-box mb-2 left-title">
+                        <a href="/user/matches/13/show14">
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 c-text white">INDIA DEMO TESTING INSPECT  VS  SAW DEMO TESTING  INSPECT</p>
+                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">13&nbsp;&nbsp;April&nbsp;&nbsp;08:09&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                          </div>
+                          <div class="inner-box flex">
+                            <p class="right-text flex-1 c-text fs-16 grey">
+                              Session Bets | 
+                              <span class="bold clr-green mr-10">
+                                0
+                              </span>
+                              Match Bets | 
+                              <span class="bold clr-green">
+                                0
+                              </span>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="box match-box mb-2 left-title">
+                        <a href="/user/matches/19/show14">
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 c-text white">INDIA SESSION DEFAULT   VS   SAW SESSION DEFAULT</p>
+                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">24&nbsp;&nbsp;April&nbsp;&nbsp;05:07&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                          </div>
+                          <div class="inner-box flex">
+                            <p class="right-text flex-1 c-text fs-16 grey">
+                              Session Bets | 
+                              <span class="bold clr-green mr-10">
+                                0
+                              </span>
+                              Match Bets | 
+                              <span class="bold clr-green">
+                                0
+                              </span>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="box match-box mb-2 left-title">
+                        <a href="/user/matches/20/show14">
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 c-text white">INDIA SESSION REVIEW   VS  SAW SESSION REVIEW</p>
+                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">25&nbsp;&nbsp;April&nbsp;&nbsp;04:30&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                          </div>
+                          <div class="inner-box flex">
+                            <p class="right-text flex-1 c-text fs-16 grey">
+                              Session Bets | 
+                              <span class="bold clr-green mr-10">
+                                0
+                              </span>
+                              Match Bets | 
+                              <span class="bold clr-green">
+                                0
+                              </span>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="box match-box mb-2 left-title">
+                        <a href="/user/matches/21/show14">
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 c-text white">INDIA S1    VS  SAW S1</p>
+                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">25&nbsp;&nbsp;April&nbsp;&nbsp;11:22&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                          </div>
+                          <div class="inner-box flex">
+                            <p class="right-text flex-1 c-text fs-16 grey">
+                              Session Bets | 
+                              <span class="bold clr-green mr-10">
+                                0
+                              </span>
+                              Match Bets | 
+                              <span class="bold clr-green">
+                                0
+                              </span>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="box match-box mb-2 left-title">
+                        <a href="/user/matches/14/show14">
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 c-text white">INDIA SESSION DEMO VS SAW SESSION DEMO</p>
+                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">16&nbsp;&nbsp;April&nbsp;&nbsp;09:12&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                          </div>
+                          <div class="inner-box flex">
+                            <p class="right-text flex-1 c-text fs-16 grey">
+                              Session Bets | 
+                              <span class="bold clr-green mr-10">
+                                0
+                              </span>
+                              Match Bets | 
+                              <span class="bold clr-green">
+                                2
+                              </span>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="box match-box mb-2 left-title">
+                        <a href="/user/matches/26/show14">
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 c-text white">INDIA MY LEDGERS DEMO VS SAW MY LEDGERS DEMO</p>
+                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">06&nbsp;&nbsp;June&nbsp;&nbsp;04:49&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                          </div>
+                          <div class="inner-box flex">
+                            <p class="right-text flex-1 c-text fs-16 grey">
+                              Session Bets | 
+                              <span class="bold clr-green mr-10">
+                                0
+                              </span>
+                              Match Bets | 
+                              <span class="bold clr-green">
+                                0
+                              </span>
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="box-title c-text mb-2">Football Premier League</div>
+                              <div class="box match-box mb-2 left-title">
+                                <a href=/user/matches/22/show_football4>
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text white">INDIA FOOTBALL VS SAW FOOTBALL </p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        0
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        2
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                </div>
+              </div><!-- left-panel close -->
+                <!-- =================MIDDLE PANEL START================= -->
+              <div class="middle-panel flex-1">
+                <div class="bread-crum mb-10">
+                  <a href="/user/dashboard">HOME</a>
+                  <a href="#" class="r-arrow"></a>
+                  <a href="/user/matches">Matches</a>
+                  <a href="#" class="r-arrow"></a>
+                  <a href="#" class="active">india my ledgers demo vs saw my ledgers demo</a>
+                </div>
+
+                <div class="l-content-outer flex dark-bg mb-10">
+                  <div class="flex-1 flex l-title">
+                    <img alt="Trophy" src="img/trophy-3ca3742ada20b4b490648cfe2305e625.svg" />
+                    <p class="fs-16 gold bold">india my ledgers demo vs saw my ledgers demo</p>
+                  </div>
+                </div>
+
+                <div class="football_score_panel score-panel mb-10">
+                  <div class="first_panel desktop_first_panel">
+                        <div class="inner-score-contianer">
+                          <div class="scorebaord_panel">
+                             <div class="match_first">
+                                <!-- <span><img src="/assets/user_dark/page/match_icon.png"></span> -->
+                                <div class="team_name">Many City</div>
+                                <div class="last_scorer">15' Goal</div>
+                             </div>
+                             <div class="live_score_section">
+                                <div class="socre_status">2nd</div>
+                                <div class="score"><span>0</span> : <span>2</span></div>
+                                <div class="result_period">HT0 : 0</div>
+                             </div>
+                             <div class="match_second">
+                                <div class="team_name">Man United</div>
+                                <div class="last_scorer">45+4'Goal</div>
+                             </div>
+                          </div>
+                          <div class="momentum_wrap">
+                             <div class="momentum_team">
+                                <div class="m_team_name">ARS</div>
+                                <div class="top_label ht">HT</div>
+                                <div class="right_label"><span>45+4'</span><span>Goal</span></div>
+                             </div>
+                             <div class="momentum_svg_wrap">
+                                <div class="m_inner_line">
+                                </div>
+                                <div class="team_status team-container">
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 1min">
+                                      </div>
+                                      <div class= "vertical2 lines 2min">
+                                        <div class="card_sec">
+                                          <div onClick="document.getElementById('shot_card_section1').style.display='flex'" class="card_c">
+                                             <div class="cards_out_sec">
+                                              <img src="img/Red-Yellow-card.svg">
+                                              </div>
+                                                <div id="shot_card_section1" class="shot_card_section">
+                                                  <ul class="y_sub_content target">
+                                                     <li>
+                                                        YELLOW & RED
+                                                     </li>
+                                                     <li>Minsk</li>
+                                                  </ul>
+                                                  <div class="m_number">6'</div>
+                                               </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                      <div class= "vertical3 lines 3min"></div>
+                                      <div class= "vertical4 lines 4min">
+                                        <div class="card_sec">
+                                          <div onClick="document.getElementById('shot_card_section2').style.display='flex'" class="card_c">
+                                             <div class="cards_out_sec">
+                                              <img src="img/corner-card.svg">
+                                              </div>
+                                                <div id="shot_card_section2" class="shot_card_section">
+                                                  <ul class="y_sub_content target">
+                                                     <li>
+                                                        CORNER
+                                                     </li>
+                                                     <li>Minsk</li>
+                                                  </ul>
+                                                  <div class="m_number">6'</div>
+                                               </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                      <div class= "vertical5 lines 5min"></div>
+                                      <div class= "vertical6 lines 6min"></div>
+                                      <div class= "vertical7 lines 7min">
+                                        <div class="card_sec">
+                                          <div onClick="document.getElementById('shot_card_section3').style.display='flex'" class="card_c">
+                                            <div class="cards_out_sec">
+                                              <img src="img/red-card.svg"></div>
+                                               <div id="shot_card_section3" class="shot_card_section">
+                                                  <ul class="y_sub_content target">
+                                                     <li>
+                                                        RED CARDS
+                                                     </li>
+                                                     <li>Minsk</li>
+                                                  </ul>
+                                                  <div class="m_number">6'</div>
+                                               </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                      <div class= "vertical8 lines 8min"></div>
+                                      <div class= "vertical9 lines 9min"></div>
+                                      <div class= "vertical-10 lines 10min"></div>
+                                      <div class= "vertical-11 lines 11min"></div>
+                                      <div class= "vertical-12 lines 12min"></div>
+                                      <div class= "vertical-13 lines 13min"></div>
+                                      <div class= "vertical-14 lines 14min"></div>
+                                      <div class= "vertical-15 lines 15min">
+                                        <div class="card_sec">
+                                          <div onClick="document.getElementById('shot_card_section4').style.display='flex'" class="card_c">
+                                            <div class="cards_out_sec">
+                                              <img src="img/Shot-on-Target.svg"></div>
+                                               <div id="shot_card_section4" class="shot_card_section">
+                                                  <ul class="y_sub_content target">
+                                                     <li>
+                                                        SHORT ON TARGET
+                                                     </li>
+                                                     <li>Minsk</li>
+                                                  </ul>
+                                                  <div class="m_number">6'</div>
+                                               </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 16min"></div>
+                                      <div class= "vertical2 lines 17min"></div>
+                                      <div class= "vertical3 lines yellow_Card 18min"></div>
+                                      <div class= "vertical4 lines 19min"> </div>
+                                      <div class= "vertical5 lines 20min"></div>
+                                      <div class= "vertical6 lines 21min"></div>
+                                      <div class= "vertical7 lines 22min"></div>
+                                      <div class= "vertical8 lines 23min"></div>
+                                      <div class= "vertical9 lines 24min"></div>
+                                      <div class= "vertical-10 lines 25min"></div>
+                                      <div class= "vertical-11 lines 26min"></div>
+                                      <div class= "vertical-12 lines 27min"></div>
+                                      <div class= "vertical-13 lines 28min"></div>
+                                      <div class= "vertical-14 lines 29min"></div>
+                                      <div class= "vertical-15 lines 30min"></div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 31min"></div>
+                                      <div class= "vertical2 lines 32min"></div>
+                                      <div class= "vertical3 lines 33min"></div>
+                                      <div class= "vertical4 lines 34min"></div>
+                                      <div class= "vertical5 lines 35min"></div>
+                                      <div class= "vertical6 lines 36min"></div>
+                                      <div class= "vertical7 lines 37min"></div>
+                                      <div class= "vertical8 lines 38min"></div>
+                                      <div class= "vertical9 lines 39min"></div>
+                                      <div class= "vertical-10 lines 40min"></div>
+                                      <div class= "vertical-11 lines 41min"></div>
+                                      <div class= "vertical-12 lines 42min"></div>
+                                      <div class= "vertical-13 lines 43min"></div>
+                                      <div class= "vertical-14 lines 44min"></div>
+                                      <div class= "vertical-15 lines 45min"></div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 46min"></div>
+                                      <div class= "vertical2 lines 47min"></div>
+                                      <div class= "vertical3 lines 48min"></div>
+                                      <div class= "vertical4 lines 49min"></div>
+                                      <div class= "vertical5 lines 50min"></div>
+                                      <div class= "vertical6 lines 51min"></div>
+                                      <div class= "vertical7 lines 52min"></div>
+                                      <div class= "vertical8 lines 53min"></div>
+                                      <div class= "vertical9 lines 54min"></div>
+                                      <div class= "vertical-10 lines 55min"></div>
+                                      <div class= "vertical-11 lines 56min"></div>
+                                      <div class= "vertical-12 lines 57min"></div>
+                                      <div class= "vertical-13 lines 58min"></div>
+                                      <div class= "vertical-14 lines 59min"></div>
+                                      <div class= "vertical-15 lines 60min"></div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 61min"></div>
+                                      <div class= "vertical2 lines 62min"></div>
+                                      <div class= "vertical3 lines 63min"></div>
+                                      <div class= "vertical4 lines 64min"></div>
+                                      <div class= "vertical5 lines 65min"></div>
+                                      <div class= "vertical6 lines 66min"></div>
+                                      <div class= "vertical7 lines 67min"></div>
+                                      <div class= "vertical8 lines 68min"></div>
+                                      <div class= "vertical9 lines 69min"></div>
+                                      <div class= "vertical-10 lines 70min"></div>
+                                      <div class= "vertical-11 lines 71min"></div>
+                                      <div class= "vertical-12 lines 72min"></div>
+                                      <div class= "vertical-13 lines 73min"></div>
+                                      <div class= "vertical-14 lines 74min"></div>
+                                      <div class= "vertical-15 lines 75min"></div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 76min"></div>
+                                      <div class= "vertical2 lines 77min"></div>
+                                      <div class= "vertical3 lines 78min"></div>
+                                      <div class= "vertical4 lines 79min"></div>
+                                      <div class= "vertical5 lines 80min"></div>
+                                      <div class= "vertical6 lines 81min"></div>
+                                      <div class= "vertical7 lines 82min"></div>
+                                      <div class= "vertical8 lines 83min"></div>
+                                      <div class= "vertical9 lines 84min"></div>
+                                      <div class= "vertical-10 lines 85min"></div>
+                                      <div class= "vertical-11 lines 86min"></div>
+                                      <div class= "vertical-12 lines 87min"></div>
+                                      <div class= "vertical-13 lines 88min"></div>
+                                      <div class= "vertical-14 lines 89min"></div>
+                                      <div class= "vertical-15 lines 90min"></div>
+                                   </div>
+                                   <div class="bottom_bar">
+                                      <div class= "vertical_b1 line"></div>
+                                      <div class= "vertical_b2 line"></div>
+                                      <div class= "vertical_b3 line"></div>
+                                      <div class= "vertical_b4 line">
+                                         <div class="yellow_c">
+                                            <div onClick="document.getElementById('card_section1').style.display='flex'" class="yellow_card">
+                                              <div class="cards_bottom-icon_sec">
+                                              <img src="img/yellow-icon.svg">
+                                              </div>
+                                               <div id="card_section1" class="card_section">
+                                                  <ul class="y_sub_content">
+                                                     <li>
+                                                        <div class="yellow_card_d"></div>
+                                                        YELLOW CARD
+                                                     </li>
+                                                     <li>B. Bobrujsk(R)</li>
+                                                  </ul>
+                                                  <div class="m_number">11</div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                       <!-- ==========event on click js start========= -->
+
+                                      <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var shot_card_section1 = document.getElementById('shot_card_section1');
+                                          if(event.target != shot_card_section1 && event.target.parentNode !=shot_card_section1){
+                                              shot_card_section1.style.display = 'none';
+                                          }
+                                          }); 
+                                      </script>
+                                       <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var shot_card_section2 = document.getElementById('shot_card_section2');
+                                          if(event.target != shot_card_section2 && event.target.parentNode !=shot_card_section2){
+                                              shot_card_section2.style.display = 'none';
+                                          }
+
+
+                                          });  
+                                      </script>
+                                        <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var shot_card_section3 = document.getElementById('shot_card_section3');
+                                          if(event.target != shot_card_section3 && event.target.parentNode !=shot_card_section3){
+                                              shot_card_section3.style.display = 'none';
+                                          }
+                                            });  
+                                      </script>
+                                       <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var shot_card_section4 = document.getElementById('shot_card_section4');
+                                          if(event.target != shot_card_section4 && event.target.parentNode !=shot_card_section4){
+                                              shot_card_section4.style.display = 'none';
+                                              }
+                                            });  
+                                        </script>
+
+
+                                    <!-- ==========event on click js end========= -->
+                                       <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var card_section1 = document.getElementById('card_section1');
+                                          if(event.target != card_section1 && event.target.parentNode !=card_section1){
+                                              card_section1.style.display = 'none';
+                                              }
+                                        });  
+                                    </script>
+                                      <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var card_section2 = document.getElementById('card_section2');
+                                          if(event.target != card_section2 && event.target.parentNode !=card_section2){
+                                              card_section2.style.display = 'none';
+                                              }
+                                        });  
+                                    </script>
+                                      <div class= "vertical_b5 line"></div>
+                                      <div class= "vertical_b6 line">
+                                        <div class="yellow_c">
+                                            <div onClick="document.getElementById('card_section2').style.display='flex'" class="yellow_card">
+                                            <div class="cards_bottom-icon_sec">
+                                            <img src="/assets/user_dark/page/Shot-off-Target.svg">
+                                            </div>
+                                             <div id="card_section2" class="card_section">
+                                                <ul class="y_sub_content">
+                                                   <li>
+                                                      <div class="yellow_card_d"></div>
+                                                      SHOT OF TARGET
+                                                   </li>
+                                                   <li>B. Bobrujsk(R)</li>
+                                                </ul>
+                                                <div class="m_number">11</div>
+                                             </div>
+                                          </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="lines_divider">
+                                   <div class= "vertical_line1 divider_l"></div>
+                                   <div class= "vertical_line2 divider_l"></div>
+                                   <div class= "vertical_line3 divider_l"></div>
+                                   <div class= "vertical_line4 divider_l">
+                                     <div class="stoppage_sec">
+                                     </div>
+                                   </div>
+                                   <div class= "vertical_line5 divider_l"></div>
+                                   <div class= "vertical_line6 divider_l"></div>
+                                   <div class= "vertical_line7 divider_l"></div>
+                                </div>
+                             </div>
+
+
+                             <div class="momentum_team">
+                                <div class="m_team_name">LFC</div>
+                                <div class="l_status top_label">15</div>
+                                <div class="l_status top_label">30</div>
+                                <div class="top_label">45'+4</div>
+                                <div class="l_status top_label">60</div>
+                                <div class="l_status top_label">75</div>
+                                <div class="right_label">90'+3</div>
+                             </div>
+                          </div>
+                       </div>
+                  </div>
+                   <div class="carousel slider-panel" data-timer="none">
+                      <div class="carousel-deck">
+                        <div class="first_panel carousel-slide atCenter">
+                          <div class="inner-score-contianer">
+                          <div class="scorebaord_panel">
+                             <div class="match_first">
+                                <!-- <span><img src="/assets/user_dark/page/match_icon.png"></span> -->
+                                <div class="team_name">Many City</div>
+                                <div class="last_scorer">15' Goal</div>
+                             </div>
+                             <div class="live_score_section">
+                                <div class="socre_status">2nd</div>
+                                <div class="score"><span>0</span> : <span>2</span></div>
+                                <div class="result_period">HT0 : 0</div>
+                             </div>
+                             <div class="match_second">
+                                <div class="team_name">Man United</div>
+                                <div class="last_scorer">45+4'Goal</div>
+                             </div>
+                          </div>
+                          <div class="momentum_wrap">
+                             <div class="momentum_team">
+                                <div class="m_team_name">ARS</div>
+                                <div class="top_label ht">HT</div>
+                                <div class="right_label"><span>45+4'</span><span>Goal</span></div>
+                             </div>
+                             <div class="momentum_svg_wrap">
+                                <div class="m_inner_line">
+                                </div>
+                                <div class="team_status team-container">
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 1min">
+                                      </div>
+                                      <div class= "vertical2 lines 2min">
+                                        <div class="card_sec">
+                                          <div onClick="document.getElementById('shot_card_section1').style.display='flex'" class="card_c">
+                                             <div class="cards_out_sec">
+                                              <img src="img/Red-Yellow-card.svg">
+                                              </div>
+                                                <div id="shot_card_section1" class="shot_card_section">
+                                                  <ul class="y_sub_content target">
+                                                     <li>
+                                                        YELLOW & RED
+                                                     </li>
+                                                     <li>Minsk</li>
+                                                  </ul>
+                                                  <div class="m_number">6'</div>
+                                               </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                      <div class= "vertical3 lines 3min"></div>
+                                      <div class= "vertical4 lines 4min">
+                                        <div class="card_sec">
+                                          <div onClick="document.getElementById('shot_card_section2').style.display='flex'" class="card_c">
+                                             <div class="cards_out_sec">
+                                              <img src="img/corner-card.svg">
+                                              </div>
+                                                <div id="shot_card_section2" class="shot_card_section">
+                                                  <ul class="y_sub_content target">
+                                                     <li>
+                                                        CORNER
+                                                     </li>
+                                                     <li>Minsk</li>
+                                                  </ul>
+                                                  <div class="m_number">6'</div>
+                                               </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                      <div class= "vertical5 lines 5min"></div>
+                                      <div class= "vertical6 lines 6min"></div>
+                                      <div class= "vertical7 lines 7min">
+                                        <div class="card_sec">
+                                          <div onClick="document.getElementById('shot_card_section3').style.display='flex'" class="card_c">
+                                            <div class="cards_out_sec">
+                                              <img src="img/red-card.svg"></div>
+                                               <div id="shot_card_section3" class="shot_card_section">
+                                                  <ul class="y_sub_content target">
+                                                     <li>
+                                                        RED CARDS
+                                                     </li>
+                                                     <li>Minsk</li>
+                                                  </ul>
+                                                  <div class="m_number">6'</div>
+                                               </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                      <div class= "vertical8 lines 8min"></div>
+                                      <div class= "vertical9 lines 9min"></div>
+                                      <div class= "vertical-10 lines 10min"></div>
+                                      <div class= "vertical-11 lines 11min"></div>
+                                      <div class= "vertical-12 lines 12min"></div>
+                                      <div class= "vertical-13 lines 13min"></div>
+                                      <div class= "vertical-14 lines 14min"></div>
+                                      <div class= "vertical-15 lines 15min">
+                                        <div class="card_sec">
+                                          <div onClick="document.getElementById('shot_card_section4').style.display='flex'" class="card_c">
+                                            <div class="cards_out_sec">
+                                              <img src="img/Shot-on-Target.svg"></div>
+                                               <div id="shot_card_section4" class="shot_card_section">
+                                                  <ul class="y_sub_content target">
+                                                     <li>
+                                                        SHORT ON TARGET
+                                                     </li>
+                                                     <li>Minsk</li>
+                                                  </ul>
+                                                  <div class="m_number">6'</div>
+                                               </div>
+                                          </div>
+                                        </div>
+                                        </div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 16min"> </div>
+                                      <div class= "vertical2 lines 17min"></div>
+                                      <div class= "vertical3 lines yellow_Card 18min"></div>
+                                      <div class= "vertical4 lines 19min"></div>
+                                      <div class= "vertical5 lines 20min"></div>
+                                      <div class= "vertical6 lines 21min"></div>
+                                      <div class= "vertical7 lines 22min"></div>
+                                      <div class= "vertical8 lines 23min"></div>
+                                      <div class= "vertical9 lines 24min"></div>
+                                      <div class= "vertical-10 lines 25min"></div>
+                                      <div class= "vertical-11 lines 26min"></div>
+                                      <div class= "vertical-12 lines 27min"></div>
+                                      <div class= "vertical-13 lines 28min"></div>
+                                      <div class= "vertical-14 lines 29min"></div>
+                                      <div class= "vertical-15 lines 30min"></div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 31min"></div>
+                                      <div class= "vertical2 lines 32min"></div>
+                                      <div class= "vertical3 lines 33min"></div>
+                                      <div class= "vertical4 lines 34min"></div>
+                                      <div class= "vertical5 lines 35min"></div>
+                                      <div class= "vertical6 lines 36min"></div>
+                                      <div class= "vertical7 lines 37min"></div>
+                                      <div class= "vertical8 lines 38min"></div>
+                                      <div class= "vertical9 lines 39min"></div>
+                                      <div class= "vertical-10 lines 40min"></div>
+                                      <div class= "vertical-11 lines 41min"></div>
+                                      <div class= "vertical-12 lines 42min"></div>
+                                      <div class= "vertical-13 lines 43min"></div>
+                                      <div class= "vertical-14 lines 44min"></div>
+                                      <div class= "vertical-15 lines 45min"></div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 46min"></div>
+                                      <div class= "vertical2 lines 47min"></div>
+                                      <div class= "vertical3 lines 48min"></div>
+                                      <div class= "vertical4 lines 49min"></div>
+                                      <div class= "vertical5 lines 50min"></div>
+                                      <div class= "vertical6 lines 51min"></div>
+                                      <div class= "vertical7 lines 52min"></div>
+                                      <div class= "vertical8 lines 53min"></div>
+                                      <div class= "vertical9 lines 54min"></div>
+                                      <div class= "vertical-10 lines 55min"></div>
+                                      <div class= "vertical-11 lines 56min"></div>
+                                      <div class= "vertical-12 lines 57min"></div>
+                                      <div class= "vertical-13 lines 58min"></div>
+                                      <div class= "vertical-14 lines 59min"></div>
+                                      <div class= "vertical-15 lines 60min"></div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 61min"></div>
+                                      <div class= "vertical2 lines 62min"></div>
+                                      <div class= "vertical3 lines 63min"></div>
+                                      <div class= "vertical4 lines 64min"></div>
+                                      <div class= "vertical5 lines 65min"></div>
+                                      <div class= "vertical6 lines 66min"></div>
+                                      <div class= "vertical7 lines 67min"></div>
+                                      <div class= "vertical8 lines 68min"></div>
+                                      <div class= "vertical9 lines 69min"></div>
+                                      <div class= "vertical-10 lines 70min"></div>
+                                      <div class= "vertical-11 lines 71min"></div>
+                                      <div class= "vertical-12 lines 72min"></div>
+                                      <div class= "vertical-13 lines 73min"></div>
+                                      <div class= "vertical-14 lines 74min"></div>
+                                      <div class= "vertical-15 lines 75min"></div>
+                                   </div>
+                                   <div class="top_bar_sec">
+                                      <div class= "vertical lines 76min"></div>
+                                      <div class= "vertical2 lines 77min"></div>
+                                      <div class= "vertical3 lines 78min"></div>
+                                      <div class= "vertical4 lines 79min"></div>
+                                      <div class= "vertical5 lines 80min"></div>
+                                      <div class= "vertical6 lines 81min"></div>
+                                      <div class= "vertical7 lines 82min"></div>
+                                      <div class= "vertical8 lines 83min"></div>
+                                      <div class= "vertical9 lines 84min"></div>
+                                      <div class= "vertical-10 lines 85min"></div>
+                                      <div class= "vertical-11 lines 86min"></div>
+                                      <div class= "vertical-12 lines 87min"></div>
+                                      <div class= "vertical-13 lines 88min"></div>
+                                      <div class= "vertical-14 lines 89min"></div>
+                                      <div class= "vertical-15 lines 90min">
+                                      </div>
+                                   </div>
+                                   <div class="bottom_bar">
+                                      <div class="vertical_b1 line"></div>
+                                      <div class="vertical_b2 line"></div>
+                                      <div class="vertical_b3 line"></div>
+                                      <div class="vertical_b4 line">
+                                         <div class="yellow_c">
+                                            <div onclick="document.getElementById('card_section1').style.display='flex'" class="yellow_card">
+                                              <div class="cards_bottom-icon_sec">
+                                              <img src="/assets/user_dark/page/yellow-icon.svg">
+                                              </div>
+                                               <div id="card_section1" class="card_section">
+                                                  <ul class="y_sub_content">
+                                                     <li>
+                                                        <div class="yellow_card_d"></div>
+                                                        YELLOW CARD
+                                                     </li>
+                                                     <li>B. Bobrujsk(R)</li>
+                                                  </ul>
+                                                  <div class="m_number">11</div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+
+
+                                       <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var card_section1 = document.getElementById('card_section1');
+                                          if(event.target != card_section1 && event.target.parentNode !=card_section1){
+                                              card_section1.style.display = 'none';
+                                              }
+                                            });  
+                                      </script>
+                                      <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var card_section2 = document.getElementById('card_section2');
+                                          if(event.target != card_section2 && event.target.parentNode !=card_section2){
+                                              card_section2.style.display = 'none';
+                                              }
+                                            });  
+                                      </script>
+                                      <div class="vertical_b5 line"></div>
+                                      <div class="vertical_b6 line">
+                                        <div class="yellow_c">
+                                            <div onclick="document.getElementById('card_section2').style.display='flex'" class="yellow_card">
+                                            <div class="cards_bottom-icon_sec">
+                                            <img src="/assets/user_dark/page/Shot-off-Target.svg">
+                                            </div>
+                                             <div id="card_section2" class="card_section">
+                                                <ul class="y_sub_content">
+                                                   <li>
+                                                      <div class="yellow_card_d"></div>
+                                                      SHOT OF TARGET
+                                                   </li>
+                                                   <li>B. Bobrujsk(R)</li>
+                                                </ul>
+                                                <div class="m_number">11</div>
+                                             </div>
+                                          </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                  <div class="lines_divider">
+                                   <div class="vertical_line1 divider_l"></div>
+                                   <div class="vertical_line2 divider_l"></div>
+                                   <div class="vertical_line3 divider_l"></div>
+                                   <div class="vertical_line4 divider_l">
+                                     <div class="stoppage_sec">
+                                     </div>
+                                   </div>
+                                   <div class="vertical_line5 divider_l"></div>
+                                   <div class="vertical_line6 divider_l"></div>
+                                   <div class="vertical_line7 divider_l"></div>
+                                  </div>
+                             </div>
+
+
+                             <div class="momentum_team">
+                                <div class="m_team_name">LFC</div>
+                                <div class="l_status top_label">15</div>
+                                <div class="l_status top_label">30</div>
+                                <div class="top_label">45'+4</div>
+                                <div class="l_status top_label">60</div>
+                                <div class="l_status top_label">75</div>
+                                <div class="right_label">90'+3</div>
+                             </div>
+                          </div>
+                       </div>
+                       </div>
+
+
+                        <!-- ==========event on click js start========= -->
+
+                                      <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var shot_card_section1 = document.getElementById('shot_card_section1');
+                                          if(event.target != shot_card_section1 && event.target.parentNode !=shot_card_section1){
+                                              shot_card_section1.style.display = 'none';
+                                            }
+                                           });  
+                                      </script>
+                                       <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var shot_card_section2 = document.getElementById('shot_card_section2');
+                                          if(event.target != shot_card_section2 && event.target.parentNode !=shot_card_section2){
+                                              shot_card_section2.style.display = 'none';
+                                          }
+                                            });  
+                                      </script>
+                                        <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var shot_card_section3 = document.getElementById('shot_card_section3');
+                                          if(event.target != shot_card_section3 && event.target.parentNode !=shot_card_section3){
+                                              shot_card_section3.style.display = 'none';
+                                          }
+                                            });  
+                                      </script>
+                                       <script type="text/javascript">
+                                         window.addEventListener('mouseup',function(event){
+                                          var shot_card_section4 = document.getElementById('shot_card_section4');
+                                          if(event.target != shot_card_section4 && event.target.parentNode !=shot_card_section4){
+                                              shot_card_section4.style.display = 'none';
+                                              }
+                                              });  
+                                      </script>
+
+
+                                    <!-- ==========event on click js end========= -->
+                            <div class="second_panel carousel-slide stat-box-mob moving atLeft">
+                             <div class="statistics_panel">
+                               <div class="inner_s_panel">
+                                <div data-tabs="" class="tab" style="display: flex; min-height: 205px;">  
+                                  <div class="first_slide tab" style="">
+                                          <div class="inner_head f-stat-head f-selcet-tab active-tab">
+                                             <div class="heade_panel_icon">
+                                               <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                             </div>
+                                          </div>
+                                      </label>
+                                      <div class="tab__content f-tabs_content stat-content" style="position: absolute;">
+                                         <div class="m_head">
+                                           STATISTICS
+                                         </div>
+                                          <div class="s_inner_section">
+                                              <div class="cards_sec">
+                                              <div class="left_side_card d-flex"><span>0</span> 
+                                                <div class="y_r_card_sec d-flex">
+                                                  <div class="y_card">
+                                                    
+                                                  </div>
+                                                  <div class="r_card">
+                                                    
+                                                  </div>
+                                                </div>
+                                                <span>0</span>
+                                              </div>
+                                              <div class="card_header">CARDS</div>
+                                              <div class="right_side_card d-flex"><span>0</span>
+                                                <div class="y_r_card_sec d-flex">
+                                                    <div class="y_card">
+                                                    </div>
+                                                    <div class="r_card">
+                                                    </div>
+                                                </div>
+                                               <span>0</span>
+                                              </div>
+                                            </div>
+                                            <div class="cicks_Sec">
+                                              <div class="left_c">3</div>
+                                              <div class="center_c">SHOTS ON TARGET</div>
+                                              <div class="right_c">3</div>
+                                            </div>
+                                            <div class="cicks_Sec">
+                                              <div class="left_c">0</div>
+                                              <div class="center_c">SHOTS OFF TARGET</div>
+                                              <div class="right_c">1</div>
+                                            </div>
+                                             <div class="cicks_Sec">
+                                              <div class="left_c">1</div>
+                                              <div class="center_c">SHOTS BLOCKED</div>
+                                              <div class="right_c">1</div>
+                                            </div>
+                                            <div class="cicks_Sec">
+                                              <div class="left_c">1</div>
+                                              <div class="center_c">CORNER KICKS</div>
+                                              <div class="right_c">0</div>
+                                            </div>
+                                          </div>
+                                        </div> 
+                                    </div>
+                                    <div class="head-to-head-panel tab">
+                                            <div class="inner_head f-head-to-head f-selcet-tab">
+                                               <div class="heade_panel_icon head-t-head-icon">
+                                                 <span><i class="fa fa-user" aria-hidden="true"></i></span> / <span><i class="fa fa-user" aria-hidden="true"></i></span> 
+                                               </div>
+                                            </div>
+                                        </label>
+                                        <div class="tab__content f-tabs_content f-head-content" style="position: absolute;display: none;">
+                                          <div class="m_head">
+                                            HEAD TO HEAD
+                                         </div>
+                                        </div>
+                                    </div>
+                                     <div class="standings-panel tab">
+                                            <div class="inner_head f-standings-head f-selcet-tab">
+                                               <div class="heade_panel_icon head-t-head-icon">
+                                                 <span>
+                                                  <img src="img/standing-icon.png">
+                                                </span>  
+                                               </div>
+                                            </div>
+                                        </label>
+                                        <div class="tab__content f-tabs_content f-standings-content" style="position: absolute;display: none;">
+                                          <div class="m_head">
+                                            STANDINGS
+                                         </div>
+                                        </div>
+                                    </div>
+                                     <div class="timeline-inner-panel tab">
+                                            <div class="inner_head f-timeline-head f-selcet-tab">
+                                               <div class="heade_panel_icon">
+                                                 <span>
+                                                  <i class="fa fa-microphone" aria-hidden="true"></i>
+                                                </span> 
+                                               </div>
+                                            </div>
+                                        </label>
+                                        <div class="tab__content f-tabs_content f-timeline-content" style="position: absolute; display: none;">
+                                          <div class="m_head">
+                                            TIMELINE
+                                         </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                          </div>
+
+                      <div class="carousel-controls"><div class="carousel-move-left">&lt;</div><div class="carousel-move-right">&gt;</div><div class="carousel-pagination"><button class="carousel-paginate active">●</button><button class="carousel-paginate">●</button></div></div>
+                  </div>
+                  
+                   <div class="bet-open-container">
+                   <div class="bet_open_inner_sec">
+                      BET OPEN
+                   </div>
+                 </div>
+                </div>
+
+
+                <div class="nav-list mb-10 market-session-bar">
+                  <span class="nav-item active">All 
+                    <span class="count">0</span>
+                  </span>
+                  <span class="nav-item">Market
+                    <span class="count">0</span>
+                  </span>
+                  <span class="nav-item">SESSION
+                    <span class="count">0</span>
+                  </span>
+                  <!-- <span class="nav-item">Even Odd 
+                    <span class="count"></span>
+                  </span>
+                  <span class="nav-item">Ending Digit 
+                    <span class="count"></span>
+                  </span> -->
+                </div>
+
+                <div class="two-col clear mb-10">
+                  <div class="width-50 md-100 mr-5">
+                    <!-- Market Bet Board start -->
+                        <div class="f-inner-holder inner-holder markets-show mb-10 clear">
+                                <div class="heading-row flex">
+                                  <p class="l-text fs-16 flex-2">Market | <span class="clr-green bold">Match Winner</span></p>
+                                  <p class="r-text flex-1"><span class="clr-green bold">0</span></p>
+                                  <p class="r-text toggle-icon"></p>
+                                </div>
+                                <div class="match-winner-header heading-row match-div"> 
+                                  <p class="lagai">Lagai</p>
+                                  <p class="khai">Khai</p>
+                                </div>
+                                <div class="data-row flex data-row-100 mb-2" data-market-id = "34" data-market-sid = "Match Winner_26">
+                                  
+                                  <p class="l-text fs-16 flex-1" data-runner-sid = "india_26" data-column = "runner_name"  class="runner_row_india_26 flag bet-place-tbl-td runner-nm-first "style="text-align:left;"><img class="runner-flags hidden" src="/images/index.png">
+                                    india
+                                  </p>
+
+                                  <p class="c-text flex-1 flex-half" ><span class="bold clr-green" data-runner-sid = "india_26" data-column = "position" class="runner_row_india_26 bet-place-tbl-td  runner-nm-first favorite_market  bet-val-cent" data-position = "0" >0</span></p>
+
+                                  <p class="flex r-text flex-1 justify-end">
+                                    <span data-runner-sid = "india_26" data-runner-name = "india" data-column = "back" class="l-button round-text dark open-keyboard MarketTable bet-place-tbl-td first-runner-bet-odds-yes-value cursor-pointer active-lagai-bet-box-color "odd-val='1.2' market-id = '34' runner-id ='93' match-id='26' heroic-market-type="match_winner"  data-id ='LAGAI' id="Match Winner_26_back_india_26">0.20</span>
+                                    <span data-runner-sid = "india_26" data-runner-name = "india" data-column = "lay" class="k-button round-text light open-keyboard MarketTable bet-place-tbl-td first-runner-bet-odds-no-value cursor-pointer active-khai-bet-box-color " odd-val='1.3' market-id = '34' runner-id ='93' match-id='26' heroic-market-type="match_winner" data-id ='KHAI' id="Match Winner_26_lay_india_26">0.30</span>
+                                  </p>
+                                </div>
+                                <div class="data-row flex data-row-100 mb-2" data-market-id = "34" data-market-sid = "Match Winner_26">
+                                  
+                                  <p class="l-text fs-16 flex-1" data-runner-sid = "saw_26" data-column = "runner_name"  class="runner_row_saw_26 flag bet-place-tbl-td"style="text-align:left;"><img class="runner-flags hidden" src="/images/index.png">
+                                    saw
+                                  </p>
+
+                                  <p class="c-text flex-1 flex-half" ><span class="bold clr-green" data-runner-sid = "saw_26" data-column = "position" class="runner_row_saw_26 bet-place-tbl-td  bet-val-cent" data-position = "0" >0</span></p>
+
+                                  <p class="flex r-text flex-1 justify-end">
+                                    <span data-runner-sid = "saw_26" data-runner-name = "saw" data-column = "back" class="l-button round-text dark open-keyboard MarketTable bet-place-tbl-td first-runner-bet-odds-yes-value cursor-pointer active-lagai-bet-box-color close-status market-suspend-b"odd-val='' market-id = '34' runner-id ='94' match-id='26' heroic-market-type="match_winner"  data-id ='LAGAI' id="Match Winner_26_back_saw_26"></span>
+                                    <span data-runner-sid = "saw_26" data-runner-name = "saw" data-column = "lay" class="k-button round-text light open-keyboard MarketTable bet-place-tbl-td first-runner-bet-odds-no-value cursor-pointer active-khai-bet-box-color close-status market-suspend-p" odd-val='' market-id = '34' runner-id ='94' match-id='26' heroic-market-type="match_winner" data-id ='KHAI' id="Match Winner_26_lay_saw_26"></span>
+                                  </p>
+                                </div>
+                        </div><!-- inner-holder close -->
+                    <!-- Market Bet Board End -->
+
+                    <!-- Custom Market Bet Board start -->
+                    <!-- Custom Market Bet Board End -->
+
+                     <!-- Market Bet Amount Form start -->
+                         <form accept-charset="UTF-8" action="/user/matches/create_bet" class="input-coin market-form show_bet_place_btn mb-10" data-remote="true" method="post" style=""><div style="display:none;"><input name="utf8" type="hidden" value="✓"></div>
+                            <div class="placed-bet market-bet-desk f-show-market-bet-desk" style="display: none;">
+                            <div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()"><i class="fa fa-times" aria-hidden="true"></i></span></div>
+                            <div class="table inner-bet br-bt">
+                              <div class="cell l-text bold runner" id="runner_type">india</div>
+                              <div class="cell r-text">
+                                <p class="bold bet-type" id="odds_desc">LAGAI</p>
+                                <p class="bold bet-odds" id="odds">0.20</p>
+                              </div>
+                            </div>
+                            <div class="inner-box flex br-bt">
+                                <p class="left-text flex-1 l-text white">Market </p>
+                                <p class="right-text flex-1 r-text bold white" name="runner_nm" id="market-nm" value="">match_winner</p>
+                            </div>
+
+                            <div class="inner-box flex br-bt">
+                              <div class="bet-input c-text">
+                                <p class="sign bold minus" onclick="addValue(-1)">−</p>
+                                <input class="c-text bold amt_field keyup" id="coin_countity_bet" type="text" name="stack" title="Coin" value="0" autocomplete="off">
+                                <input type="hidden" id="bet-hidden" value="-1">
+                                <p class="sign bold plus" onclick="addValue(1)">+</p>
+                              </div>
+                            </div>
+
+                            <input id="odds_type" type="hidden" name="odds_type" value="LAGAI">
+                            <input id="runner_id" type="hidden" name="runner_id" value="29">
+                            <input id="odds_val" type="hidden" name="odds_val" value="1.21">
+                            <input id="match_id" type="hidden" name="match_id" value="10">
+                            <input id="market_id" type="hidden" name="market_id" value="11">
+                            <input id="match_winner_heroic_market_type" class="market-type" type="hidden" name="heroic_market_type" value="match_winner">
+
+                            <div class="sl-desktop-numpad-container br-bt">
+                              <div class="num-btn-holder flex">
+                                <div class="num-btn-row sl-superbtn-row flex mt-5">
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(100)">100</div>
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(500)">500</div>
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(1000)">1H</div>
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(5000)">5H</div>
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(10000)">10H</div>
+                                </div>
+                                <div class="num-btn-row sl-superbtn-row flex mt-5">
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(25000)">25H</div>
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(50000)">50H</div>
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(100000)">1L</div>
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(200000)">2L</div>
+                                  <div class="sl-desktop-num-btn" onclick="addSuperValue(500000)">5L</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="inner-box flex br-bt">
+                              <div class="bet-input c-text">
+                                <p class="left-text c-text white">Return | <span class="bold clr-green" id="return-value">0.00</span></p>
+                              </div>
+                            </div>
+                            <div class="inner-box flex br-bt">
+                              <button class="bet-btn button alert place-btn flex-1 mr-10" type="submit" data-disable="true">Done</button>
+                              <button class="bet-btn clear-btn flex-1" type="button" onclick="clearBet()">Clear Bet</button>
+                            </div>
+                            </div>
+                            </form>         <!-- Market Bet Amount Form End --> 
+                    </div>
+                    <!-- width-50 close -->
+
+                  <div class="width-50 md-100 ml-5">
+                      <div class="session-market">
+                        <div class="session-markets-divs">
+                          <!-- Session bet board start -->
+                              <div class="heading-row flex sessions-thead">
+                                <p class="l-text fs-16 flex-2 sessions-title">Market | <span class="clr-green bold">SESSION</span></p>
+                                <p class="r-text flex-1">
+                                    <span class="clr-green bold">
+                                      0   
+                                    </span>
+                                </p>
+                              </div>
+                                  <div class="f-inner-holder inner-holder clear mb-2 markets-show" data-heroic-market-type="session" data-heroic-market-id="17" data-innings="1" data-session-type="runs_in_overs" data-overs="15">
+                                    <div class="heading-row flex">
+                                      <p class="l-text fs-16 flex-2" data-column="session_title">
+                                        SESSION | <span class="clr-green bold">15 Overs, india demo testing inspect </span>
+                                      </p>
+                                      <p class="r-text toggle-icon"></p>
+                                    </div>
+
+                                    <div class="data-row flex data-row-50 mr-2" style="display: flex;">
+                                      <p class="flex l-text fs-16 flex-2">
+                                        <span>No | </span>
+                                        <span data-column="no_runs" session-type="15 Overs, india demo testing inspect " heroic-market-type="session" session-rate="1.0" class="k-button round-text light open-keyboard-session not-value-box-color SessionTable bet-place-tbl-td first-runner-bet-odds-yes-value cursor-pointer " data-id="NO" match-id="13" session-run-id="21" session-id="17" id="17_no">
+                                          30
+                                        </span>
+                                      </p>
+                                      <p class="r-text flex-1 bold">
+                                        <span class="clr-green bold" data-column="no_rate" id="17_no_rate">
+                                          1.0
+                                        </span>
+                                      </p>
+                                    </div>
+                                    
+                                    <div class="data-row flex data-row-50 mb-2" style="display: flex;">
+                                      <p class="flex l-text fs-16 flex-2">
+                                        <span>Yes | </span>
+                                        <span data-column="yes_runs" session-type="15 Overs, india demo testing inspect " heroic-market-type="session" session-rate="1.0" class="l-button round-text dark open-keyboard-session yes-value-box-color SessionTable bet-place-tbl-td first-runner-bet-odds-no-value cursor-pointer " data-id="YES" match-id="13" session-run-id="21" session-id="17" id="17_yes">
+                                          31
+                                        </span>
+                                      </p>
+                                      <p class="r-text flex-1 bold">
+                                        <span data-column="yes_rate" class="clr-green bold bet-place-tbl-td bet-val-cent " id="17_yes_rate">
+                                          1.0
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <!-- inner-holder close -->
+                                  
+                                  <!-- inner-holder close -->
+                          <!-- Session bet board End -->
+                        </div>  
+                      </div>
+
+                      <!-- Session Bet Amount Form start -->
+                      <form accept-charset="UTF-8" action="/user/matches/create_session_bet" class="input-coin session-form show_bet_place_btn mb-10" data-remote="true" method="post" style=""><div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+                        <div class="placed-bet session-bet-desk mt-10 f-show-session-bet-desk" style="display: none;">
+                          <div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()"><i class="fa fa-times" aria-hidden="true"></i></span></div>
+                          <div class="table inner-bet br-bt">
+                            <div class="cell l-text bold runner" id="session_runner_type">YES</div>
+                            <div class="cell r-text">
+                              <p class="bold bet-odds" id="runns">
+                                            31
+                                          </p>
+                            </div>
+                          </div>
+                          <div class="inner-box flex br-bt">
+                            <p class="left-text flex-1 l-text white">SESSION</p>
+                            <p class="right-text flex-1 r-text bold white" name="runner_nm" id="session-nm" value="">15 Overs, india demo testing inspect </p>
+                          </div>
+
+                          <div class="inner-box flex br-bt">
+                            <div class="bet-input c-text">
+                              <p class="sign bold minus" onclick="addValue(-1)">−</p>
+                              <input class="c-text bold amt_field keyup" id="coin_countity_session" type="text" name="coins_debited" title="Coin" value="0" autocomplete="off">
+                              <input type="hidden" id="bet-hidden" value="-1">
+                              <p class="sign bold plus" onclick="addValue(1)">+</p>
+                            </div>
+                          </div>
+
+                          <input id="s_match_id" type="hidden" name="match_id" value="13">
+                          <input id="runs" type="hidden" name="runs" value="30">
+                          <input id="action" type="hidden" name="session_bet_type" value="NO">
+                          <input id="session_id" type="hidden" name="session_id" value="17">
+                          <input id="session_run_id" type="hidden" name="session_run_id" value="21">
+                          <input id="session_rate" type="hidden" name="odd_value" value="2.00">
+                          <input id="session_heroic_market_type" class="market-type" type="hidden" name="heroic_market_type" value="session">
+
+                        <div class="sl-desktop-numpad-container br-bt">
+                          <div class="num-btn-holder flex">
+                            <div class="num-btn-row sl-superbtn-row flex mt-5">
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(100)">100</div>
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(500)">500</div>
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(1000)">1H</div>
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(5000)">5H</div>
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(10000)">10H</div>
+                            </div>
+                            <div class="num-btn-row sl-superbtn-row flex mt-5">
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(25000)">25H</div>
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(50000)">50H</div>
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(100000)">1L</div>
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(200000)">2L</div>
+                              <div class="sl-desktop-num-btn" onclick="addSuperValue(500000)">5L</div>
+                            </div>
+                          </div>
+                        </div>
+
+                          <div class="inner-box flex br-bt">
+                            <div class="bet-input c-text">
+                              <p class="left-text c-text white">Return | <span class="bold clr-green" id="session-return-value">0.00</span></p>
+                            </div>
+                          </div>
+                          <div class="inner-box flex br-bt">
+                            <button class="bet-btn button alert place-btn flex-1 mr-10" type="submit">Done</button>
+                            <button class="bet-btn clear-btn flex-1" type="button" onclick="clearBet()">Clear Bet</button>
+                          </div>
+                        </div>
+                          </form>          
+                          <!-- Session Bet Amount Form End -->
+
+                        <!-- ENDING DIGIT MARKET START -->
+                        <!-- ENDING DIGIT MARKET End -->
+
+                        <!-- Bets Tables -->
+                          <div class="bets-container">
+                            <!-- Match Bets Table Start -->
+                            <!-- Match Bets Table Close -->
+
+                            <!-- Session bet listing start-->
+                            <!-- Session bet listing End-->  
+                                
+                            <!-- Session bet listing End--> 
+                              <div class="inner-holder bets-outer mb-10 clear">
+                                <div class="heading-row flex">
+                                  <p class="l-text fs-16 flex-2">
+                                    <span class="bold">LIVE MATCHES</span>
+                                  </p>
+                                  <p class="r-text toggle-icon"></p>
+                                </div>
+                                      <div class="box match-box box-background mb-2">
+                                        <a href="/user/matches/10/show14">
+                                          <div class="inner-box flex br-bt">
+                                            <p class="left-text flex-1 c-text">INDIA DEMO 17 VS SAW DEMO 18</p>
+                                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">30&nbsp;&nbsp;March&nbsp;&nbsp;06:59&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                          </div>
+                                          <div class="inner-box flex">
+                                            <p class="right-text flex-1 c-text fs-16 grey">
+                                              Session Bets | 
+                                              <span class="bold clr-green mr-10">
+                                                0
+                                              </span>
+                                              Match Bets | 
+                                              <span class="bold clr-green">
+                                                0
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="box match-box box-background mb-2">
+                                        <a href="/user/matches/11/show14">
+                                          <div class="inner-box flex br-bt">
+                                            <p class="left-text flex-1 c-text">INDIA DEMO 19 VS SAW DEMO 20</p>
+                                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">06&nbsp;&nbsp;April&nbsp;&nbsp;04:53&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                          </div>
+                                          <div class="inner-box flex">
+                                            <p class="right-text flex-1 c-text fs-16 grey">
+                                              Session Bets | 
+                                              <span class="bold clr-green mr-10">
+                                                0
+                                              </span>
+                                              Match Bets | 
+                                              <span class="bold clr-green">
+                                                0
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="box match-box box-background mb-2">
+                                        <a href="/user/matches/19/show14">
+                                          <div class="inner-box flex br-bt">
+                                            <p class="left-text flex-1 c-text">INDIA SESSION DEFAULT   VS   SAW SESSION DEFAULT</p>
+                                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">24&nbsp;&nbsp;April&nbsp;&nbsp;05:07&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                          </div>
+                                          <div class="inner-box flex">
+                                            <p class="right-text flex-1 c-text fs-16 grey">
+                                              Session Bets | 
+                                              <span class="bold clr-green mr-10">
+                                                0
+                                              </span>
+                                              Match Bets | 
+                                              <span class="bold clr-green">
+                                                0
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="box match-box box-background mb-2">
+                                        <a href="/user/matches/20/show14">
+                                          <div class="inner-box flex br-bt">
+                                            <p class="left-text flex-1 c-text">INDIA SESSION REVIEW   VS  SAW SESSION REVIEW</p>
+                                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">25&nbsp;&nbsp;April&nbsp;&nbsp;04:30&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                          </div>
+                                          <div class="inner-box flex">
+                                            <p class="right-text flex-1 c-text fs-16 grey">
+                                              Session Bets | 
+                                              <span class="bold clr-green mr-10">
+                                                0
+                                              </span>
+                                              Match Bets | 
+                                              <span class="bold clr-green">
+                                                0
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="box match-box box-background mb-2">
+                                        <a href="/user/matches/21/show14">
+                                          <div class="inner-box flex br-bt">
+                                            <p class="left-text flex-1 c-text">INDIA S1    VS  SAW S1</p>
+                                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">25&nbsp;&nbsp;April&nbsp;&nbsp;11:22&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                          </div>
+                                          <div class="inner-box flex">
+                                            <p class="right-text flex-1 c-text fs-16 grey">
+                                              Session Bets | 
+                                              <span class="bold clr-green mr-10">
+                                                0
+                                              </span>
+                                              Match Bets | 
+                                              <span class="bold clr-green">
+                                                0
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="box match-box box-background mb-2">
+                                        <a href="/user/matches/14/show14">
+                                          <div class="inner-box flex br-bt">
+                                            <p class="left-text flex-1 c-text">INDIA SESSION DEMO VS SAW SESSION DEMO</p>
+                                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">16&nbsp;&nbsp;April&nbsp;&nbsp;09:12&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                          </div>
+                                          <div class="inner-box flex">
+                                            <p class="right-text flex-1 c-text fs-16 grey">
+                                              Session Bets | 
+                                              <span class="bold clr-green mr-10">
+                                                0
+                                              </span>
+                                              Match Bets | 
+                                              <span class="bold clr-green">
+                                                2
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="box match-box box-background mb-2">
+                                        <a href="/user/matches/24/show14">
+                                          <div class="inner-box flex br-bt">
+                                            <p class="left-text flex-1 c-text">INDIA DECLARED DEMO1 VS SAW DECLARED DEMO1</p>
+                                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">19&nbsp;&nbsp;May&nbsp;&nbsp;11:29&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                          </div>
+                                          <div class="inner-box flex">
+                                            <p class="right-text flex-1 c-text fs-16 grey">
+                                              Session Bets | 
+                                              <span class="bold clr-green mr-10">
+                                                1
+                                              </span>
+                                              Match Bets | 
+                                              <span class="bold clr-green">
+                                                1
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="box match-box box-background mb-2">
+                                        <a href="/user/matches/26/show14">
+                                          <div class="inner-box flex br-bt">
+                                            <p class="left-text flex-1 c-text">INDIA MY LEDGERS DEMO VS SAW MY LEDGERS DEMO</p>
+                                            <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">06&nbsp;&nbsp;June&nbsp;&nbsp;04:49&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                          </div>
+                                          <div class="inner-box flex">
+                                            <p class="right-text flex-1 c-text fs-16 grey">
+                                              Session Bets | 
+                                              <span class="bold clr-green mr-10">
+                                                0
+                                              </span>
+                                              Match Bets | 
+                                              <span class="bold clr-green">
+                                                0
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </a>
+                                      </div>
+                              </div>
+                          </div>
+                        <!-- bets-container Close-->
+                      </div>
+                    <!-- width-50 close -->
+                </div>
+
+                
+
+
+
+                <div class="md-modal md-effect-1" id="modal-1">
+                  <div class="md-content">
+                    <!-- <h3>Message</h3> -->
+                    <div>
+                      <!--  <p>This is a modal window. You can do the following things with it:</p> -->
+                      <p class="message"><p>
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12" style="text-align: center;">
+                          <a  class="btn btn-danger purp_btn md-close">OK</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- middle-panel close -->
+            <!-- =================MIDDLE PANEL CLOSE================= -->
+              <div class="right-panel match-list-box">
+                <div class="betting-box">
+                  <div class="empty-bet mb-10">
+                    <div class="empty-bet-title c-text mb-10">Your Bet Slip is Empty</div>
+                    <div class="empty-bet-notice c-text">
+                      Your bet slip is empty. Click on any price to add a bet..!
+                    </div>
+                  </div>
+                  
+                  <!-- Market Bet Amount Form start -->
+                    <form accept-charset="UTF-8" action="/user/matches/create_bet" class="input-coin market-form show_bet_place_btn" data-remote="true" method="post" style="display:none;"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+                      <div class="placed-bet hide">
+                      <div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()"><i class="fa fa-times" aria-hidden="true"></i></span></div>
+                      <div class="table inner-bet br-bt">
+                        <div class="cell l-text bold runner" id='runner_type'></div>
+                        <div class="cell r-text">
+                          <p class="bold bet-type" id='odds_desc'></p>
+                          <p class="bold bet-odds"  id='odds'></p>
+                        </div>
+                      </div>
+                      <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 l-text white">Market </p>
+                          <p class="right-text flex-1 r-text bold white" name="runner_nm" id='market-nm' value=""></p>
+                      </div>
+
+                      <div class="inner-box flex br-bt">
+                        <div class="bet-input c-text">
+                          <p class="sign bold minus" onclick="addValue(-1)">&#8722;</p>
+                          <input class="c-text bold amt_field keyup" id ="coin_countity_bet" type="text" name="stack" title="Coin" type="text" value="0" autocomplete="off">
+                          <input type="hidden" id="bet-hidden" value="-1">
+                          <p class="sign bold plus" onclick="addValue(1)">&#43;</p>
+                        </div>
+                      </div>
+
+                      <input id='odds_type'  type="hidden" name="odds_type" value="">
+                      <input id='runner_id' type='hidden' name='runner_id' value=''>
+                      <input id='odds_val' type="hidden" name="odds_val" value="">
+                      <input id='match_id' type="hidden" name="match_id" value="">
+                      <input id='market_id' type='hidden' name='market_id' value=''>
+                      <input id='match_winner_heroic_market_type' class="market-type" type="hidden" name="heroic_market_type" value="">
+                      <div class="inner-box flex br-bt">
+                        <div class="bet-input c-text">
+                          <p class="left-text c-text white">Return | <span class="bold clr-green" id="return-value">0.00</span></p>
+                        </div>
+                      </div>
+                      <div class="inner-box flex br-bt">
+                        <button class="bet-btn button alert place-btn flex-1 mr-10" type="submit" data-disable="true">Done</button>
+                        <button class="bet-btn clear-btn flex-1" type="button" onclick="clearBet()">Clear Bet</button>
+                      </div>
+                      </div>
+                </form>          <!-- Market Bet Amount Form End --> 
+
+                  <!-- Session Bet Amount Form start -->
+                    <form accept-charset="UTF-8" action="/user/matches/create_session_bet" class="input-coin session-form show_bet_place_btn" data-remote="true" method="post" style="display:none;"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+                      <div class="placed-bet hide">
+                        <div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()"><i class="fa fa-times" aria-hidden="true"></i></span></div>
+                        <div class="table inner-bet br-bt">
+                          <div class="cell l-text bold runner" id='session_runner_type'></div>
+                          <div class="cell r-text">
+                            <p class="bold bet-odds"  id='runns'></p>
+                          </div>
+                        </div>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 l-text white">SESSION</p>
+                          <p class="right-text flex-1 r-text bold white" name="runner_nm" id='session-nm' value=""></p>
+                        </div>
+
+                        <div class="inner-box flex br-bt">
+                          <div class="bet-input c-text">
+                            <p class="sign bold minus" onclick="addValue(-1)">&#8722;</p>
+                            <input class="c-text bold amt_field keyup" id ="coin_countity_session" type="text" name="coins_debited" title="Coin" type="text" value="0" autocomplete="off">
+                            <input type="hidden" id="bet-hidden" value="-1">
+                            <p class="sign bold plus" onclick="addValue(1)">&#43;</p>
+                          </div>
+                        </div>
+
+                        <input id='s_match_id' type="hidden" name="match_id" value="">
+                        <input id='runs' type="hidden" name="runs" value="">
+                        <input id='action'  type="hidden" name="session_bet_type" value="">
+                        <input id='session_id'  type="hidden" name="session_id" value="">
+                        <input id='session_run_id' type="hidden" name='session_run_id' value=''>
+                        <input id='session_rate' type='hidden' name='odd_value'>
+                        <input id='session_heroic_market_type' class="market-type" type="hidden" name="heroic_market_type" value="">
+
+                        <div class="inner-box flex br-bt">
+                          <div class="bet-input c-text">
+                            <p class="left-text c-text white">Return | <span class="bold clr-green" id="session-return-value">0.00</span></p>
+                          </div>
+                        </div>
+                        <div class="inner-box flex br-bt">
+                          <button class="bet-btn button alert place-btn flex-1 mr-10" type="submit" >Done</button>
+                          <button class="bet-btn clear-btn flex-1" type="button" onclick="clearBet()">Clear Bet</button>
+                        </div>
+                      </div>
+                </form>          <!-- Session Bet Amount Form End -->
+                  <!-- Even_odd Bet Amount Form start -->
+                    <form accept-charset="UTF-8" action="/user/matches/create_bet" class="input-coin even-odd-market-form show_bet_place_btn" data-remote="true" method="post" style="display:none;"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+                      <div class="placed-bet hide">
+                      <div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()"><i class="fa fa-times" aria-hidden="true"></i></span></div>
+                      <div class="table inner-bet br-bt">
+                        <div class="cell l-text bold runner" id='even_odd_runner_type'></div>
+                        <div class="cell r-text">
+                          <p class="bold bet-type">RATE</p>
+                          <p class="bold bet-odds"  id='even_odd_odds'></p>
+                        </div>
+                      </div>
+                      <div class="inner-box flex br-bt">
+                        <p class="left-text flex-1 l-text white">Market</p>
+                        <p class="right-text flex-1 r-text bold white" name="runner_nm" id='even-odd-market-nm' value=""></p>
+                      </div>
+
+
+                      <div class="inner-box flex br-bt">
+                        <div class="bet-input c-text">
+                          <p class="sign bold minus" onclick="addValue(-1)">&#8722;</p>
+                          <input class="c-text bold amt_field1 keyup" id ="coin_countity_even_odd" type="text" name="stack" title="Coin" type="text" value="0" autocomplete="off">
+                          <input type="hidden" id="bet-hidden" value="-1">
+                          <p class="sign bold plus" onclick="addValue(1)">&#43;</p>
+                        </div>
+                      </div>
+
+                      <input id='even_odd_odds_type'  type="hidden" name="odds_type" value="LAGAI">
+                      <input id='even_odd_runner_id' type='hidden' name='runner_id' value=''>
+                      <input id='even_odd_odds_val' type="hidden" name="odds_val" value="">
+                      <input id='even_odd_match_id' type="hidden" name="match_id" value="">
+                      <input id='even_odd_market_id' type='hidden' name='market_id' value=''>
+                      <input id='even_odd_heroic_market_type' type="hidden" name="heroic_market_type" value="">
+                      <div class="inner-box flex br-bt">
+                        <div class="bet-input c-text">
+                          <p class="left-text c-text white">Return | <span class="bold clr-green" id="even-return-value">0.00</span></p>
+                        </div>
+                      </div>
+                      <div class="inner-box flex br-bt">
+                        <button class="bet-btn button alert place-btn flex-1 mr-10" type="submit" >Done</button>
+                        <button class="bet-btn clear-btn flex-1" type="button" onclick="clearBet()">Clear Bet</button>
+                      </div>
+                      </div>
+                </form>          <!-- Even_odd Bet Amount Form End --> 
+                </div>
+                <div class="second_panel stat-box-desktop">
+                 <div class="statistics_panel">
+                   <div class="inner_s_panel">
+                    <div data-tabs class="tabs-d" style="display: flex;">  
+                      <div class="first_slide f-first-sec tabs" style="">
+                              <div class="inner_head f-stat-head f-selcet-tab active-tab">
+                                 <div class="heade_panel_icon">
+                                   <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                 </div>
+                              </div>
+                          </label>
+                          <div class="tabs__content f-tabs_content stat-content" style="">
+                             <div class="m_head">
+                               STATISTICS
+                             </div>
+                              <div class="s_inner_section">
+                                  <div class="cards_sec">
+                                  <div class="left_side_card d-flex"><span>0</span> 
+                                    <div class="y_r_card_sec d-flex">
+                                      <div class="y_card">
+                                        
+                                      </div>
+                                      <div class="r_card">
+                                        
+                                      </div>
+                                    </div>
+                                    <span>0</span>
+                                  </div>
+                                  <div class="card_header">CARDS</div>
+                                  <div class="right_side_card d-flex"><span>0</span>
+                                    <div class="y_r_card_sec d-flex">
+                                        <div class="y_card">
+                                        </div>
+                                        <div class="r_card">
+                                        </div>
+                                    </div>
+                                   <span>0</span>
+                                  </div>
+                                </div>
+                                <div class="cicks_Sec">
+                                  <div class="left_c">3</div>
+                                  <div class="center_c">SHOTS ON TARGET</div>
+                                  <div class="right_c">3</div>
+                                </div>
+                                <div class="cicks_Sec">
+                                  <div class="left_c">0</div>
+                                  <div class="center_c">SHOTS OFF TARGET</div>
+                                  <div class="right_c">1</div>
+                                </div>
+                                 <div class="cicks_Sec">
+                                  <div class="left_c">1</div>
+                                  <div class="center_c">SHOTS BLOCKED</div>
+                                  <div class="right_c">1</div>
+                                </div>
+                                <div class="cicks_Sec">
+                                  <div class="left_c">1</div>
+                                  <div class="center_c">CORNER KICKS</div>
+                                  <div class="right_c">0</div>
+                                </div>
+                              </div>
+                            </div> 
+                        </div>
+                        <div class="head-to-head-panel tabs f-second-sec">
+                                <div class="inner_head f-head-to-head f-selcet-tab">
+                                   <div class="heade_panel_icon head-t-head-icon">
+                                     <span><i class="fa fa-user" aria-hidden="true"></i></span> / <span><i class="fa fa-user" aria-hidden="true"></i></span> 
+                                   </div>
+                                </div>
+                            </label>
+                            <div class="tabs__content f-second-tabs f-tabs_content f-head-content" style="display: none">
+                              <div class="m_head">
+                                HEAD TO HEAD
+                             </div>
+                            </div>
+                        </div>
+                         <div class="standings-panel f-third-sec tabs">
+                                <div class="inner_head f-standings-head f-selcet-tab">
+                                   <div class="heade_panel_icon head-t-head-icon">
+                                     <span>
+                                      <img src="img/standing-icon.png">
+                                     
+                                    </span>  
+                                   </div>
+                                </div>
+                            </label>
+                            <div class="tabs__content f-third-tabs f-tabs_content f-standings-content" style="display: none;">
+                              <div class="m_head">
+                                STANDINGS
+                             </div>
+                            </div>
+                        </div>
+                         <div class="timeline-inner-panel f-fourth-sec tabs">
+                                <div class="inner_head f-timeline-head f-selcet-tab">
+                                   <div class="heade_panel_icon">
+                                     <span>
+                                      <i class="fa fa-microphone" aria-hidden="true"></i>
+                                    </span> 
+                                   </div>
+                                </div>
+                            </label>
+                            <div class="tabs__content f-fourth-tabs f-tabs_content f-timeline-content" style="display: none;">
+                              <div class="m_head">
+                                TIMELINE
+                             </div>
+                            </div>
+                        </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+                
+                <!-- sl-numpad-container -->
+                  <div class="sl-numpad-container">
+                    <div class="num-btn-holder flex">
+                      <div class="num-btn-row sl-superbtn-row flex mt-5">
+                        <div class="sl-num-btn" onclick="addSuperValue(100)">100</div>
+                        <div class="sl-num-btn" onclick="addSuperValue(500)">500</div>
+                        <div class="sl-num-btn" onclick="addSuperValue(1000)">1H</div>
+                        <div class="sl-num-btn" onclick="addSuperValue(5000)">5H</div>
+                        <div class="sl-num-btn" onclick="addSuperValue(10000)">10H</div>
+                      </div>
+                      <div class="num-btn-row sl-superbtn-row flex mt-5">
+                        <div class="sl-num-btn" onclick="addSuperValue(25000)">25H</div>
+                        <div class="sl-num-btn" onclick="addSuperValue(50000)">50H</div>
+                        <div class="sl-num-btn" onclick="addSuperValue(100000)">1L</div>
+                        <div class="sl-num-btn" onclick="addSuperValue(200000)">2L</div>
+                        <div class="sl-num-btn" onclick="addSuperValue(500000)">5L</div>
+                      </div>
+
+                      <div class="num-btn-row flex mt-5">
+                        <div class="sl-num-btn" onclick="slNumBtn(1)">1</div>
+                        <div class="sl-num-btn" onclick="slNumBtn(2)">2</div>
+                        <div class="sl-num-btn" onclick="slNumBtn(3)">3</div>
+                      </div>
+                      <div class="num-btn-row flex">
+                        <div class="sl-num-btn" onclick="slNumBtn(4)">4</div>
+                        <div class="sl-num-btn" onclick="slNumBtn(5)">5</div>
+                        <div class="sl-num-btn" onclick="slNumBtn(6)">6</div>
+                      </div>
+                      <div class="num-btn-row flex">
+                        <div class="sl-num-btn" onclick="slNumBtn(7)">7</div>
+                        <div class="sl-num-btn" onclick="slNumBtn(8)">8</div>
+                        <div class="sl-num-btn" onclick="slNumBtn(9)">9</div>
+                      </div>
+                      <div class="num-btn-row flex mb-10">
+                        <div class="sl-num-btn" onclick="clearBet()">C</div>
+                        <div class="sl-num-btn" onclick="slNumBtn(0)">0</div>
+                        <div class="sl-num-btn sl-backspace" onclick="num_backspace()">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px"><g><g>
+                              <g><g>
+                                  <path d="M490.667,64H133.077c-7.196,0-13.906,3.627-17.848,9.647L3.485,244.314c-4.647,7.098-4.647,16.274,0,23.372     l111.744,170.667c3.942,6.02,10.652,9.647,17.848,9.647h357.589c11.782,0,21.333-9.551,21.333-21.333V85.333     C512,73.551,502.449,64,490.667,64z M469.333,405.333H144.609L46.833,256l97.776-149.333h324.725V405.333z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#102C4C"/>
+                                  <path d="M198.246,356.418c8.331,8.331,21.839,8.331,30.17,0l70.248-70.248l70.248,70.248c8.331,8.331,21.839,8.331,30.17,0     s8.331-21.839,0-30.17L328.834,256l70.248-70.248c8.331-8.331,8.331-21.839,0-30.17s-21.839-8.331-30.17,0l-70.248,70.248     l-70.248-70.248c-8.331-8.331-21.839-8.331-30.17,0c-8.331,8.331-8.331,21.839,0,30.17L268.495,256l-70.248,70.248     C189.915,334.58,189.915,348.087,198.246,356.418z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#102C4C"/>
+                                </g></g></g></g>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <!-- sl-numpad-container -->
+
+                
+                </div>
+              </div>
+            <!-- right-panel close -->
+            </div><!-- main-container close -->
+
+              <!-- =============statistcs panel js start=========== -->
+              <script>
+                 (function($, document) {
+                      // get tallest tab__content element
+                      let height = -1;
+
+                    $('.tab__content').each(function() {
+                      height = height > $(this).outerHeight() ? height : $(this).outerHeight();
+                         $(this).css('position', 'absolute');
+                    });
+                      
+                      // set height of tabs + top offset
+                    $('[data-tabs]').css('min-height', height + 40 + 'px');
+                   
+                  }(jQuery, document));
+              </script>
+             <!-- =============statistcs panel js end=========== -->
+
+                <!-- =============carousel js start============= -->
+              <script>
+                
+                  // A Carousel Object will have a .carousel html element associated with it with the car parameter
+                  // At the end of this document, all .carousel elements are assigned to a Carousel Object
+                  function Carousel(car){
+                    // this will be our Carousel object, which will be referred to as carousel
+                    var carousel = this;
+
+                    // PROPERTIES
+
+                    // carousel.element is a jquery object of the car element passed into the Carousel constructor
+                    carousel.element = $(car);
+                    carousel.currentSlide = 0;
+                    carousel.previousSlide = 0;
+                    carousel.numberOfSlides = 0;
+                    // timer will be the timer object
+                    carousel.timer = false;
+                    // timerLength is the time between slideshow switches
+                    carousel.timerLength = 5000;
+                    // timerPause is the time between clicking a button and the slideshow starting again
+                    carousel.timerPause = 10000;
+                    // timing will stop button clicks if it is true
+                    carousel.timing = false;
+
+
+
+                    // METHODS
+
+                    // .changePosition() is a method for altering the carousel's data
+                    // It gets passed true, false, or a number
+                    // It makes sure that the slides always stay within available parameters
+                    // It calls the .showPosition() method at the end
+                    carousel.changePosition = function(direction){
+                      // Don't do anything if you're already moving
+                      if(carousel.timing) return;
+
+                      carousel.previousSlide = carousel.currentSlide;
+                      // If moving to the left, decrement currentSlide
+                      if(direction === false) {
+                        carousel.currentSlide--;
+                      } else 
+                      // If moving to the right, increment currentSlide
+                      if(direction === true) {
+                        carousel.currentSlide++;
+                      } else 
+                      // If direction is a number
+                      {
+                        if(carousel.currentSlide<direction) {
+                          carousel.currentSlide = direction;
+                          // return will stop the current function from doing anything else, and switch straight to .showPosition()
+                          return carousel.showPosition(true,true);
+                        } else if (carousel.currentSlide>direction) {
+                          carousel.currentSlide = direction;
+                          return carousel.showPosition(false,true);
+                        }
+                      }
+
+                      if(carousel.currentSlide == carousel.previousSlide) return;
+
+                      if(carousel.currentSlide < 0){
+                        carousel.currentSlide = carousel.numberOfSlides-1;
+                      } else if(carousel.currentSlide >= carousel.numberOfSlides){
+                        carousel.currentSlide = 0;
+                      }
+
+                      carousel.showPosition(direction,false);
+                    };
+
+                    // .showPosition() will 
+                    carousel.showPosition = function(direction,placed){
+                      // Clear the changeTimer if it's currently running
+                      clearTimeout(carousel.changeTimer);
+                      carousel.changeTimer = false;
+
+                      var leftposition, rightposition;
+                      if(carousel.currentSlide == 0){
+                        leftposition = carousel.numberOfSlides-1;
+                      } else leftposition = carousel.currentSlide-1;
+
+                      if(carousel.currentSlide == carousel.numberOfSlides-1){
+                        rightposition = 0;
+                      } else rightposition = carousel.currentSlide+1;
+
+
+                      // Select all the slides, remove any odd classes from them, and then set them back to carousel-slide
+                      var cs = carousel.element.find(".carousel-slide")
+                        .removeClass("atLeft atRight atCenter moving");
+
+                      cs.eq(carousel.previousSlide).addClass("atCenter")
+                      if(direction===true){
+                        cs.eq(carousel.currentSlide).addClass("atRight");
+                        cs.eq(rightposition).addClass("atRight");
+                      } else if(direction===false){
+                        cs.eq(carousel.currentSlide).addClass("atLeft");
+                        cs.eq(leftposition).addClass("atLeft");
+                      }
+
+                      // Set timing to true so that no button clicks will work while a slide is happening
+                      carousel.timing = true;
+
+                      // Wait some milliseconds for the computer to render the slides into their starting positions
+                      // Then move the correct slides to their new positions
+                      carousel.changeTimer = setTimeout(function(){
+                        carousel.element.find(".carousel-paginate")
+                          .eq(carousel.currentSlide).addClass("active")
+                          .siblings().removeClass("active");
+                        cs.eq(carousel.currentSlide)
+                          .removeClass("atLeft atRight").addClass("moving atCenter");
+                        cs.eq(carousel.previousSlide)
+                          .removeClass("atLeft atRight atCenter").addClass("moving at"+
+                            (direction===true ? "Left" : "Right"));
+
+                        // Wait a second and let the button be clicked again
+                        setTimeout(function(){carousel.timing = false;},400);
+                      // The number here can be adjusted if you have too many glitches
+                      },50);
+                    };
+
+
+                    // Slideshow Methods
+                    // .startTimer() starts a repeating interval timer which calls .tick() every timerLength
+                    carousel.startTimer = function(){
+                      // No slideshow if the timerLength is 0
+                      if(carousel.timerLength === 0) return;
+                      carousel.timer = setInterval(carousel.tick, carousel.timerLength);
+                    };
+                    // .stopTimer() clears the interval and resets the timer to false
+                    carousel.stopTimer = function(){
+                      clearInterval(carousel.timer);
+                      carousel.timer = false;
+                    };
+                    // .pauseTimer() calls the .stopTimer() and then starts a single use timer to call .startTimer() again
+                    carousel.pauseTimer = function(){
+                      carousel.stopTimer();
+                      carousel.timer = setTimeout(carousel.startTimer, carousel.timerPause);
+                    };
+                    // .tick() will call the .changePosition() function and move to the right
+                    carousel.tick = function(){
+                      carousel.changePosition(true);
+                    };
+
+
+
+                    // This function will create a series of buttons to a new div and append that
+                    // div to the controls div
+                    carousel.makeButtons = function(){
+                      // Passing a string of an html tag into jquery returns a new element
+                      var button,buttondiv = $("<div class='carousel-pagination'>");
+                      // New elements can be appended, prepended, and more to other elements
+                      for(var i=0; i<carousel.numberOfSlides; i++) {
+                        // Make a new button element
+                        btn = $("<button class='carousel-paginate'>").html("&#x25cf;");
+                        // If it's the first button, add an active class to it.
+                        if(i==0) btn.addClass("active");
+                        // Add the button to the buttondiv
+                        buttondiv.append(btn);
+                      }
+                      // Add the buttondiv to the carousel controls
+                      carousel.element.append(
+                        $("<div class='carousel-controls'>").html(
+                          "<div class='carousel-move-left'>&lt;</div>"+
+                          "<div class='carousel-move-right'>&gt;</div>"
+                          ).append(buttondiv)
+                        );
+                    };
+
+
+
+                    carousel.init = function(){
+
+                      // If a timer attribute has been given, set the timer values
+                      if(carousel.element.data("timer")=="none") {
+                        carousel.timerLength = 0;
+                      } else if(carousel.element.data("timer")!=undefined) {
+                        carousel.timerLength = +carousel.element.data("timer")*1000;
+                      }
+                      carousel.timerPause = carousel.timerLength*2;
+
+                      // Find the number of slides from the html carousel-deck
+                      carousel.numberOfSlides = carousel.element.find(".carousel-slide").length;
+                      // Show the first slide
+                      carousel.element.find(".carousel-slide").eq(0).addClass("atCenter");
+
+                      // Create all the buttons
+                      carousel.makeButtons();
+                      // Start the slideshow
+                      carousel.startTimer();
+                    };
+
+
+
+
+
+                    // EVENT HANDLERS
+                    carousel.element.on("click",".carousel-move-left",function(){
+                      carousel.changePosition(false);
+                      carousel.pauseTimer();
+                    });
+                    carousel.element.on("click",".carousel-move-right",function(){
+                      carousel.changePosition(true);
+                      carousel.pauseTimer();
+                    });
+                    carousel.element.on("click",".carousel-paginate",function(){
+                      carousel.changePosition($(this).index());
+                      carousel.pauseTimer();
+                    });
+
+
+
+                    // Call a function called .init() to start anything that needs to be started
+                    carousel.init();
+                  }
+
+                  $(function(){ // document ready
+                    // Find all the .carousel elements and assign them to a Carousel Object
+                    $(".carousel").each(function(){
+                      new Carousel(this);
+                    });
+                  });
+              </script>
+              <!-- =============carousel js end============= -->
+          </div>
+
+  <script type="text/javascript">
+    function showMobMenu() {
+      $('body').addClass('overlay');
+      $('.mob-nav').addClass('show-mob-menu');
+    }
+    function hideMobMenu() {
+      $('body').removeClass('overlay');
+      $('.mob-nav').removeClass('show-mob-menu');
+    }
+  </script>
+  <script type="text/javascript" src="js/jquery-62.js"></script>
+  <script type="text/javascript" src="js/jquery_u.js"></script>
+  <script type="text/javascript" src="js/sockjs.js"></script>
+  <script type="text/javascript" src="js/stomp.js"></script>
+  <script type="text/javascript" src="js/main-user.js"></script>
+  <script type="text/javascript" src="js/jquery-validate-min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/user-log-in.js"></script>
+  <script type="text/javascript" src="js/main-user.js"></script>
+
+  </body>
+</html>
+
+
+  

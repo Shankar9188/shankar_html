@@ -1,0 +1,1423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lords24</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="css/admin_dark.css" media="all" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script media="all" src="js/application.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.css">
+    <script media="all" src="js/select2.full.min.js"></script>
+    <script media="all" src="js/main.js"></script>
+  </head>
+  <body class="theme-cyan  font-montserrat   ">
+    <!-- Theme Setting -->
+    <div class="themesetting">
+      <a href="javascript:void(0);" class="theme_btn"><i class="icon-magic-wand"></i></a>
+      <div class="card theme_color">
+        <div class="header">
+          <h2>Theme Color</h2>
+        </div>
+        <ul class="choose-skin list-unstyled mb-0">
+          <a href="/settings/set_agent_theme_color?color=green" data-method="get" data-remote="true">
+            <li data-theme="green" class=><div class="green"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=orange" data-method="get" data-remote="true">
+            <li data-theme="orange" class=><div class="orange"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=blush" data-method="get" data-remote="true">
+            <li data-theme="blush" class=><div class="blush"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=cyan" data-method="get" data-remote="true">
+            <li data-theme="cyan" class=active ><div class="cyan"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=indigo" data-method="get" data-remote="true">
+            <li data-theme="indigo" class=><div class="indigo"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=red" data-method="get" data-remote="true">
+            <li data-theme="red" class=><div class="red"></div></li>
+          </a>
+        </ul>
+      </div>
+      <div class="card font_setting">
+        <div class="header">
+          <h2>Font Settings</h2>
+        </div>
+        <div>
+          <div class="fancy-radio mb-2">
+            <a href="/settings/set_agent_theme_font?font=krub" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-krub" type="radio"  >
+                <span><i></i>Krub Google font</span>
+              </label>
+            </a>  
+          </div>
+          <div class="fancy-radio mb-2">
+            <a href="/settings/set_agent_theme_font?font=montserrat" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-montserrat" type="radio" checked>
+                <span><i></i>Montserrat Google font</span>
+              </label>
+            </a>  
+          </div>
+          <div class="fancy-radio">
+            <a href="/settings/set_agent_theme_font?font=roboto" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-roboto" type="radio"  >
+                <span><i></i>Robot Google font</span>
+              </label>
+            </a>  
+          </div>
+        </div>
+      </div>
+      <div class="card setting_switch">
+        <div class="header">
+          <h2>Settings</h2>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Light Version
+            <div class="float-right">
+              <a href="/settings/set_agent_theme" data-method="post" data-remote="true">
+                <label class="switch">
+                  <input id="themes-switch" type="checkbox" class="lv-btn">
+                  <span class="slider round"></span>
+                </label>
+              </a>  
+            </div>
+          </li>
+         
+          <li class="list-group-item">
+            Horizontal Henu
+            <div class="float-right">
+              <a href="/settings/set_agent_horizontal_menu" data-method="post" data-remote="true" class="hmenu-link">
+                <label class="switch">
+                  <input id="hmenu-switch" type="checkbox" class="hmenu-btn" >
+                  <span class="slider round"></span>
+                </label>
+              </a>  
+            </div>
+          </li>
+          <li class="list-group-item">
+            Mini Sidebar
+            <div class="float-right">
+                <label class="switch">
+                  <a href="/settings/set_agent_mini_sidebar" data-method="post" data-remote="true" class="mini-sidebar-link">
+                    <input id="mini-switch" type="checkbox" class="mini-sidebar-btn">
+                    <span class="slider round"></span>
+                  </a>
+                </label>
+            </div>
+          </li>
+        </ul>
+      </div>   
+    </div>
+
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <div id="wrapper">
+      <!-- partial:partials/_navbar.html -->
+  <nav class="navbar top-navbar">
+    <div class="container-fluid">
+      <div class="navbar-left">
+         <div class="navbar-btn">
+          <a href="index.html"></a>
+          <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
+        </div> 
+        <ul class="nav navbar-nav">
+          <!-- <li>
+            <a class="navbar-minimalize  btn btn-primary" href="#"><i class="fa fa-bars"></i></a>
+          </li> -->
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="icon-envelope"></i>
+              <span class="notification-dot bg-green">4</span>
+            </a>
+            <ul class="dropdown-menu right_chat email vivify fadeIn">
+              <li class="header green">You have 4 New eMail</li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                    <div class="media-body">
+                      <span class="name">James Wert <small class="float-right text-muted">Just now</small></span>
+                      <span class="message">Update GitHub</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <div class="avtar-pic w35 bg-indigo"><span>FC</span></div>
+                    <div class="media-body">
+                      <span class="name">Folisise Chosielie <small class="float-right text-muted">12min ago</small></span>
+                      <span class="message">New Messages</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <!-- <img class="media-object " src="../admin_dark/images/xs/avatar5.jpg" alt=""> -->
+                    <div class="media-body">
+                      <span class="name">Louis Henry <small class="float-right text-muted">38min ago</small></span>
+                      <span class="message">Design bug fix</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media mb-0">
+                    <!-- <img class="media-object " src="../admin_dark/images/xs/avatar2.jpg" alt=""> -->
+                    <div class="media-body">
+                      <span class="name">Debra Stewart <small class="float-right text-muted">2hr ago</small></span>
+                      <span class="message">Fix Bug</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="icon-bell"></i>
+              <span class="notification-dot bg-azura">4</span>
+            </a>
+            <ul class="dropdown-menu feeds_widget vivify fadeIn">
+              <li class="header blue">You have 4 New Notifications</li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-red"><i class="fa fa-check"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-danger">Issue Fixed <small class="float-right text-muted">9:10 AM</small></h4>
+                    <small>WE have fix all Design bug with Responsive</small>
+                  </div>
+                </a>
+              </li>                               
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-info"><i class="fa fa-user"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-info">New User <small class="float-right text-muted">9:15 AM</small></h4>
+                    <small>I feel great! Thanks team</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-orange"><i class="fa fa-question-circle"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-warning">Server Warning <small class="float-right text-muted">9:17 AM</small></h4>
+                    <small>Your connection is not private</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-green"><i class="fa fa-thumbs-o-up"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-success">2 New Feedback <small class="float-right text-muted">9:22 AM</small></h4>
+                    <small>It will give a smart finishing to your site</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown language-menu">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="fa fa-language"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/us.svg " class="w20 mr-2 rounded-circle">  -->US English</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/gb.svg " class="w20 mr-2 rounded-circle"> --> UK English</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/russia.svg " class="w20 mr-2 rounded-circle"> --> Russian</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/arabia.svg " class="w20 mr-2 rounded-circle"> --> Arabic</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/france.svg " class="w20 mr-2 rounded-circle"> --> French</a>
+            </div>
+          </li>
+          <li><a href="javascript:void(0);" class="megamenu_toggle icon-menu" title="Mega Menu">Mega</a></li>
+          <li class="p_social"><a href="page-social.html" class="social icon-menu" title="News">Social</a></li>
+          <li class="p_news"><a href="page-news.html" class="news icon-menu" title="News">News</a></li>
+          <li class="p_blog"><a href="page-blog.html" class="blog icon-menu" title="Blog">Blog</a></li>
+        </ul>
+      </div>
+
+          <div class="navbar-right">
+            <div id="navbar-menu">
+              <ul class="nav navbar-nav">
+                <li><a href="javascript:void(0);" class="search_toggle icon-menu" title="Search Result"><i class="icon-magnifier"></i></a></li>                        
+                <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="icon-bubbles"></i><span class="notification-dot bg-pink">2</span></a></li>
+                <li><a class="icon-menu" data-method="delete" href="/agents/sign_out" rel="nofollow"><i class='icon-power'></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+      </nav>
+
+      <div class="search_div">
+        <div class="card">
+          <div class="body">
+            <form id="navbar-search" class="navbar-form search-form">
+              <div class="input-group mb-0">
+                <input type="text" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="icon-magnifier"></i></span>
+                  <a href="javascript:void(0);" class="search_toggle btn btn-danger"><i class="icon-close"></i></a>
+                </div>
+              </div>
+            </form>
+          </div>            
+        </div>
+        <span>Search Result <small class="float-right text-muted">About 90 results (0.47 seconds)</small></span>
+        <div class="table-responsive">
+          <table class="table table-hover table-custom spacing5">
+            <tbody>
+              <tr>
+                <td class="w40">
+                  <span>01</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>SS</span></div>
+                    <div class="ml-3">
+                      <a href="page-invoices-detail.html" title="">South Shyanne</a>
+                      <p class="mb-0">south.shyanne@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>02</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Zoe Baker</a>
+                      <p class="mb-0">zoe.baker@example.com</p>
+                    </div>
+                  </div>                                        
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>03</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-indigo" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>CB</span></div>
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Colin Brown</a>
+                      <p class="mb-0">colinbrown@example.com</p>
+                    </div>
+                  </div>                                        
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>04</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-green" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>KG</span></div>
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Kevin Gill</a>
+                      <p class="mb-0">kevin.gill@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>05</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Brandon Smith</a>
+                      <p class="mb-0">Maria.gill@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>06</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Kevin Baker</a>
+                      <p class="mb-0">kevin.baker@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>07</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Zoe Baker</a>
+                      <p class="mb-0">zoe.baker@example.com</p>
+                    </div>
+                  </div>                                        
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="megamenu" class="megamenu particles_js">
+        <a href="javascript:void(0);" class="megamenu_toggle btn btn-danger"><i class="icon-close"></i></a>
+        <div class="container">            
+          <div class="row clearfix">
+            <div class="col-12">
+              <ul class="q_links">
+                <li><a href="app-inbox.html"><i class="icon-envelope"></i><span>Inbox</span></a></li>
+                <li><a href="app-chat.html"><i class="icon-bubbles"></i><span>Messenger</span></a></li>
+                <li><a href="app-calendar.html"><i class="icon-calendar"></i><span>Event</span></a></li>
+                <li><a href="page-profile.html"><i class="icon-user"></i><span>Profile</span></a></li>
+                <li><a href="page-invoices.html"><i class="icon-printer"></i><span>Invoice</span></a></li>
+                <li><a href="page-timeline.html"><i class="icon-list"></i><span>Timeline</span></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-picture text-info"></i>
+                    <h4 class="m-t-25 mb-0">104 Picture</h4>
+                    <p>Your gallery download complete</p>
+                    <a href="javascript:void(0);" class="btn btn-info btn-round">Download now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-diamond text-success"></i>
+                    <h4 class="m-t-25 mb-0">813 Point</h4>
+                    <p>You are doing great job!</p>
+                    <a href="javascript:void(0);" class="btn btn-success btn-round">Read now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-social-twitter text-primary"></i>
+                    <h4 class="m-t-25 mb-0">3,756</h4>
+                    <p>New Followers on Twitter</p>
+                    <a href="javascript:void(0);" class="btn btn-primary btn-round">Find more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Anyone send me a message
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone seeing my profile page
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone posts a comment on my post
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="particles-js"></div>
+      </div>
+
+      <div id="rightbar" class="rightbar">
+        <div class="body">
+          <ul class="nav nav-tabs2">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Chat-one">Chat</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat-list">List</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat-groups">Groups</a></li>
+          </ul>
+          <hr>
+          <div class="tab-content">
+            <div class="tab-pane vivify fadeIn delay-100 active" id="Chat-one">
+              <div class="slim_scroll">
+                <div class="chat_detail">
+                  <ul class="chat-widget clearfix">
+                    <li class="left float-left">
+                      <div class="avtar-pic w35 bg-pink"><span>KG</span></div>
+                      <div class="chat-info">       
+                        <span class="message">Hello, John<br>What is the update on Project X?</span>
+                      </div>
+                    </li>
+                    <li class="right">
+                      <!-- <img src="../admin_dark/images/xs/avatar1.jpg" class="rounded" alt=""> -->
+                      <div class="chat-info">
+                        <span class="message">Hi, Alizee<br> It is almost completed. I will send you an email later today.</span>
+                      </div>
+                    </li>
+                    <li class="left float-left">
+                      <div class="avtar-pic w35 bg-pink"><span>KG</span></div>
+                      <div class="chat-info">
+                        <span class="message">That's great. Will catch you in evening.</span>
+                      </div>
+                    </li>
+                    <li class="right">
+                      <!-- <img src="../assets/images/xs/avatar1.jpg" class="rounded" alt=""> -->
+                      <div class="chat-info">
+                        <span class="message">Sure we'will have a blast today.</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="input-group p-t-15">
+                    <textarea rows="3" class="form-control" placeholder="Enter text here..."></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane vvivify fadeIn delay-100" id="Chat-list">
+              <ul class="right_chat list-unstyled mb-0">
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Folisise Chosielie</span>
+                        <span class="message">offline</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Marshall Nichols</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Louis Henry</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-orange"><span>DS</span></div>
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-green"><span>SW</span></div>
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since Jan 18</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-indigo"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Louis Henry</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-pink"><span>DS</span></div>
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-info"><span>SW</span></div>
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane vivify fadeIn delay-100" id="Chat-groups">
+              <ul class="right_chat list-unstyled mb-0">
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-cyan"><span>DT</span></div>
+                      <div class="media-body">
+                        <span class="name">Designer Team</span>
+                        <span class="message">offline</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-azura"><span>SG</span></div>
+                      <div class="media-body">
+                        <span class="name">Sale Groups</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-orange"><span>NF</span></div>
+                      <div class="media-body">
+                        <span class="name">New Fresher</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-indigo"><span>PL</span></div>
+                      <div class="media-body">
+                        <span class="name">Project Lead</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- partial -->
+      <div>
+      <div id="left-sidebar" class="sidebar">
+        <div class="navbar-brand">
+          <a href=""><img alt="xBook" class="img-fluid logo" src="img/icon.svg" /><span>Lords24</span></a>
+         <!--  <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu icon-close"></i></button> 
+          <button type="button" class="btn float-right navbar-minimalize"><i class='fas fa-angle-left'></i></button> -->
+        </div>
+        <div class="sidebar-scroll">
+          <a href="/settings/set_agent_mini_sidebar" data-method="post" data-remote="true" class="mini-sidebar-link">
+            <div class="right-icon"><i class='fas fa-angle-left navbar-minimalize float-right'></i></div>
+          </a>  
+          <div class="user-account">
+           <!--  <div class="user_div">
+            </div> -->
+            <div class="dropdown">
+              <span>Welcome,</span>
+              <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Company (company)</strong></a>
+              <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
+                <li><a href="page-profile.html"><i class="icon-user"></i>My Profile</a></li>
+                <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
+                <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+                <li class="divider"></li>
+                <li><a data-method="delete" href="/agents/sign_out" rel="nofollow"><i class='icon-power'></i>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <nav id="left-sidebar-nav" class="sidebar-nav">
+            <ul id="main-menu" class="metismenu">
+              <li class="header">Main</li>
+              <li>
+                <a href="company-dashboard.html"><i class="icon-speedometer"></i><span>Dashboard</span></a>
+              </li>
+                <li class="nav-menu">
+                  <a href="#myPage" class="has-arrow"><i class="icon-diamond"></i><span>Manage</span></a>
+                  <ul class="active-content hide"> 
+                    <li class="open active"><a href="manage-master.html" data-method="get">Master</a></li>
+                    <li class="open active"><a href="manage-super-stockists.html" data-method="get">Super Stockists</a></li>
+                    <li class="open active"><a href="manage-stockists.html" data-method="get">Stockists</a></li>
+                    <li class="open active"><a href="manage-agent.html" data-method="get">Agent</a></li>
+                  </ul>
+                </li>
+                <li class="nav-menu">
+                  <a href="#myPage" class="has-arrow"><i class="icon-rocket"></i><span>Sports</span></a>
+                  <ul class="active-content hide"> 
+                    <li ><a href="sports-matches.html" data-method="get">Matches</a></li>
+                      <li ><a href="sports-tournament.html" data-method="get">Tournament</a></li>
+                  </ul>
+                </li>
+                  <li class="nav-menu">
+                    <a href="#myPage" class="has-arrow"><i class="icon-user"></i><span>Manage Clients</span></a>
+                    <ul class="active-content hide"> 
+
+                      <li>
+                        <a href="update_client_limit.html" data-method="get">Commission &amp; Limits</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                      <a href="manage-sub-company.html" data-method="get"><i class="icon-bubbles"></i><span>Manage SubCompany</span></a>
+                  </li>
+
+                  <li>
+                    <a href="manage-password-panel.html" data-method="get"><i class="icon-tag"></i><span>Manage Password</span></a>
+                  </li>
+
+                  <li>
+                    <a href="language.html" data-method="get"><i class="icon-speech"></i><span>Language</span></a>
+                  </li>
+
+                  <li class="nav-menu">
+                    <a href="#myPage" class="has-arrow"><i class="icon-book-open"></i><span>Manage Ledgers</span></a>
+                    <ul class="active-content hide"> 
+                      <li >
+                        <a href="collection_report.html" data-method="get">Collection Report</a>
+                      </li>
+                      <li>
+                        <a href="earning_report.html" data-method="get">Profit &amp; Loss</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-menu">
+                    <a href="#myPage" class="has-arrow"><i class="icon-settings"></i><span>Manage Settings</span></a>
+                    <ul class="active-content hide"> 
+                      <li ><a href="settings.html" data-method="get"><span>Settings</span></a></li>
+                      <li ><a href="stake_limits_packages.html"><span>Stake Limits Packages</span></a></li> 
+                      <li ><a href="rules.html"><span>RULES</span></a></li>
+                    </ul>                       
+                  </li>
+
+                  <li ><a href="update_agent_coins.html" data-method="get"><i class="icon-credit-card"></i><span>Credit Coins</span></a>
+                  </li>
+                </ul>
+          </nav>
+        </div>   
+      </div>
+
+      <div id="main-content">
+         <div class="container-fluid">
+            <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+               <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+               <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+               <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+               <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/pdfmake.min.js"></script>
+               <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/vfs_fonts.js"></script>
+               <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js
+               "></script>
+               <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
+               
+               <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+               <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css"> -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet">
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+            <style>
+               @media (min-width: 768px) and (max-width: 1440px){
+               .select2-container {
+               min-width: 90% !important;
+               }
+               }
+               @media (min-width: 1600px){
+               #reportrange{
+               max-width: 16%;
+               overflow: auto;
+               }
+               }
+               @media all and (max-width: 425px){
+               .row {
+               display: inherit; 
+               }
+               .col-lg-3{
+               position: initial;
+               }
+               .pull-right {
+               left: auto;
+               right: 0;
+               padding-right: 15px;
+               padding-left: 0;
+               border-right: 5px solid #eee;
+               border-left: 5px solid #eee;
+               border-radius: 3px;
+               text-align: right;
+               float: left!important;
+               width: calc(50% - 25px)!important;
+               }
+               .my_ledgers_dated_picker {
+               background: none repeat scroll 0% 0% #FFF;
+               cursor: pointer;
+               padding: 5px 10px;
+               border: 1px solid #CCC;
+               height: 35px;
+               margin: 0px 0px 0px 10% !important; 
+               overflow: auto;
+               }
+               .search_date_btn {
+               padding: 5px 25px;
+               margin-left: 10px;
+               }
+               }
+               @media all and (max-width: 768px){
+               .row {
+               flex-wrap: inherit !important;
+               }
+               }  
+               .my_ledgers_dated_picker{
+               background: none repeat scroll 0% 0% #FFF;
+               cursor: pointer;
+               padding: 5px 10px;
+               border: 1px solid #CCC;
+               height: 35px;
+               /*width: 25%;*/
+               margin: 10px 0px 0px 25px;
+               }
+               .pull-right{
+               left:auto;
+               right:0;
+               padding-right:15px;
+               padding-left:0;
+               border-right:5px solid #eee;
+               border-left:5px solid #eee;
+               text-align:right;
+               border-radius: 0.25rem;
+               margin-left:10px;
+               float:left!important;
+               /*    width: calc(22% - 25px)
+               */  }
+               .caret {
+               display: inline-block;
+               width: 0;
+               height: 0;
+               margin-left: 4px;
+               vertical-align: middle;
+               border-top: 4px dashed;
+               border-top: 4px solid\9;
+               border-right: 4px solid transparent;
+               border-left: 4px solid transparent;
+               }
+               .search_date_btn{
+               padding: 5px 25px;
+               }
+               .note-short-text {
+               overflow: hidden;
+               white-space: nowrap;
+               text-overflow: ellipsis;
+               max-width: 50px;
+               }
+               .modal {
+               display: ;
+               position: fixed;
+               z-index: 1;
+               padding-top: 100px;
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               overflow: auto;
+               background-color: rgb(0,0,0);
+               background-color: rgba(0,0,0,0.4);
+               }
+               .modal-content {
+               background-color: #fefefe;
+               margin: auto;
+               padding: 20px;
+               border: 1px solid #888;
+               width: 80%;
+               }
+               .close {
+               color: #aaaaaa;
+               float: right;
+               font-size: 28px;
+               font-weight: bold;
+               }
+               .close:hover,
+               .close:focus {
+               color: #000;
+               text-decoration: none;
+               cursor: pointer;
+               }
+               .select-event-type{
+               display:none;
+               }
+               .select-dropdown {
+               box-sizing: content-box;
+               background-color: transparent;
+               border: none;
+               /*    border-bottom: 1px solid #ced4da;*/  
+               border-radius: 0;
+               outline: 0;
+               box-shadow: none;
+               transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+               }
+               .md-form input{
+               box-sizing: content-box;
+               background-color: transparent;
+               border: none;
+               border-bottom: 1px solid #ced4da;
+               border-radius: 0;
+               outline: 0;
+               box-shadow: none;
+               transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+               }
+               .select2-container {
+               min-width: 80%;
+               border:none;
+               margin: 0px 24px;
+               }
+               .select2-results__option:before {
+               content: "";
+               display: inline-block;
+               position: relative;
+               height: 20px;
+               width: 20px;
+               border: 2px solid #e9e9e9;
+               border-radius: 4px;
+               background-color: #fff;
+               margin-right: 20px;
+               vertical-align: middle;
+               }
+               .select2-results__option[aria-selected=true]:before {
+               font-family:fontAwesome;
+               content: "\f00c";
+               color: #fff;
+               background-color: #f77750;
+               border: 0;
+               display: inline-block;
+               padding-left: 3px;
+               }
+               .select2-container--default .select2-selection--multiple {
+               background-color: white;
+               border: 1px solid #aaa;
+               border-radius: 4px;
+               cursor: text;
+               /* margin: 0px 24px;*/
+               }
+               .select2-dropdown {
+               background-color: white;
+               border: 1px solid #aaa;
+               border-radius: 4px;
+               box-sizing: border-box;
+               display: block;
+               position: absolute;
+               left: -100000px;
+               width: 100%;
+               z-index: 1051;
+               margin: none;
+               }
+               .select2-container--open .select2-dropdown {
+               left: -24px;
+               }
+               .select2-container--default .select2-selection--multiple .select2-selection__choice {
+               background-color: #37abb5;
+               color:#fff;
+               border:none;
+               padding:4px 6px 4px 4px;
+               }
+               .select2-selection__choice__remove {
+               color: #414c52;
+               }
+               @media all and (max-width: 425px){
+               .my_ledgers_dated_picker{
+               height:auto ;
+               }
+               }
+               @media all and (min-width: 375px){
+               .my_ledgers_dated_picker{
+               max-width:250px !important;
+               }
+               }
+               @media all and (max-width: 426px) and (min-width: 376px){
+               .row :nth-child(2){
+               width: auto;
+               }
+               }
+            </style>
+            <div class="block-header">
+               <div class="row clearfix">
+                  <div class="col-lg-12">
+                     <h1>EARNING REPORT </h1>
+                     <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                           <li class="breadcrumb-item">
+                              <a href="/agent/dashboard">Dashboard</a>
+                           </li>
+                           <li class="breadcrumb-item">
+                              <a href="#">COMPANY(company)</a>
+                           </li>
+                           <li class="breadcrumb-item active" aria-current="page">
+                              <a href="#"><strong>Profit &amp; Loss</strong></a>
+                           </li>
+                        </ol>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+            <!-- <p style="text-align:center;">
+               <a href="/agent/agents//agent_cash_tarnsaction"><button type="button" class="btn btn-primary btn-lg">Agent Cash Transaction</button></a>
+               <a href=""><button type="button" class="btn btn-primary btn-lg">Large button</button></a>
+               <a href=""><button type="button" class="btn btn-primary btn-lg">Large button</button></a>
+               </p> -->
+            <div class="row">
+               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 11px;">
+                  <div class="select-wrapper mdb-select colorful-select dropdown-primary md-form">
+                     <div class="form-group">
+                        <select class="js-select2 select2-hidden-accessible select-event-type" multiple="" tabindex="-1" aria-hidden="true" style="">
+                           <option value="cricket" data-badge="">Cricket</option>
+                           <!-- <option value='football' data-badge="" selected>Football</option>
+                              <option value="single_digit" data-badge="" selected>Dus Ka Dum</option>
+                              <option value="roulette" data-badge="" selected>Roulette</option>
+                              <option value="inside_outside" data-badge="" selected>Inside Outside</option> -->
+                           <option value="cricket_tournament" data-badge="">Cricket Tournament</option>
+                           <!-- <option value="football_tournament" data-badge="" selected>Football Tournament</option> -->
+                        </select>
+                     <!--    <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 1px;">
+                           <span class="selection">
+                              <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                 <ul class="select2-selection__rendered">
+                                    <li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="-1" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li>
+                                 </ul>
+                              </span>
+                           </span>
+                           <span class="dropdown-wrapper" aria-hidden="true"></span>
+                        </span> -->
+                     </div>
+                  </div>
+               </div>
+               <div id="reportrange" class="my_ledgers_dated_picker col-lg-3 col-md-4 col-sm-6 col-xs-11 pull-right">
+                  <i class="glyphicon glyphicon-calendar fa fa-calendar" aria-hidden="true"></i>&nbsp;
+                  <span> - </span><b class="caret"></b>
+               </div>
+               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin:11px 0px;">
+                  <a class="btn btn-primary btn-xs search_date_btn text-white" onclick="searchData();">Search</a>
+               </div>
+            </div>
+            <div class="col-lg-12" style="margin-top: 30px;">
+               <div class="card">
+                  <div class="header">
+                     <h2>Summary</h2>
+                     <ul class="header-dropdown dropdown">
+                        <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="table-responsive">
+                     <table class="table table-bordered table-striped" cellspacing="0" width="100%">
+                        <thead>
+                           <tr>
+                              <th>All Time Total</th>
+                              <th>47074.035</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="header">
+                     <h2>Earning Report</h2>
+                     <ul class="header-dropdown dropdown">
+                        <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="table-responsive">
+                     <div id="earning-report-pdf_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="dt-buttons"> <a class="btn btn-round btn-primary buttons-csv buttons-html5" tabindex="0" aria-controls="earning-report-pdf" href="#"><span>CSV</span></a> <a class="btn btn-round btn-primary buttons-pdf buttons-html5" tabindex="0" aria-controls="earning-report-pdf" href="#"><span>PDF</span></a> </div>
+                        <div id="earning-report-pdf_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control" placeholder="" aria-controls="earning-report-pdf"></label></div>
+                        <table class="table table-hover agent-earning-report table-custom spacing5 dataTable" id="earning-report-pdf" cellspacing="0" width="100%" role="grid" aria-describedby="earning-report-pdf_info" style="width: 100%;">
+                           <thead>
+                              <tr role="row">
+                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 105px;">DATE/TIME</th>
+                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 133px;">Match Id</th>
+                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 496px;">Match Title</th>
+                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 206px;">Match Earnings</th>
+                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 190px;">Commision Earnings</th>
+                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 80px;">Charges</th>
+                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 133px;">Total Earnings</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr role="row" class="odd">
+                                 <td>02 Sep 20</td>
+                                 <td>84</td>
+                                 <td>Soccer English Premier League 2017 (Watfords vs Westham) </td>
+                                 <td>0</td>
+                                 <td>0</td>
+                                 <td>0</td>
+                                 <td>0.0</td>
+                              </tr>
+                              <tr role="row" class="even">
+                                 <td>27 Jun 20</td>
+                                 <td>tournament_2</td>
+                                 <td>Ipl 2019</td>
+                                 <td>0.0</td>
+                                 <td>0</td>
+                                 <td>0</td>
+                                 <td>0.0</td>
+                              </tr>
+                              <tr role="row" class="odd">
+                                 <td>27 Jun 20</td>
+                                 <td>tournament_3</td>
+                                 <td>Ipl 2018</td>
+                                 <td>0.0</td>
+                                 <td>0</td>
+                                 <td>0</td>
+                                 <td>0.0</td>
+                              </tr>
+                              <tr role="row" class="even">
+                                 <td>27 Jun 20</td>
+                                 <td>tournament_1</td>
+                                 <td>Ipl 2020</td>
+                                 <td>0.0</td>
+                                 <td>0</td>
+                                 <td>0</td>
+                                 <td>0.0</td>
+                              </tr>
+                              <tr role="row" class="odd">
+                                 <td>06 Jun 20</td>
+                                 <td>26</td>
+                                 <td>india my ledgers demo vs saw my ledgers demo</td>
+                                 <td>0.0</td>
+                                 <td>0</td>
+                                 <td>50</td>
+                                 <td>50.0</td>
+                              </tr>
+                              <tr role="row" class="even">
+                                 <td>19 May 20</td>
+                                 <td>24</td>
+                                 <td>india declared demo1 vs saw declared demo1</td>
+                                 <td>-120.0</td>
+                                 <td>0</td>
+                                 <td>25</td>
+                                 <td>-95.0</td>
+                              </tr>
+                              <tr role="row" class="odd">
+                                 <td>16 May 20</td>
+                                 <td>22</td>
+                                 <td>india football vs saw football </td>
+                                 <td>0</td>
+                                 <td>0</td>
+                                 <td>0</td>
+                                 <td>0.0</td>
+                              </tr>
+                              <tr role="row" class="even">
+                                 <td>25 Apr 20</td>
+                                 <td>21</td>
+                                 <td>india s1    vs  saw s1</td>
+                                 <td>1000.0</td>
+                                 <td>-40.0</td>
+                                 <td>25</td>
+                                 <td>865.0</td>
+                              </tr>
+                              <tr role="row" class="odd">
+                                 <td>25 Apr 20</td>
+                                 <td>20</td>
+                                 <td>india session review   vs  saw session review</td>
+                                 <td>18600.0</td>
+                                 <td>-744.0</td>
+                                 <td>25</td>
+                                 <td>17881.0</td>
+                              </tr>
+                              <tr role="row" class="even">
+                                 <td>24 Apr 20</td>
+                                 <td>19</td>
+                                 <td>india session default   vs   saw session default</td>
+                                 <td>10000.0</td>
+                                 <td>-200.0</td>
+                                 <td>25</td>
+                                 <td>9825.0</td>
+                              </tr>
+                           </tbody>
+                           <tfoot>
+                              <tr>
+                                 <th rowspan="1" colspan="1"></th>
+                                 <th rowspan="1" colspan="1"></th>
+                                 <th rowspan="1" colspan="1">Total</th>
+                                 <th rowspan="1" colspan="1">48878.035000000002</th>
+                                 <th rowspan="1" colspan="1">-1384.0</th>
+                                 <th rowspan="1" colspan="1">300</th>
+                                 <th rowspan="1" colspan="1">47074.035</th>
+                              </tr>
+                           </tfoot>
+                        </table>
+                        <div class="dataTables_info" id="earning-report-pdf_info" role="status" aria-live="polite">Showing 1 to 10 of 14 entries</div>
+                        <div class="dataTables_paginate paging_simple_numbers" id="earning-report-pdf_paginate">
+                           <ul class="pagination">
+                              <li class="paginate_button page-item previous disabled" id="earning-report-pdf_previous"><a href="#" aria-controls="earning-report-pdf" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                              <li class="paginate_button page-item active"><a href="#" aria-controls="earning-report-pdf" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                              <li class="paginate_button page-item "><a href="#" aria-controls="earning-report-pdf" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                              <li class="paginate_button page-item next" id="earning-report-pdf_next"><a href="#" aria-controls="earning-report-pdf" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <script type="text/javascript">
+               function searchData(){
+                 var event_type = [];
+                 $(".select-event-type :selected").each(function(){
+                   event_type.push($(this).val());
+                 });
+                 event_type = JSON.stringify(event_type)
+               
+                 var url ="/agent/ledgers/earning_report?event_type="+event_type
+                 if (url != '') { // require a URL
+                   window.location = url; // redirect
+                 }
+                 return false;
+               }
+            </script>
+            <script type="text/javascript">
+               $(document).ready(function() {
+                 $('.agent-earning-report').DataTable({
+                   dom: 'Bfrtip',
+                   "ordering": false,
+                   buttons: [
+                   'csvHtml5',
+                   'pdfHtml5'
+                   ]
+                 });
+               });
+               $(function() {
+                 var start = moment().subtract(29, 'days');
+                 var end = moment();
+                 function cb(start, end) {
+                   // $('#reportrange span').text('');
+                    var event_type = [];
+                   $(".select-event-type :selected").each(function(){
+                     event_type.push($(this).val());
+                   });
+                   event_type = JSON.stringify(event_type)
+                   // event_array = "[]"
+                   // array = event_array.replace(/&quot;/g, '"');
+                   url = '/agent/ledgers/earning_report?start_date='+start.format('YYYY-MM-DD')+'&end_date='+end.format('YYYY-MM-DD')+'&event_type='+event_type;
+                   $('.search_date_btn').attr('href',url);
+                   $('#reportrange span').html(start.format('D MMM, YYYY') + ' - ' + end.format('D MMM, YYYY'));
+                 }
+               
+                 $('#reportrange').daterangepicker({
+                   startDate: start,
+                   endDate: end,
+                   locale: {
+                      firstDay: 1,
+                      daysOfWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                   },
+               
+                   ranges: {
+                     'Today': [moment(), moment()],
+                     'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                     'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                     'This Week': [moment().startOf('week').day(1), moment().endOf('week').day(7)],
+                     'Last Week': [moment().subtract(1, 'week').startOf('week').day(1), moment().subtract(1, 'week').endOf('week').day(7)],
+                     'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                     'This Month': [moment().startOf('month'), moment().endOf('month')],
+                     'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                   }
+                 }, cb);
+                 cb(startDate, endDate);
+               }); 
+            </script>
+            <script type="text/javascript">
+               $(document).on('click' , '.clearBtn' , function(){
+                 window.location = '/agent/ledgers/earning_report';
+               });
+            </script>
+            <script>
+               $(".js-select2").select2({
+                 closeOnSelect: false,
+                 placeholder: "",
+                 allowHtml: true,
+                 allowClear: true,
+                 tags: true // создает новые опции на лету
+               });
+            </script>
+         </div>
+      </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+  
+            </div>
+          </div>
+        </div>
+        <script media="all" src="/assets/admin_dark.js"></script>
+      </body>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          if(false == true){
+            document.getElementById("themes-switch").checked = true;
+          }else{
+            document.getElementById("themes-switch").checked = false;
+          }
+
+          if(false == true)
+          {
+            $("body").addClass("mini_sidebar");
+            document.getElementById("mini-switch").checked = true;
+            $("#left-sidebar").addClass("mini_sidebar_on");
+            $(".hmenu-btn").attr("disabled", "disabled");
+            $(".hmenu-link").addClass("isDisabled");
+          }else{
+            $("body").removeClass("mini_sidebar");
+            document.getElementById("mini-switch").checked = false;
+            $("#left-sidebar").removeClass("mini_sidebar_on");
+            $(".hmenu-btn").removeAttr("disabled", "disabled");
+            $(".hmenu-link").removeClass("isDisabled");
+          }
+        });
+
+        $(function() {
+          $(window).on("load resize", function() {
+            if($(window).innerWidth() < 1201){
+              $(".mini-sidebar-btn, .hmenu-btn").attr("disabled", "disabled");
+              $(".hmenu-link").addClass("isDisabled");
+              $(".mini-sidebar-link").addClass("isDisabled");
+            }else{
+              if(false == true){
+                $("body").addClass("h-menu");
+                document.getElementById("hmenu-switch").checked = true;
+                $(".mini-sidebar-btn").attr("disabled", "disabled");
+                $(".mini-sidebar-link").addClass("isDisabled");
+              }else{
+                $("body").removeClass("h-menu")
+                document.getElementById("hmenu-switch").checked = false;
+                $(".mini-sidebar-btn").removeAttr("disabled", "disabled");
+                $(".mini-sidebar-link").removeClass("isDisabled");
+              }
+
+              if(false == true){
+                $("body").addClass("mini_sidebar");
+                document.getElementById("mini-switch").checked = true;
+                $("#left-sidebar").addClass("mini_sidebar_on");
+                $(".hmenu-btn").attr("disabled", "disabled");
+                $(".hmenu-link").addClass("isDisabled");
+              }else{
+                $("body").removeClass("mini_sidebar");
+                document.getElementById("mini-switch").checked = false;
+                $("#left-sidebar").removeClass("mini_sidebar_on");
+                $(".hmenu-btn").removeAttr("disabled", "disabled");
+                $(".hmenu-link").removeClass("isDisabled");
+              }
+            }
+          }) 
+        }); 
+
+
+        $(".navbar-minimalize").on("click", function() {
+          $("body").toggleClass("mini_sidebar");
+          $("#left-sidebar").toggleClass("mini_sidebar_on");
+          if(false == true){
+            document.getElementById("mini-switch").checked = true;
+          }
+          else{
+            document.getElementById("mini-switch").checked = false;
+          }
+          // $(".navbar-brand").toggleClass("sidebar-icon");
+          // $(".right-icon").toggleClass("second");
+        });
+
+
+      </script>
+
+
+
+</html>

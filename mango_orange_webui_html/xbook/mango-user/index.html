@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lords24</title>
+   <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/user_dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      I18n.defaultLocale = "en";
+      I18n.locale = "en";
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <style type="text/css">
+  @media (max-width: 375px){
+    .logo {
+      font-size: 25px;
+    }
+
+    .login-cell .details span {
+      font-size: 14px;
+    }
+
+    .login-cell .details {
+      width: 230px;
+      padding: 7px 10px;
+    }
+  }
+
+  @media (max-width: 600px) and (min-width: 375px){
+    .logo {
+      font-size: 25px;
+    }
+
+    .login-cell .details span {
+      font-size: 16px;
+    }
+
+    .login-cell .details {
+      width: 260px;
+      padding: 7px 10px;
+    }
+  }
+</style>
+<header>
+  <div class="container-width flex">
+    <div class="logo">
+      <!-- <img src="img/page/logo_3.png"> -->
+      xBook.Pro
+    </div>
+
+    <div class="flex flex-1 r-text login-row">
+      <div class="table">
+        <div class="login-cell cell">
+          <p class="menu" onclick="showMobMenu()">
+            <!-- <span class="username bold">USER_OF_AGENT</span>|
+            <span class="coins">2969.0&nbsp;&nbsp;Coins </span> -->
+            <img alt="Menu" src="img/menu-aee306771f7f5dfa6274f52b319907ef.svg" />
+          </p>
+          <p class="details">
+            <span class="username bold">USER_OF_AGENT</span>|
+            <span class="coins">2969.0&nbsp;&nbsp;Coins </span>
+            <!-- <img src="img/indicators/arrow-right.svg" class="ar-down"> -->
+          </p>
+          <p class="details logout">
+            <a href="/users/sign_out" data-method="delete" rel="nofollow">
+              <span class="username bold clr-green">LOGOUT</span>
+            </a>
+          </p>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="container-width flex">
+    <div class="flex-1 l-text nav-align">
+      <ul>
+        <a href="/user/rules">
+          <li >HOME</li>
+        </a>
+        <!-- <a href="/user/dashboard/schedule">
+          <li   class="nav-active" ></li>
+        </a> -->
+        <a href="/user/matches">
+          <li >IN PLAY</li>
+        </a>
+          <a href="/user/matches/tournaments">
+            <li >TOURNAMENT</li>
+          </a>
+        <a href="/user/upcomming_matches">
+          <li >UPCOMING</li>
+        </a>
+        <a href="/user/rules">
+          <li >RULES</li>
+        </a>
+        <a href="/user/ledgers">
+          <li >LEDGER</li>
+        </a>
+        <a href="/user/dashboard/change_password">
+          <li >PASSWORD</li>
+        </a>
+        <a href="/user/all_matches">
+          <li >ALL MATCHES</li>
+        </a>
+        <!-- <a href="/user/games">
+          <li   class="nav-active" ></li>
+        </a> -->
+          <a href="/user/settings">
+            <li >SETTINGS</li>
+          </a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mob-nav light-bg">
+  <div class="outer-nav">
+    <div class="inner-nav flex dark-bg">
+      <p class="r-text fs-sm flex-1 bold  clr-user">USER_OF_AGENT | <span class="white fs-sm">2969.0  Coins</span></p>
+      <p class="l-text fs-sm flex-1"><img alt="Close right arrow" onClick="hideMobMenu()" src="img/close-right-arrow-9c53fbf0dc7a1234ee7a3813273e398a.svg" /></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/rules">HOME</a></p>
+    </div>
+    <!-- <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/dashboard/schedule"></a></p>
+    </div> -->
+    
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/matches">IN PLAY</a></p>
+    </div>
+
+      <div class="inner-nav flex br-bt">
+        <p class="r-text flex-1 bold dot-af"><a href="/user/matches/tournaments">TOURNAMENT</a></p>
+      </div>
+
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/upcomming_matches">UPCOMING</a></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/rules">RULES</a></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/ledgers">LEDGER</a></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/dashboard/change_password">PASSWORD</a></p>
+    </div>
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/all_matches">ALL MATCHES</a></p>
+    </div>
+    <!-- <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/user/games"></a></p>
+    </div> -->
+      <div class="inner-nav flex br-bt">
+        <p class="r-text flex-1 bold dot-af"><a href="/user/settings">SETTINGS</a></p>
+      </div>
+    <!-- <div class="inner-nav flex br-bt" onclick="showMobBets()">
+      <p class="r-text flex-1 bold dot-af">SHOW BETS</p>
+    </div> -->
+    <div class="inner-nav flex br-bt">
+      <p class="r-text flex-1 bold dot-af"><a href="/users/sign_out" data-method="delete" rel="nofollow">LOGOUT</a></p>
+    </div> 
+
+    <div class="logo">
+      <!-- <img src="img/page/logo_3.png"> -->
+      xBook.pro
+    </div>
+  </div>
+</div>
+    </div>  
+    <!-- <div class="container-width main-container flex"> -->
+      <html>
+
+  <head>
+    <script src="/assets/user/show15-957a555e5ffd5290009de0a2417a3001.js?body=1"></script>
+    <script type="text/javascript">
+      match_id_show13 = 26;
+    </script>
+
+    
+    
+    <script type="text/javascript">
+      $(function() {
+        // setTimeout(function(){
+        //   setBetStatus();
+        // }, 3000);
+
+        stompConnect();
+
+        // setHeroicCommentaryEvent('');
+        //set_event_font_size('');
+      });
+
+      var client;
+
+      var stompSuccessCallback = function() {
+        console.log('connected');
+        subscription = client.subscribe("/topic/arenas.global", messageRecivedStomp);
+      };
+
+      var stompFailureCallback =  function() {
+        console.log('error');
+        setTimeout(stompConnect, 10000);
+        console.log('STOMP: Reconecting in 10 seconds');
+      };
+
+       // called when the client receives a STOMP message from the server
+
+      function stompConnect() {
+        console.log('STOMP: Attempting connection');
+        // var sockJSConn = new SockJS('http://equivalent.io:15674/stomp');
+        var sockJSConn = new SockJS('http://164.52.194.11:15674/stomp');
+        sockJSConn._transportTimeout = function() { console.log('gotcha!!!'); };
+
+        console.log(sockJSConn);
+
+        // ws.onclose = function() {
+        //   console.log('close');
+        //   client.disconnect();
+        //   setConnected();
+        // };
+
+        client = Stomp.over(sockJSConn);
+        console.log(client);
+        // SockJS does not support heart-beat: disable heart-beats
+        client.heartbeat.outgoing = 0;
+        client.heartbeat.incoming = 0;
+
+        // recreate the stompClient to use a new WebSocket
+        client.connect('arenas_consumer', 'WJ+#5b5T6Z9VZwYF', stompSuccessCallback, stompFailureCallback, 'lagaikhai');
+      }
+    </script>
+
+
+  </head>
+  <style type="text/css">
+    /*Start Suspend Style*/
+    .market-suspend-p{
+      background: #7D5861 !important;
+      color: #7D5861 !important;
+      border-radius: 3px;
+      border: 2px solid #fff !important;
+      height: calc(24px - 1px) !important;
+      width: calc(50px - 2px) !important;
+      opacity: 0.5;
+      /*height: 100%;*/
+      cursor: not-allowed;
+    }
+    .market-suspend-b{
+      background: #0C5677 !important;
+      color: #0C5677 !important;
+      border-radius: 3px;
+      border: 2px solid #fff !important;
+      height: calc(24px - 1px) !important;
+      width: calc(50px - 2px) !important;
+      opacity: 0.5;
+      /*height: 100%;*/
+      cursor: not-allowed;
+    }
+    /*End Suspend Style*/
+
+    /*Start Odds Indicator Style*/
+    .green-m{
+      border-color: #009000;
+      animation: move-in-step 0.8s;
+      animation-iteration-count:3;
+      border-color: inherit;
+    }
+
+    @keyframes move-in-step{
+      0% {
+        /*border-color: inherit;*/
+        border-color: #fff;
+      }
+      80% {
+        border-color: #63C76A;
+      }
+      100% {
+        border-color: #63C76A;
+      }
+    }
+
+    .yellow-m{
+      border-color: #ffff00;
+      animation: move-in-step-yello 0.8s;
+      animation-iteration-count:3;
+      border-color: inherit;
+    }
+
+    @keyframes move-in-step-yello{
+      0% {
+        /*border-color: inherit;*/
+        border-color: #fff;
+      }
+      80% {
+        border-color: #ffff00;
+      }
+      100% {
+        border-color: #ffff00;
+      }
+    }
+
+    .red-m{
+      border-color: #d21717;
+      animation: move-in-steps 0.8s;
+      animation-iteration-count:3;
+      border-color: inherit
+    }
+
+    @keyframes move-in-steps{
+      0% {
+        /*border-color: inherit*/
+        border-color: #fff;
+      }
+      80% {
+        border-color: #ED5656;
+      }
+      100% {
+        border-color: #ED5656;
+      }
+    }
+
+    .l-button{
+      border: 2px solid #53aceb;
+      height: calc(24px - 1px) !important;
+      width: calc(50px - 2px) !important;
+    }
+
+    .k-button{
+      border: 2px solid #F0B5C3;
+      height: calc(24px - 1px) !important;
+      width: calc(50px - 2px) !important;
+    }
+    /*End Odds Indicator Style*/
+
+    .red{
+      color: red;
+    }
+
+    .box-background{
+      background-color: #344955;
+    }
+
+    /*LOAD BUTTON CSS FROM USER MATCH SHOW PAGE*/
+      .button.alert:before,
+      .button.alert:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; 
+      }
+
+      .button.round, .button.round {
+        border-radius: 1000px; 
+      }
+
+      .button.alert, .button.alert {
+        /*background-color: #3A61A2;*/
+        /*border-color: #3A61A2;*/
+        color: white; 
+      }
+
+      @media only screen and (min-width: 40.063em) {
+        .button, .button {
+          display: inline-block; 
+        } 
+      }
+
+      .button, .button {
+        position: relative;  
+      } 
+         
+      .button:not(.disabled):before {
+        content: '';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -11px;
+        width: 20px;
+        height: 20px;
+        border: 4px solid;
+        border-left-color: transparent;
+        border-radius: 50%;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -moz-transition-property: opacity;
+        -o-transition-property: opacity;
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
+        -moz-animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -moz-animation-name: rotate;
+        -webkit-animation-name: rotate;
+        animation-name: rotate;
+        -moz-animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+      }
+      .button:not(.disabled):after {
+        /*content: '';*/
+        display: inline-block;
+        height: 100%;
+        width: 0px;
+        -moz-transition-delay: 0.5s;
+        -o-transition-delay: 0.5s;
+        -webkit-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+        -moz-transition-duration: 0.75s;
+        -o-transition-duration: 0.75s;
+        -webkit-transition-duration: 0.75s;
+        transition-duration: 0.75s;
+        -moz-transition-property: width;
+        -o-transition-property: width;
+        -webkit-transition-property: width;
+        transition-property: width;
+      }
+
+      @media all and (max-width: 767px){
+        .button.alert{
+          font-size: 12px;
+          padding-top: 0.8rem;
+          padding-bottom: 0.8rem;
+        }
+      }
+
+      .button:not(.disabled).sending {
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+
+      .button:not(.disabled).sending:not(.expand) {
+        /*text-align: left;*/
+      }
+
+      .button:not(.disabled).sending:before {
+        -moz-transition-delay: 0.5s;
+        -o-transition-delay: 0.5s;
+        -webkit-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+        -moz-transition-duration: 1s;
+        -o-transition-duration: 1s;
+        -webkit-transition-duration: 1s;
+        transition-duration: 1s;
+        filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+        opacity: 1;
+      }
+
+      .button:not(.disabled).sending:after {
+        -moz-transition-delay: 0s;
+        -o-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+        width: 20px;
+      }
+
+      @keyframes rotate {
+        0% {
+          -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -moz-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+    /*LOAD BUTTON CSS FROM USER MATCH SHOW PAGE*/
+
+    .button.alert.round{
+      margin-left: 15px;
+    }
+
+    /*START ERROR POPUP*/
+      .md-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        max-width: 630px;
+        min-width: 320px;
+        height: auto;
+        z-index: 2000;
+        visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      /* Effect 1: Fade in and scale up */
+      .md-effect-1 .md-content {
+        -webkit-transform: scale(0.7);
+        -moz-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        transform: scale(0.7);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .md-show.md-effect-1 .md-content {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .md-perspective,
+      .md-perspective body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .md-perspective body  {
+        background: #222;
+        -webkit-perspective: 600px;
+        -moz-perspective: 600px;
+        perspective: 600px;
+      }
+
+      .md-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        max-width: 630px;
+        min-width: 280px;
+        height: auto;
+        z-index: 2000;
+        visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      .md-show {
+        visibility: visible;
+      }
+
+      .md-overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        opacity: 0;
+        /*background: rgba(143,27,15,0.8);*/
+        background: none repeat scroll 0% 0% rgba(171, 186, 214, 0.76) !important;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .md-show ~ .md-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Content styles */
+      .md-content {
+        color: #fff;
+        background: #3A61A2;
+        position: relative;
+        border-radius: 10px;
+        margin: 0 auto;
+      }
+      .md-content p{
+        text-align: center;
+      }
+      .md-content h3 {
+        font-family: "open-sans-semibold" !important;
+        margin: 0;
+        padding: 0.4em;
+        text-align: center;
+        font-size: 2.4em;
+        font-weight: 300;
+        opacity: 0.8;
+        background: #3A61A2;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .md-content > div {
+        padding: 20px 40px 20px;
+        margin: 0;
+        font-weight: 300;
+        font-size: 1.15em;
+      }
+
+      /*.md-content > div p {
+        margin: 0;
+        padding: 10px 0;
+      }*/
+
+      .md-content > div ul {
+        margin: 0;
+        padding: 0 0 30px 20px;
+      }
+
+      .md-content > div ul li {
+        font-family: "open-sans-semibold"!important;
+        padding: 5px 0;
+      }
+
+      .md-content button {
+        display: block;
+        margin: 0 auto;
+        font-size: 0.8em;
+      }
+
+    /*END ERROR POPUP*/
+
+    /*Background Images related Issue fixed start*/
+      .score-panel{
+        background-image: url(img/cricket_bg-5a4e85976f9b4103e7cae34e41fd297f.png);
+      }
+      .bread-crum a.r-arrow{
+        background-image: url(img/arrow-right-7741e14390f9c2b0ec435540b7b8a602.svg);
+      }
+
+      @media all and (max-width: 992px){
+        .score-panel{
+          height: 136px;
+          background-image: none;
+          background-color: #fff;
+        }
+      }
+    /*Background Images related Issue fixed End*/  
+
+    /*=======place-bet style start===== */
+      .num-btn-holder{
+        background-color: #000;
+      }
+      .sl-desktop-num-btn{
+        font-size: 16px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        width: 60px;
+        height: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(17, 42, 76);
+        font-weight: 600;
+        background-color: rgb(236, 234, 234);
+        margin: 0px 8px;
+      }
+      
+      @media all and (max-width: 860px){
+        .market-bet-mob{
+          display: none;
+        }
+        .session-desk{
+          display: none !important
+        }
+      }
+      @media all and (min-width: 860px){
+        .market-bet-mob{
+          display: none !important;
+        }
+        .session-mob{
+          display: none !important
+        }
+      }
+
+      @media all and (max-width: 768px){
+        .right-panel.match-list-box.right-panel-show{
+          width: calc(100% - 20px);
+          background-color: #e9e9e9 !important;
+        }
+
+        .market-bet-desk{
+          transition: right 0.3s;
+          /*position: fixed;*/
+          top: 10px;
+          /*width: calc(100% - 20px);*/
+          z-index: 5555;
+          transition: right 0.3s;
+          background-color: #e9e9e9 !important;
+        }
+
+        .market-bet-desk-show{
+          right: 10px;
+        }
+        .top{
+          right: -429px;
+        }
+        .block{
+          display: block;
+        }
+        .button.alert {
+          font-size: 15px;
+          padding-top: 0.4rem;
+        }
+
+       .session-bet-desk{
+          transition: right 0.3s;
+          /*position: fixed;*/
+          top: 0px;
+          /*width: calc(100% - 20px);*/
+          z-index: 5556;
+          transition: right 0.3s;
+          background-color: #e9e9e9 !important;
+        }
+        .session-bet-desk-show{
+          right: 10px;
+        }
+        .session-bet-desk .main-box{
+          margin-top: 386px !important;
+        }
+      }
+    /*=======place-bet style end===== */
+  </style>
+  
+  <body>
+
+    <div class="cricket_game">
+      <div class="container-width main-container flex">
+      <div class="left-panel">
+        <div class="main-box">
+          <div class="match-status-title l-text mb-2">Choose Sport</div>
+          <div class="sport-row active-sport mb-2">
+            <div class="icn">
+              <img alt="Cricket" src="img/cricket-13750a814721f130e5d898ee0ae4851f.png" />
+            </div>
+            <div class="type bold">CRICKET</div>
+          </div>
+          <a href="mango-football.html">
+          <div class="sport-row mb-2 open_football_game">
+            <div class="icn">
+              <img alt="Football" src="img/football-5fc1ef67f4ac648bb2a62481b4d1cfde.png" />
+            </div>
+            <div class="type bold ">FOOTBALL</div>
+          </div>
+          </a>
+          <a href="mango-football.html">
+         <div class="sport-row mb-2 open_tennis_game">
+            <div class="icn">
+                <img alt="Tennis img" src="img/tennis-img-8eea36e88eba328b5ef330aa4b7aa90e.svg" />
+              </div>
+              <div class="type bold tennis-g"><span class="translation_missing" title="translation missing: en.tennis">Tennis</span></div>
+          </div>
+          </a>
+        </div>
+      </div><!-- left-panel close -->
+
+      <!-- =================MIDDLE PANEL START================= -->
+        <div class="middle-panel flex-1">
+          <div class="bread-crum mb-10">
+            <a href="/user/dashboard">HOME</a>
+            <a href="#" class="r-arrow"></a>
+            <a href="/user/matches">Matches</a>
+            <a href="#" class="r-arrow"></a>
+            <a href="#" class="active">india my ledgers demo vs saw my ledgers demo</a>
+          </div>
+
+          <div class="l-content-outer flex dark-bg mb-10">
+            <div class="flex-1 flex l-title">
+              <img alt="Trophy" src="img/trophy-3ca3742ada20b4b490648cfe2305e625.svg" />
+              <p class="fs-16 gold bold">india my ledgers demo vs saw my ledgers demo</p>
+            </div>
+          </div>
+
+          <div class="score-panel mb-10">
+            <div class="inner-score-holder">
+              <div class="left-score score-div l-text">
+                <p class="team-name active bold" id="score_table_bat_26">india</p>
+                <p class="status score bold" id="score_table_run_26">0/0 (0.0 Ovs)</p>
+              </div>
+              <div class="middle-score">
+                <p class="commentry bold c-text" id="event_table_26" style="font-size: 40px;">BET<br>OPEN</p>
+              </div>
+              <div class="right-score score-div bold r-text">
+                <p class="team-name bold" id="score_table_bwl_26">saw
+                </p>
+                <p class="status score bold" id="score_table_bwl_desc26">
+                      Bowling...
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-list mb-10 market-session-bar">
+            <span class="nav-item active">All 
+              <span class="count" id="all_markets_count">1</span>
+            </span>
+            <span class="nav-item">Market
+              <span class="count" id="markets_count">1 </span>
+            </span>
+            <span class="nav-item">SESSION
+              <span class="count" id="sessions_count">0</span>
+            </span>
+            <!-- <span class="nav-item">Even Odd 
+              <span class="count"></span>
+            </span>
+            <span class="nav-item">Ending Digit 
+              <span class="count"></span>
+            </span> -->
+          </div>
+
+          <div class="two-col clear mb-10">
+            <div class="width-50 md-100 mr-5">
+              <!-- Market Bet Board start -->
+                  <div class="c-inner-holder inner-holder markets-show mb-10 clear">
+                          <div class="heading-row flex">
+                            <p class="l-text fs-16 flex-2">Market | <span class="clr-green bold">Match Winner</span></p>
+                            <p class="r-text flex-1"><span class="clr-green bold">0</span></p>
+                            <p class="r-text toggle-icon"></p>
+                          </div>
+                          <div class="match-winner-header heading-row match-div"> 
+                            <p class="lagai">Lagai</p>
+                            <p class="khai">Khai</p>
+                          </div>
+                          <div class="data-row flex data-row-100 mb-2" data-market-id = "34" data-market-sid = "Match Winner_26">
+                            
+                            <p class="l-text fs-16 flex-1" data-runner-sid = "india_26" data-column = "runner_name"  class="runner_row_india_26 flag bet-place-tbl-td runner-nm-first "style="text-align:left;"><img class="runner-flags hidden" src="/images/index.png">
+                              india
+                            </p>
+
+                            <p class="c-text flex-1 flex-half" ><span class="bold clr-green" data-runner-sid = "india_26" data-column = "position" class="runner_row_india_26 bet-place-tbl-td  runner-nm-first favorite_market  bet-val-cent" data-position = "0" >0</span></p>
+
+                            <p class="flex r-text flex-1 justify-end">
+                              <span data-runner-sid = "india_26" data-runner-name = "india" data-column = "back" class="l-button round-text dark open-keyboard MarketTable bet-place-tbl-td first-runner-bet-odds-yes-value cursor-pointer active-lagai-bet-box-color "odd-val='1.2' market-id = '34' runner-id ='93' match-id='26' heroic-market-type="match_winner"  data-id ='LAGAI' id="Match Winner_26_back_india_26">0.20</span>
+                              <span data-runner-sid = "india_26" data-runner-name = "india" data-column = "lay" class="k-button round-text light open-keyboard MarketTable bet-place-tbl-td first-runner-bet-odds-no-value cursor-pointer active-khai-bet-box-color " odd-val='1.3' market-id = '34' runner-id ='93' match-id='26' heroic-market-type="match_winner" data-id ='KHAI' id="Match Winner_26_lay_india_26">0.30</span>
+                            </p>
+                          </div>
+                          <div class="data-row flex data-row-100 mb-2" data-market-id = "34" data-market-sid = "Match Winner_26">
+                            
+                            <p class="l-text fs-16 flex-1" data-runner-sid = "saw_26" data-column = "runner_name"  class="runner_row_saw_26 flag bet-place-tbl-td"style="text-align:left;"><img class="runner-flags hidden" src="/images/index.png">
+                              saw
+                            </p>
+
+                            <p class="c-text flex-1 flex-half" ><span class="bold clr-green" data-runner-sid = "saw_26" data-column = "position" class="runner_row_saw_26 bet-place-tbl-td  bet-val-cent" data-position = "0" >0</span></p>
+
+                            <p class="flex r-text flex-1 justify-end">
+                              <span data-runner-sid = "saw_26" data-runner-name = "saw" data-column = "back" class="l-button round-text dark open-keyboard MarketTable bet-place-tbl-td first-runner-bet-odds-yes-value cursor-pointer active-lagai-bet-box-color close-status market-suspend-b"odd-val='' market-id = '34' runner-id ='94' match-id='26' heroic-market-type="match_winner"  data-id ='LAGAI' id="Match Winner_26_back_saw_26"></span>
+                              <span data-runner-sid = "saw_26" data-runner-name = "saw" data-column = "lay" class="k-button round-text light open-keyboard MarketTable bet-place-tbl-td first-runner-bet-odds-no-value cursor-pointer active-khai-bet-box-color close-status market-suspend-p" odd-val='' market-id = '34' runner-id ='94' match-id='26' heroic-market-type="match_winner" data-id ='KHAI' id="Match Winner_26_lay_saw_26"></span>
+                            </p>
+                          </div>
+                  </div>
+                  <!-- inner-holder close -->
+              <!-- Market Bet Board End -->
+
+              <!-- Custom Market Bet Board start -->
+              <!-- Custom Market Bet Board End -->
+
+               <!-- Market Bet Amount Form start -->
+             <form accept-charset="UTF-8" action="/user/matches/create_bet" class="input-coin market-form show_bet_place_btn mb-10" data-remote="true" method="post" style=""><div style="display:none;"><input name="utf8" type="hidden" value="✓"></div>
+                <div class="placed-bet market-bet-desk c-show-market-bet-desk" style="display: none;">
+                <div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()">×</span></div>
+                <div class="table inner-bet br-bt">
+                  <div class="cell l-text bold runner" id="runner_type">india</div>
+                  <div class="cell r-text">
+                    <p class="bold bet-type" id="odds_desc">LAGAI</p>
+                    <p class="bold bet-odds" id="odds">0.20</p>
+                  </div>
+                </div>
+                <div class="inner-box flex br-bt">
+                    <p class="left-text flex-1 l-text white">Market </p>
+                    <p class="right-text flex-1 r-text bold white" name="runner_nm" id="market-nm" value="">match_winner</p>
+                </div>
+
+                <div class="inner-box flex br-bt">
+                  <div class="bet-input c-text">
+                    <p class="sign bold minus" onclick="addValue(-1)">−</p>
+                    <input class="c-text bold amt_field keyup" id="coin_countity_bet" type="text" name="stack" title="Coin" value="0" autocomplete="off">
+                    <input type="hidden" id="bet-hidden" value="-1">
+                    <p class="sign bold plus" onclick="addValue(1)">+</p>
+                  </div>
+                </div>
+
+                <input id="odds_type" type="hidden" name="odds_type" value="LAGAI">
+                <input id="runner_id" type="hidden" name="runner_id" value="29">
+                <input id="odds_val" type="hidden" name="odds_val" value="1.21">
+                <input id="match_id" type="hidden" name="match_id" value="10">
+                <input id="market_id" type="hidden" name="market_id" value="11">
+                <input id="match_winner_heroic_market_type" class="market-type" type="hidden" name="heroic_market_type" value="match_winner">
+
+                <div class="sl-desktop-numpad-container br-bt">
+                  <div class="num-btn-holder flex">
+                    <div class="num-btn-row sl-superbtn-row flex mt-5">
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(100)">100</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(500)">500</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(1000)">1H</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(5000)">5H</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(10000)">10H</div>
+                    </div>
+                    <div class="num-btn-row sl-superbtn-row flex mt-5">
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(25000)">25H</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(50000)">50H</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(100000)">1L</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(200000)">2L</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(500000)">5L</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inner-box flex br-bt">
+                  <div class="bet-input c-text">
+                    <p class="left-text c-text white">Return | <span class="bold clr-green" id="return-value">0.00</span></p>
+                  </div>
+                </div>
+                <div class="inner-box flex br-bt">
+                  <button class="bet-btn button alert place-btn flex-1 mr-10" type="submit" data-disable="true">Done</button>
+                  <button class="bet-btn clear-btn flex-1" type="button" onclick="clearBet()">Clear Bet</button>
+                </div>
+                </div>
+                </form>         <!-- Market Bet Amount Form End --> 
+            </div>
+            <!-- width-50 close -->
+
+            
+            <div class="width-50 md-100 ml-5">
+              <!-- even odd market bet board start -->
+              <!-- even odd market bet board End-->
+
+              <div class="session-market">
+                <div class="session-markets-divs">
+                  <!-- Session bet board start -->
+                      <div class="heading-row flex sessions-thead">
+                        <p class="l-text fs-16 flex-2 sessions-title">Market | <span class="clr-green bold">SESSION</span></p>
+                        <p class="r-text flex-1">
+                            <span class="clr-green bold">
+                              0   
+                            </span>
+                        </p>
+                      </div>
+                          <div class="c-inner-holder inner-holder clear mb-2 markets-show" data-heroic-market-type="session" data-heroic-market-id="17" data-innings="1" data-session-type="runs_in_overs" data-overs="15">
+                            <div class="heading-row flex">
+                              <p class="l-text fs-16 flex-2" data-column="session_title">
+                                SESSION | <span class="clr-green bold">15 Overs, india demo testing inspect </span>
+                              </p>
+                              <p class="r-text toggle-icon"></p>
+                            </div>
+
+                            <div class="data-row flex data-row-50 mr-2" style="display: flex;">
+                              <p class="flex l-text fs-16 flex-2">
+                                <span>No | </span>
+                                <span data-column="no_runs" session-type="15 Overs, india demo testing inspect " heroic-market-type="session" session-rate="1.0" class="k-button round-text light open-keyboard-session not-value-box-color SessionTable bet-place-tbl-td first-runner-bet-odds-yes-value cursor-pointer " data-id="NO" match-id="13" session-run-id="21" session-id="17" id="17_no">
+                                  30
+                                </span>
+                              </p>
+                              <p class="r-text flex-1 bold">
+                                <span class="clr-green bold" data-column="no_rate" id="17_no_rate">
+                                  1.0
+                                </span>
+                              </p>
+                            </div>
+                            
+                            <div class="data-row flex data-row-50 mb-2" style="display: flex;">
+                              <p class="flex l-text fs-16 flex-2">
+                                <span>Yes | </span>
+                                <span data-column="yes_runs" session-type="15 Overs, india demo testing inspect " heroic-market-type="session" session-rate="1.0" class="l-button round-text dark open-keyboard-session yes-value-box-color SessionTable bet-place-tbl-td first-runner-bet-odds-no-value cursor-pointer " data-id="YES" match-id="13" session-run-id="21" session-id="17" id="17_yes">
+                                  31
+                                </span>
+                              </p>
+                              <p class="r-text flex-1 bold">
+                                <span data-column="yes_rate" class="clr-green bold bet-place-tbl-td bet-val-cent " id="17_yes_rate">
+                                  1.0
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                          <!-- inner-holder close -->
+                          
+                          <!-- inner-holder close -->
+                  <!-- Session bet board End -->
+                </div>  
+              </div>
+
+              <!-- Session Bet Amount Form start -->
+              <form accept-charset="UTF-8" action="/user/matches/create_session_bet" class="input-coin session-form show_bet_place_btn mb-10" data-remote="true" method="post" style=""><div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+                <div class="placed-bet session-bet-desk mt-10 c-show-session-bet-desk" style="display: none;">
+                  <div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()">×</span></div>
+                  <div class="table inner-bet br-bt">
+                    <div class="cell l-text bold runner" id="session_runner_type">YES</div>
+                    <div class="cell r-text">
+                      <p class="bold bet-odds" id="runns">
+                                    31
+                                  </p>
+                    </div>
+                  </div>
+                  <div class="inner-box flex br-bt">
+                    <p class="left-text flex-1 l-text white">SESSION</p>
+                    <p class="right-text flex-1 r-text bold white" name="runner_nm" id="session-nm" value="">15 Overs, india demo testing inspect </p>
+                  </div>
+
+                  <div class="inner-box flex br-bt">
+                    <div class="bet-input c-text">
+                      <p class="sign bold minus" onclick="addValue(-1)">−</p>
+                      <input class="c-text bold amt_field keyup" id="coin_countity_session" type="text" name="coins_debited" title="Coin" value="0" autocomplete="off">
+                      <input type="hidden" id="bet-hidden" value="-1">
+                      <p class="sign bold plus" onclick="addValue(1)">+</p>
+                    </div>
+                  </div>
+
+                  <input id="s_match_id" type="hidden" name="match_id" value="13">
+                  <input id="runs" type="hidden" name="runs" value="30">
+                  <input id="action" type="hidden" name="session_bet_type" value="NO">
+                  <input id="session_id" type="hidden" name="session_id" value="17">
+                  <input id="session_run_id" type="hidden" name="session_run_id" value="21">
+                  <input id="session_rate" type="hidden" name="odd_value" value="2.00">
+                  <input id="session_heroic_market_type" class="market-type" type="hidden" name="heroic_market_type" value="session">
+
+                <div class="sl-desktop-numpad-container br-bt">
+                  <div class="num-btn-holder flex">
+                    <div class="num-btn-row sl-superbtn-row flex mt-5">
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(100)">100</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(500)">500</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(1000)">1H</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(5000)">5H</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(10000)">10H</div>
+                    </div>
+                    <div class="num-btn-row sl-superbtn-row flex mt-5">
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(25000)">25H</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(50000)">50H</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(100000)">1L</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(200000)">2L</div>
+                      <div class="sl-desktop-num-btn" onclick="addSuperValue(500000)">5L</div>
+                    </div>
+                  </div>
+                </div>
+
+                  <div class="inner-box flex br-bt">
+                    <div class="bet-input c-text">
+                      <p class="left-text c-text white">Return | <span class="bold clr-green" id="session-return-value">0.00</span></p>
+                    </div>
+                  </div>
+                  <div class="inner-box flex br-bt">
+                    <button class="bet-btn button alert place-btn flex-1 mr-10" type="submit">Done</button>
+                    <button class="bet-btn clear-btn flex-1" type="button" onclick="clearBet()">Clear Bet</button>
+                  </div>
+                </div>
+                  </form>          
+                  <!-- Session Bet Amount Form End -->
+
+                <!-- ENDING DIGIT MARKET START -->
+                <!-- ENDING DIGIT MARKET End -->
+
+                <!-- Bets Tables -->
+                  <div class="bets-container">
+                    <!-- Match Bets Table Start -->
+                    <!-- Match Bets Table Close -->
+
+                    <!-- Session bet listing start-->
+                    <!-- Session bet listing End-->  
+                        
+                    <!-- Session bet listing End--> 
+                      <div class="inner-holder bets-outer mb-10 clear">
+                        <div class="heading-row flex">
+                          <p class="l-text fs-16 flex-2">
+                            <span class="bold">LIVE MATCHES</span>
+                          </p>
+                          <p class="r-text toggle-icon"></p>
+                        </div>
+                              <div class="box match-box box-background mb-2">
+                                <a href="/user/matches/10/show14">
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text">INDIA DEMO 17 VS SAW DEMO 18</p>
+                                    <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">30&nbsp;&nbsp;March&nbsp;&nbsp;06:59&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        0
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        0
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="box match-box box-background mb-2">
+                                <a href="/user/matches/11/show14">
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text">INDIA DEMO 19 VS SAW DEMO 20</p>
+                                    <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">06&nbsp;&nbsp;April&nbsp;&nbsp;04:53&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        0
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        0
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="box match-box box-background mb-2">
+                                <a href="/user/matches/19/show14">
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text">INDIA SESSION DEFAULT   VS   SAW SESSION DEFAULT</p>
+                                    <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">24&nbsp;&nbsp;April&nbsp;&nbsp;05:07&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        0
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        0
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="box match-box box-background mb-2">
+                                <a href="/user/matches/20/show14">
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text">INDIA SESSION REVIEW   VS  SAW SESSION REVIEW</p>
+                                    <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">25&nbsp;&nbsp;April&nbsp;&nbsp;04:30&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        0
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        0
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="box match-box box-background mb-2">
+                                <a href="/user/matches/21/show14">
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text">INDIA S1    VS  SAW S1</p>
+                                    <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">25&nbsp;&nbsp;April&nbsp;&nbsp;11:22&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        0
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        0
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="box match-box box-background mb-2">
+                                <a href="/user/matches/14/show14">
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text">INDIA SESSION DEMO VS SAW SESSION DEMO</p>
+                                    <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">16&nbsp;&nbsp;April&nbsp;&nbsp;09:12&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        0
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        2
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="box match-box box-background mb-2">
+                                <a href="/user/matches/24/show14">
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text">INDIA DECLARED DEMO1 VS SAW DECLARED DEMO1</p>
+                                    <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">19&nbsp;&nbsp;May&nbsp;&nbsp;11:29&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        1
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        1
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="box match-box box-background mb-2">
+                                <a href="/user/matches/26/show14">
+                                  <div class="inner-box flex br-bt">
+                                    <p class="left-text flex-1 c-text">INDIA MY LEDGERS DEMO VS SAW MY LEDGERS DEMO</p>
+                                    <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">06&nbsp;&nbsp;June&nbsp;&nbsp;04:49&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                                  </div>
+                                  <div class="inner-box flex">
+                                    <p class="right-text flex-1 c-text fs-16 grey">
+                                      Session Bets | 
+                                      <span class="bold clr-green mr-10">
+                                        0
+                                      </span>
+                                      Match Bets | 
+                                      <span class="bold clr-green">
+                                        0
+                                      </span>
+                                    </p>
+                                  </div>
+                                </a>
+                              </div>
+                      </div>
+                  </div>
+                <!-- bets-container Close-->
+            </div>
+
+            <!-- width-50 close -->
+          </div>
+
+          <div class="md-modal md-effect-1" id="modal-1">
+            <div class="md-content">
+              <!-- <h3>Message</h3> -->
+              <div>
+                <!--  <p>This is a modal window. You can do the following things with it:</p> -->
+                <p class="message"><p>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12" style="text-align: center;">
+                    <a  class="btn btn-danger purp_btn md-close" onclick="closeModel()">OK</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- middle-panel close -->
+      <!-- =================MIDDLE PANEL CLOSE================= -->
+
+      <div class="right-panel match-list-box">
+        <div class="betting-box">
+          <div class="empty-bet mb-10">
+            <div class="empty-bet-title c-text">Your Bet Slip is Empty</div>
+            <div class="empty-bet-notice c-text">
+              Your bet slip is empty. Click on any price to add a bet..!
+            </div>
+          </div>
+    
+          <!-- Even_odd Bet Amount Form start -->
+            <form accept-charset="UTF-8" action="/user/matches/create_bet" class="input-coin even-odd-market-form show_bet_place_btn" data-remote="true" method="post" style="display:none;"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+              <div class="placed-bet hide">
+              <div class="empty-bet-title c-text">Place Your Bet <span class="close bold" onclick="closeBet()">&times;</span></div>
+              <div class="table inner-bet br-bt">
+                <div class="cell l-text bold runner" id='even_odd_runner_type'></div>
+                <div class="cell r-text">
+                  <p class="bold bet-type">RATE</p>
+                  <p class="bold bet-odds"  id='even_odd_odds'></p>
+                </div>
+              </div>
+              <div class="inner-box flex br-bt">
+                <p class="left-text flex-1 l-text white">Market</p>
+                <p class="right-text flex-1 r-text bold white" name="runner_nm" id='even-odd-market-nm' value=""></p>
+              </div>
+
+
+              <div class="inner-box flex br-bt">
+                <div class="bet-input c-text">
+                  <p class="sign bold minus" onclick="addValue(-1)">&#8722;</p>
+                  <input class="c-text bold amt_field1 keyup" id ="coin_countity_even_odd" type="text" name="stack" title="Coin" type="text" value="0" autocomplete="off">
+                  <input type="hidden" id="bet-hidden" value="-1">
+                  <p class="sign bold plus" onclick="addValue(1)">&#43;</p>
+                </div>
+              </div>
+
+              <input id='even_odd_odds_type'  type="hidden" name="odds_type" value="LAGAI">
+              <input id='even_odd_runner_id' type='hidden' name='runner_id' value=''>
+              <input id='even_odd_odds_val' type="hidden" name="odds_val" value="">
+              <input id='even_odd_match_id' type="hidden" name="match_id" value="">
+              <input id='even_odd_market_id' type='hidden' name='market_id' value=''>
+              <input id='even_odd_heroic_market_type' type="hidden" name="heroic_market_type" value="">
+
+              <div class="sl-desktop-numpad-container br-bt">
+                <div class="num-btn-holder flex">
+                  <div class="num-btn-row sl-superbtn-row flex mt-5">
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(100)">100</div>
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(500)">500</div>
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(1000)">1H</div>
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(5000)">5H</div>
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(10000)">10H</div>
+                  </div>
+                  <div class="num-btn-row sl-superbtn-row flex mt-5">
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(25000)">25H</div>
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(50000)">50H</div>
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(100000)">1L</div>
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(200000)">2L</div>
+                    <div class="sl-desktop-num-btn" onclick="addSuperValue(500000)">5L</div>
+                  </div>
+                </div>
+              </div>   
+              <div class="inner-box flex br-bt">
+                <div class="bet-input c-text">
+                  <p class="left-text c-text white">Return | <span class="bold clr-green" id="even-return-value">0.00</span></p>
+                </div>
+              </div>
+              <div class="inner-box flex br-bt">
+                <button class="bet-btn button alert place-btn flex-1 mr-10" type="submit" >Done</button>
+                <button class="bet-btn clear-btn flex-1" type="button" onclick="clearBet()">Clear Bet</button>
+              </div>
+              </div>
+            </form>          <!-- Even_odd Bet Amount Form End --> 
+        </div>
+        
+        <!-- sl-numpad-container -->
+          <div class="sl-numpad-container">
+            <div class="num-btn-holder flex">
+              <div class="num-btn-row sl-superbtn-row flex mt-5">
+                <div class="sl-num-btn" onclick="addSuperValue(100)">100</div>
+                <div class="sl-num-btn" onclick="addSuperValue(500)">500</div>
+                <div class="sl-num-btn" onclick="addSuperValue(1000)">1H</div>
+                <div class="sl-num-btn" onclick="addSuperValue(5000)">5H</div>
+                <div class="sl-num-btn" onclick="addSuperValue(10000)">10H</div>
+              </div>
+              <div class="num-btn-row sl-superbtn-row flex mt-5">
+                <div class="sl-num-btn" onclick="addSuperValue(25000)">25H</div>
+                <div class="sl-num-btn" onclick="addSuperValue(50000)">50H</div>
+                <div class="sl-num-btn" onclick="addSuperValue(100000)">1L</div>
+                <div class="sl-num-btn" onclick="addSuperValue(200000)">2L</div>
+                <div class="sl-num-btn" onclick="addSuperValue(500000)">5L</div>
+              </div>
+
+              <div class="num-btn-row flex mt-5">
+                <div class="sl-num-btn" onclick="slNumBtn(1)">1</div>
+                <div class="sl-num-btn" onclick="slNumBtn(2)">2</div>
+                <div class="sl-num-btn" onclick="slNumBtn(3)">3</div>
+              </div>
+              <div class="num-btn-row flex">
+                <div class="sl-num-btn" onclick="slNumBtn(4)">4</div>
+                <div class="sl-num-btn" onclick="slNumBtn(5)">5</div>
+                <div class="sl-num-btn" onclick="slNumBtn(6)">6</div>
+              </div>
+              <div class="num-btn-row flex">
+                <div class="sl-num-btn" onclick="slNumBtn(7)">7</div>
+                <div class="sl-num-btn" onclick="slNumBtn(8)">8</div>
+                <div class="sl-num-btn" onclick="slNumBtn(9)">9</div>
+              </div>
+              <div class="num-btn-row flex mb-10">
+                <div class="sl-num-btn" onclick="clearBet()">C</div>
+                <div class="sl-num-btn" onclick="slNumBtn(0)">0</div>
+                <div class="sl-num-btn sl-backspace" onclick="num_backspace()">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px"><g><g>
+                      <g><g>
+                          <path d="M490.667,64H133.077c-7.196,0-13.906,3.627-17.848,9.647L3.485,244.314c-4.647,7.098-4.647,16.274,0,23.372     l111.744,170.667c3.942,6.02,10.652,9.647,17.848,9.647h357.589c11.782,0,21.333-9.551,21.333-21.333V85.333     C512,73.551,502.449,64,490.667,64z M469.333,405.333H144.609L46.833,256l97.776-149.333h324.725V405.333z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#102C4C"/>
+                          <path d="M198.246,356.418c8.331,8.331,21.839,8.331,30.17,0l70.248-70.248l70.248,70.248c8.331,8.331,21.839,8.331,30.17,0     s8.331-21.839,0-30.17L328.834,256l70.248-70.248c8.331-8.331,8.331-21.839,0-30.17s-21.839-8.331-30.17,0l-70.248,70.248     l-70.248-70.248c-8.331-8.331-21.839-8.331-30.17,0c-8.331,8.331-8.331,21.839,0,30.17L268.495,256l-70.248,70.248     C189.915,334.58,189.915,348.087,198.246,356.418z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#102C4C"/>
+                        </g></g></g></g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- sl-numpad-container -->
+
+        <div class="main-box">
+          <!-- Bets Main Table Start -->
+            <!-- Match Bets Table Start -->
+            <!-- Match Bets Table End -->  
+
+            <!-- Session bet listing start-->
+            <!-- Session bet listing End-->
+          <!-- Bets Main Table Close -->
+
+          <!-- Inplay Cricket and Football Match List -->
+            <div class="match-status-title l-text mb-2">Live Matches</div>
+                    <div class="box match-box mb-2">
+                      <a href=/user/matches/10/show14>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 c-text white">INDIA DEMO 17 VS SAW DEMO 18</p>
+                          <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">30&nbsp;&nbsp;March&nbsp;&nbsp;06:59&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                        </div>
+                        <div class="inner-box flex">
+                          <p class="right-text flex-1 c-text fs-16 grey">
+                            Session Bets | 
+                            <span class="bold clr-green mr-10">
+                              0
+                            </span>
+                            Match Bets | 
+                            <span class="bold clr-green">
+                              0
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="box match-box mb-2">
+                      <a href=/user/matches/11/show14>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 c-text white">INDIA DEMO 19 VS SAW DEMO 20</p>
+                          <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">06&nbsp;&nbsp;April&nbsp;&nbsp;04:53&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                        </div>
+                        <div class="inner-box flex">
+                          <p class="right-text flex-1 c-text fs-16 grey">
+                            Session Bets | 
+                            <span class="bold clr-green mr-10">
+                              0
+                            </span>
+                            Match Bets | 
+                            <span class="bold clr-green">
+                              0
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="box match-box mb-2">
+                      <a href=/user/matches/13/show14>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 c-text white">INDIA DEMO TESTING INSPECT  VS  SAW DEMO TESTING  INSPECT</p>
+                          <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">13&nbsp;&nbsp;April&nbsp;&nbsp;08:09&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                        </div>
+                        <div class="inner-box flex">
+                          <p class="right-text flex-1 c-text fs-16 grey">
+                            Session Bets | 
+                            <span class="bold clr-green mr-10">
+                              0
+                            </span>
+                            Match Bets | 
+                            <span class="bold clr-green">
+                              0
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="box match-box mb-2">
+                      <a href=/user/matches/19/show14>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 c-text white">INDIA SESSION DEFAULT   VS   SAW SESSION DEFAULT</p>
+                          <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">24&nbsp;&nbsp;April&nbsp;&nbsp;05:07&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                        </div>
+                        <div class="inner-box flex">
+                          <p class="right-text flex-1 c-text fs-16 grey">
+                            Session Bets | 
+                            <span class="bold clr-green mr-10">
+                              0
+                            </span>
+                            Match Bets | 
+                            <span class="bold clr-green">
+                              0
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="box match-box mb-2">
+                      <a href=/user/matches/20/show14>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 c-text white">INDIA SESSION REVIEW   VS  SAW SESSION REVIEW</p>
+                          <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">25&nbsp;&nbsp;April&nbsp;&nbsp;04:30&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                        </div>
+                        <div class="inner-box flex">
+                          <p class="right-text flex-1 c-text fs-16 grey">
+                            Session Bets | 
+                            <span class="bold clr-green mr-10">
+                              0
+                            </span>
+                            Match Bets | 
+                            <span class="bold clr-green">
+                              0
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="box match-box mb-2">
+                      <a href=/user/matches/21/show14>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 c-text white">INDIA S1    VS  SAW S1</p>
+                          <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">25&nbsp;&nbsp;April&nbsp;&nbsp;11:22&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                        </div>
+                        <div class="inner-box flex">
+                          <p class="right-text flex-1 c-text fs-16 grey">
+                            Session Bets | 
+                            <span class="bold clr-green mr-10">
+                              0
+                            </span>
+                            Match Bets | 
+                            <span class="bold clr-green">
+                              0
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="box match-box mb-2">
+                      <a href=/user/matches/14/show14>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 c-text white">INDIA SESSION DEMO VS SAW SESSION DEMO</p>
+                          <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">16&nbsp;&nbsp;April&nbsp;&nbsp;09:12&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                        </div>
+                        <div class="inner-box flex">
+                          <p class="right-text flex-1 c-text fs-16 grey">
+                            Session Bets | 
+                            <span class="bold clr-green mr-10">
+                              0
+                            </span>
+                            Match Bets | 
+                            <span class="bold clr-green">
+                              2
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="box match-box mb-2">
+                      <a href=/user/matches/24/show14>
+                        <div class="inner-box flex br-bt">
+                          <p class="left-text flex-1 c-text white">INDIA DECLARED DEMO1 VS SAW DECLARED DEMO1</p>
+                          <p class="schedule l-text flex-1 b-left"><span class="fs-16 grey">19&nbsp;&nbsp;May&nbsp;&nbsp;11:29&nbsp;PM<!-- 27 APRIL 09:30:00 PM --></span></p>
+                        </div>
+                        <div class="inner-box flex">
+                          <p class="right-text flex-1 c-text fs-16 grey">
+                            Session Bets | 
+                            <span class="bold clr-green mr-10">
+                              1
+                            </span>
+                            Match Bets | 
+                            <span class="bold clr-green">
+                              1
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+            </div>     
+
+            <div class="box-title c-text mb-2">Football Premier League</div>
+              <div class="box match-box mb-2">
+                <a href=/user/matches/22/show_football4>
+                  <div class="inner-box flex br-bt">
+                    <p class="left-text flex-1 c-text white">INDIA FOOTBALL VS SAW FOOTBALL </p>
+                  </div>
+                  <div class="inner-box flex">
+                    <p class="right-text flex-1 c-text fs-16 grey">
+                      Session Bets | 
+                      <span class="bold clr-green mr-10">
+                        0
+                      </span>
+                      Match Bets | 
+                      <span class="bold clr-green">
+                        2
+                      </span>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div> 
+          <!-- Inplay Cricket and Football Match List End -->
+        </div>
+      </div><!-- right-panel close -->
+      </div><!-- main-container close -->
+      </div>
+
+  <script type="text/javascript">
+    function showMobMenu() {
+      $('body').addClass('overlay');
+      $('.mob-nav').addClass('show-mob-menu');
+    }
+    function hideMobMenu() {
+      $('body').removeClass('overlay');
+      $('.mob-nav').removeClass('show-mob-menu');
+    }
+  </script>
+  <script type="text/javascript" src="js/jquery-62.js"></script>
+  <script type="text/javascript" src="js/jquery_u.js"></script>
+  <script type="text/javascript" src="js/sockjs.js"></script>
+  <script type="text/javascript" src="js/stomp.js"></script>
+  <script type="text/javascript" src="js/main-user.js"></script>
+  <script type="text/javascript" src="js/jquery-validate-min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/user-log-in.js"></script>
+  <script type="text/javascript" src="js/main-user.js"></script>
+
+  </body>
+</html>
+
+
+  

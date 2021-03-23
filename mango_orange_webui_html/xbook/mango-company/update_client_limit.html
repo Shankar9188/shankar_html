@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lords24</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="css/admin_dark.css" media="all" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script media="all" src="js/application.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.css">
+    <script media="all" src="js/miniscript.bundle.js"></script>
+    <script media="all" src="js/select2.full.min.js"></script>
+    <script media="all" src="js/main.js"></script>
+  </head>
+  <body class="theme-cyan  font-montserrat">
+    <!-- Theme Setting -->
+    <div class="themesetting">
+      <a href="javascript:void(0);" class="theme_btn"><i class="icon-magic-wand"></i></a>
+      <div class="card theme_color">
+        <div class="header">
+          <h2>Theme Color</h2>
+        </div>
+        <ul class="choose-skin list-unstyled mb-0">
+          <a href="/settings/set_agent_theme_color?color=green" data-method="get" data-remote="true">
+            <li data-theme="green" class=><div class="green"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=orange" data-method="get" data-remote="true">
+            <li data-theme="orange" class=><div class="orange"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=blush" data-method="get" data-remote="true">
+            <li data-theme="blush" class=><div class="blush"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=cyan" data-method="get" data-remote="true">
+            <li data-theme="cyan" class=active ><div class="cyan"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=indigo" data-method="get" data-remote="true">
+            <li data-theme="indigo" class=><div class="indigo"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=red" data-method="get" data-remote="true">
+            <li data-theme="red" class=><div class="red"></div></li>
+          </a>
+        </ul>
+      </div>
+      <div class="card font_setting">
+        <div class="header">
+          <h2>Font Settings</h2>
+        </div>
+        <div>
+          <div class="fancy-radio mb-2">
+            <a href="/settings/set_agent_theme_font?font=krub" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-krub" type="radio"  >
+                <span><i></i>Krub Google font</span>
+              </label>
+            </a>  
+          </div>
+          <div class="fancy-radio mb-2">
+            <a href="/settings/set_agent_theme_font?font=montserrat" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-montserrat" type="radio" checked>
+                <span><i></i>Montserrat Google font</span>
+              </label>
+            </a>  
+          </div>
+          <div class="fancy-radio">
+            <a href="/settings/set_agent_theme_font?font=roboto" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-roboto" type="radio"  >
+                <span><i></i>Robot Google font</span>
+              </label>
+            </a>  
+          </div>
+        </div>
+      </div>
+      <div class="card setting_switch">
+        <div class="header">
+          <h2>Settings</h2>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Light Version
+            <div class="float-right">
+              <a href="/settings/set_agent_theme" data-method="post" data-remote="true">
+                <label class="switch">
+                  <input id="themes-switch" type="checkbox" class="lv-btn">
+                  <span class="slider round"></span>
+                </label>
+              </a>  
+            </div>
+          </li>
+         
+          <li class="list-group-item">
+            Horizontal Henu
+            <div class="float-right">
+              <a href="/settings/set_agent_horizontal_menu" data-method="post" data-remote="true" class="hmenu-link">
+                <label class="switch">
+                  <input id="hmenu-switch" type="checkbox" class="hmenu-btn" >
+                  <span class="slider round"></span>
+                </label>
+              </a>  
+            </div>
+          </li>
+          <li class="list-group-item">
+            Mini Sidebar
+            <div class="float-right">
+                <label class="switch">
+                  <a href="/settings/set_agent_mini_sidebar" data-method="post" data-remote="true" class="mini-sidebar-link">
+                    <input id="mini-switch" type="checkbox" class="mini-sidebar-btn">
+                    <span class="slider round"></span>
+                  </a>
+                </label>
+            </div>
+          </li>
+        </ul>
+      </div>   
+    </div>
+
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <div id="wrapper">
+      <!-- partial:partials/_navbar.html -->
+  <nav class="navbar top-navbar">
+    <div class="container-fluid">
+      <div class="navbar-left">
+         <div class="navbar-btn">
+          <a href="index.html"></a>
+          <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
+        </div> 
+        <ul class="nav navbar-nav">
+          <!-- <li>
+            <a class="navbar-minimalize  btn btn-primary" href="#"><i class="fa fa-bars"></i></a>
+          </li> -->
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="icon-envelope"></i>
+              <span class="notification-dot bg-green">4</span>
+            </a>
+            <ul class="dropdown-menu right_chat email vivify fadeIn">
+              <li class="header green">You have 4 New eMail</li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                    <div class="media-body">
+                      <span class="name">James Wert <small class="float-right text-muted">Just now</small></span>
+                      <span class="message">Update GitHub</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <div class="avtar-pic w35 bg-indigo"><span>FC</span></div>
+                    <div class="media-body">
+                      <span class="name">Folisise Chosielie <small class="float-right text-muted">12min ago</small></span>
+                      <span class="message">New Messages</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <!-- <img class="media-object " src="../admin_dark/images/xs/avatar5.jpg" alt=""> -->
+                    <div class="media-body">
+                      <span class="name">Louis Henry <small class="float-right text-muted">38min ago</small></span>
+                      <span class="message">Design bug fix</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media mb-0">
+                    <!-- <img class="media-object " src="../admin_dark/images/xs/avatar2.jpg" alt=""> -->
+                    <div class="media-body">
+                      <span class="name">Debra Stewart <small class="float-right text-muted">2hr ago</small></span>
+                      <span class="message">Fix Bug</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="icon-bell"></i>
+              <span class="notification-dot bg-azura">4</span>
+            </a>
+            <ul class="dropdown-menu feeds_widget vivify fadeIn">
+              <li class="header blue">You have 4 New Notifications</li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-red"><i class="fa fa-check"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-danger">Issue Fixed <small class="float-right text-muted">9:10 AM</small></h4>
+                    <small>WE have fix all Design bug with Responsive</small>
+                  </div>
+                </a>
+              </li>                               
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-info"><i class="fa fa-user"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-info">New User <small class="float-right text-muted">9:15 AM</small></h4>
+                    <small>I feel great! Thanks team</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-orange"><i class="fa fa-question-circle"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-warning">Server Warning <small class="float-right text-muted">9:17 AM</small></h4>
+                    <small>Your connection is not private</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-green"><i class="fa fa-thumbs-o-up"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-success">2 New Feedback <small class="float-right text-muted">9:22 AM</small></h4>
+                    <small>It will give a smart finishing to your site</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown language-menu">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="fa fa-language"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/us.svg " class="w20 mr-2 rounded-circle">  -->US English</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/gb.svg " class="w20 mr-2 rounded-circle"> --> UK English</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/russia.svg " class="w20 mr-2 rounded-circle"> --> Russian</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/arabia.svg " class="w20 mr-2 rounded-circle"> --> Arabic</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/france.svg " class="w20 mr-2 rounded-circle"> --> French</a>
+            </div>
+          </li>
+          <li><a href="javascript:void(0);" class="megamenu_toggle icon-menu" title="Mega Menu">Mega</a></li>
+          <li class="p_social"><a href="page-social.html" class="social icon-menu" title="News">Social</a></li>
+          <li class="p_news"><a href="page-news.html" class="news icon-menu" title="News">News</a></li>
+          <li class="p_blog"><a href="page-blog.html" class="blog icon-menu" title="Blog">Blog</a></li>
+        </ul>
+      </div>
+
+          <div class="navbar-right">
+            <div id="navbar-menu">
+              <ul class="nav navbar-nav">
+                <li><a href="javascript:void(0);" class="search_toggle icon-menu" title="Search Result"><i class="icon-magnifier"></i></a></li>                        
+                <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="icon-bubbles"></i><span class="notification-dot bg-pink">2</span></a></li>
+                <li><a class="icon-menu" data-method="delete" href="/agents/sign_out" rel="nofollow"><i class='icon-power'></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+      </nav>
+
+      <div class="search_div">
+        <div class="card">
+          <div class="body">
+            <form id="navbar-search" class="navbar-form search-form">
+              <div class="input-group mb-0">
+                <input type="text" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="icon-magnifier"></i></span>
+                  <a href="javascript:void(0);" class="search_toggle btn btn-danger"><i class="icon-close"></i></a>
+                </div>
+              </div>
+            </form>
+          </div>            
+        </div>
+        <span>Search Result <small class="float-right text-muted">About 90 results (0.47 seconds)</small></span>
+        <div class="table-responsive">
+          <table class="table table-hover table-custom spacing5">
+            <tbody>
+              <tr>
+                <td class="w40">
+                  <span>01</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>SS</span></div>
+                    <div class="ml-3">
+                      <a href="page-invoices-detail.html" title="">South Shyanne</a>
+                      <p class="mb-0">south.shyanne@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>02</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Zoe Baker</a>
+                      <p class="mb-0">zoe.baker@example.com</p>
+                    </div>
+                  </div>                                        
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>03</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-indigo" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>CB</span></div>
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Colin Brown</a>
+                      <p class="mb-0">colinbrown@example.com</p>
+                    </div>
+                  </div>                                        
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>04</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-green" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>KG</span></div>
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Kevin Gill</a>
+                      <p class="mb-0">kevin.gill@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>05</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Brandon Smith</a>
+                      <p class="mb-0">Maria.gill@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>06</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Kevin Baker</a>
+                      <p class="mb-0">kevin.baker@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>07</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Zoe Baker</a>
+                      <p class="mb-0">zoe.baker@example.com</p>
+                    </div>
+                  </div>                                        
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="megamenu" class="megamenu particles_js">
+        <a href="javascript:void(0);" class="megamenu_toggle btn btn-danger"><i class="icon-close"></i></a>
+        <div class="container">            
+          <div class="row clearfix">
+            <div class="col-12">
+              <ul class="q_links">
+                <li><a href="app-inbox.html"><i class="icon-envelope"></i><span>Inbox</span></a></li>
+                <li><a href="app-chat.html"><i class="icon-bubbles"></i><span>Messenger</span></a></li>
+                <li><a href="app-calendar.html"><i class="icon-calendar"></i><span>Event</span></a></li>
+                <li><a href="page-profile.html"><i class="icon-user"></i><span>Profile</span></a></li>
+                <li><a href="page-invoices.html"><i class="icon-printer"></i><span>Invoice</span></a></li>
+                <li><a href="page-timeline.html"><i class="icon-list"></i><span>Timeline</span></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-picture text-info"></i>
+                    <h4 class="m-t-25 mb-0">104 Picture</h4>
+                    <p>Your gallery download complete</p>
+                    <a href="javascript:void(0);" class="btn btn-info btn-round">Download now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-diamond text-success"></i>
+                    <h4 class="m-t-25 mb-0">813 Point</h4>
+                    <p>You are doing great job!</p>
+                    <a href="javascript:void(0);" class="btn btn-success btn-round">Read now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-social-twitter text-primary"></i>
+                    <h4 class="m-t-25 mb-0">3,756</h4>
+                    <p>New Followers on Twitter</p>
+                    <a href="javascript:void(0);" class="btn btn-primary btn-round">Find more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Anyone send me a message
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone seeing my profile page
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone posts a comment on my post
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="particles-js"></div>
+      </div>
+
+      <div id="rightbar" class="rightbar">
+        <div class="body">
+          <ul class="nav nav-tabs2">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Chat-one">Chat</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat-list">List</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat-groups">Groups</a></li>
+          </ul>
+          <hr>
+          <div class="tab-content">
+            <div class="tab-pane vivify fadeIn delay-100 active" id="Chat-one">
+              <div class="slim_scroll">
+                <div class="chat_detail">
+                  <ul class="chat-widget clearfix">
+                    <li class="left float-left">
+                      <div class="avtar-pic w35 bg-pink"><span>KG</span></div>
+                      <div class="chat-info">       
+                        <span class="message">Hello, John<br>What is the update on Project X?</span>
+                      </div>
+                    </li>
+                    <li class="right">
+                      <!-- <img src="../admin_dark/images/xs/avatar1.jpg" class="rounded" alt=""> -->
+                      <div class="chat-info">
+                        <span class="message">Hi, Alizee<br> It is almost completed. I will send you an email later today.</span>
+                      </div>
+                    </li>
+                    <li class="left float-left">
+                      <div class="avtar-pic w35 bg-pink"><span>KG</span></div>
+                      <div class="chat-info">
+                        <span class="message">That's great. Will catch you in evening.</span>
+                      </div>
+                    </li>
+                    <li class="right">
+                      <!-- <img src="../assets/images/xs/avatar1.jpg" class="rounded" alt=""> -->
+                      <div class="chat-info">
+                        <span class="message">Sure we'will have a blast today.</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="input-group p-t-15">
+                    <textarea rows="3" class="form-control" placeholder="Enter text here..."></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane vvivify fadeIn delay-100" id="Chat-list">
+              <ul class="right_chat list-unstyled mb-0">
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Folisise Chosielie</span>
+                        <span class="message">offline</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Marshall Nichols</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Louis Henry</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-orange"><span>DS</span></div>
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-green"><span>SW</span></div>
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since Jan 18</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-indigo"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Louis Henry</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-pink"><span>DS</span></div>
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-info"><span>SW</span></div>
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane vivify fadeIn delay-100" id="Chat-groups">
+              <ul class="right_chat list-unstyled mb-0">
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-cyan"><span>DT</span></div>
+                      <div class="media-body">
+                        <span class="name">Designer Team</span>
+                        <span class="message">offline</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-azura"><span>SG</span></div>
+                      <div class="media-body">
+                        <span class="name">Sale Groups</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-orange"><span>NF</span></div>
+                      <div class="media-body">
+                        <span class="name">New Fresher</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-indigo"><span>PL</span></div>
+                      <div class="media-body">
+                        <span class="name">Project Lead</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>                            
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- partial -->
+      <div>
+        <div id="left-sidebar" class="sidebar">
+          <div class="navbar-brand">
+            <a href=""><img alt="xBook" class="img-fluid logo" src="img/icon.svg" /><span>Lords24</span></a>
+           <!--  <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu icon-close"></i></button> 
+            <button type="button" class="btn float-right navbar-minimalize"><i class='fas fa-angle-left'></i></button> -->
+          </div>
+          <div class="sidebar-scroll">
+            <a href="/settings/set_agent_mini_sidebar" data-method="post" data-remote="true" class="mini-sidebar-link">
+              <div class="right-icon"><i class='fas fa-angle-left navbar-minimalize float-right'></i></div>
+            </a>  
+            <div class="user-account">
+             <!--  <div class="user_div">
+              </div> -->
+              <div class="dropdown">
+                <span>Welcome,</span>
+                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Company (company)</strong></a>
+                <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
+                  <li><a href="page-profile.html"><i class="icon-user"></i>My Profile</a></li>
+                  <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
+                  <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+                  <li class="divider"></li>
+                  <li><a data-method="delete" href="/agents/sign_out" rel="nofollow"><i class='icon-power'></i>Logout</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <nav id="left-sidebar-nav" class="sidebar-nav">
+              <ul id="main-menu" class="metismenu">
+                <li class="header">Main</li>
+                <li>
+                  <a href="company-dashboard.html"><i class="icon-speedometer"></i><span>Dashboard</span></a>
+                </li>
+                  <li class="nav-menu">
+                    <a href="#myPage" class="has-arrow"><i class="icon-diamond"></i><span>Manage</span></a>
+                    <ul class="active-content hide"> 
+                      <li class="open active"><a href="manage-master.html" data-method="get">Master</a></li>
+                      <li class="open active"><a href="manage-super-stockists.html" data-method="get">Super Stockists</a></li>
+                      <li class="open active"><a href="manage-stockists.html" data-method="get">Stockists</a></li>
+                      <li class="open active"><a href="manage-agent.html" data-method="get">Agent</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-menu">
+                    <a href="#myPage" class="has-arrow"><i class="icon-rocket"></i><span>Sports</span></a>
+                    <ul class="active-content hide"> 
+                      <li ><a href="sports-matches.html" data-method="get">Matches</a></li>
+                        <li ><a href="sports-tournament.html" data-method="get">Tournament</a></li>
+                    </ul>
+                  </li>
+                    <li class="nav-menu">
+                      <a href="#myPage" class="has-arrow"><i class="icon-user"></i><span>Manage Clients</span></a>
+                      <ul class="active-content hide"> 
+
+                        <li>
+                          <a href="/agent/users/update_client_limit" data-method="get">Commission &amp; Limits</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                        <a href="manage-sub-company.html" data-method="get"><i class="icon-bubbles"></i><span>Manage SubCompany</span></a>
+                    </li>
+
+                    <li>
+                      <a href="manage-password-panel.html" data-method="get"><i class="icon-tag"></i><span>Manage Password</span></a>
+                    </li>
+
+                    <li>
+                      <a href="language.html" data-method="get"><i class="icon-speech"></i><span>Language</span></a>
+                    </li>
+
+                    <li class="nav-menu">
+                      <a href="#myPage" class="has-arrow"><i class="icon-book-open"></i><span>Manage Ledgers</span></a>
+                      <ul class="active-content hide"> 
+                        <li >
+                          <a href="collection_report.html" data-method="get">Collection Report</a>
+                        </li>
+                        <li>
+                          <a href="/earning_report.html" data-method="get">Profit &amp; Loss</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-menu">
+                      <a href="#myPage" class="has-arrow"><i class="icon-settings"></i><span>Manage Settings</span></a>
+                      <ul class="active-content hide"> 
+                        <li ><a href="settings.html" data-method="get"><span>Settings</span></a></li>
+                        <li ><a href="stake_limits_packages.html"><span>Stake Limits Packages</span></a></li> 
+                        <li ><a href="rules.html"><span>RULES</span></a></li>
+                      </ul>                       
+                    </li>
+
+                    <li ><a href="update_agent_coins.html" data-method="get"><i class="icon-credit-card"></i><span>Credit Coins</span></a>
+                    </li>
+                  </ul>
+            </nav>
+          </div>   
+        </div>
+
+        <div id="main-content">
+           <div class="container-fluid">
+              <style type="text/css">
+                 .col-xs-6 {
+                 width:80%;
+                 }
+                 .col-coins-limit{
+                 width: 150px;
+                 }
+              </style>
+              <div class="block-header">
+                 <div class="row clearfix">
+                    <div class="col-md-6 col-sm-12">
+                       <h1>CLIENTS</h1>
+                       <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a href="/agent/dashboard">Dashboard</a></li>
+                             <li class="breadcrumb-item active" aria-current="page"><a href="#"><strong>Commission &amp; Limits</strong></a></li>
+                          </ol>
+                       </nav>
+                    </div>
+                 </div>
+              </div>
+              <div class="row clearfix d-block">
+                 <div class="col-lg-12">
+                    <div class="card">
+                       <div class="header">
+                          <h2>Super Stockists</h2>
+                       </div>
+                       <div class="table-responsive">
+                          <table class="table table-hover table-bordered">
+                             <thead>
+                                <tr class="tbl-header-middle">
+                                   <th colspan="1"></th>
+                                   <th colspan="1"></th>
+                                   <th colspan="3">Client Commission</th>
+                                   <th colspan="1">Client Limit</th>
+                                   <th colspan="2"></th>
+                                </tr>
+                                <tr>
+                                   <th>ID</th>
+                                   <th>Client Name</th>
+                                   <th>Match Commission</th>
+                                   <th>Session Commission</th>
+                                   <th>Football Commission</th>
+                                   <th>Fix Limit</th>
+                                   <th>Used Limit</th>
+                                   <th>Action</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr data-agent-id="2">
+                                   <td>2</td>
+                                   <td>Stockist Agent (Stockist)</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="5000000.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="2010000.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                                <tr data-agent-id="9">
+                                   <td>9</td>
+                                   <td>Xss9 ()</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="4.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="4.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="1000000.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="517881.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                                <tr data-agent-id="12">
+                                   <td>12</td>
+                                   <td>Xss12 ()</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="4.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="1000000.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="100865.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                             </tbody>
+                          </table>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-12">
+                    <div class="card">
+                       <div class="header">
+                          <h2>Stockists</h2>
+                       </div>
+                       <div class="table-responsive">
+                          <table class="table table-hover table-bordered">
+                             <thead>
+                                <tr class="tbl-header-middle">
+                                   <th colspan="1"></th>
+                                   <th colspan="1"></th>
+                                   <th colspan="3">Client Commission</th>
+                                   <th colspan="1">Client Limit</th>
+                                   <th colspan="2"></th>
+                                </tr>
+                                <tr>
+                                   <th>ID</th>
+                                   <th>Client Name</th>
+                                   <th>Match Commission</th>
+                                   <th>Session Commission</th>
+                                   <th>Football Commission</th>
+                                   <th>Fix Limit</th>
+                                   <th>Used Limit</th>
+                                   <th>Action</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr data-agent-id="20">
+                                   <td>20</td>
+                                   <td>Xs20 (Abc)</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="0.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="0.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                             </tbody>
+                          </table>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-12">
+                    <div class="card">
+                       <div class="header">
+                          <h2>Agent</h2>
+                       </div>
+                       <div class="table-responsive">
+                          <table class="table table-hover table-bordered">
+                             <thead>
+                                <tr class="tbl-header-middle">
+                                   <th colspan="1"></th>
+                                   <th colspan="1"></th>
+                                   <th colspan="3">Client Commission</th>
+                                   <th colspan="1">Client Limit</th>
+                                   <th colspan="2"></th>
+                                </tr>
+                                <tr>
+                                   <th>ID</th>
+                                   <th>Client Name</th>
+                                   <th>Match Commission</th>
+                                   <th>Session Commission</th>
+                                   <th>Football Commission</th>
+                                   <th>Fix Limit</th>
+                                   <th>Used Limit</th>
+                                   <th>Action</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr data-agent-id="5">
+                                   <td>5</td>
+                                   <td>Agent Company (Agent)</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="1000000.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="0.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                                <tr data-agent-id="6">
+                                   <td>6</td>
+                                   <td>Xa6 ()</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="2.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="1000000.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="99800.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                                <tr data-agent-id="7">
+                                   <td>7</td>
+                                   <td>Xa7 ()</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="2.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="1000000.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="99200.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                                <tr data-agent-id="8">
+                                   <td>8</td>
+                                   <td>Xa8 ()</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="2.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="1000000.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="99800.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                                <tr data-agent-id="16">
+                                   <td>16</td>
+                                   <td>Xa16 ()</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="0.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="0.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                                <tr data-agent-id="17">
+                                   <td>17</td>
+                                   <td>Xa17 ()</td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" name="match_commission" type="text" value="0.0"></td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" name="session_commission" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" name="football_match_commission_percentage" type="text" value="0.0">
+                                   </td>
+                                   <td><input class="update-agent-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="0.0"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="0.0"></td>
+                                   <td><button type="button" class="btn btn-primary update-agent">Update</button></td>
+                                </tr>
+                             </tbody>
+                          </table>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-12">
+                    <div class="card">
+                       <div class="header">
+                          <h2>All Users</h2>
+                       </div>
+                       <div class="table-responsive">
+                          <table class="table table-hover table-bordered">
+                             <thead>
+                                <tr class="tbl-header-middle">
+                                   <th colspan="1"></th>
+                                   <th colspan="1"></th>
+                                   <th colspan="3">Client Commission</th>
+                                   <th colspan="2">Client Limit</th>
+                                   <th colspan="2"></th>
+                                </tr>
+                                <tr>
+                                   <th>ID</th>
+                                   <th>Client Name</th>
+                                   <th>Match Commission</th>
+                                   <th>Session Commission</th>
+                                   <th>Football Commission</th>
+                                   <th>Fix Limit</th>
+                                   <th>Current Limit</th>
+                                   <th>Used Limit</th>
+                                   <th>Action</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr data-user-id="1">
+                                   <td>1</td>
+                                   <td>USER_OF_COMPANY (Company)</td>
+                                   <td><input class="update-user-info col-xs-6" data-field-name="match_commission" disabled="disabled" id="match_commission" max="100.0" min="0.0" name="match_commission" step="0.01" type="number" value="0.0"></td>
+                                   <td><input class="update-user-info col-xs-6" data-field-name="session_commission" disabled="disabled" id="session_commission" max="100.0" min="0.0" name="session_commission" step="0.01" type="number" value="0.0">
+                                   </td>
+                                   <td><input class="update-user-info col-xs-6" data-field-name="football_match_commission_percentage" disabled="disabled" id="football_match_commission_percentage" max="100.0" min="0.0" name="football_match_commission_percentage" step="0.01" type="number" value="0.0">
+                                   </td>
+                                   <td><input class="update-user-info col-xs-6 col-coins-limit" data-field-name="fix_limit" id="fix_limit" name="fix_limit" type="text" value="10000.0"></td>
+                                   <td><input class="update-user-info col-xs-6 col-coins-limit" data-field-name="coins" id="coins" name="coins" type="text" value="9983.3"></td>
+                                   <td><input class="col-xs-6 col-coins-limit" id="used_coins" name="used_coins" readonly="readonly" type="text" value="0"></td>
+                                   <td><button type="button" class="btn btn-primary update-user">Update</button></td>
+                                </tr>
+                             </tbody>
+                          </table>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-12">
+                    <div class="card">
+                       <div class="header">
+                          <h2>Summary</h2>
+                       </div>
+                       <div class="table-responsive">
+                          <table class="table table-hover table-custom spacing5">
+                             <thead>
+                                <tr>
+                                   <th>Fix Limit</th>
+                                   <th>Limit Distributed Below</th>
+                                   <th>Limit With Clients</th>
+                                   <!-- <th>Ledger Balance</th> -->
+                                   <th>Ledger Exposure</th>
+                                   <th>Current Limit</th>
+                                   <th>Remaining Limit</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr>
+                                   <td>50000000.0</td>
+                                   <td>12000100.0</td>
+                                   <td>9983.3</td>
+                                   <td>0.0 </td>
+                                   <td>50000000.0</td>
+                                   <td>37989916.7</td>
+                                </tr>
+                             </tbody>
+                          </table>
+                       </div>
+                    </div>
+                 </div>
+                 <script type="text/javascript">
+                    $(".update-user").click(function(){  
+                      var submit_hash = {}; 
+                      $(this).closest('tr').find('.update-user-info').each(function(){
+                          var field_name = $(this).attr('data-field-name')
+                          var field_value = $(this).val();
+                          submit_hash[field_name] = field_value;
+                      });
+                      var user_id = $(this).closest("tr").attr("data-user-id");
+                      console.log("submit_hash =>", submit_hash);
+                      console.log("user_id =>",user_id);
+                      $.ajax({
+                            type: "patch",
+                            url: "/agent/users/update_client_limit_on_index",
+                            data : {id : user_id, user : submit_hash},
+                            headers: {
+                                       'X-CSRF-Token': 'fUm1fNY7SoHDVHzYNHx7qrpuY2oPa4r5+CiMv+CcZNo='
+                                 },
+                            success: function(response){         
+                           }
+                       });
+                    });
+                    
+                    $(".update-agent").click(function(){  
+                      var submit_hash = {}; 
+                      $(this).closest('tr').find('.update-agent-info').each(function(){
+                          var field_name = $(this).attr('data-field-name')
+                          var field_value = $(this).val();
+                          submit_hash[field_name] = field_value;
+                      });
+                      var agent_id = $(this).closest("tr").attr("data-agent-id");
+                      console.log("submit_hash =>", submit_hash);
+                      console.log("agent_id =>", agent_id);
+                      $.ajax({
+                            type: "patch",
+                            url: "/agent/agents/update_client_limit_on_index",
+                            data : {id : agent_id, agent : submit_hash},
+                            headers: {
+                                       'X-CSRF-Token': 'fUm1fNY7SoHDVHzYNHx7qrpuY2oPa4r5+CiMv+CcZNo='
+                                 },
+                            success: function(response){  
+                           }
+                       });
+                    });
+                    
+                    
+                    $(".update-sub-company-agent").click(function(){  
+                      var submit_hash = {}; 
+                      $(this).closest('tr').find('.update-agent-info').each(function(){
+                          var field_name = $(this).attr('data-field-name')
+                          var field_value = $(this).val();
+                          submit_hash[field_name] = field_value;
+                      });
+                      var agent_id = $(this).closest("tr").attr("data-agent-id");
+                      console.log("submit_hash =>", submit_hash);
+                      console.log("agent_id =>", agent_id);
+                      $.ajax({
+                            type: "patch",
+                            url: "/agent/agents/update_sub_company_limit_on_index",
+                            data : {id : agent_id, agent : submit_hash},
+                            headers: {
+                                       'X-CSRF-Token': 'fUm1fNY7SoHDVHzYNHx7qrpuY2oPa4r5+CiMv+CcZNo='
+                                 },
+                            success: function(response){  
+                           }
+                       });
+                    });
+                 </script>
+              </div>
+           </div>
+        </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+        </div>
+          </div>
+        </div>
+        <script media="all" src="/assets/admin_dark.js"></script>
+      </body>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          if(false == true){
+            document.getElementById("themes-switch").checked = true;
+          }else{
+            document.getElementById("themes-switch").checked = false;
+          }
+
+          if(false == true)
+          {
+            $("body").addClass("mini_sidebar");
+            document.getElementById("mini-switch").checked = true;
+            $("#left-sidebar").addClass("mini_sidebar_on");
+            $(".hmenu-btn").attr("disabled", "disabled");
+            $(".hmenu-link").addClass("isDisabled");
+          }else{
+            $("body").removeClass("mini_sidebar");
+            document.getElementById("mini-switch").checked = false;
+            $("#left-sidebar").removeClass("mini_sidebar_on");
+            $(".hmenu-btn").removeAttr("disabled", "disabled");
+            $(".hmenu-link").removeClass("isDisabled");
+          }
+        });
+
+        $(function() {
+          $(window).on("load resize", function() {
+            if($(window).innerWidth() < 1201){
+              $(".mini-sidebar-btn, .hmenu-btn").attr("disabled", "disabled");
+              $(".hmenu-link").addClass("isDisabled");
+              $(".mini-sidebar-link").addClass("isDisabled");
+            }else{
+              if(false == true){
+                $("body").addClass("h-menu");
+                document.getElementById("hmenu-switch").checked = true;
+                $(".mini-sidebar-btn").attr("disabled", "disabled");
+                $(".mini-sidebar-link").addClass("isDisabled");
+              }else{
+                $("body").removeClass("h-menu")
+                document.getElementById("hmenu-switch").checked = false;
+                $(".mini-sidebar-btn").removeAttr("disabled", "disabled");
+                $(".mini-sidebar-link").removeClass("isDisabled");
+              }
+
+              if(false == true){
+                $("body").addClass("mini_sidebar");
+                document.getElementById("mini-switch").checked = true;
+                $("#left-sidebar").addClass("mini_sidebar_on");
+                $(".hmenu-btn").attr("disabled", "disabled");
+                $(".hmenu-link").addClass("isDisabled");
+              }else{
+                $("body").removeClass("mini_sidebar");
+                document.getElementById("mini-switch").checked = false;
+                $("#left-sidebar").removeClass("mini_sidebar_on");
+                $(".hmenu-btn").removeAttr("disabled", "disabled");
+                $(".hmenu-link").removeClass("isDisabled");
+              }
+            }
+          }) 
+        }); 
+
+
+        $(".navbar-minimalize").on("click", function() {
+          $("body").toggleClass("mini_sidebar");
+          $("#left-sidebar").toggleClass("mini_sidebar_on");
+          if(false == true){
+            document.getElementById("mini-switch").checked = true;
+          }
+          else{
+            document.getElementById("mini-switch").checked = false;
+          }
+          // $(".navbar-brand").toggleClass("sidebar-icon");
+          // $(".right-icon").toggleClass("second");
+        });
+      </script>
+
+
+
+</html>

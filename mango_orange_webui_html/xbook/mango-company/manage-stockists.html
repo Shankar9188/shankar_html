@@ -1,0 +1,2790 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lords24</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="css/admin_dark.css" media="all" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script media="all" src="js/application.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.css">
+    <script media="all" src="js/select2.full.min.js"></script>
+    <script media="all" src="js/main.js"></script>
+  </head>
+  <body class="theme-cyan  font-montserrat   ">
+    <!-- Theme Setting -->
+    <div class="themesetting">
+      <a href="javascript:void(0);" class="theme_btn"><i class="icon-magic-wand"></i></a>
+      <div class="card theme_color">
+        <div class="header">
+          <h2>Theme Color</h2>
+        </div>
+        <ul class="choose-skin list-unstyled mb-0">
+          <a href="/settings/set_agent_theme_color?color=green" data-method="get" data-remote="true">
+            <li data-theme="green" class=><div class="green"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=orange" data-method="get" data-remote="true">
+            <li data-theme="orange" class=><div class="orange"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=blush" data-method="get" data-remote="true">
+            <li data-theme="blush" class=><div class="blush"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=cyan" data-method="get" data-remote="true">
+            <li data-theme="cyan" class=active ><div class="cyan"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=indigo" data-method="get" data-remote="true">
+            <li data-theme="indigo" class=><div class="indigo"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=red" data-method="get" data-remote="true">
+            <li data-theme="red" class=><div class="red"></div></li>
+          </a>
+        </ul>
+      </div>
+      <div class="card font_setting">
+        <div class="header">
+          <h2>Font Settings</h2>
+        </div>
+        <div>
+          <div class="fancy-radio mb-2">
+            <a href="/settings/set_agent_theme_font?font=krub" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-krub" type="radio"  >
+                <span><i></i>Krub Google font</span>
+              </label>
+            </a>
+          </div>
+          <div class="fancy-radio mb-2">
+            <a href="/settings/set_agent_theme_font?font=montserrat" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-montserrat" type="radio" checked>
+                <span><i></i>Montserrat Google font</span>
+              </label>
+            </a>
+          </div>
+          <div class="fancy-radio">
+            <a href="/settings/set_agent_theme_font?font=roboto" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-roboto" type="radio"  >
+                <span><i></i>Robot Google font</span>
+              </label>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card setting_switch">
+        <div class="header">
+          <h2>Settings</h2>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Light Version
+            <div class="float-right">
+              <a href="/settings/set_agent_theme" data-method="post" data-remote="true">
+                <label class="switch">
+                  <input id="themes-switch" type="checkbox" class="lv-btn">
+                  <span class="slider round"></span>
+                </label>
+              </a>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            Horizontal Henu
+            <div class="float-right">
+              <a href="/settings/set_agent_horizontal_menu" data-method="post" data-remote="true" class="hmenu-link">
+                <label class="switch">
+                  <input id="hmenu-switch" type="checkbox" class="hmenu-btn" >
+                  <span class="slider round"></span>
+                </label>
+              </a>
+            </div>
+          </li>
+          <li class="list-group-item">
+            Mini Sidebar
+            <div class="float-right">
+                <label class="switch">
+                  <a href="/settings/set_agent_mini_sidebar" data-method="post" data-remote="true" class="mini-sidebar-link">
+                    <input id="mini-switch" type="checkbox" class="mini-sidebar-btn">
+                    <span class="slider round"></span>
+                  </a>
+                </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <div id="wrapper">
+      <!-- partial:partials/_navbar.html -->
+  <nav class="navbar top-navbar">
+    <div class="container-fluid">
+      <div class="navbar-left">
+         <div class="navbar-btn">
+          <a href="index.html"></a>
+          <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
+        </div>
+        <ul class="nav navbar-nav">
+          <!-- <li>
+            <a class="navbar-minimalize  btn btn-primary" href="#"><i class="fa fa-bars"></i></a>
+          </li> -->
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="icon-envelope"></i>
+              <span class="notification-dot bg-green">4</span>
+            </a>
+            <ul class="dropdown-menu right_chat email vivify fadeIn">
+              <li class="header green">You have 4 New eMail</li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                    <div class="media-body">
+                      <span class="name">James Wert <small class="float-right text-muted">Just now</small></span>
+                      <span class="message">Update GitHub</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <div class="avtar-pic w35 bg-indigo"><span>FC</span></div>
+                    <div class="media-body">
+                      <span class="name">Folisise Chosielie <small class="float-right text-muted">12min ago</small></span>
+                      <span class="message">New Messages</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <!-- <img class="media-object " src="../admin_dark/images/xs/avatar5.jpg" alt=""> -->
+                    <div class="media-body">
+                      <span class="name">Louis Henry <small class="float-right text-muted">38min ago</small></span>
+                      <span class="message">Design bug fix</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media mb-0">
+                    <!-- <img class="media-object " src="../admin_dark/images/xs/avatar2.jpg" alt=""> -->
+                    <div class="media-body">
+                      <span class="name">Debra Stewart <small class="float-right text-muted">2hr ago</small></span>
+                      <span class="message">Fix Bug</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="icon-bell"></i>
+              <span class="notification-dot bg-azura">4</span>
+            </a>
+            <ul class="dropdown-menu feeds_widget vivify fadeIn">
+              <li class="header blue">You have 4 New Notifications</li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-red"><i class="fa fa-check"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-danger">Issue Fixed <small class="float-right text-muted">9:10 AM</small></h4>
+                    <small>WE have fix all Design bug with Responsive</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-info"><i class="fa fa-user"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-info">New User <small class="float-right text-muted">9:15 AM</small></h4>
+                    <small>I feel great! Thanks team</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-orange"><i class="fa fa-question-circle"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-warning">Server Warning <small class="float-right text-muted">9:17 AM</small></h4>
+                    <small>Your connection is not private</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-green"><i class="fa fa-thumbs-o-up"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-success">2 New Feedback <small class="float-right text-muted">9:22 AM</small></h4>
+                    <small>It will give a smart finishing to your site</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown language-menu">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="fa fa-language"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/us.svg " class="w20 mr-2 rounded-circle">  -->US English</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/gb.svg " class="w20 mr-2 rounded-circle"> --> UK English</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/russia.svg " class="w20 mr-2 rounded-circle"> --> Russian</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/arabia.svg " class="w20 mr-2 rounded-circle"> --> Arabic</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/france.svg " class="w20 mr-2 rounded-circle"> --> French</a>
+            </div>
+          </li>
+          <li><a href="javascript:void(0);" class="megamenu_toggle icon-menu" title="Mega Menu">Mega</a></li>
+          <li class="p_social"><a href="page-social.html" class="social icon-menu" title="News">Social</a></li>
+          <li class="p_news"><a href="page-news.html" class="news icon-menu" title="News">News</a></li>
+          <li class="p_blog"><a href="page-blog.html" class="blog icon-menu" title="Blog">Blog</a></li>
+        </ul>
+      </div>
+
+          <div class="navbar-right">
+            <div id="navbar-menu">
+              <ul class="nav navbar-nav">
+                <li><a href="javascript:void(0);" class="search_toggle icon-menu" title="Search Result"><i class="icon-magnifier"></i></a></li>
+                <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="icon-bubbles"></i><span class="notification-dot bg-pink">2</span></a></li>
+                <li><a class="icon-menu" data-method="delete" href="/agents/sign_out" rel="nofollow"><i class='icon-power'></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+      </nav>
+
+      <div class="search_div">
+        <div class="card">
+          <div class="body">
+            <form id="navbar-search" class="navbar-form search-form">
+              <div class="input-group mb-0">
+                <input type="text" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="icon-magnifier"></i></span>
+                  <a href="javascript:void(0);" class="search_toggle btn btn-danger"><i class="icon-close"></i></a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <span>Search Result <small class="float-right text-muted">About 90 results (0.47 seconds)</small></span>
+        <div class="table-responsive">
+          <table class="table table-hover table-custom spacing5">
+            <tbody>
+              <tr>
+                <td class="w40">
+                  <span>01</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>SS</span></div>
+                    <div class="ml-3">
+                      <a href="page-invoices-detail.html" title="">South Shyanne</a>
+                      <p class="mb-0">south.shyanne@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>02</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Zoe Baker</a>
+                      <p class="mb-0">zoe.baker@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>03</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-indigo" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>CB</span></div>
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Colin Brown</a>
+                      <p class="mb-0">colinbrown@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>04</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-green" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>KG</span></div>
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Kevin Gill</a>
+                      <p class="mb-0">kevin.gill@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>05</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Brandon Smith</a>
+                      <p class="mb-0">Maria.gill@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>06</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Kevin Baker</a>
+                      <p class="mb-0">kevin.baker@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>07</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Zoe Baker</a>
+                      <p class="mb-0">zoe.baker@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="megamenu" class="megamenu particles_js">
+        <a href="javascript:void(0);" class="megamenu_toggle btn btn-danger"><i class="icon-close"></i></a>
+        <div class="container">
+          <div class="row clearfix">
+            <div class="col-12">
+              <ul class="q_links">
+                <li><a href="app-inbox.html"><i class="icon-envelope"></i><span>Inbox</span></a></li>
+                <li><a href="app-chat.html"><i class="icon-bubbles"></i><span>Messenger</span></a></li>
+                <li><a href="app-calendar.html"><i class="icon-calendar"></i><span>Event</span></a></li>
+                <li><a href="page-profile.html"><i class="icon-user"></i><span>Profile</span></a></li>
+                <li><a href="page-invoices.html"><i class="icon-printer"></i><span>Invoice</span></a></li>
+                <li><a href="page-timeline.html"><i class="icon-list"></i><span>Timeline</span></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-picture text-info"></i>
+                    <h4 class="m-t-25 mb-0">104 Picture</h4>
+                    <p>Your gallery download complete</p>
+                    <a href="javascript:void(0);" class="btn btn-info btn-round">Download now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-diamond text-success"></i>
+                    <h4 class="m-t-25 mb-0">813 Point</h4>
+                    <p>You are doing great job!</p>
+                    <a href="javascript:void(0);" class="btn btn-success btn-round">Read now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-social-twitter text-primary"></i>
+                    <h4 class="m-t-25 mb-0">3,756</h4>
+                    <p>New Followers on Twitter</p>
+                    <a href="javascript:void(0);" class="btn btn-primary btn-round">Find more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Anyone send me a message
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone seeing my profile page
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone posts a comment on my post
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="particles-js"></div>
+      </div>
+
+      <div id="rightbar" class="rightbar">
+        <div class="body">
+          <ul class="nav nav-tabs2">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Chat-one">Chat</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat-list">List</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat-groups">Groups</a></li>
+          </ul>
+          <hr>
+          <div class="tab-content">
+            <div class="tab-pane vivify fadeIn delay-100 active" id="Chat-one">
+              <div class="slim_scroll">
+                <div class="chat_detail">
+                  <ul class="chat-widget clearfix">
+                    <li class="left float-left">
+                      <div class="avtar-pic w35 bg-pink"><span>KG</span></div>
+                      <div class="chat-info">
+                        <span class="message">Hello, John<br>What is the update on Project X?</span>
+                      </div>
+                    </li>
+                    <li class="right">
+                      <!-- <img src="../admin_dark/images/xs/avatar1.jpg" class="rounded" alt=""> -->
+                      <div class="chat-info">
+                        <span class="message">Hi, Alizee<br> It is almost completed. I will send you an email later today.</span>
+                      </div>
+                    </li>
+                    <li class="left float-left">
+                      <div class="avtar-pic w35 bg-pink"><span>KG</span></div>
+                      <div class="chat-info">
+                        <span class="message">That's great. Will catch you in evening.</span>
+                      </div>
+                    </li>
+                    <li class="right">
+                      <!-- <img src="../assets/images/xs/avatar1.jpg" class="rounded" alt=""> -->
+                      <div class="chat-info">
+                        <span class="message">Sure we'will have a blast today.</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="input-group p-t-15">
+                    <textarea rows="3" class="form-control" placeholder="Enter text here..."></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane vvivify fadeIn delay-100" id="Chat-list">
+              <ul class="right_chat list-unstyled mb-0">
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Folisise Chosielie</span>
+                        <span class="message">offline</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Marshall Nichols</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Louis Henry</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-orange"><span>DS</span></div>
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-green"><span>SW</span></div>
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since Jan 18</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-indigo"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Louis Henry</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-pink"><span>DS</span></div>
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-info"><span>SW</span></div>
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane vivify fadeIn delay-100" id="Chat-groups">
+              <ul class="right_chat list-unstyled mb-0">
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-cyan"><span>DT</span></div>
+                      <div class="media-body">
+                        <span class="name">Designer Team</span>
+                        <span class="message">offline</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-azura"><span>SG</span></div>
+                      <div class="media-body">
+                        <span class="name">Sale Groups</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-orange"><span>NF</span></div>
+                      <div class="media-body">
+                        <span class="name">New Fresher</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-indigo"><span>PL</span></div>
+                      <div class="media-body">
+                        <span class="name">Project Lead</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- partial -->
+      <div>
+      <div id="left-sidebar" class="sidebar">
+        <div class="navbar-brand">
+          <a href=""><img alt="xBook" class="img-fluid logo" src="img/icon.svg" /><span>Lords24</span></a>
+         <!--  <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu icon-close"></i></button>
+          <button type="button" class="btn float-right navbar-minimalize"><i class='fas fa-angle-left'></i></button> -->
+        </div>
+        <div class="sidebar-scroll">
+          <a href="/settings/set_agent_mini_sidebar" data-method="post" data-remote="true" class="mini-sidebar-link">
+            <div class="right-icon"><i class='fas fa-angle-left navbar-minimalize float-right'></i></div>
+          </a>
+          <div class="user-account">
+           <!--  <div class="user_div">
+            </div> -->
+            <div class="dropdown">
+              <span>Welcome,</span>
+              <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Company (company)</strong></a>
+              <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
+                <li><a href="page-profile.html"><i class="icon-user"></i>My Profile</a></li>
+                <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
+                <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+                <li class="divider"></li>
+                <li><a data-method="delete" href="/agents/sign_out" rel="nofollow"><i class='icon-power'></i>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <nav id="left-sidebar-nav" class="sidebar-nav">
+            <ul id="main-menu" class="metismenu">
+              <li class="header">Main</li>
+              <li>
+                <a href="company-dashboard.html"><i class="icon-speedometer"></i><span>Dashboard</span></a>
+              </li>
+                <li class="nav-menu">
+                  <a href="#myPage" class="has-arrow"><i class="icon-diamond"></i><span>Manage</span></a>
+                  <ul class="active-content hide">
+                    <li class="open active"><a href="manage-master.html" data-method="get">Master</a></li>
+                    <li class="open active"><a href="manage-super-stockists.html" data-method="get">Super Stockists</a></li>
+                    <li class="open active"><a href="manage-stockists.html" data-method="get">Stockists</a></li>
+                    <li class="open active"><a href="manage-agent.html" data-method="get">Agent</a></li>
+                  </ul>
+                </li>
+                <li class="nav-menu">
+                  <a href="#myPage" class="has-arrow"><i class="icon-rocket"></i><span>Sports</span></a>
+                  <ul class="active-content hide">
+                    <li ><a href="sports-matches.html" data-method="get">Matches</a></li>
+                      <li ><a href="sports-tournament.html" data-method="get">Tournament</a></li>
+                  </ul>
+                </li>
+                  <li class="nav-menu">
+                    <a href="#myPage" class="has-arrow"><i class="icon-user"></i><span>Manage Clients</span></a>
+                    <ul class="active-content hide">
+
+                      <li>
+                        <a href="update_client_limit.html" data-method="get">Commission &amp; Limits</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                      <a href="manage-sub-company.html" data-method="get"><i class="icon-bubbles"></i><span>Manage SubCompany</span></a>
+                  </li>
+
+                  <li>
+                    <a href="manage-password-panel.html" data-method="get"><i class="icon-tag"></i><span>Manage Password</span></a>
+                  </li>
+
+                  <li>
+                    <a href="language.html" data-method="get"><i class="icon-speech"></i><span>Language</span></a>
+                  </li>
+
+                  <li class="nav-menu">
+                    <a href="#myPage" class="has-arrow"><i class="icon-book-open"></i><span>Manage Ledgers</span></a>
+                    <ul class="active-content hide">
+                      <li >
+                        <a href="collection_report.html" data-method="get">Collection Report</a>
+                      </li>
+                      <li>
+                        <a href="earning_report.html" data-method="get">Profit &amp; Loss</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-menu">
+                    <a href="#myPage" class="has-arrow"><i class="icon-settings"></i><span>Manage Settings</span></a>
+                    <ul class="active-content hide">
+                      <li ><a href="settings.html" data-method="get"><span>Settings</span></a></li>
+                      <li ><a href="stake_limits_packages.html"><span>Stake Limits Packages</span></a></li>
+                      <li ><a href="rules.html"><span>RULES</span></a></li>
+                    </ul>
+                  </li>
+
+                  <li ><a href="update_agent_coins.html" data-method="get"><i class="icon-credit-card"></i><span>Credit Coins</span></a>
+                  </li>
+                </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div id="main-content">
+        <div class="container-fluid">
+          <!-- <div class="split"> -->
+            <div class="row clearfix match-container split-row split containers">
+              <div class="split__left">
+                 <div class="block-header">
+                  <div class="row clearfix">
+                    <div class="col-sm-12">
+                      <h1>Stockists</h1>
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item">
+                            <a href="/agent/dashboard">Dashboard</a>
+                          </li>
+                          <li class="breadcrumb-item active" aria-current="page">
+                            <strong>Stockists</strong>
+                          </li>
+                          <li class="breadcrumb-item active agent-company hide"aria-current="page">
+                            <strong>Xs20 (Abc)</strong>
+                          </li>
+                          <li class="breadcrumb-item active receive-cash-contain hide" aria-current="page">
+                          <strong>Recieve Cash</strong>
+                          </li>
+                          <li class="breadcrumb-item active pay-cash-contain hide" aria-current="page">
+                          <strong>Pay Cash</strong>
+                          </li>
+                          <li class="breadcrumb-item active ledger-contain hide" aria-current="page">
+                          <strong>Ledger</strong>
+                          </li>
+                          <li class="breadcrumb-item active cash-ledger-contain hide" aria-current="page">
+                          <strong>Cash Ledger</strong>
+                          </li>
+                          <li class="breadcrumb-item active match-ledger-contain hide" aria-current="page">
+                          <strong>Match Ledger</strong>
+                          </li>
+                          <li class="breadcrumb-item active direct-agents-contain hide" aria-current="page">
+                          <strong>Direct Agents</strong>
+                          </li>
+                          <li class="breadcrumb-item active direct-clients-contain hide" aria-current="page">
+                          <strong>Direct Clients</strong>
+                          </li>
+                          <li class="breadcrumb-item active coin-history-contain hide" aria-current="page">
+                          <strong>Coin History</strong>
+                          </li>
+                          <li class="breadcrumb-item active sub-company-report-contain-b hide" aria-current="page">
+                          <strong>Sub Company Report</strong>
+                          </li>
+                          <li class="breadcrumb-item active special-sc-175-report-contain hide" aria-current="page">
+                          <strong>Special Sc 175 Report</strong>
+                          </li>
+                          <li class="breadcrumb-item active create-new-container hide" aria-current="page">
+                          <strong>Create Stockist</strong>
+                          </li>
+                        </ol>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                <div class="row clearfix">
+                   <div class="col-lg-12">
+                      <div class="card">
+                         <div class="header">
+                            <h2>All Agents</h2>
+                            <ul class="header-dropdown dropdown">
+                               <li class="btn btn-primary btn-xs opn-create-sec">Create Stockists</a>
+                               </li>
+                               <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                            </ul>
+                         </div>
+                         <div class="table-responsive table-rsp1">
+                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                               <div class="dt-buttons"> <a class="btn btn-round btn-primary buttons-csv buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>CSV</span></a> <a class="btn btn-round btn-primary buttons-pdf buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>PDF</span></a> </div>
+                               <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+                               <table class="table agent-table table-hover table-custom spacing5 dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                  <thead>
+                                     <tr role="row">
+                                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 68px;">ID</th>
+                                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 203px;">User Name</th>
+                                        <th class="sorting_disabled  r-head" rowspan="1" colspan="1" style="width: 141px;">Name</th>
+                                        <th class="sorting_disabled  r-head" rowspan="1" colspan="1" style="width: 161px;">Fix Limit</th>
+                                        <th class="sorting_disabled  r-head" rowspan="1" colspan="1" style="width: 172px;">My Share</th>
+                                        <th class="sorting_disabled  r-head" rowspan="1" colspan="1" style="width: 192px;">Max Share</th>
+                                        <th class="sorting_disabled  r-head" rowspan="1" colspan="1" style="width: 451px;">Actions</th>
+                                        <th class="sorting_disabled show-data-head hide" rowspan="1" colspan="1" style="width: 53px;"></th>
+                                     </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="odd table_hover" role="row" id="widthBtn">
+                                     <td>20</td>
+                                     <td class="agent_name">Xs20 (Abc)</td>
+                                     <td class="r-data">abc xyz</td>
+                                     <td class="r-data">0.0</td>
+                                     <td class="r-data">0.0</td>
+                                     <td class="r-data">0.0</td>
+                                     <td class="r-data action-btn">
+                                        <span class="opn-edit-sec opn_detail"><i class="fa fa-edit fa-lg fa-2x" aria-hidden="true"></i></span>&nbsp;&nbsp;
+                                        <a href="/agent/agents/5/change_password_panel"><i class="fa fa-lock fa-lg fa-2x" aria-hidden="true"></i></a>
+                                        <span class="parnt-class"><span class="hide-dtl">Details</span> <span class="show-dtl opn_detail">Details <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></span></span>
+                                     </td>
+                                     <td class="show-data-head show-data hide">
+                                       <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+                                        <ul class="col-table-data opn-collapsed-dada vivify fadeIn">
+                                          <table class="table agent-table table-striped dataTable">
+                                            <tbody><tr><td class="">Name : abc xyz</td>
+                                            <td class="">Fix Limit : 0.0</td>
+                                            <td class="">My Share : 0.0</td>
+                                            <td class="">Max Share : 0.0</td>
+                                            <td class="">Actions : <span class="opn-edit-sec opn_detail"><i class="fa fa-edit i-size" aria-hidden="true"></span></a>&nbsp;&nbsp;
+                                            <a href="/agent/agents/5/change_password_panel"><i class="fa fa-lock i-size" aria-hidden="true"></i></a>
+                                            </td>
+                                          </tr></tbody></table>
+                                        </ul>
+                                     </td>
+                                    </tr>
+                                  </tbody>
+                               </table>
+                               <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div>
+                               <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                  <ul class="pagination">
+                                     <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                     <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                     <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+              </div>
+
+
+              <div class="split__right d-right hide">
+                <div class="details-container">
+                  <div class="stockists-detail">
+                    <div class="block-header">
+                      <div class="row clearfix">
+                      </div>
+                      <div class="close-details close_agent_detl">
+                          <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                            <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                      </div>
+                    </div>
+
+                    <div class="row clearfix">
+                      <div class="col-lg-12">
+                        <div class="card">
+                          <div class="header">
+                            <h2>Agent Dashboard</h2>
+                            <ul class="header-dropdown dropdown">
+                              <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                            </ul>
+                          </div>
+                          <div class="body">
+                            <div class="table-responsive">
+                              <p style="text-align:center;">
+
+                                <button type="button" class="btn btn-primary btn-lg opn_receive_cash">Recieve Cash</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_pay_cash">Pay Cash</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_ledger">Ledger</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_cash_ledger">Cash Ledger</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_match_ledger">Match Ledger</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_direct_agents">Direct Agents</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_direct_clients">Direct Clients</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_coin_history">Coin History</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_sub_company_report">Sub Company Report</button>
+
+                                <button type="button" class="btn btn-primary btn-lg opn_special_sc_175_report"><span class="translation_missing" title="translation missing: en.special_sc_175_report">Special Sc 175 Report</span></button>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row clearfix">
+                      <div class="col-lg-6 col-md-6">
+                        <div class="card">
+                          <div class="body">
+                            <div class="d-flex align-items-center">
+                              <div class="icon-in-bg bg-indigo text-white rounded-circle"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+                              <div class="ml-4">
+                                <!-- <span class="label label-success pull-right">Monthly</span> -->
+                                <span>Coins</span>
+                                <h4 class="mb-0 font-weight-medium">0.0</h4>
+                                <!--  <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                                <small>Total income</small> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                        <div class="card">
+                          <div class="body">
+                            <div class="d-flex align-items-center">
+                              <div class="icon-in-bg bg-azura text-white rounded-circle"><i class="fa fa-credit-card" aria-hidden="true"></i></div>
+                              <div class="ml-4">
+                                <!-- <span class="label label-info pull-right">Annual</span> -->
+                                <span>Ledger Balance</span>
+                                <h4 class="mb-0 font-weight-medium">0.0</h4>
+                                <!-- <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
+                                <small>New orders</small> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="receive-cash-contain hide">
+                    <div class="block-header">
+                      <div class="row clearfix">
+                        <div class="back-icon open_agent_details">
+                          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </div>
+                         <div class="close-details close_agent_detl">
+                          <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                            <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="row clearfix">
+                      <div class="col-lg-12">
+                        <div class="card">
+                          <div class="header">
+                            <h2>Receive Cash From Agent</h2>
+                            <ul class="header-dropdown dropdown">
+                            <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                            </ul>
+                          </div>
+                          <div class="body">
+                            <div class="table-responsive">
+                              <form accept-charset="UTF-8" action="/agent/agents/5/receive_cash_from_agent" class="form-horizontal" data-remote="true" id="payment-form" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+                                <div class="input-group mb-3">
+                                  <label class="col-lg-2 control-label">Agent Name:</label>
+                                  <div class="col-lg-9">
+                                    <p class="form-control-static">XS20(abc)</p>
+                                  </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                   <label class="col-lg-2 control-label">Ledger Balance:</label>
+                                   <div class="col-lg-9">
+                                      <p class="form-control-static available-coin" id="">0.0</p>
+                                   </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <label class="col-sm-2 control-label">Updates Coins</label>
+                                    <div class="col-sm-9"><input type="text" id="" name="coins" class="form-control added-coin"></div>
+                                </div>
+                                <div class="input-group mb-3">
+                                  <label class="col-sm-2 control-label">Note</label>
+                                  <div class="col-sm-9"><textarea id="" name="note" class="form-control added-note"></textarea></div>
+                                </div>
+                                <div class="input-group mb-3">
+                                  <div class="col-sm-9 col-sm-offset-3">
+                                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pay-cash-contain hide">
+                    <div class="block-header">
+                      <div class="row clearfix">
+                        <div class="back-icon open_agent_details">
+                          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </div>
+                         <div class="close-details close_agent_detl">
+                          <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                            <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="row clearfix">
+                       <div class="col-lg-12">
+                          <div class="card">
+                             <div class="header">
+                                <h2>Pay Cash From Agent</h2>
+                                <ul class="header-dropdown dropdown">
+                                   <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                                </ul>
+                             </div>
+                             <div class="body">
+                                <div class="table-responsive">
+                                   <form accept-charset="UTF-8" action="/agent/agents/5/pay_cash_to_agent" class="form-horizontal" data-remote="true" id="payment-form" method="post">
+                                      <div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+                                      <div class="input-group mb-3">
+                                         <label class="col-lg-2 control-label">Agent Name:</label>
+                                         <div class="col-lg-9">
+                                            <p class="form-control-static">XS20(abc)</p>
+                                         </div>
+                                      </div>
+                                      <div class="input-group mb-3">
+                                         <label class="col-lg-2 control-label">Ledger Balance:</label>
+                                         <div class="col-lg-9">
+                                            <p class="form-control-static available-coin" id="">0.0</p>
+                                         </div>
+                                      </div>
+                                      <div class="input-group mb-3">
+                                         <label class="col-sm-2 control-label">Updates Coins</label>
+                                         <div class="col-sm-9"><input type="text" id="" name="coins" class="form-control added-coin"></div>
+                                      </div>
+                                      <div class="input-group mb-3">
+                                         <label class="col-sm-2 control-label">Note</label>
+                                         <div class="col-sm-9"><textarea id="" name="note" class="form-control added-note"></textarea></div>
+                                      </div>
+                                      <div class="input-group mb-3">
+                                         <div class="col-sm-9 col-sm-offset-3">
+                                            <button class="btn btn-primary" type="submit">Save Changes</button>
+                                         </div>
+                                      </div>
+                                   </form>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+
+                  <div class="ledger-contain hide">
+                    <div class="block-header">
+                        <div class="row clearfix">
+                          <div class="back-icon open_agent_details">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                          </div>
+                           <div class="close-details close_agent_detl">
+                            <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                              <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                           </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                      <div id="reportrange" class="my_ledgers_dated_picker col-lg-3 col-md-4 col-sm-6 col-xs-11 pull-right">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar" aria-hidden="true"></i>&nbsp;
+                        <span> - </span><b class="caret"></b>
+                      </div>
+
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 11px;">
+                        <a class="btn btn-primary btn-xs search_date_btn text-white">Search</a>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12" style="margin-top: 30px;">
+                       <div class="card">
+                          <div class="header">
+                             <h2>Agent Ledger</h2>
+                             <ul class="header-dropdown dropdown">
+                                <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                             </ul>
+                          </div>
+                          <div class="table-responsive table-containt">
+                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                <div class="dt-buttons"> <a class="btn btn-round btn-primary buttons-csv buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>CSV</span></a> <a class="btn btn-round btn-primary buttons-pdf buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>PDF</span></a> </div>
+                                <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+
+                                  <table class="table table-striped table-c-striped spacing5 main-table block-table w-550" style="width: 100%">
+                                    <thead>
+                                        <tr class="table-head td_wrap">
+                                        <td>DATE/TIME</td>
+                                        <td>Collection Name </td>
+                                        <td>DEBIT </td>
+                                        <td>CREDIT</td>
+                                        <td>Balance</td>
+                                        <td>Note</td>
+                                      </tr>
+                                    </thead>
+                                    <tr class="table-data td_wrap">
+                                       <td id="getdate_692" class="tabel-time" style="white-space: nowrap !important;">
+                                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Aug 26,  5:11:27 AM
+                                        </td>
+                                        <td class="collection-name"> Cash Paid</td>
+                                        <td class="debit">30.0</td>
+                                        <td class="credit">- </td>
+                                        <td class="balance">7370.0</td>
+                                        <td class="note wrp">Lorem Ipsum is simply.</td>
+                                    </tr>
+                                    <tr class="table-data td_wrap">
+                                       <td id="getdate_692" class="tabel-time" style="white-space: nowrap !important;">
+                                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Aug 26,  5:11:27 AM
+                                        </td>
+                                        <td class="collection-name"> Cash Paid</td>
+                                        <td class="debit">30.0</td>
+                                        <td class="credit">- </td>
+                                        <td class="balance">7370.0</td>
+                                        <td class="note">Lorem Ipsum is simply .</td>
+                                    </tr>
+                                  </table>
+
+                              <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div>
+                                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                   <ul class="pagination">
+                                      <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                      <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">Next</a></li>
+                                   </ul>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+
+                  <div class="cash-ledger-contain hide">
+                    <div class="block-header">
+                        <div class="row clearfix">
+                          <div class="back-icon open_agent_details">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                          </div>
+                           <div class="close-details close_agent_detl">
+                            <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                              <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div id="reportrange" class="my_ledgers_dated_picker col-lg-3 col-md-4 col-sm-6 col-xs-11 pull-right">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar" aria-hidden="true"></i>&nbsp;
+                        <span> - </span><b class="caret"></b>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top:11px;">
+                        <a class="btn btn-primary btn-xs search_date_btn text-white">Search</a>
+                      </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-top: 30px;">
+                       <div class="card">
+                          <div class="header">
+                             <h2>Agent Ledger</h2>
+                             <ul class="header-dropdown dropdown">
+                                <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                             </ul>
+                          </div>
+                          <div class="table-responsive table-containt">
+                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                <div class="dt-buttons"> <a class="btn btn-round btn-primary buttons-csv buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>CSV</span></a> <a class="btn btn-round btn-primary buttons-pdf buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>PDF</span></a> </div>
+                                <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+
+                                <table class="table table-striped table-c-striped spacing5 main-table block-table w-550" style="width: 100%">
+                                    <thead>
+                                      <tr class="table-head">
+                                      <td>DATE/TIME</td>
+                                      <td>Collection Name </td>
+                                      <td>DEBIT </td>
+                                      <td>CREDIT</td>
+                                      <td>Balance</td>
+                                    </tr>
+                                    </thead>
+                                    <tr class="table-data">
+                                       <td id="getdate_692" class="tabel-time">
+                                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Aug 26,  5:11:27 AM
+                                        </td>
+                                        <td class="collection-name"> Cash Paid</td>
+                                        <td class="debit">30.0</td>
+                                        <td class="credit">- </td>
+                                        <td class="balance last-td">7370.0</td>
+                                    </tr>
+                                    <tr class="table-data">
+                                       <td id="getdate_692" class="tabel-time">
+                                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Aug 26,  5:11:27 AM
+                                        </td>
+                                        <td class="collection-name"> Cash Paid</td>
+                                        <td class="debit">30.0</td>
+                                        <td class="credit">- </td>
+                                        <td class="balance last-td">7370.0</td>
+                                    </tr>
+
+                                    <tr class="table-data">
+                                       <td id="getdate_692" class="tabel-time">
+                                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Aug 26,  5:11:27 AM
+                                        </td>
+                                        <td class="collection-name"> Cash Paid</td>
+                                        <td class="debit">30.0</td>
+                                        <td class="credit">- </td>
+                                        <td class="balance last-td">7370.0</td>
+                                    </tr>
+                                </table>
+
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div>
+                                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                   <ul class="pagination">
+                                      <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                      <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">Next</a></li>
+                                   </ul>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+
+                  <div class="match-ledger-contain hide">
+                    <div class="block-header">
+                        <div class="row clearfix">
+                          <div class="back-icon open_agent_details">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                          </div>
+                           <div class="close-details close_agent_detl">
+                            <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                              <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div id="reportrange" class="my_ledgers_dated_picker col-lg-3 col-md-4 col-sm-6 col-xs-11 pull-right">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar" aria-hidden="true"></i>&nbsp;
+                        <span> - </span><b class="caret"></b>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 11px;">
+                        <a class="btn btn-primary btn-xs search_date_btn text-white">Search</a>
+                      </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-top: 30px;">
+                       <div class="card">
+                          <div class="header">
+                             <h2>Summary</h2>
+                             <ul class="header-dropdown dropdown">
+                                <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                             </ul>
+                          </div>
+                          <div class="table-responsive">
+                             <table class="table table-bordered table-striped" cellspacing="0" width="100%">
+                                <thead>
+                                   <tr>
+                                      <th>All Time Total</th>
+                                      <th></th>
+                                   </tr>
+                                </thead>
+                             </table>
+                          </div>
+                       </div>
+                       <div class="card">
+                          <div class="header">
+                             <h2>Agent Ledger</h2>
+                             <ul class="header-dropdown dropdown">
+                                <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                             </ul>
+                          </div>
+                          <div class="table-responsive">
+                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                <div class="dt-buttons"> <a class="btn btn-round btn-primary buttons-csv buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>CSV</span></a> <a class="btn btn-round btn-primary buttons-pdf buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>PDF</span></a> </div>
+                                <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+                               <table class="table table-striped table-c-striped spacing5 main-table block-table w-550" style="width: 100%">
+                                      <thead>
+                                        <tr class="table-head">
+                                        <td>DATE/TIME</td>
+                                        <td>Collection Name </td>
+                                        <td>DEBIT </td>
+                                        <td>CREDIT</td>
+                                        <td>Balance</td>
+                                      </tr>
+                                      </thead>
+                                      <tbody><tr class="table-data">
+                                         <td id="getdate_692" class="tabel-time">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Aug 26,  5:11:27 AM
+                                          </td>
+                                          <td class="collection-name">-</td>
+                                          <td class="debit">30.0</td>
+                                          <td class="credit">- </td>
+                                          <td class="balance last-td">7370.0</td>
+                                      </tr>
+                                      <tr class="table-data">
+                                         <td id="getdate_692" class="tabel-time">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Aug 26,  5:11:27 AM
+                                          </td>
+                                          <td class="collection-name">-</td>
+                                          <td class="debit">30.0</td>
+                                          <td class="credit">- </td>
+                                          <td class="balance last-td">7370.0</td>
+                                      </tr>
+
+                                      <tr class="table-data">
+                                         <td id="getdate_692" class="tabel-time">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Aug 26,  5:11:27 AM
+                                          </td>
+                                          <td class="collection-name">-</td>
+                                          <td class="debit">30.0</td>
+                                          <td class="credit">- </td>
+                                          <td class="balance last-td">7370.0</td>
+                                      </tr>
+                                  </tbody>
+                                </table>
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div>
+                                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                   <ul class="pagination">
+                                      <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                      <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">Next</a></li>
+                                   </ul>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+
+                  <div class="direct-agents-contain hide">
+                    <div class="block-header">
+                        <div class="row clearfix">
+                          <div class="back-icon open_agent_details">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                          </div>
+                           <div class="close-details close_agent_detl">
+                            <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                              <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix inner-details-sec">
+                     <div class="col-lg-12">
+                        <div class="card">
+                           <div class="header">
+                              <h2>All Agents</h2>
+                              <ul class="header-dropdown dropdown">
+                                 <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                                 <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                    <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 33px, 0px);">
+                                       <li><a href="javascript:void(0);">Action</a></li>
+                                       <li><a href="javascript:void(0);">Another Action</a></li>
+                                       <li><a href="javascript:void(0);">Something else</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="body">
+                              <div class="table-responsive">
+                                 <table class="table agent-table table-hover table-striped table-c-striped spacing5 main-table block-table">
+                                    <thead>
+                                       <tr class="table-head">
+                                          <th>ID</th>
+                                          <th>User Name</th>
+                                          <th>Name</th>
+                                          <th>Agent Under</th>
+                                          <th>Actions</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr class="table-data">
+                                          <td class="id-sec">3</td>
+                                          <td class="agent_name user_name-sec wrp">SUPER_AGENT(super)</td>
+                                          <td class="name-sec wrp">Super Agent</td>
+                                          <td class="agnet-under wrp">stockist_agent</td>
+                                          <td class="action-sec last-td">
+                                             <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                             <a class="delete_3" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/agents/3" rel="nofollow"><i class="fa fa-trash-o text-danger fa-lg" aria-hidden="true"></i></a>
+                                          </td>
+                                       </tr>
+                                       <tr class="table-data">
+                                          <td class="id-sec">21</td>
+                                          <td class="agent_name user_name-sec wrp">XA21(abc)</td>
+                                          <td class="name-sec wrp">abc xyz</td>
+                                          <td class="agnet-under wrp">stockist_agent</td>
+                                          <td class="action-sec last-td">
+                                             <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                             <a class="delete_21" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/agents/21" rel="nofollow"><i class="fa fa-trash-o text-danger fa-lg" aria-hidden="true"></i></a>
+                                          </td>
+                                       </tr>
+
+                                        <tr class="table-data">
+                                          <td class="id-sec">3</td>
+                                          <td class="agent_name user_name-sec wrp">SUPER_AGENT(super)</td>
+                                          <td class="name-sec wrp">Super Agent</td>
+                                          <td class="agnet-under wrp">stockist_agent</td>
+                                          <td class="action-sec last-td">
+                                             <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                             <a class="delete_3" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/agents/3" rel="nofollow"><i class="fa fa-trash-o text-danger fa-lg" aria-hidden="true"></i></a>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                    </div>
+
+                    <div class="row clearfix edit-sec hide">
+                       <div class="col-lg-12 col-md-12">
+                          <div class="card">
+                             <div class="header">
+                                <h2> Edit User</h2>
+                             </div>
+                             <div class="body">
+                                <form accept-charset="UTF-8" action="/agent/users/2" class="form-horizontal" id="user_form" method="post">
+                                   <div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="patch"><input name="authenticity_token" type="hidden" value="OWBkeYNcGm+gpn1MvYd/n4YyqdLhWR+fwOG5bOYwjd8="></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">User Name</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" id="user_user_name" name="user[user_name]" placeholder="User Name" readonly="readonly" required="required" style="text-transform:uppercase" type="text" value="user_of_stockist">
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">First Name</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" id="user_first_name" name="user[first_name]" placeholder="First Name" type="text" value="Super">
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Last Name</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" id="user_last_name" name="user[last_name]" placeholder="Last Name" type="text" value="User">
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Fix Limit</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" id="entered_fix_limit" min="0.00" name="user[fix_limit]" placeholder="Fix Limit" required="required" step="0.01" type="number" value="10000">
+                                         <text class="fix_limit_error"><b>Note</b> : Fix Limit can be set from <b>0</b> to <b>37989916.7</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">My Share</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" disabled="disabled" id="entered_agent_share" max="100.00" min="0.00" name="user[agent_share]" placeholder="My Share" required="required" step="0.01" type="number" value="90">
+                                         <text class="agent_share_error"><b>Note</b> :  My Share can be set from 0 to <b>100.0</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Match Commission</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" disabled="disabled" id="user_match_comission" max="100.00" min="0.00" name="user[match_commission]" placeholder="Match Commission" required="required" step="0.01" type="text" value="0">
+                                         <text class="commi_error_match"><b>Note</b> : Match Commission can be set from 0 to <b>100.0</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label"> Session Commission</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" disabled="disabled" id="user_session_comission" max="100.00" min="0.00" name="user[session_commission]" placeholder="Session Commission" required="required" step="0.01" type="text" value="0">
+                                         <text class="commi_error_session"><b>Note</b> : Session Commission can be set from 0 to <b>100.0</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Football Match Commission</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" disabled="disabled" id="football_match_commission_percentage" min="0" name="user[football_match_commission_percentage]" placeholder="Football Match Commission" required="required" type="text" value="0">
+                                         <text class="foot_commi_error_match"><b>Note</b> : Football Match Commission set below or equal to <b>100.0</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label" style="margin-top: -10px;">User Blocked</label>
+                                      <div class="col-sm-12">
+                                         <div class="switch">
+                                            <div class="onoffswitch">
+                                               <input name="user[blocked_by_agent]" type="hidden" value="0"><input class="onoffswitch-checkbox" id="pays_usage_charges_to_parent" name="user[blocked_by_agent]" type="checkbox" value="1">
+                                               <label class="onoffswitch-label" for="pays_usage_charges_to_parent">
+                                               <span class="onoffswitch-inner"></span>
+                                               <span class="onoffswitch-switch"></span>
+                                               </label>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label" style="margin-top: -10px;">Bets Blocked</label>
+                                      <div class="col-sm-12">
+                                         <div class="switch">
+                                            <div class="onoffswitch">
+                                               <input name="user[bets_blocked_by_agent]" type="hidden" value="0"><input class="onoffswitch-checkbox" id="bets_blocked_by_agent" name="user[bets_blocked_by_agent]" type="checkbox" value="1">
+                                               <label class="onoffswitch-label" for="bets_blocked_by_agent">
+                                               <span class="onoffswitch-inner"></span>
+                                               <span class="onoffswitch-switch"></span>
+                                               </label>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <div class="col-sm-4 col-sm-offset-2">
+                                         <span class="btn btn-info swich-button">Cancel</span>
+                                         <button class="btn btn-primary" type="submit" id="submit">Save Changes</button>
+                                      </div>
+                                   </div>
+                                </form>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+
+                  <div class="direct-clients-contain hide">
+                    <div class="block-header">
+                        <div class="row clearfix">
+                          <div class="back-icon open_agent_details">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                          </div>
+                           <div class="close-details close_agent_detl">
+                            <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                              <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                           </div>
+                        </div>
+                    </div>
+
+                   <div class="row clearfix inner-details-sec">
+                     <div class="col-lg-12">
+                        <div class="card">
+                           <div class="header">
+                              <h2>All Agents</h2>
+                              <ul class="header-dropdown dropdown">
+                                 <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                                 <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                    <ul class="dropdown-menu">
+                                       <li><a href="javascript:void(0);">Action</a></li>
+                                       <li><a href="javascript:void(0);">Another Action</a></li>
+                                       <li><a href="javascript:void(0);">Something else</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="body">
+                              <div class="table-responsive table-rsp wrp wrp">
+                                 <table class="table agent-table table-hover table-striped table-c-striped spacing5 main-table block-table">
+                                    <thead>
+                                       <tr class="table-head">
+                                          <th>ID</th>
+                                          <th>User Name</th>
+                                          <th>Name</th>
+                                          <th>Agent Under</th>
+                                          <th>Actions</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr class="table-data">
+                                          <td class="id-sec">2</td>
+                                          <td class="agent_name user_name-sec wrp wrp">USER_OF_STOCKIST(super)</td>
+                                          <td class="name-sec wrp wrp">Super User</td>
+                                          <td class="agnet-under wrp wrp">stockist_agent</td>
+                                          <td class="action-sec last-td">
+                                             <span class="btn btn-success btn-sm open-edit-sec"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit</span>&nbsp;&nbsp;
+                                          </td>
+                                       </tr>
+
+                                        <tr class="table-data">
+                                          <td class="id-sec">2</td>
+                                          <td class="agent_name user_name-sec wrp wrp">USER_OF_STOCKIST(super)</td>
+                                          <td class="name-sec wrp wrp">Super User</td>
+                                          <td class="agnet-under wrp wrp">stockist_agent</td>
+                                          <td class="action-sec last-td">
+                                              <span class="btn btn-success btn-sm open-edit-sec"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit</span>&nbsp;&nbsp;
+                                          </td>
+                                       </tr>
+                                        <tr class="table-data">
+                                          <td class="id-sec">2</td>
+                                          <td class="agent_name user_name-sec">USER_OF_STOCKIST(super)</td>
+                                          <td class="name-sec">Super User</td>
+                                          <td class="agnet-under">stockist_agent</td>
+                                          <td class="action-sec last-td">
+                                              <span class="btn btn-success btn-sm open-edit-sec"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit</span>&nbsp;&nbsp;
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                    </div>
+
+                    <div class="row clearfix edit-sec hide">
+                       <div class="col-lg-12 col-md-12">
+                          <div class="card">
+                             <div class="header">
+                                <h2> Edit User</h2>
+                             </div>
+                             <div class="body">
+                                <form accept-charset="UTF-8" action="/agent/users/2" class="form-horizontal" id="user_form" method="post">
+                                   <div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="patch"><input name="authenticity_token" type="hidden" value="OWBkeYNcGm+gpn1MvYd/n4YyqdLhWR+fwOG5bOYwjd8="></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">User Name</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" id="user_user_name" name="user[user_name]" placeholder="User Name" readonly="readonly" required="required" style="text-transform:uppercase" type="text" value="user_of_stockist">
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">First Name</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" id="user_first_name" name="user[first_name]" placeholder="First Name" type="text" value="Super">
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Last Name</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" id="user_last_name" name="user[last_name]" placeholder="Last Name" type="text" value="User">
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Fix Limit</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" id="entered_fix_limit" min="0.00" name="user[fix_limit]" placeholder="Fix Limit" required="required" step="0.01" type="number" value="10000">
+                                         <text class="fix_limit_error"><b>Note</b> : Fix Limit can be set from <b>0</b> to <b>37989916.7</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">My Share</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" disabled="disabled" id="entered_agent_share" max="100.00" min="0.00" name="user[agent_share]" placeholder="My Share" required="required" step="0.01" type="number" value="90">
+                                         <text class="agent_share_error"><b>Note</b> :  My Share can be set from 0 to <b>100.0</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Match Commission</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" disabled="disabled" id="user_match_comission" max="100.00" min="0.00" name="user[match_commission]" placeholder="Match Commission" required="required" step="0.01" type="text" value="0">
+                                         <text class="commi_error_match"><b>Note</b> : Match Commission can be set from 0 to <b>100.0</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label"> Session Commission</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" disabled="disabled" id="user_session_comission" max="100.00" min="0.00" name="user[session_commission]" placeholder="Session Commission" required="required" step="0.01" type="text" value="0">
+                                         <text class="commi_error_session"><b>Note</b> : Session Commission can be set from 0 to <b>100.0</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Football Match Commission</label>
+                                      <div class="col-sm-12">
+                                         <input class="form-control" disabled="disabled" id="football_match_commission_percentage" min="0" name="user[football_match_commission_percentage]" placeholder="Football Match Commission" required="required" type="text" value="0">
+                                         <text class="foot_commi_error_match"><b>Note</b> : Football Match Commission set below or equal to <b>100.0</b></text>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label" style="margin-top: -10px;">User Blocked</label>
+                                      <div class="col-sm-12">
+                                         <div class="switch">
+                                            <div class="onoffswitch">
+                                               <input name="user[blocked_by_agent]" type="hidden" value="0"><input class="onoffswitch-checkbox" id="pays_usage_charges_to_parent" name="user[blocked_by_agent]" type="checkbox" value="1">
+                                               <label class="onoffswitch-label" for="pays_usage_charges_to_parent">
+                                               <span class="onoffswitch-inner"></span>
+                                               <span class="onoffswitch-switch"></span>
+                                               </label>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <label class="col-sm-2 control-label" style="margin-top: -10px;">Bets Blocked</label>
+                                      <div class="col-sm-12">
+                                         <div class="switch">
+                                            <div class="onoffswitch">
+                                               <input name="user[bets_blocked_by_agent]" type="hidden" value="0"><input class="onoffswitch-checkbox" id="bets_blocked_by_agent" name="user[bets_blocked_by_agent]" type="checkbox" value="1">
+                                               <label class="onoffswitch-label" for="bets_blocked_by_agent">
+                                               <span class="onoffswitch-inner"></span>
+                                               <span class="onoffswitch-switch"></span>
+                                               </label>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                      <div class="col-sm-4 col-sm-offset-2">
+                                         <span class="btn btn-info swich-button">Cancel</span>
+                                         <button class="btn btn-primary" type="submit" id="submit">Save Changes</button>
+                                      </div>
+                                   </div>
+                                </form>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+
+                  <div class="coin-history-contain hide">
+                    <div class="block-header">
+                        <div class="row clearfix">
+                          <div class="back-icon open_agent_details">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                          </div>
+                           <div class="close-details close_agent_detl">
+                            <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                              <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="card">
+                        <div class="header">
+                          <h2>Agent Company (Agent)Current Agent Changelog Details</h2>
+                        </div>
+                        <div class="table-responsive table-containt">
+                          <table class="table table-striped table-c-striped spacing5 main-table block-table w-550" style="width: 100%">
+                                <thead>
+                                  <tr class="table-head td_wrap">
+                                  <td>Changelog ID : </td>
+                                  <td>Description : </td>
+                                  <td>Coins : </td>
+                                  <td>Fix Limit : </td>
+                                  <td>Match Commission : </td>
+                                  <td>Session Commission : </td>
+                                  <td>Created At : </td>
+                                </tr>
+                                </thead>
+                                <tr class="table-data td_wrap">
+                                    <td class="changelog-id">89</td>
+                                    <td class="description wrp"> Coins after match declaration</td>
+                                    <td class="coins">0.0</td>
+                                    <td class="fix-limit">1000000.0</td>
+                                    <td class="match-commission">0.0</td>
+                                    <td class="session-comission">0.0</td>
+                                    <td class="created-at last-td">May 23 2020, 3:10 PM</td>
+                                </tr>
+                                <tr class="table-data td_wrap">
+                                    <td class="changelog-id">89</td>
+                                    <td class="description wrp"> Coins after match declaration</td>
+                                    <td class="coins">0.0</td>
+                                    <td class="fix-limit">1000000.0</td>
+                                    <td class="match-commission">0.0</td>
+                                    <td class="session-comission">0.0</td>
+                                    <td class="created-at last-td">May 23 2020, 3:10 PM</td>
+                                </tr>
+                                  <tr class="table-data td_wrap">
+                                    <td class="changelog-id">89</td>
+                                    <td class="description wrp"> Coins after match declaration</td>
+                                    <td class="coins">0.0</td>
+                                    <td class="fix-limit">1000000.0</td>
+                                    <td class="match-commission">0.0</td>
+                                    <td class="session-comission">0.0</td>
+                                    <td class="created-at last-td">May 23 2020, 3:10 PM</td>
+                                </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sub-company-report-contain hide">
+                    <div class="block-header">
+                        <div class="row clearfix">
+                          <div class="back-icon open_agent_details">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                          </div>
+                           <div class="close-details close_agent_detl">
+                            <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                              <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                           </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12" style="margin-top: 11px;">
+                          <div class="select-wrapper mdb-select colorful-select dropdown-primary md-form">
+                            <div class="form-group">
+                              <select class="js-select2 select2-hidden-accessible select-event-type" multiple="" tabindex="-1" aria-hidden="true" style="">
+                                <option value="cricket" data-badge="" selected="">Cricket</option>
+                                <!-- <option value='football' data-badge="" selected>Football</option>
+                                <option value="single_digit" data-badge="" selected>Dus Ka Dum</option>
+                                <option value="roulette" data-badge="" selected>Roulette</option>
+                                <option value="inside_outside" data-badge="" selected>Inside Outside</option> -->
+                                <option value="cricket_tournament" data-badge="">Cricket Tournament</option>
+                                <!-- <option value="football_tournament" data-badge="" selected>Football Tournament</option> -->
+                              </select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 1px;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><span class="select2-selection__clear">×</span><li class="select2-selection__choice" title="Cricket"><span class="select2-selection__choice__remove" role="presentation">×</span>Cricket</li><li class="select2-selection__choice" title="Cricket Tournament"><span class="select2-selection__choice__remove" role="presentation">×</span>Cricket Tournament</li><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="-1" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="reportrange" class="my_ledgers_dated_picker col-md-3 col-md-4 col-sm-6 col-xs-11 pull-right">
+                          <i class="glyphicon glyphicon-calendar fa fa-calendar" aria-hidden="true"></i>&nbsp;
+                          <span> - </span><b class="caret"></b>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin:11px 0px;">
+                          <a class="btn btn-primary btn-xs search_date_btn text-white" onclick="searchData();">Search</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" style="margin-top: 30px;">
+                      <div class="card">
+                        <div class="header">
+                          <h2>Summary</h2>
+                          <ul class="header-dropdown dropdown">
+                            <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                          </ul>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-striped" cellspacing="0" width="100%">
+                            <thead>
+                              <tr>
+                                <th>All Time Company Total</th>
+                                <th>0.0</th>
+                              </tr>
+                              <tr>
+                                <th>All Time Sub Company Total</th>
+                                <th>0.0</th>
+                              </tr>
+                                <tr>
+                                  <th>Selected Cricket, Football Company Total </th>
+                                  <th>0.0</th>
+                                </tr>
+                                <tr>
+                                  <th>Selected Cricket, Football Sub Company Total </th>
+                                  <th>0.0</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="card sub-company-ledger">
+                        <div class="header">
+                          <h2>Sub Company Report</h2>
+                          <ul class="header-dropdown dropdown">
+                            <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                          </ul>
+                        </div>
+                        <div class="table-responsive table-rsp">
+                          <table class="table table-striped table-c-striped spacing5 main-table table-container cols-3 " style="width: 100%">
+                            <thead>
+                              <tr class="table-head">
+                              <td>DATE/TIME  </td>
+                              <td>Match Id  </td>
+                              <td>Match Title  </td>
+                              <td>Company Match Earnings Share Percentage  </td>
+                              <td>Company Usage Charges Share Percentage  </td>
+                              <td>Sub Company Match Earnings  </td>
+                              <td>Sub Company Usage Charges Earnings  </td>
+                              <td>Company Match Earnings </td>
+                              <td>Company Usage Charges Earnings </td>
+                              <td>Sub Company Match Earnings After Company Share </td>
+                              <td>Sub Company Usage Charges Earnings After Company Share </td>
+                              <td>Sub Company Earnings After Company Share  </td>
+                              <td>Company Earnings </td>
+                            </tr>
+                            </thead>
+                            <tr class="table-data">
+                                <td class="tabel-time w-33">24 Aug 20</td>
+                                <td class="match-id wrp w-33">triple_chance_6859</td>
+                                <td class="match-title wrp w-33">Triple Chance - 24 Aug 07:51PM </td>
+                                <td class="earnings-match-company-share wrp w-33">0.0</td>
+                                <td class="charges-usage-compnay-share wrp w-33">0.0</td>
+                                <td class="earning-match-subcompany wrp w-33">0.0</td>
+                                <td class="charges-usage-subcompany wrp w-33">0.0</td>
+                                <td class="company-match-er wrp w-33">0.0</td>
+                                <td class="company-usage-er wrp w-33">0.0</td>
+                                <td class="subcompany-match-after-c-share wrp w-33">0.0</td>
+                                <td class="subcompany-usage-after-c-share wrp w-33">0.0</td>
+                                <td class="subcompany-er-after-c-share wrp w-33">0.0</td>
+                                <td class="company-earnings wrp last-td w-33">0.0</td>
+                            </tr>
+                            <tr class="table-data">
+                                <td class="tabel-time">24 Aug 20</td>
+                                <td class="match-id wrp">triple_chance_6859</td>
+                                <td class="match-title wrp">Triple Chance - 24 Aug 07:51PM </td>
+                                <td class="earnings-match-company-share wrp">0.0</td>
+                                <td class="charges-usage-compnay-share wrp">0.0</td>
+                                <td class="earning-match-subcompany wrp">0.0</td>
+                                <td class="charges-usage-subcompany wrp">0.0</td>
+                                <td class="company-match-er wrp">0.0</td>
+                                <td class="company-usage-er wrp">0.0</td>
+                                <td class="subcompany-match-after-c-share wrp">0.0</td>
+                                <td class="subcompany-usage-after-c-share wrp">0.0</td>
+                                <td class="subcompany-er-after-c-share wrp">0.0</td>
+                                <td class="company-earnings wrp last-td">0.0</td>
+                            </tr>
+                            <tbody>
+                              <tr class="table-data mt-10 total-row">
+                                <td class="total-data last-td c-align" colspan="3">Total</td>
+                                <td class="earnings-match-company-share wrp">0.0</td>
+                                <td class="charges-usage-compnay-share wrp">0.0</td>
+                                <td class="earning-match-subcompany wrp">0.0</td>
+                                <td class="charges-usage-subcompany wrp">0.0</td>
+                                <td class="company-match-er wrp">0.0</td>
+                                <td class="company-usage-er wrp">0.0</td>
+                                <td class="subcompany-match-after-c-share wrp">0.0</td>
+                                <td class="subcompany-usage-after-c-share wrp">0.0</td>
+                                <td class="subcompany-er-after-c-share wrp">0.0</td>
+                                <td class="company-earnings wrp fix-td">0.0</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="special-sc-175-report-contain hide">
+                    <div class="block-header">
+                      <div class="row clearfix">
+                        <div class="back-icon open_agent_details">
+                          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </div>
+                         <div class="close-details close_agent_detl">
+                          <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                            <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div id="reportrange" class="my_ledgers_dated_picker col-lg-3 col-md-4 col-sm-6 col-xs-11 pull-right">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar" aria-hidden="true"></i>&nbsp;
+                        <span> - </span><b class="caret"></b>
+                      </div>
+
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 11px;">
+                        <a class="btn btn-primary btn-xs search_date_btn text-white">Search</a>
+                      </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-top: 30px;">
+                      <div class="card">
+                        <div class="header">
+                          <h2>Summary</h2>
+                          <ul class="header-dropdown dropdown">
+                            <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                          </ul>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-striped">
+                            <thead>
+                              <tr>
+                                <th>All Time Company Total</th>
+                                <th>0.0</th>
+                              </tr>
+                              <tr>
+                                <th>All Time Sub Company Total</th>
+                                <th>0.0</th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="header">
+                          <h2>Sub Company Report</h2>
+                          <ul class="header-dropdown dropdown">
+                            <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
+                          </ul>
+                        </div>
+                        <div class="table-responsive table-rsp">
+                          <table class="table table-striped table-c-striped spacing5 main-table table-container cols-3 td-wrap table-content" style="width: 100%">
+                            <thead>
+                              <tr class="table-head">
+                              <td>DATE/TIME  </td>
+                              <td>Match Id  </td>
+                              <td>Match Title  </td>
+                              <td>Company Match Earnings Share Percentage  </td>
+                              <td>Company Usage Charges Share Percentage  </td>
+                              <td>Sub Company Match Earnings  </td>
+                              <td>Sub Company Usage Charges Earnings  </td>
+                              <td>Company Match Earnings </td>
+                              <td>Company Usage Charges Earnings </td>
+                              <td>Sub Company Match Earnings After Company Share </td>
+                              <td>Sub Company Usage Charges Earnings After Company Share </td>
+                              <td>Sub Company Earnings After Company Share  </td>
+                              <td>Company Earnings </td>
+                            </tr>
+                            </thead>
+                            <tr class="table-data">
+                                <td class="tabel-time">24 Aug 20</td>
+                                <td class="match-id wrp">triple_chance_6859</td>
+                                <td class="match-title wrp">Triple Chance - 24 Aug 07:51PM </td>
+                                <td class="earnings-match-company-share wrp">0.0</td>
+                                <td class="charges-usage-compnay-share wrp">0.0</td>
+                                <td class="earning-match-subcompany wrp">0.0</td>
+                                <td class="charges-usage-subcompany wrp">0.0</td>
+                                <td class="company-match-er wrp">0.0</td>
+                                <td class="company-usage-er wrp">0.0</td>
+                                <td class="subcompany-match-after-c-share wrp">0.0</td>
+                                <td class="subcompany-usage-after-c-share wrp">0.0</td>
+                                <td class="subcompany-er-after-c-share wrp">0.0</td>
+                                <td class="company-earnings wrp last-td">0.0</td>
+                            </tr>
+                            <tr class="table-data">
+                                <td class="tabel-time">24 Aug 20</td>
+                                <td class="match-id wrp">triple_chance_6859</td>
+                                <td class="match-title wrp">Triple Chance - 24 Aug 07:51PM </td>
+                                <td class="earnings-match-company-share wrp">0.0</td>
+                                <td class="charges-usage-compnay-share wrp">0.0</td>
+                                <td class="earning-match-subcompany wrp">0.0</td>
+                                <td class="charges-usage-subcompany wrp">0.0</td>
+                                <td class="company-match-er wrp">0.0</td>
+                                <td class="company-usage-er wrp">0.0</td>
+                                <td class="subcompany-match-after-c-share wrp">0.0</td>
+                                <td class="subcompany-usage-after-c-share wrp">0.0</td>
+                                <td class="subcompany-er-after-c-share wrp">0.0</td>
+                                <td class="company-earnings wrp last-td">0.0</td>
+                            </tr>
+                           <tbody>
+                                <tr class="table-data mt-10 total-row">
+                                <td class="total-data last-td c-align" colspan="3">Total</td>
+                                <td class="earnings-match-company-share wrp">0.0</td>
+                                <td class="charges-usage-compnay-share wrp">0.0</td>
+                                <td class="earning-match-subcompany wrp">0.0</td>
+                                <td class="charges-usage-subcompany wrp">0.0</td>
+                                <td class="company-match-er wrp">0.0</td>
+                                <td class="company-usage-er wrp">0.0</td>
+                                <td class="subcompany-match-after-c-share wrp">0.0</td>
+                                <td class="subcompany-usage-after-c-share wrp">0.0</td>
+                                <td class="subcompany-er-after-c-share wrp">0.0</td>
+                                <td class="company-earnings wrp fix-td">0.0</td>
+                            </tr>
+                           </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="edit-box hide">
+                  <div class="row clearfix">
+                     <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                           <div class="header">
+                              <h2>Edit Stockist</h2>
+                           </div>
+                           <div class="body">
+                              <form accept-charset="UTF-8" action="/agent/agents/20" class="form-horizontal" id="agent_form" method="post">
+                                 <div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="patch"><input name="authenticity_token" type="hidden" value="xhFjJXAwNrZKD/wVu2gMi3uz8jRSiBw26YS4/bMK2AY="></div>
+                                 <div class="form-group">
+                                    <label>User Name</label>
+                                    <input class="form-control" id="agent_user_name" name="agent[user_name]" placeholder="User Name" readonly="readonly" required="required" style="text-transform:uppercase" type="text" value="xs20">
+                                 </div>
+                                 <div class="form-group">
+                                    <label>First Name</label>
+                                    <input class="form-control" id="agent_first_name" name="agent[first_name]" placeholder="First Name" type="text" value="abc">
+                                 </div>
+                                 <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input class="form-control" id="agent_last_name" name="agent[last_name]" placeholder="Last Name" type="text" value="xyz">
+                                 </div>
+                                 <div class="form-group">
+                                    <label>Agent Fix Limit</label>
+                                    <input class="form-control" id="entered_agent_fix_limit" min="0.00" name="agent[fix_limit]" placeholder="Agent Fix Limit" required="required" type="number" value="0">
+                                    <text class="agent_fix_limit_error"><b>Note</b> : Agent Fix Limit set below or equal to <b>37989916.7</b></text>
+                                 </div>
+                                 <div class="form-group">
+                                    <label>My Share</label>
+                                    <input class="form-control" disabled="disabled" id="entered_agent_share" max="100" min="0" name="agent[agent_share]" placeholder="Agent Share" required="required" type="number" value="0">
+                                    <text class="agent_share_error"><b>Note</b> : Max Agent Share + My Share should be set below or equal to <b>100.0</b></text>
+                                 </div>
+                                 <div class="hr-line-dashed"></div>
+                                 <div class="form-group">
+                                    <label>Max Agent Share</label>
+                                    <input class="form-control" disabled="disabled" id="entered_max_agent_share" max="100.00" min="0.00" name="agent[maximum_share]" placeholder="Agent Share" required="required" type="number" value="0">
+                                    <text class="max_agent_share_error"><b>Note</b> : Max Agent Share + My Share should be set below or equal to <b>100.0</b></text>
+                                 </div>
+                                 <div class="form-group">
+                                    <label>Agent Match Commission</label>
+                                    <input class="form-control" disabled="disabled" id="agent_match_comission" max="100.00" min="0.00" name="agent[match_commission]" placeholder="Agent Match Commission" required="required" type="text" value="0">
+                                    <text class="commi_error_match"><b>Note</b> : Agent Match Commission set below or equal to <b>100.0</b></text>
+                                 </div>
+                                 <div class="form-group">
+                                    <label>Agent Session Commission</label>
+                                    <input class="form-control" disabled="disabled" id="agent_session_comission" min="0" name="agent[session_commission]" placeholder="Agent Session Commission" required="required" type="text" value="0">
+                                    <text class="commi_error_session"><b>Note</b> : Agent Session Commission set below or equal to <b>100.0</b></text>
+                                 </div>
+                                 <div class="form-group">
+                                    <label>Football Match Commission</label>
+                                    <input class="form-control" disabled="disabled" id="football_match_commission_percentage" min="0" name="agent[football_match_commission_percentage]" placeholder="Football Match Commission" required="required" type="text" value="0">
+                                    <text class="foot_commi_error_match"><b>Note</b> : Football Match Commission set below or equal to <b>100.0</b></text>
+                                 </div>
+                                 <div class="hr-line-dashed"></div>
+                                 <div class="form-group">
+                                    <label style="margin-top: -10px;">Pays Usage Charges To Parent</label>
+                                    <div class="col-sm-10">
+                                       <div class="switch">
+                                          <div class="onoffswitch">
+                                             <input name="agent[pays_usage_charges_to_parent]" type="hidden" value="0"><input checked="checked" class="onoffswitch-checkbox" id="pays_usage_charges_to_parent" name="agent[pays_usage_charges_to_parent]" type="checkbox" value="1">
+                                             <label class="onoffswitch-label" for="pays_usage_charges_to_parent">
+                                             <span class="onoffswitch-inner"></span>
+                                             <span class="onoffswitch-switch"></span>
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="hr-line-dashed"></div>
+                                 <div class="form-group">
+                                    <label style="margin-top: -10px;">Agent Blocked</label>
+                                    <div class="col-sm-10">
+                                       <div class="switch">
+                                          <div class="onoffswitch">
+                                             <input name="agent[blocked_by_agent]" type="hidden" value="0"><input class="onoffswitch-checkbox" id="agent_blocked_to_parent" name="agent[blocked_by_agent]" type="checkbox" value="1">
+                                             <label class="onoffswitch-label" for="agent_blocked_to_parent">
+                                             <span class="onoffswitch-inner"></span>
+                                             <span class="onoffswitch-switch"></span>
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="hr-line-dashed"></div>
+                                 <div class="form-group">
+                                    <label style="margin-top: -10px;">Bets Blocked</label>
+                                    <div class="col-sm-10">
+                                       <div class="switch">
+                                          <div class="onoffswitch">
+                                             <input name="agent[bets_blocked_by_agent]" type="hidden" value="0"><input class="onoffswitch-checkbox" id="bets_blocked_by_agent" name="agent[bets_blocked_by_agent]" type="checkbox" value="1">
+                                             <label class="onoffswitch-label" for="bets_blocked_by_agent">
+                                             <span class="onoffswitch-inner"></span>
+                                             <span class="onoffswitch-switch"></span>
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="hr-line-dashed"></div>
+                                 <div class="form-group">
+                                    <div class="col-sm-offset-2">
+                                       <span class="btn btn-info edit-cancel">Cancel</span>
+                                       <span class="btn btn-primary" type="submit" id="submit">Save Changes</span>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+
+                <div class="create-new-container hide">
+                 <div class="container-fluid">
+                  <div class="block-header">
+                    <div class="row clearfix">
+                      <div class="col-md-6 col-sm-12">
+                        <!-- <h1>New Stockists</h1>
+                        <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                              <a href="/agent/dashboard">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                              <a href="/agent/agents">Agents</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                              <strong>Create Stockists</strong>
+                            </li>
+                          </ol>
+                        </nav> -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12">
+                      <div class="card">
+
+                        <div class="header">
+                          <h2>New Stockists</h2>
+                        </div>
+
+                        <div class="body">
+                          <div style="color:red"></div>
+                          <form accept-charset="UTF-8" action="/agent/agents" class="form-horizontal" id="agent_form" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="SFpdR5boW2Zzi4s+1VTFqjQkciLXP+/82Q9m/ar/yXI="></div>
+                            <div class="input-group mb-3">
+                              <label class="col-sm-2 control-label">User Name</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" id="agent_user_name" name="agent[user_name]" placeholder="User Name" type="text" value="XS25">
+                              </div>
+                            </div>
+
+                              <input id="agent_ancestry" name="agent[ancestry]" type="hidden" value="1">
+                            <input id="agent_role" name="agent[role]" type="hidden" value="stockist">
+
+                            <div class="input-group mb-3">
+                              <label class="col-sm-2 control-label">First Name</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" id="agent_first_name" name="agent[first_name]" placeholder="First Name" type="text">
+                              </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="col-sm-2 control-label">Last Name</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" id="agent_last_name" name="agent[last_name]" placeholder="Last Name" type="text">
+                              </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="col-sm-2 control-label">My Share</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" id="entered_agent_share" max="100.00" min="0.00" name="agent[agent_share]" placeholder="My Share" required="required" type="number" value="0.0">
+                                <text class="agent_share_error"><b>Note</b> : Max Agent Share + My Share should be set below or equal to <b>100.0</b></text>
+                               </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="col-sm-2 control-label">Max Agent Share</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" id="entered_max_agent_share" max="100.00" min="0.00" name="agent[maximum_share]" placeholder="Agent Share" required="required" type="number" value="0.0">
+                                <text class="max_agent_share_error"><b>Note</b> : Max Agent Share + My Share should be set below or equal to <b>100.0</b></text>
+                              </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="col-sm-2 control-label">Agent Fix Limit</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" id="entered_agent_fix_limit" min="0.00" name="agent[fix_limit]" placeholder="Agent Fix Limit" required="required" type="number" value="0.0">
+                                <text class="agent_fix_limit_error"><b>Note</b> : Agent Fix Limit set below or equal to <b>36990016.7</b></text>
+                              </div>
+                            </div>
+
+                              <div class="input-group mb-3">
+                                <label class="col-sm-2 control-label">Agent Match Commission</label>
+                                <div class="col-sm-10">
+                                  <input class="form-control" id="agent_match_comission" max="100.00" min="0.00" name="agent[match_commission]" placeholder="Agent Match Commission" required="required" type="text" value="0.0">
+                                  <text class="commi_error_match"><b>Note</b> : Agent Match Commission set below or equal to <b>100.0</b></text>
+                               </div>
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <label class="col-sm-2 control-label">Agent Session Commission</label>
+                                <div class="col-sm-10">
+                                  <input class="form-control" id="agent_session_comission" max="100.00" min="0.00" name="agent[session_commission]" placeholder="Agent Session Commission" required="required" type="text" value="0.0">
+                                  <text class="commi_error_session"><b>Note</b> : Agent Session Commission set below or equal to <b>100.0</b></text>
+                                </div>
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <label class="col-sm-2 control-label">Football Match Commission</label>
+                                <div class="col-sm-10">
+                                  <input class="form-control" id="football_match_commission_percentage" min="0" name="agent[football_match_commission_percentage]" placeholder="Football Match Commission" required="required" type="text" value="0.0">
+                                  <text class="foot_commi_error_match"><b>Note</b> : Football Match Commission set below or equal to <b>100.0</b></text>
+                                </div>
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <label class="col-sm-2 control-label" style="margin-top: -10px;">Pays Usage Charges To Parent</label>
+                                <div class="col-sm-10">
+                                  <div class="switch">
+                                    <div class="onoffswitch">
+                                      <input name="agent[pays_usage_charges_to_parent]" type="hidden" value="0"><input checked="checked" class="onoffswitch-checkbox" id="pays_usage_charges_to_parent" name="agent[pays_usage_charges_to_parent]" type="checkbox" value="1">
+                                      <label class="onoffswitch-label" for="pays_usage_charges_to_parent">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            <div class="input-group mb-3">
+                              <label class="col-sm-2 control-label">Password</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" id="agent_password" name="agent[password]" placeholder="Password" required="required" type="password">
+                              </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <label class="col-sm-2 control-label">Confirm Password</label>
+                                <div class="col-sm-10">
+                                  <input class="form-control" id="agent_confirm_password" name="agent[confirm_password]" placeholder="Confirm Password" required="required" type="password">
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <div class="col-sm-offset-2">
+                                <span class="btn btn-info cancel_sec">Cancel</span>
+                                <button class="btn btn-primary" type="submit" id="submit">Save Changes</button>
+                              </div>
+                            </div>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <script>
+                    $(document).ready(function() {
+                      $('#submit').click(function(event){
+                        if($('#agent_password').val() != $('#agent_confirm_password').val()) {
+                          alert("Password and Confirm Password don't match");
+                          event.preventDefault();
+                          $('#agent_password').val("");
+                          $('#agent_password').focus();
+                          $('#agent_confirm_password').val("");
+                        }
+                      });
+                    });
+
+                    $('#agent_form').on('submit', function() {
+                      // do validation here
+                      var parent_match_commision = 100.0
+                      var parent_session_commision = 100.0
+                      var parent_agent_share = 0.0
+                      var parent_max_agent_share = 100.0
+                      var max_football_match_commission_percentage = 100.0
+
+                      var parent_agent_fix_limit = 50000000.0
+                      var parent_agent_remaining_limit = 36990016.7
+                      var agent_match_comi = $('#agent_match_comission').val();
+                      var football_match_commi = $('#football_match_commission_percentage').val();
+                      var agent_session_comi = $('#agent_session_comission').val();
+                      var agent_share = $('#entered_agent_share').val();
+                      var max_agent_share = $('#entered_max_agent_share').val();
+                      var total_agent_share = parseFloat(agent_share) + parseFloat(max_agent_share)
+
+                      var agent_limit = $('#entered_agent_fix_limit').val();
+                      var agent_match_comission = parseFloat(agent_match_comi);
+                      var agent_session_comission = parseFloat(agent_session_comi);
+                      var current_agent_share = parseFloat(agent_share);
+                      var current_agent_fix_limit = parseFloat(agent_limit);
+                      var agent_football_match_commission = parseFloat(football_match_commi);
+                      var root_agent = true
+                      var company_agent = 0
+                      var is_master_company = true
+                      var is_sub_company = false
+                      console.log("is_master_company =>",is_master_company);
+                      console.log("parent_agent_share=>",parent_agent_share);
+                      console.log("current_agent_share=>",current_agent_share);
+                      console.log("total_agent_share=>",total_agent_share);
+
+                      $(".agent_share_error").css("color","#676a6c");
+                      $(".max_agent_share_error").css("color","#676a6c");
+                      $(".commi_error_match").css("color","#676a6c");
+                      $(".commi_error_session").css("color","#676a6c");
+                      $(".agent_fix_limit_error").css("color","#676a6c");
+                      $(".foot_commi_error_match").css("color","#676a6c");
+
+                      if(total_agent_share > parent_max_agent_share){
+                        $(".max_agent_share_error").css("color","red");
+                        $(".agent_share_error").css("color","red");
+                        return false;
+                      }
+                      if(max_football_match_commission_percentage < agent_football_match_commission){
+                         $(".foot_commi_error_match").css("color","red");
+                         return false;
+                      }
+                      if(parent_match_commision < agent_match_comission){
+                            $(".commi_error_match").css("color","red");
+                            return false;
+                          }
+
+                      if(parent_session_commision < agent_session_comission){
+                            $(".commi_error_session").css("color","red");
+                            return false;
+                          }
+                      // if(parent_agent_share < current_agent_share){
+                      //    $(".agent_share_error").css("color","red");
+                      //    return false;
+                      // }
+
+                      if(parent_agent_remaining_limit < current_agent_fix_limit){
+                         $(".agent_fix_limit_error").css("color","red");
+                         return false;
+                      }
+
+                      if (is_sub_company == true){
+                        if(parent_match_commision < agent_match_comission){
+                          $(".commi_error_match").css("color","red");
+                          return false;
+                        }
+                        if(parent_session_commision < agent_session_comission){
+                          $(".commi_error_session").css("color","red");
+                          return false;
+                        }
+                      }
+                    });
+                  </script>
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+
+          <script>
+            $(document).ready(function() {
+              $('.agent-table').DataTable({
+                dom: 'Bfrtip',
+                "ordering": false,
+                buttons: [
+                'csvHtml5',
+                'pdfHtml5'
+                ]
+              });
+            });
+          </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.opn_detail').click(function(){
+          $('.split__left').css('width', '50%');
+          $('.split__left').css('max-width', '70%')
+          $('.split__right , .split__bar').removeClass('hide');
+          $('.agent-company').removeClass('hide');
+          $('.gutter').css('display', 'block');
+
+        });
+      });
+       $(document).ready(function(){
+        $('.close_agent_detl').click(function(){
+          $('.split__left').css('width', '100%');
+          $('.split__left').css('max-width', 'inherit')
+          $('.split__right , .split__bar').addClass('hide');
+          $('.agent-company').addClass('hide');
+          $('.gutter').css('display', 'none');
+        })
+      });
+    </script>
+
+    <!-- ==============receive cash js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_receive_cash').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.receive-cash-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.receive-cash-contain').addClass('hide');
+            });
+          });
+        </script>
+    <!-- ==============receive cash js end========= -->
+
+    <!-- ==============pay cash js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_pay_cash').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.pay-cash-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.pay-cash-contain').addClass('hide');
+            });
+          });
+
+        </script>
+    <!-- ==============pay cash js end========= -->
+
+    <!-- ==============ledger js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_ledger').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.ledger-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.ledger-contain').addClass('hide');
+            });
+          });
+
+        </script>
+    <!-- ==============ledger js end========= -->
+
+    <!-- ==============cash ledger js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_cash_ledger').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.cash-ledger-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.cash-ledger-contain').addClass('hide');
+            });
+          });
+
+        </script>
+    <!-- ==============cash ledger js end========= -->
+
+    <!-- ==============match ledger js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_match_ledger').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.match-ledger-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.match-ledger-contain').addClass('hide');
+            });
+          });
+        </script>
+    <!-- ==============match ledger js end========= -->
+
+    <!-- ==============direct agents js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_direct_agents').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.direct-agents-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.direct-agents-contain').addClass('hide');
+            });
+          });
+
+        </script>
+    <!-- ==============direct agents js end========= -->
+
+    <!-- ==============direct clients js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_direct_clients').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.direct-clients-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.direct-clients-contain').addClass('hide');
+            });
+          });
+
+        </script>
+    <!-- ==============direct clients js end========= -->
+
+    <!-- ==============coin history js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_coin_history').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.coin-history-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.coin-history-contain').addClass('hide');
+            });
+          });
+
+        </script>
+    <!-- ==============coin history js end========= -->
+
+    <!-- ==============sub company report js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_sub_company_report').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.sub-company-report-contain , .sub-company-report-contain-b').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.sub-company-report-contain , .sub-company-report-contain-b').addClass('hide');
+            });
+          });
+
+        </script>
+    <!-- ==============sub company report js end========= -->
+
+    <!-- ==============special sc 175 report js start========= -->
+        <script>
+          $(document).ready(function(){
+            $('.opn_special_sc_175_report').click(function(){
+              $('.stockists-detail').addClass('hide');
+              $('.special-sc-175-report-contain').removeClass('hide');
+            });
+          });
+
+          $(document).ready(function(){
+            $('.open_agent_details').click(function(){
+              $('.stockists-detail').removeClass('hide');
+              $('.special-sc-175-report-contain').addClass('hide');
+            });
+          });
+
+        </script>
+    <!-- ==============sub company report js end========= -->
+            </div>
+          </div>
+        </div>
+        <script media="all" src="/assets/admin_dark.js"></script>
+      </body>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          if(false == true){
+            document.getElementById("themes-switch").checked = true;
+          }else{
+            document.getElementById("themes-switch").checked = false;
+          }
+
+          if(false == true)
+          {
+            $("body").addClass("mini_sidebar");
+            document.getElementById("mini-switch").checked = true;
+            $("#left-sidebar").addClass("mini_sidebar_on");
+            $(".hmenu-btn").attr("disabled", "disabled");
+            $(".hmenu-link").addClass("isDisabled");
+          }else{
+            $("body").removeClass("mini_sidebar");
+            document.getElementById("mini-switch").checked = false;
+            $("#left-sidebar").removeClass("mini_sidebar_on");
+            $(".hmenu-btn").removeAttr("disabled", "disabled");
+            $(".hmenu-link").removeClass("isDisabled");
+          }
+        });
+
+        $(function() {
+          $(window).on("load resize", function() {
+            if($(window).innerWidth() < 1201){
+              $(".mini-sidebar-btn, .hmenu-btn").attr("disabled", "disabled");
+              $(".hmenu-link").addClass("isDisabled");
+              $(".mini-sidebar-link").addClass("isDisabled");
+            }else{
+              if(false == true){
+                $("body").addClass("h-menu");
+                document.getElementById("hmenu-switch").checked = true;
+                $(".mini-sidebar-btn").attr("disabled", "disabled");
+                $(".mini-sidebar-link").addClass("isDisabled");
+              }else{
+                $("body").removeClass("h-menu")
+                document.getElementById("hmenu-switch").checked = false;
+                $(".mini-sidebar-btn").removeAttr("disabled", "disabled");
+                $(".mini-sidebar-link").removeClass("isDisabled");
+              }
+
+              if(false == true){
+                $("body").addClass("mini_sidebar");
+                document.getElementById("mini-switch").checked = true;
+                $("#left-sidebar").addClass("mini_sidebar_on");
+                $(".hmenu-btn").attr("disabled", "disabled");
+                $(".hmenu-link").addClass("isDisabled");
+              }else{
+                $("body").removeClass("mini_sidebar");
+                document.getElementById("mini-switch").checked = false;
+                $("#left-sidebar").removeClass("mini_sidebar_on");
+                $(".hmenu-btn").removeAttr("disabled", "disabled");
+                $(".hmenu-link").removeClass("isDisabled");
+              }
+            }
+          })
+        });
+
+
+        $(".navbar-minimalize").on("click", function() {
+          $("body").toggleClass("mini_sidebar");
+          $("#left-sidebar").toggleClass("mini_sidebar_on");
+          if(false == true){
+            document.getElementById("mini-switch").checked = true;
+          }
+          else{
+            document.getElementById("mini-switch").checked = false;
+          }
+          // $(".navbar-brand").toggleClass("sidebar-icon");
+          // $(".right-icon").toggleClass("second");
+        });
+
+
+      </script>
+
+
+
+</html>

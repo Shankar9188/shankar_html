@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lords24</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="css/admin_dark.css" media="all" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script media="all" src="js/application.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.css">
+    <script media="all" src="js/select2.full.min.js"></script>
+    <script media="all" src="js/main.js"></script>
+  </head>
+  <body class="theme-cyan  font-montserrat   ">
+    <!-- Theme Setting -->
+    <div class="themesetting">
+      <a href="javascript:void(0);" class="theme_btn"><i class="icon-magic-wand"></i></a>
+      <div class="card theme_color">
+        <div class="header">
+          <h2>Theme Color</h2>
+        </div>
+        <ul class="choose-skin list-unstyled mb-0">
+          <a href="/settings/set_agent_theme_color?color=green" data-method="get" data-remote="true">
+            <li data-theme="green" class=><div class="green"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=orange" data-method="get" data-remote="true">
+            <li data-theme="orange" class=><div class="orange"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=blush" data-method="get" data-remote="true">
+            <li data-theme="blush" class=><div class="blush"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=cyan" data-method="get" data-remote="true">
+            <li data-theme="cyan" class=active ><div class="cyan"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=indigo" data-method="get" data-remote="true">
+            <li data-theme="indigo" class=><div class="indigo"></div></li>
+          </a>
+          <a href="/settings/set_agent_theme_color?color=red" data-method="get" data-remote="true">
+            <li data-theme="red" class=><div class="red"></div></li>
+          </a>
+        </ul>
+      </div>
+      <div class="card font_setting">
+        <div class="header">
+          <h2>Font Settings</h2>
+        </div>
+        <div>
+          <div class="fancy-radio mb-2">
+            <a href="/settings/set_agent_theme_font?font=krub" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-krub" type="radio"  >
+                <span><i></i>Krub Google font</span>
+              </label>
+            </a>
+          </div>
+          <div class="fancy-radio mb-2">
+            <a href="/settings/set_agent_theme_font?font=montserrat" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-montserrat" type="radio" checked>
+                <span><i></i>Montserrat Google font</span>
+              </label>
+            </a>
+          </div>
+          <div class="fancy-radio">
+            <a href="/settings/set_agent_theme_font?font=roboto" data-method="get" data-remote="true">
+              <label>
+                <input name="font" value="font-roboto" type="radio"  >
+                <span><i></i>Robot Google font</span>
+              </label>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card setting_switch">
+        <div class="header">
+          <h2>Settings</h2>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Light Version
+            <div class="float-right">
+              <a href="/settings/set_agent_theme" data-method="post" data-remote="true">
+                <label class="switch">
+                  <input id="themes-switch" type="checkbox" class="lv-btn">
+                  <span class="slider round"></span>
+                </label>
+              </a>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            Horizontal Henu
+            <div class="float-right">
+              <a href="/settings/set_agent_horizontal_menu" data-method="post" data-remote="true" class="hmenu-link">
+                <label class="switch">
+                  <input id="hmenu-switch" type="checkbox" class="hmenu-btn" >
+                  <span class="slider round"></span>
+                </label>
+              </a>
+            </div>
+          </li>
+          <li class="list-group-item">
+            Mini Sidebar
+            <div class="float-right">
+                <label class="switch">
+                  <a href="/settings/set_agent_mini_sidebar" data-method="post" data-remote="true" class="mini-sidebar-link">
+                    <input id="mini-switch" type="checkbox" class="mini-sidebar-btn">
+                    <span class="slider round"></span>
+                  </a>
+                </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <div id="wrapper">
+      <!-- partial:partials/_navbar.html -->
+  <nav class="navbar top-navbar">
+    <div class="container-fluid">
+      <div class="navbar-left">
+         <div class="navbar-btn">
+          <a href="index.html"></a>
+          <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
+        </div>
+        <ul class="nav navbar-nav">
+          <!-- <li>
+            <a class="navbar-minimalize  btn btn-primary" href="#"><i class="fa fa-bars"></i></a>
+          </li> -->
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="icon-envelope"></i>
+              <span class="notification-dot bg-green">4</span>
+            </a>
+            <ul class="dropdown-menu right_chat email vivify fadeIn">
+              <li class="header green">You have 4 New eMail</li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                    <div class="media-body">
+                      <span class="name">James Wert <small class="float-right text-muted">Just now</small></span>
+                      <span class="message">Update GitHub</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <div class="avtar-pic w35 bg-indigo"><span>FC</span></div>
+                    <div class="media-body">
+                      <span class="name">Folisise Chosielie <small class="float-right text-muted">12min ago</small></span>
+                      <span class="message">New Messages</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media">
+                    <!-- <img class="media-object " src="../admin_dark/images/xs/avatar5.jpg" alt=""> -->
+                    <div class="media-body">
+                      <span class="name">Louis Henry <small class="float-right text-muted">38min ago</small></span>
+                      <span class="message">Design bug fix</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="media mb-0">
+                    <!-- <img class="media-object " src="../admin_dark/images/xs/avatar2.jpg" alt=""> -->
+                    <div class="media-body">
+                      <span class="name">Debra Stewart <small class="float-right text-muted">2hr ago</small></span>
+                      <span class="message">Fix Bug</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="icon-bell"></i>
+              <span class="notification-dot bg-azura">4</span>
+            </a>
+            <ul class="dropdown-menu feeds_widget vivify fadeIn">
+              <li class="header blue">You have 4 New Notifications</li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-red"><i class="fa fa-check"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-danger">Issue Fixed <small class="float-right text-muted">9:10 AM</small></h4>
+                    <small>WE have fix all Design bug with Responsive</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-info"><i class="fa fa-user"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-info">New User <small class="float-right text-muted">9:15 AM</small></h4>
+                    <small>I feel great! Thanks team</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-orange"><i class="fa fa-question-circle"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-warning">Server Warning <small class="float-right text-muted">9:17 AM</small></h4>
+                    <small>Your connection is not private</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="feeds-left bg-green"><i class="fa fa-thumbs-o-up"></i></div>
+                  <div class="feeds-body">
+                    <h4 class="title text-success">2 New Feedback <small class="float-right text-muted">9:22 AM</small></h4>
+                    <small>It will give a smart finishing to your site</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown language-menu">
+            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+              <i class="fa fa-language"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/us.svg " class="w20 mr-2 rounded-circle">  -->US English</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/gb.svg " class="w20 mr-2 rounded-circle"> --> UK English</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/russia.svg " class="w20 mr-2 rounded-circle"> --> Russian</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/arabia.svg " class="w20 mr-2 rounded-circle"> --> Arabic</a>
+              <a class="dropdown-item pt-2 pb-2" href="#"><!-- <img src="../assets/images/flag/france.svg " class="w20 mr-2 rounded-circle"> --> French</a>
+            </div>
+          </li>
+          <li><a href="javascript:void(0);" class="megamenu_toggle icon-menu" title="Mega Menu">Mega</a></li>
+          <li class="p_social"><a href="page-social.html" class="social icon-menu" title="News">Social</a></li>
+          <li class="p_news"><a href="page-news.html" class="news icon-menu" title="News">News</a></li>
+          <li class="p_blog"><a href="page-blog.html" class="blog icon-menu" title="Blog">Blog</a></li>
+        </ul>
+      </div>
+
+          <div class="navbar-right">
+            <div id="navbar-menu">
+              <ul class="nav navbar-nav">
+                <li><a href="javascript:void(0);" class="search_toggle icon-menu" title="Search Result"><i class="icon-magnifier"></i></a></li>
+                <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="icon-bubbles"></i><span class="notification-dot bg-pink">2</span></a></li>
+                <li><a class="icon-menu" data-method="delete" href="/agents/sign_out" rel="nofollow"><i class='icon-power'></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+      </nav>
+
+      <div class="search_div">
+        <div class="card">
+          <div class="body">
+            <form id="navbar-search" class="navbar-form search-form">
+              <div class="input-group mb-0">
+                <input type="text" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="icon-magnifier"></i></span>
+                  <a href="javascript:void(0);" class="search_toggle btn btn-danger"><i class="icon-close"></i></a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <span>Search Result <small class="float-right text-muted">About 90 results (0.47 seconds)</small></span>
+        <div class="table-responsive">
+          <table class="table table-hover table-custom spacing5">
+            <tbody>
+              <tr>
+                <td class="w40">
+                  <span>01</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>SS</span></div>
+                    <div class="ml-3">
+                      <a href="page-invoices-detail.html" title="">South Shyanne</a>
+                      <p class="mb-0">south.shyanne@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>02</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Zoe Baker</a>
+                      <p class="mb-0">zoe.baker@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>03</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-indigo" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>CB</span></div>
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Colin Brown</a>
+                      <p class="mb-0">colinbrown@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>04</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="avtar-pic w35 bg-green" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name"><span>KG</span></div>
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Kevin Gill</a>
+                      <p class="mb-0">kevin.gill@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>05</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Brandon Smith</a>
+                      <p class="mb-0">Maria.gill@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>06</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Kevin Baker</a>
+                      <p class="mb-0">kevin.baker@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>07</span>
+                </td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <!-- <img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name"> -->
+                    <div class="ml-3">
+                      <a href="javascript:void(0);" title="">Zoe Baker</a>
+                      <p class="mb-0">zoe.baker@example.com</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="megamenu" class="megamenu particles_js">
+        <a href="javascript:void(0);" class="megamenu_toggle btn btn-danger"><i class="icon-close"></i></a>
+        <div class="container">
+          <div class="row clearfix">
+            <div class="col-12">
+              <ul class="q_links">
+                <li><a href="app-inbox.html"><i class="icon-envelope"></i><span>Inbox</span></a></li>
+                <li><a href="app-chat.html"><i class="icon-bubbles"></i><span>Messenger</span></a></li>
+                <li><a href="app-calendar.html"><i class="icon-calendar"></i><span>Event</span></a></li>
+                <li><a href="page-profile.html"><i class="icon-user"></i><span>Profile</span></a></li>
+                <li><a href="page-invoices.html"><i class="icon-printer"></i><span>Invoice</span></a></li>
+                <li><a href="page-timeline.html"><i class="icon-list"></i><span>Timeline</span></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-picture text-info"></i>
+                    <h4 class="m-t-25 mb-0">104 Picture</h4>
+                    <p>Your gallery download complete</p>
+                    <a href="javascript:void(0);" class="btn btn-info btn-round">Download now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-diamond text-success"></i>
+                    <h4 class="m-t-25 mb-0">813 Point</h4>
+                    <p>You are doing great job!</p>
+                    <a href="javascript:void(0);" class="btn btn-success btn-round">Read now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card w_card3">
+                <div class="body">
+                  <div class="text-center"><i class="icon-social-twitter text-primary"></i>
+                    <h4 class="m-t-25 mb-0">3,756</h4>
+                    <p>New Followers on Twitter</p>
+                    <a href="javascript:void(0);" class="btn btn-primary btn-round">Find more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Anyone send me a message
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone seeing my profile page
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox" checked="">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  Anyone posts a comment on my post
+                  <div class="float-right">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="particles-js"></div>
+      </div>
+
+      <div id="rightbar" class="rightbar">
+        <div class="body">
+          <ul class="nav nav-tabs2">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Chat-one">Chat</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat-list">List</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat-groups">Groups</a></li>
+          </ul>
+          <hr>
+          <div class="tab-content">
+            <div class="tab-pane vivify fadeIn delay-100 active" id="Chat-one">
+              <div class="slim_scroll">
+                <div class="chat_detail">
+                  <ul class="chat-widget clearfix">
+                    <li class="left float-left">
+                      <div class="avtar-pic w35 bg-pink"><span>KG</span></div>
+                      <div class="chat-info">
+                        <span class="message">Hello, John<br>What is the update on Project X?</span>
+                      </div>
+                    </li>
+                    <li class="right">
+                      <!-- <img src="../admin_dark/images/xs/avatar1.jpg" class="rounded" alt=""> -->
+                      <div class="chat-info">
+                        <span class="message">Hi, Alizee<br> It is almost completed. I will send you an email later today.</span>
+                      </div>
+                    </li>
+                    <li class="left float-left">
+                      <div class="avtar-pic w35 bg-pink"><span>KG</span></div>
+                      <div class="chat-info">
+                        <span class="message">That's great. Will catch you in evening.</span>
+                      </div>
+                    </li>
+                    <li class="right">
+                      <!-- <img src="../assets/images/xs/avatar1.jpg" class="rounded" alt=""> -->
+                      <div class="chat-info">
+                        <span class="message">Sure we'will have a blast today.</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="input-group p-t-15">
+                    <textarea rows="3" class="form-control" placeholder="Enter text here..."></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane vvivify fadeIn delay-100" id="Chat-list">
+              <ul class="right_chat list-unstyled mb-0">
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Folisise Chosielie</span>
+                        <span class="message">offline</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Marshall Nichols</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-red"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Louis Henry</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-orange"><span>DS</span></div>
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-green"><span>SW</span></div>
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <!-- <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt=""> -->
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since Jan 18</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-indigo"><span>FC</span></div>
+                      <div class="media-body">
+                        <span class="name">Louis Henry</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-pink"><span>DS</span></div>
+                      <div class="media-body">
+                        <span class="name">Debra Stewart</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-info"><span>SW</span></div>
+                      <div class="media-body">
+                        <span class="name">Lisa Garett</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane vivify fadeIn delay-100" id="Chat-groups">
+              <ul class="right_chat list-unstyled mb-0">
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-cyan"><span>DT</span></div>
+                      <div class="media-body">
+                        <span class="name">Designer Team</span>
+                        <span class="message">offline</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-azura"><span>SG</span></div>
+                      <div class="media-body">
+                        <span class="name">Sale Groups</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="online">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-orange"><span>NF</span></div>
+                      <div class="media-body">
+                        <span class="name">New Fresher</span>
+                        <span class="message">online</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="offline">
+                  <a href="javascript:void(0);">
+                    <div class="media">
+                      <div class="avtar-pic w35 bg-indigo"><span>PL</span></div>
+                      <div class="media-body">
+                        <span class="name">Project Lead</span>
+                        <span class="message">offline since May 12</span>
+                        <span class="badge badge-outline status"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- partial -->
+      <div>
+      <div id="left-sidebar" class="sidebar">
+        <div class="navbar-brand">
+          <a href=""><img alt="xBook" class="img-fluid logo" src="img/icon.svg" /><span>Lords24</span></a>
+         <!--  <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu icon-close"></i></button>
+          <button type="button" class="btn float-right navbar-minimalize"><i class='fas fa-angle-left'></i></button> -->
+        </div>
+        <div class="sidebar-scroll">
+          <a href="/settings/set_agent_mini_sidebar" data-method="post" data-remote="true" class="mini-sidebar-link">
+            <div class="right-icon"><i class='fas fa-angle-left navbar-minimalize float-right'></i></div>
+          </a>
+          <div class="user-account">
+           <!--  <div class="user_div">
+            </div> -->
+            <div class="dropdown">
+              <span>Welcome,</span>
+              <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Company (company)</strong></a>
+              <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
+                <li><a href="page-profile.html"><i class="icon-user"></i>My Profile</a></li>
+                <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
+                <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+                <li class="divider"></li>
+                <li><a data-method="delete" href="/agents/sign_out" rel="nofollow"><i class='icon-power'></i>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <nav id="left-sidebar-nav" class="sidebar-nav">
+            <ul id="main-menu" class="metismenu">
+              <li class="header">Main</li>
+              <li>
+                <a href="company-dashboard.html"><i class="icon-speedometer"></i><span>Dashboard</span></a>
+              </li>
+              <li class="nav-menu">
+                <a href="#myPage" class="has-arrow"><i class="icon-diamond"></i><span>Manage</span></a>
+                <ul class="active-content hide">
+                  <li class="open active"><a href="manage-master.html" data-method="get">Master</a></li>
+                  <li class="open active"><a href="manage-super-stockists.html" data-method="get">Super Stockists</a></li>
+                  <li class="open active"><a href="manage-stockists.html" data-method="get">Stockists</a></li>
+                  <li class="open active"><a href="manage-agent.html" data-method="get">Agent</a></li>
+                </ul>
+              </li>
+              <li class="nav-menu">
+                <a href="#myPage" class="has-arrow"><i class="icon-rocket"></i><span>Sports</span></a>
+                <ul class="active-content hide">
+                  <li ><a href="sports-matches.html" data-method="get">Matches</a></li>
+                    <li ><a href="sports-tournament.html" data-method="get">Tournament</a></li>
+                </ul>
+              </li>
+              <li class="nav-menu">
+                <a href="#myPage" class="has-arrow"><i class="icon-user"></i><span>Manage Clients</span></a>
+                <ul class="active-content hide">
+
+                  <li>
+                    <a href="update_client_limit.html" data-method="get">Commission &amp; Limits</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                  <a href="manage-sub-company.html" data-method="get"><i class="icon-bubbles"></i><span>Manage SubCompany</span></a>
+              </li>
+              <li>
+                <a href="manage-password-panel.html" data-method="get"><i class="icon-tag"></i><span>Manage Password</span></a>
+              </li>
+              <li>
+                <a href="language.html" data-method="get"><i class="icon-speech"></i><span>Language</span></a>
+              </li>
+              <li class="nav-menu">
+                <a href="#myPage" class="has-arrow"><i class="icon-book-open"></i><span>Manage Ledgers</span></a>
+                <ul class="active-content hide">
+                  <li >
+                    <a href="collection_report.html" data-method="get">Collection Report</a>
+                  </li>
+                  <li>
+                    <a href="/earning_report.html" data-method="get">Profit &amp; Loss</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-menu">
+                <a href="#myPage" class="has-arrow"><i class="icon-settings"></i><span>Manage Settings</span></a>
+                <ul class="active-content hide">
+                  <li ><a href="settings.html" data-method="get"><span>Settings</span></a></li>
+                  <li ><a href="stake_limits_packages.html"><span>Stake Limits Packages</span></a></li>
+                  <li ><a href="rules.html"><span>RULES</span></a></li>
+                </ul>
+              </li>
+              <li ><a href="update_agent_coins.html" data-method="get"><i class="icon-credit-card"></i><span>Credit Coins</span></a>
+                </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div id="main-content">
+        <div class="container-fluid">
+            <div class="row clearfix match-container split-row split containers">
+              <div class="split__left">
+                <style>
+                   @media screen and (max-width: 375px) {
+                   .card .header .header-dropdown {
+                   position: inherit;
+                   top: 5px;
+                   right: 5px;
+                   list-style: none;
+                   }
+                   }
+                   @media screen and (max-width: 425px) {
+                   .card .header .header-dropdown li a {
+                   font-size: 12px;
+                   }
+                   }
+                   .sorting_1{
+                    width: 20px;
+                   }
+                </style>
+                <div class="block-header">
+                   <div class="row clearfix">
+                      <div class="col-md-6 col-sm-12">
+                         <h2>Super Admin</h2>
+                         <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                               <li class="breadcrumb-item">
+                                  <a href="/agent/dashboard">Dashboard</a>
+                               </li>
+                               <li class="breadcrumb-item active" aria-current="page">
+                                  <a><strong>Stake Limits Packages</strong></a>
+                               </li>
+                            </ol>
+                         </nav>
+                      </div>
+                   </div>
+                </div>
+                <div class="row clearfix">
+                   <div class="col-lg-12">
+                      <div class="card">
+                         <div class="header">
+                            <h2>Stake Limits Packages</h2>
+                            <ul class="header-dropdown dropdown">
+                               <li class="btn btn-primary btn-xs opn-create-sec">Create new Stake Limits Packages</a></li>
+                            </ul>
+                         </div>
+                         <div class="table-responsive">
+                           <table class="table agent-table table-hover table-custom spacing5 dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                <thead>
+                                   <tr role="row">
+                                      <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 68px;">ID</th>
+                                      <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 203px;">Title</th>
+                                      <th class="sorting_disabled  r-head" rowspan="1" colspan="1" style="width: 451px; text-align: center;">Actions</th>
+                                      <th class="sorting_disabled show-data-head hide" rowspan="1" colspan="1" style="width: 53px;"></th>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                  <tr class="odd table_hover" role="row" id="widthBtn">
+                                   <td>1</td>
+                                   <td class="agent_name">DEFAULT</td>
+                                   <td class="r-data action-btn">
+                                    <span class="opn-edit-sec opn_detail"><i class="fa fa-edit fa-lg fa-2x" aria-hidden="true"></i></span>
+                                      <!-- <a href="/agent/agents/5/edit"><i class="fa fa-edit fa-lg fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp; -->
+                                      <a class="delete_1 btn btn-danger btn-sm" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/stake_limits_packages/1" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                      <span class="parnt-class"><span class="hide-dtl">Details</span> <span class="show-dtl opn_detail">Details <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></span></span>
+                                   </td>
+                                   <td class="show-data-head show-data hide">
+                                     <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+                                      <ul class="col-table-data opn-collapsed-dada vivify fadeIn">
+                                        <table class="table agent-table table-striped dataTable">
+                                          <tbody><tr>
+                                          <td class="">Actions : <span class="opn-edit-sec opn_detail"><i class="fa fa-edit i-size" aria-hidden="true"></i></span>
+                                          <a class="delete_1 btn btn-danger btn-sm" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/stake_limits_packages/1" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                          </td>
+                                        </tr></tbody></table>
+                                      </ul>
+                                   </td>
+                                  </tr>
+                                </tbody>
+                             </table>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+              </div>
+
+
+              <div class="split__right d-right hide">
+                <div class="details-container">
+                  <div class="stockists-detail">
+                    <div class="block-header">
+                      <div class="close-details close_agent_detl">
+                          <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+                            <span class="close-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                      </div>
+                    </div>
+                    <div class="row clearfix stake-limit-container" style="margin-top: 20px;">
+                       <div class="col-lg-12">
+                          <div class="card">
+                             <div class="header">
+                                <h2>Stake Limits Packages</h2>
+                                <ul class="header-dropdown dropdown">
+                                   <!-- <li>
+                                      <a href="/agent/stake_limits_packages/1/market_type_stake_limits/new" class="btn btn-primary btn-xs">Create new Market Type Stake Limits</a>
+                                   </li> -->
+                                </ul>
+                             </div>
+                             <div class="body">
+                                <div class="table-responsive table-rsp1">
+                                   <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                      <div class="dt-buttons"> <a class="btn btn-round btn-primary buttons-csv buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>CSV</span></a> <a class="btn btn-round btn-primary buttons-pdf buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>PDF</span></a> </div>
+                                      <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+                                      <table class="table agent-table table-hover spacing5 dataTable no-footer table-striped table-c-striped main-table" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+                                         <thead>
+                                            <tr role="row" class="table-head">
+                                               <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="ID: activate to sort column descending" style="width: 77px;">ID</th>
+                                               <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Market Type: activate to sort column ascending" style="width: 508px;">Market Type</th>
+                                               <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Minimum Stake: activate to sort column ascending" style="width: 279px;">Minimum Stake</th>
+                                               <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Maximum Stake: activate to sort column ascending" style="width: 283px;">Maximum Stake</th>
+                                               <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 155px;">Actions</th>
+                                            </tr>
+                                         </thead>
+                                         <tbody>
+                                            <tr role="row" class="odd table-data">
+                                               <td class="sorting_1 id-sec">1</td>
+                                               <td class="market-type-sec wrp">CRICKET_MATCH_WINNER</td>
+                                               <td class="minimum-stake-sec">100.0</td>
+                                               <td class="maximum-stake-sec">200000.0</td>
+                                               <td class="last-td action-sec">
+                                                  <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                  <a class="delete_1 btn btn-danger btn-sm" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/stake_limits_packages/1/market_type_stake_limits/1" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                               </td>
+                                            </tr>
+                                            <tr role="row" class="even table-data">
+                                               <td class="sorting_1 id-sec">2</td>
+                                               <td class="market-type-sec wrp">CRICKET_SESSION</td>
+                                               <td class="minimum-stake-sec">100.0</td>
+                                               <td class="maximum-stake-sec">100000.0</td>
+                                               <td class="last-td action-sec">
+                                                  <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                  <a class="delete_2 btn btn-danger btn-sm" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/stake_limits_packages/1/market_type_stake_limits/2" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                               </td>
+                                            </tr>
+                                            <tr role="row" class="odd table-data">
+                                               <td class="sorting_1 id-sec">3</td>
+                                               <td class="market-type-sec wrp">CRICKET_EVEN_ODD</td>
+                                               <td class="minimum-stake-sec">100.0</td>
+                                               <td class="maximum-stake-sec">200000.0</td>
+                                               <td class="last-td action-sec">
+                                                  <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                  <a class="delete_3 btn btn-danger btn-sm" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/stake_limits_packages/1/market_type_stake_limits/3" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                               </td>
+                                            </tr>
+                                            <tr role="row" class="even table-data">
+                                               <td class="sorting_1 id-sec">4</td>
+                                               <td class="market-type-sec wrp">CRICKET_ENDING_DIGIT</td>
+                                               <td class="minimum-stake-sec">100.0</td>
+                                               <td class="maximum-stake-sec">200000.0</td>
+                                               <td class="last-td action-sec">
+                                                  <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                  <a class="delete_4 btn btn-danger btn-sm" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/stake_limits_packages/1/market_type_stake_limits/4" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                               </td>
+                                            </tr>
+                                            <tr role="row" class="odd table-data">
+                                               <td class="sorting_1 id-sec">5</td>
+                                               <td class="market-type-sec wrp">FOOTBALL_WIN_DRAW_WIN</td>
+                                               <td class="minimum-stake-sec">2000.0</td>
+                                               <td class="maximum-stake-sec">200000.0</td>
+                                               <td class="last-td action-sec">
+                                                  <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                  <a class="delete_5 btn btn-danger btn-sm" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/stake_limits_packages/1/market_type_stake_limits/5" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                               </td>
+                                            </tr>
+                                            <tr role="row" class="even table-data">
+                                               <td class="sorting_1 id-sec">6</td>
+                                               <td class="market-type-sec wrp">FOOTBALL_GOALS_OVER_UNDER</td>
+                                               <td class="minimum-stake-sec">1000.0</td>
+                                               <td class="maximum-stake-sec">100000.0</td>
+                                               <td class="last-td action-sec">
+                                                  <i class="fa fa-edit fa-lg open-edit-sec" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                  <a class="delete_6 btn btn-danger btn-sm" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/agent/stake_limits_packages/1/market_type_stake_limits/6" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                               </td>
+                                            </tr>
+                                         </tbody>
+                                      </table>
+                                      <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 6 of 6 entries</div>
+                                      <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                         <ul class="pagination">
+                                            <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                            <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                            <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li>
+                                         </ul>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+
+
+                    <div class="row clearfix edit-sec hide">
+                     <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                           <div class="header">
+                              <h2>EDIT Market Type Stake Limits</h2>
+                           </div>
+                           <div class="body">
+                              <form accept-charset="UTF-8" action="/agent/stake_limits_packages/1/market_type_stake_limits/1" class="form-horizontal" id="edit_market_type_stake_limit_1" method="post">
+                                 <div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="patch"><input name="authenticity_token" type="hidden" value="3v0a1CJeKWL0Uk0uKZ/HK3sThRNoIlgB3eWgZaL3rJc="></div>
+                                 <div class="form-group">
+                                    <label class="col-sm-2 control-label">Market Type</label>
+                                    <div class="col-sm-10">
+                                       <select class="form-control" id="market_type_stake_limit_market_type" name="market_type_stake_limit[market_type]">
+                                          <option value="">Select Market Type</option>
+                                          <option selected="selected" value="cricket_match_winner">Cricket Match Winner</option>
+                                          <option value="cricket_session">Cricket Session</option>
+                                          <option value="cricket_even_odd">Cricket Even Odd</option>
+                                          <option value="cricket_ending_digit">Cricket Ending Digit</option>
+                                          <option value="football_win_draw_win">Football Win Draw Win</option>
+                                          <option value="football_goals_over_under">Football Goals Over Under</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label class="col-sm-2 control-label">Minimum Stake</label>
+                                    <div class="col-sm-10">
+                                       <input class="form-control" id="market_type_stake_limit_minimum_stake" name="market_type_stake_limit[minimum_stake]" placeholder="Minimum Stake" type="text" value="100">
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label class="col-sm-2 control-label">Maximum Stake</label>
+                                    <div class="col-sm-10">
+                                       <input class="form-control" id="market_type_stake_limit_maximum_stake" name="market_type_stake_limit[maximum_stake]" placeholder="Maximum Stake" type="text" value="200000">
+                                    </div>
+                                 </div>
+                                 <div class="hr-line-dashed"></div>
+                                 <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                       <span class="btn btn-info swich-button">Cancel</span>
+                                       <span class="btn btn-primary swich-button" type="submit" id="submit">Save Changes</span>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="edit-box hide">
+                  <div class="row clearfix">
+                     <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                           <div class="header">
+                              <h2>EDIT Super Admin Setting</h2>
+                           </div>
+                           <div class="body">
+                              <form accept-charset="UTF-8" action="/agent/stake_limits_packages/1" class="form-horizontal" id="edit_stake_limits_package_1" method="post">
+                                 <div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="patch"><input name="authenticity_token" type="hidden" value="xhFjJXAwNrZKD/wVu2gMi3uz8jRSiBw26YS4/bMK2AY="></div>
+                                 <div class="form-group">
+                                    <label class="col-sm-2 control-label">Title</label>
+                                    <div class="col-sm-10">
+                                       <input class="form-control" id="stake_limits_package_title" name="stake_limits_package[title]" placeholder="Title" type="text" value="default">
+                                    </div>
+                                 </div>
+                                 <div class="hr-line-dashed"></div>
+                                 <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                       <a class="btn btn-info edit-cancel">Cancel</a>
+                                       <button class="btn btn-primary" type="submit" id="submit">Save Changes</button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+
+                <div class="create-new-container hide">
+                  <div class="container-fluid">
+                     <style type="text/css">
+                     .user-hide {
+                       display: none;
+                     }
+                    </style>
+                    <script type="text/javascript">is_click_on_load_title = false</script>
+                    <div class="block-header">
+                     <div class="row clearfix">
+                       <div class="col-md-6 col-sm-12">
+                         <!-- <h1>Super Admin</h1>
+                         <nav aria-label="breadcrumb">
+                           <ol class="breadcrumb">
+                             <li class="breadcrumb-item">
+                               <a href="/agent/dashboard">Dashboard</a>
+                             </li>
+                             <li class="breadcrumb-item">
+                               <a href="/agent/stake_limits_packages">Stake Limits Packages</a>
+                             </li>
+                             <li class="breadcrumb-item active" aria-current="page">
+                               <strong>New</strong>
+                             </li>
+                           </ol>
+                         </nav> -->
+                       </div>
+                     </div>
+                    </div>
+                    <div class="row clearfix">
+                     <div class="col-lg-12 col-md-12">
+                       <div class="card">
+                         <div class="header">
+                           <h2>NEW Super Admin Setting</h2>
+                         </div>
+                         <div class="body">
+                           <form accept-charset="UTF-8" action="/agent/stake_limits_packages" class="form-horizontal" id="new_stake_limits_package" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="+a4KETXDwOVu5NniOmqyr90PDOK681KepsYxMyp1ccA="></div>
+                             <div class="form-group"><label class="col-sm-2 control-label">Title</label>
+                               <div class="col-sm-10">
+                                 <input class="form-control" id="stake_limits_package_title" name="stake_limits_package[title]" placeholder="Title" type="text">
+                               </div>
+                             </div>
+                             <div class="hr-line-dashed"></div>
+                             <div class="form-group">
+                               <div class="col-sm-offset-2">
+                                 <span class="btn btn-info cancel_sec">Cancel</span>
+                                 <span class="btn btn-primary" type="submit" id="submit">Save Changes</span>
+                               </div>
+                             </div>
+                           </form>
+                         </div>
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <script>
+              $(document).ready(function() {
+                $('.agent-table').DataTable({
+                  dom: 'Bfrtip',
+                  "ordering": false,
+                  buttons: [
+                  'csvHtml5',
+                  'pdfHtml5'
+                  ]
+                });
+              });
+            </script>
+
+            <script>
+                $(document).ready(function(){
+                  $('.opn_detail').click(function(){
+                    $('.split__left').css('width', '50%');
+                    $('.split__left').css('max-width', '70%')
+                    $('.split__right , .split__bar').removeClass('hide');
+                    $('.agent-company').removeClass('hide');
+                    $('.gutter').css('display', 'block');
+
+                  });
+                });
+                 $(document).ready(function(){
+                  $('.close_agent_detl').click(function(){
+                    $('.split__left').css('width', '100%');
+                    $('.split__left').css('max-width', 'inherit')
+                    $('.split__right , .split__bar').addClass('hide');
+                    $('.agent-company').addClass('hide');
+                    $('.gutter').css('display', 'none');
+                  })
+                });
+              </script>
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+            </div>
+          </div>
+        </div>
+        <script media="all" src="/assets/admin_dark.js"></script>
+      </body>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          if(false == true){
+            document.getElementById("themes-switch").checked = true;
+          }else{
+            document.getElementById("themes-switch").checked = false;
+          }
+
+          if(false == true)
+          {
+            $("body").addClass("mini_sidebar");
+            document.getElementById("mini-switch").checked = true;
+            $("#left-sidebar").addClass("mini_sidebar_on");
+            $(".hmenu-btn").attr("disabled", "disabled");
+            $(".hmenu-link").addClass("isDisabled");
+          }else{
+            $("body").removeClass("mini_sidebar");
+            document.getElementById("mini-switch").checked = false;
+            $("#left-sidebar").removeClass("mini_sidebar_on");
+            $(".hmenu-btn").removeAttr("disabled", "disabled");
+            $(".hmenu-link").removeClass("isDisabled");
+          }
+        });
+
+        $(function() {
+          $(window).on("load resize", function() {
+            if($(window).innerWidth() < 1201){
+              $(".mini-sidebar-btn, .hmenu-btn").attr("disabled", "disabled");
+              $(".hmenu-link").addClass("isDisabled");
+              $(".mini-sidebar-link").addClass("isDisabled");
+            }else{
+              if(false == true){
+                $("body").addClass("h-menu");
+                document.getElementById("hmenu-switch").checked = true;
+                $(".mini-sidebar-btn").attr("disabled", "disabled");
+                $(".mini-sidebar-link").addClass("isDisabled");
+              }else{
+                $("body").removeClass("h-menu")
+                document.getElementById("hmenu-switch").checked = false;
+                $(".mini-sidebar-btn").removeAttr("disabled", "disabled");
+                $(".mini-sidebar-link").removeClass("isDisabled");
+              }
+
+              if(false == true){
+                $("body").addClass("mini_sidebar");
+                document.getElementById("mini-switch").checked = true;
+                $("#left-sidebar").addClass("mini_sidebar_on");
+                $(".hmenu-btn").attr("disabled", "disabled");
+                $(".hmenu-link").addClass("isDisabled");
+              }else{
+                $("body").removeClass("mini_sidebar");
+                document.getElementById("mini-switch").checked = false;
+                $("#left-sidebar").removeClass("mini_sidebar_on");
+                $(".hmenu-btn").removeAttr("disabled", "disabled");
+                $(".hmenu-link").removeClass("isDisabled");
+              }
+            }
+          })
+        });
+
+
+        $(".navbar-minimalize").on("click", function() {
+          $("body").toggleClass("mini_sidebar");
+          $("#left-sidebar").toggleClass("mini_sidebar_on");
+          if(false == true){
+            document.getElementById("mini-switch").checked = true;
+          }
+          else{
+            document.getElementById("mini-switch").checked = false;
+          }
+          // $(".navbar-brand").toggleClass("sidebar-icon");
+          // $(".right-icon").toggleClass("second");
+        });
+
+
+      </script>
+
+
+
+</html>
